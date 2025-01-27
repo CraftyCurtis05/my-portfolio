@@ -60,12 +60,7 @@
           <ul class="list-inline footer-links">
             <li class="list-inline-item">
               <a href="#" class="text-white">
-                Privacy Policy
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white">
-                Terms of Service
+                Contact Me
               </a>
             </li>
             <li class="list-inline-item">

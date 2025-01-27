@@ -6,9 +6,7 @@
 
 <script>
 export default {
-  components: {
-    
-  }
+
 }
 </script>
 
@@ -22,5 +20,12 @@ body {
   scroll-behavior: smooth;
   font-family: Roboto, sans-serif;
   font-size: 18px;
+}
+
+main {
+  background-color: #dadae2;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 </style>

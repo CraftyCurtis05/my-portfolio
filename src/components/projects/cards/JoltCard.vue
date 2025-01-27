@@ -1,7 +1,7 @@
 <template>
-    <div class="card mb-3" style="max-width: 540px;">
+    <article class="card mb-3" style="max-width: 45vw; height: 25vw;">
         <div class="row g-0">
-            <div class="col-md-4">
+            <section class="col-md-4">
                 <!-- Image Carousel -->
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -34,10 +34,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-8">
+            </section>
+            <section class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">"Jolt" Coffee Shop Locator Web Application</h5>
+                    <h5 class="card-title">"Jolt" Coffee Shop Locator App</h5>
                     <p class="card-text"><strong>Tech Stack:</strong> Vue.js, Spring Boot, PostgreSQL, Yelp API, Axios</p>
                     <p class="card-text">
                         Jolt helps users locate nearby coffee shops by integrating with the Yelp API. With user profiles, favorites, and personalized experiences, Jolt makes coffee shop discovery easy.
@@ -46,12 +46,14 @@
                         <li>User Authentication & Profile Management</li>
                         <li>Real-time Coffee Shop Locator with Yelp API</li>
                         <li>Save Favorites and Update Profile</li>
+                        <li>Upload and Update Profile Picture</li>
+                        <li>Personalized Search Using Profile Details</li>
                     </ul>
                     <p class="card-text"><small class="text-muted">Originally created as a Tech Elevator capstone project, redesigned with enhanced features.</small></p>
                 </div>
-            </div>
+            </section>
         </div>
-    </div>    
+    </article>    
 </template>
 
 <script>
