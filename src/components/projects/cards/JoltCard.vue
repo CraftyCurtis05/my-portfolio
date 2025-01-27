@@ -1,0 +1,65 @@
+<template>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <!-- Image Carousel -->
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/1-jolt-login.png" class="d-block w-100" alt="Jolt App Screenshot 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/2-jolt-home.png" class="d-block w-100" alt="Jolt App Screenshot 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/3-jolt-locator.png" class="d-block w-100" alt="Jolt App Screenshot 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/4-jolt-locator-search.png" class="d-block w-100" alt="Jolt App Screenshot 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/5-jolt-shop.png" class="d-block w-100" alt="Jolt App Screenshot 5">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/6-jolt-articles.png" class="d-block w-100" alt="Jolt App Screenshot 6">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/7-jolt-about.png" class="d-block w-100" alt="Jolt App Screenshot 7">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/8-jolt-about-select.png" class="d-block w-100" alt="Jolt App Screenshot 8">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/9-jolt-profile.png" class="d-block w-100" alt="Jolt App Screenshot 9">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">"Jolt" Coffee Shop Locator Web Application</h5>
+                    <p class="card-text"><strong>Tech Stack:</strong> Vue.js, Spring Boot, PostgreSQL, Yelp API, Axios</p>
+                    <p class="card-text">
+                        Jolt helps users locate nearby coffee shops by integrating with the Yelp API. With user profiles, favorites, and personalized experiences, Jolt makes coffee shop discovery easy.
+                    </p>
+                    <ul>
+                        <li>User Authentication & Profile Management</li>
+                        <li>Real-time Coffee Shop Locator with Yelp API</li>
+                        <li>Save Favorites and Update Profile</li>
+                    </ul>
+                    <p class="card-text"><small class="text-muted">Originally created as a Tech Elevator capstone project, redesigned with enhanced features.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>    
+</template>
+
+<script>
+export default {
+    name: "JoltCard"
+}
+</script>
+
+<style scoped>
+
+</style>
