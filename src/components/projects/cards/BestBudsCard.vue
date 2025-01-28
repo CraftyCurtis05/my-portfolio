@@ -1,5 +1,5 @@
 <template>
-    <article class="card mb-3" style="max-width: 45vw; height: 25vw;">
+    <article class="card mb-3" style="max-width: 45vw;">
         <div class="row g-0">
             <section class="col-md-4">
                 <!-- Image Carousel -->
