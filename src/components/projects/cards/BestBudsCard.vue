@@ -3,7 +3,7 @@
         <div class="row g-0">
             <section class="col-md-4">
                 <!-- Image Carousel -->
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/1-best-buds-login.png" class="d-block w-100" alt="Best Buds App Screenshot 1">
@@ -43,6 +43,7 @@
                         </div>
                     </div>
                 </div>
+                <button @click="openCarouselModalBestBuds" class="btn btn-primary">View Carousel in Full Screen</button>
             </section>
             <section class="col-md-8">
                 <div class="card-body">
@@ -62,15 +63,90 @@
                 </div>
             </section>
         </div>
-    </article>    
+    </article>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="carouselModalBestBuds" tabindex="-1" aria-labelledby="carouselModalBestBudsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carouselModalBestBudsLabel">Image Carousel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal Carousel -->
+                    <div id="carouselSlidesOnlyModal" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/1-best-buds-login.png" class="d-block w-100" alt="Best Buds App Screenshot 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/2-best-buds-home-top.png" class="d-block w-100" alt="Best Buds App Screenshot 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/3-best-buds-home-bottom.png" class="d-block w-100" alt="Best Buds App Screenshot 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/4-best-buds-search.png" class="d-block w-100" alt="Best Buds App Screenshot 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/5-best-buds-shop.png" class="d-block w-100" alt="Best Buds App Screenshot 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/6-best-buds-tips-tricks-top.png" class="d-block w-100" alt="Best Buds App Screenshot 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/7-best-buds-tips-tricks-middle.png" class="d-block w-100" alt="Best Buds App Screenshot 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/8-best-buds-articles.png" class="d-block w-100" alt="Best Buds App Screenshot 8">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/9-best-buds-news.png" class="d-block w-100" alt="Best Buds App Screenshot 9">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/10-best-buds-about.png" class="d-block w-100" alt="Best Buds App Screenshot 10">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/11-best-buds-contact.png" class="d-block w-100" alt="Best Buds App Screenshot 11">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/12-best-buds-profile.png" class="d-block w-100" alt="Best Buds App Screenshot 12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
 </template>
 
 <script>
 export default {
-    name: "BestBudsCard"
+    name: "BestBudsCard",
+    methods: {
+        openCarouselModalBestBuds() {
+            // Use Bootstrap's modal functionality to show the modal
+            const modal = new window.bootstrap.Modal(document.getElementById('carouselModalBestBuds'));
+            modal.show();
+        }
+    }
 }
 </script>
 
 <style scoped>
+/* Ensure modal content doesn't overlap the close button */
+.modal .modal-dialog {
+  z-index: 1500 !important;
+}
 
+.modal .modal-header .btn-close {
+  position: relative;
+  z-index: 2000; /* Ensure the close button is always on top */
+}
+
+/* Adjust carousel styling in the modal if needed */
+.modal .carousel-inner {
+    z-index: 1000; /* Lower z-index to ensure it's below the close button */
+}
 </style>

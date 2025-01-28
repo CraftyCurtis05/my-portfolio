@@ -1,3 +1,6 @@
+<!-- npm install -->
+<!-- npm install emailjs-com -->
+
 <template>
   <div id="portfolio-app">
     <router-view />

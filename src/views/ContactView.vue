@@ -20,7 +20,7 @@
   
   <script>
   import Header from '@/components/Header.vue';
-  import Contact from '@/components/contact/Contact.vue';
+  import Contact from '@/components/contact/ContactForm.vue';
   import Footer from '@/components/Footer.vue';
   
   export default {

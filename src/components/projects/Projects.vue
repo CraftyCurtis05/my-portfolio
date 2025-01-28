@@ -16,7 +16,7 @@
                         <b><u><a :href="githubWaterSensorsLink" target="_blank" id="title">"Spring Boot Course" - Water Quality Sensor Application</a></u></b>
                     </li>
                     <li>
-                        <b><u><a :href="githubMiniProjectsLink" target="_blank" id="title">25+ Codecademy Mini Projects</a></u></b>
+                        <b><u><a :href="githubMiniProjectsLink" target="_blank" id="title">"Codecademy" - 25+ Mini Projects</a></u></b>
                     </li>
                 </ul>
             </section>
@@ -41,15 +41,15 @@
         <article class="d-flex flex-row" id="proj-container">
             <!-- Conditionally render cards with close button -->
             <component v-show="showJoltCard" class="p-2 mx-auto card">
-                <button class="close-btn" @click="showJoltCard = false">X</button>
+                <button type="button" class="btn-close" @click="showJoltCard = false"></button>
                 <JoltCard />
             </component>
             <component v-show="showBestBudsCard" class="p-2 mx-auto card">
-                <button class="close-btn" @click="showBestBudsCard = false">X</button>   
+                <button type="button" class="btn-close" @click="showBestBudsCard = false"></button>   
                 <BestBudsCard />
             </component>
             <component v-show="showInventoryManagementCard" class="p-2 mx-auto card">
-                <button class="close-btn" @click="showInventoryManagementCard = false">X</button>
+                <button type="button" class="btn-close" @click="showInventoryManagementCard = false"></button>
                 <InventoryManagementCard />
             </component>
         </article>
@@ -113,32 +113,11 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Optional: Styling for cards */
-.card {
-  position: relative;
-  transition: transform 0.5s ease;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-/* Close Button Styles */
-.close-btn {
+.btn-close {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: transparent;
-  border: .1px black solid;
-  color: #000;
-  font-size: 1rem;
   cursor: pointer;
   z-index: 10; /* Ensure the close button stays on top of card content */
-}
-
-.close-btn:hover {
-  color: grey;
-  font-weight: bold;
 }
 </style>

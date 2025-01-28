@@ -20,7 +20,7 @@
   
   <script>
   import Header from '@/components/Header.vue';
-  import AboutText from '@/components/about/AboutText.vue';
+  import AboutText from '@/components/about/About.vue';
   import Footer from '@/components/Footer.vue';
   
   export default {
