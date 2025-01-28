@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-form container mt-5">
+  <div class="contact-form container my-5">
     <h2 class="text-center mb-4">Contact Me</h2>
     <form @submit.prevent="sendEmail" ref="form">
       <div class="form-group">
@@ -32,7 +32,7 @@
           required
         ></textarea>
       </div>
-      <button type="submit" :disabled="loading" class="btn btn-primary btn-block">
+      <button type="submit" :disabled="loading" class="btn btn-block">
         Send Message
       </button>
     </form>
@@ -92,7 +92,36 @@ export default {
   margin: 0 auto;
 }
 
-button:disabled {
-  background-color: #ccc;
+.btn {
+    font-size: .9rem;
+    color: #858585;
+    background-color: #dadae2;
+    border: 1px #b9b8b8 solid;
+    margin-top: .5vw;
+    transition: transform 0.3s ease-in;
+}
+
+.btn:hover {
+    font-weight: 500;
+    color: #696969;
+    background-image: radial-gradient(circle, #b9b9d7, #dadae2);
+    background-size: 300% 300%; /* Makes the gradient larger than the element */
+    animation: gradient-animation 3s ease infinite; /* Applies the animation */
+    border: 1px #b9b9d7 solid;
+    margin-top: .5vw;
+    transform: scale(1.05);
+}
+
+/* Define the animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* End position */
+    }
+    100% {
+        background-position: 0% 50%; /* Back to start */
+    }
 }
 </style>

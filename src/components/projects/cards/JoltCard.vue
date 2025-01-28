@@ -1,9 +1,9 @@
 <template>
     <article class="card mb-3" style="max-width: 45vw;">
         <div class="row g-0">
-            <section class="col-md-4">
+            <section class="carousel-container col-md-4">
                 <!-- Image Carousel -->
-                <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselSlidesOnly" class="carousel-main slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/1-jolt-login.png" class="d-block w-100" alt="Jolt App Screenshot 1">
@@ -34,11 +34,12 @@
                         </div>
                     </div>
                 </div>
-                <button @click="openCarouselModalJolt" class="btn btn-primary">View Carousel in Full Screen</button>
+                <button @click="openCarouselModalJolt" class="btn">View in Full Screen</button>
             </section>
+
             <section class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">"Jolt" Coffee Shop Locator App</h5>
+                    <h5 class="card-title"><a href="https://github.com/CraftyCurtis05/jolt-coffee-shop-locator" target="_blank">"Jolt" Coffee Shop Locator App</a></h5>
                     <p class="card-text"><strong>Tech Stack:</strong> Vue.js, Spring Boot, PostgreSQL, Yelp API, Axios</p>
                     <p class="card-text">
                         Jolt helps users locate nearby coffee shops by integrating with the Yelp API. With user profiles, favorites, and personalized experiences, Jolt makes coffee shop discovery easy.
@@ -61,12 +62,23 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="carouselModalJoltLabel">Image Carousel</h5>
+                    <h5 class="modal-title" id="carouselModalJoltLabel">"Jolt" Screenshots</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- Modal Carousel -->
-                    <div id="carouselSlidesOnlyModal" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselSlidesOnlyJoltModal" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                        </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/1-jolt-login.png" class="d-block w-100" alt="Jolt App Screenshot 1">
@@ -96,6 +108,16 @@
                                 <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/9-jolt-profile.png" class="d-block w-100" alt="Jolt App Screenshot 9">
                             </div>
                         </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -117,18 +139,104 @@ export default {
 </script>
   
 <style scoped>
-/* Ensure modal content doesn't overlap the close button */
-.modal .modal-dialog {
-  z-index: 1500 !important;
+h5,
+a {
+    color: black;
+    transition: transform 0.1s ease;
 }
 
-.modal .modal-header .btn-close {
-  position: relative;
-  z-index: 2000; /* Ensure the close button is always on top */
+h5:hover, 
+a:hover {
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
-/* Adjust carousel styling in the modal if needed */
-.modal .carousel-inner {
-    z-index: 1000; /* Lower z-index to ensure it's below the close button */
+.carousel-container  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dadae2;
+    padding: .2rem;
+}
+
+.carousel-main {
+    margin-top: 1vw;
+    border: 2px black solid;
+}
+
+.btn {
+    width: 10vw;
+    font-size: .9rem;
+    color: #858585;
+    background-color: #dadae2;
+    border: 1px #b9b8b8 solid;
+    margin-top: .5vw;
+    transition: transform 0.3s ease-in;
+}
+
+.btn:hover {
+    font-weight: 500;
+    color: #696969;
+    background-image: radial-gradient(circle, #b9b9d7, #dadae2);
+    background-size: 300% 300%; /* Makes the gradient larger than the element */
+    animation: gradient-animation 3s ease infinite; /* Applies the animation */
+    border: 1px #b9b9d7 solid;
+    margin-top: .5vw;
+    transform: scale(1.05);
+}
+
+/* Define the animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* End position */
+    }
+    100% {
+        background-position: 0% 50%; /* Back to start */
+    }
+}
+
+.modal-body {
+    background-color: #dadae2;
+    padding: 3rem 4rem;
+    margin: auto;
+}
+
+.modal-dialog {
+    max-width: 80vw;
+}
+
+.carousel-indicators,
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(100%); /* Ensure the icons are visible */
+    margin: auto;
+}
+
+.carousel-indicators {
+    position: absolute;
+    top: 103%; /* Align vertically centered */
+    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
+}
+
+/* Position the carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%; /* Align vertically centered */
+    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
+    z-index: 3000;  /* Ensure buttons are above other elements */
+}
+
+/* Move the "previous" button to the left */
+.carousel-control-prev {
+    left: -7.5vw; /* Adjust this value to push further towards the left */
+}
+
+/* Move the "next" button to the right */
+.carousel-control-next {
+    right: -7.5vw; /* Adjust this value to push further towards the right */
 }
 </style>

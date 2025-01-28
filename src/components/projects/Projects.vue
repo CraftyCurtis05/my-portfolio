@@ -20,6 +20,7 @@
                     </li>
                 </ul>
             </section>
+
             <section class="p-2 mx-auto" id="desc">
                 <h2>Personal Projects</h2>
                 <ul>
@@ -31,7 +32,7 @@
                         <b><u>"Best Buds" Dispensary Locator Web Application</u></b>
                     </li>
                     <li @click="showInventoryManagementCard = true" id="title">
-                        <b><u>Inventory Management Application</u></b><em> (Currently Under Development)</em>
+                        <b><u>Inventory Management Application</u></b><em> (Currently Under Design)</em>
                     </li>
                 </ul>
             </section>
@@ -89,12 +90,7 @@ main {
 }
 
 #desc-container {
-  border-bottom: 1px grey solid;
-  padding-block: 2.5vw;
-}
-
-#proj-container {
-  margin-top: 1vw;
+  padding-top: 2.5rem;
 }
 
 #title,

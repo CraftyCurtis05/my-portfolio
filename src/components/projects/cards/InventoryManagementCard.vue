@@ -1,16 +1,16 @@
 <template>
   <article class="card mb-3" style="max-width: 45vw;">
     <div class="row g-0">
-      <section class="col-md-4">
+      <section class="carousel-container col-md-4">
         <!-- Image Carousel -->
-        <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselSlidesOnly" class="carousel-main slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="@/assets/projects/design-examples/inventory-mgmt-dashboard-design.png" class="d-block w-100" alt="Inventory Management Dashboard Wireframe">
             </div>
           </div>
         </div>
-        <button @click="openCarouselModalInventory" class="btn btn-primary">View Carousel in Full Screen</button>
+        <button @click="openCarouselModalInventory" class="btn btn-primary">View in Full Screen</button>
       </section>
   
       <section class="col-md-8">
@@ -43,7 +43,10 @@
         </div>
         <div class="modal-body">
           <!-- Modal Carousel -->
-          <div id="carouselSlidesOnlyModal" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselSlidesOnlyInventoryModal" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselSlidesOnlyInventoryModal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="@/assets/projects/design-examples/inventory-mgmt-dashboard-design.png" class="d-block w-100" alt="Inventory Management Dashboard Wireframe">
@@ -70,18 +73,75 @@ export default {
 </script>
   
 <style scoped>
-/* Ensure modal content doesn't overlap the close button */
-.modal .modal-dialog {
-  z-index: 1500 !important;
+h5 {
+    color: black;
 }
 
-.modal .modal-header .btn-close {
-  position: relative;
-  z-index: 2000; /* Ensure the close button is always on top */
+.carousel-container  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dadae2;
+    padding: .2rem;
 }
 
-/* Adjust carousel styling in the modal if needed */
-.modal .carousel-inner {
-    z-index: 1000; /* Lower z-index to ensure it's below the close button */
+.carousel-main {
+    margin-top: 1vw;
+    border: 2px black solid;
+}
+
+.btn {
+    width: 10vw;
+    font-size: .9rem;
+    color: #858585;
+    background-color: #dadae2;
+    border: 1px #b9b8b8 solid;
+    margin-top: .5vw;
+    transition: transform 0.3s ease-in;
+}
+
+.btn:hover {
+    font-weight: 500;
+    color: #696969;
+    background-image: radial-gradient(circle, #b9b9d7, #dadae2);
+    background-size: 300% 300%; /* Makes the gradient larger than the element */
+    animation: gradient-animation 3s ease infinite; /* Applies the animation */
+    border: 1px #b9b9d7 solid;
+    margin-top: .5vw;
+    transform: scale(1.05);
+}
+
+/* Define the animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* End position */
+    }
+    100% {
+        background-position: 0% 50%; /* Back to start */
+    }
+}
+
+.modal-body {
+    background-color: #dadae2;
+    padding: 3rem 4rem;
+    margin: auto;
+}
+
+.modal-dialog {
+    max-width: 80vw;
+}
+
+.carousel-indicators {
+    filter: invert(100%); /* Ensure the icons are visible */
+    margin: auto;
+}
+
+.carousel-indicators {
+    position: absolute;
+    top: 103%; /* Align vertically centered */
+    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
 }
 </style>
