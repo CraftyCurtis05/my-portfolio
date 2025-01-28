@@ -14,17 +14,17 @@
         <!-- Header Component -->
         <header class="icons d-flex flex-row-reverse bd-highlight">  
             <!-- Social Media Icons -->
-            <a href="https://www.hackerrank.com/profile/craftycurtis05">
+            <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank">
                 <img class="icon" src="@/assets/icons/hackerrank_icon.png">
             </a>
-            <a href="https://www.codecademy.com/profiles/CraftyCurtis05">
+            <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank">
                 <img class="icon" src="@/assets/icons/codecademy_icon.png">
             </a>
             <a href="https://github.com/CraftyCurtis05">
-                <img class="icon" src="@/assets/icons/github_icon.png">
+                <img class="icon" src="@/assets/icons/github_icon.png" target="_blank">
             </a>
             <a href="https://www.linkedin.com/in/jcurtisdeveloper/">
-                <img class="icon" src="@/assets/icons/linkedin_icon.png">
+                <img class="icon" src="@/assets/icons/linkedin_icon.png" target="_blank">
             </a>
         </header>
 

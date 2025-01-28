@@ -21,6 +21,7 @@
             Seriously, if there's a new album or hidden indie track, you can bet I’m already on it. 
             Music is my creative fuel—whether I’m coding, sketching, or just chilling, there’s always a soundtrack to my life. 
             I love working with teams and collaborating on innovative projects, and I’m always eager to keep learning and growing in my role as a developer. 
+            <br><br>
             If you’re looking for someone who’s not afraid to take on challenges, add a little humor to the mix, and deliver quality work (while blasting some great tunes), I’m your person!
           </p>
         </div>  
@@ -35,12 +36,13 @@
 
 <script>
 export default {
-    name: "About"
+    name: "AboutMe"
 }
 </script>
 
 <style scoped>
 .paragraph {
+  background-color: #ecebef;
   border: 1px solid black;
   margin-top: 3vw;
 }

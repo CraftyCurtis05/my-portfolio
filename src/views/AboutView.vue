@@ -9,7 +9,7 @@
   
     <body>
       <main>
-        <AboutText/>
+        <AboutMe/>
       </main>
     </body>
   
@@ -20,19 +20,21 @@
   
   <script>
   import Header from '@/components/Header.vue';
-  import AboutText from '@/components/about/About.vue';
+  import AboutMe from '@/components/about/AboutMe.vue';
   import Footer from '@/components/Footer.vue';
   
   export default {
     name: "AboutView",
     components: { 
       Header,
-      AboutText,
+      AboutMe,
       Footer
     }
   };
   </script>
   
   <style scoped>
-  
+  body {
+  background-color: #dadae2;
+}
   </style>

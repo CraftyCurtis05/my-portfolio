@@ -12,13 +12,13 @@
           </div>
         </div>
         <div class="col-md-3">
-          <h5>About Me</h5>
+          <h5><router-link to="/about" class="link">About Me</router-link></h5>
           <p>
-            Say something about me.
+            Code enthusiast, creative problem-solver, and your next favorite developer.
           </p>
         </div>
         <div class="col-md-3">
-          <h5>Contact Me</h5>
+          <h5><router-link to="/contact" class="link">Contact Me</router-link></h5>
           <ul class="list-unstyled">
             <li>Email: craftycurtis05@gmail.com</li>
             <li>Phone: +16142031537</li>
@@ -29,22 +29,22 @@
           <h5>Follow Me</h5>
           <ul class="list-inline footer-links">
             <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/jcurtisdeveloper/">
+              <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank">
                 <img id="footer-icons" class="img-responsive" src="@/assets/icons/linkedin_icon.png">
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/CraftyCurtis05">
+              <a href="https://github.com/CraftyCurtis05" target="_blank">
                 <img id="footer-icons" class="img-responsive" src="@/assets/icons/github_icon.png">
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.codecademy.com/profiles/CraftyCurtis05">
+              <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank">
                 <img id="footer-icons" class="img-responsive" src="@/assets/icons/codecademy_icon.png">
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.hackerrank.com/profile/craftycurtis05">
+              <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank">
                 <img id="footer-icons" class="img-responsive" src="@/assets/icons/hackerrank_icon.png">
               </a>
             </li>
@@ -83,7 +83,17 @@ export default {
 
 <style scoped>
 footer {
-    background-color: #dadae2;
-    height: 17rem;
+  background-color: #dadae2;
+  height: 17rem;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration:underline;
+  font-weight: 700;
 }
 </style>

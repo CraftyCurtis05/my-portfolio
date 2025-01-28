@@ -34,5 +34,7 @@
   </script>
   
   <style scoped>
-  
+  body {
+  background-color: #dadae2;
+}
   </style>
