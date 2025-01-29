@@ -18,19 +18,19 @@
             <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title ml-5">TEnmo - P2P Online Payment Service API</h5>
+                <h5 class="card-title ml-5">"TEnmo" P2P Online Payment Service API</h5>
                 <p class="card-text lead"><b>Tech Stack:</b> Spring Boot, PostgreSQL, RESTful API, JDBC, JWT Authentication</p>
                 <p class="card-text lead">
                     Worked with a team to design and develop a Spring Boot RESTful API for a peer-to-peer payment service, enabling money transfers, balance checks, and transfer requests, with PostgreSQL for data storage and efficient transaction management.
                 </p>
                 <ul class="lead">
-                    <li>Designed models & controllers schemas</li>
-                    <li>Database creation & management</li>
-                    <li>Used DAO & Jdbc DAO</li>
-                    <li>User authentication with JWT</li>
-                    <li>Integration testing using Postman</li>
+                    <li>Designed Models & Controllers Schemas</li>
+                    <li>Database Creation & Management</li>
+                    <li>Used DAO & JDBC DAO</li>
+                    <li>User Authentication with JWT</li>
+                    <li>Integration Testing using Postman</li>
                 </ul>
-                <p class="card-text text-muted lead"><em>This project is a peer-to-peer payment solution for managing transactions and transfers securely with a focus on backend architecture.</em></p>
+                <p class="card-text text-muted lead"><em>This project is a peer-to-peer payment solution for managing transactions and transfers securely.</em></p>
                 </div>
             </section>
 
@@ -44,25 +44,25 @@
 
                 <!-- Modal Header -->
                 <section class="modal-header">
-                <h5 class="modal-title lead" id="carouselModalTEnmo">No Image Available</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title lead" id="carouselModalTEnmo">No Image Available</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </section>
 
                 <!-- Modal Carousel -->
                 <section class="modal-body">
-                <div id="carouselSlidesOnlyTEnmo" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselSlidesOnlyTEnmo" class="carousel slide" data-bs-ride="carousel">
 
-                    <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselSlidesOnlyTEnmo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    </div>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselSlidesOnlyTEnmo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        </div>
 
-                    <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="@/assets/projects/default_image.png" class="d-block w-100" alt="No Image Available">
-                    </div>
-                    </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="@/assets/projects/default_image.png" class="d-block w-100" alt="No Image Available">
+                            </div>
+                        </div>
 
-                </div>
+                    </div>
                 </section>
             </div>
         </article>

@@ -14,10 +14,10 @@
                         <b>"Tech Elevator" Vending Machine Application</b>
                     </li>
                     <li class="visit" @click="showTEnmoCard = true" title="Click to See More Information">
-                        <b>"Tech Elevator" - TEnmo Application</b>
+                        <b>"Tech Elevator" TEnmo Application</b>
                     </li>
-                    <li class="visit">
-                        <b><a :href="githubTECoffeeLocatorLink" target="_blank" title="Visit Code on GitHub">"Tech Elevator" - Coffee Shop Locator Web Application</a></b>
+                    <li class="visit" @click="showTECoffeeCard = true" title="Click to See More Information">
+                        <b>"Tech Elevator" Coffee Shop Locator Web Application</b>
                     </li>
                     <li class="visit">
                         <b><a :href="githubWaterSensorsLink" target="_blank" title="Visit Code on GitHub">"Spring Boot Course" - Water Quality Sensor Application</a></b>
@@ -58,7 +58,12 @@
             <section v-show="showTEnmoCard" class="p-2 mx-auto card">
                 <button type="button" class="btn-close" @click="showTEnmoCard = false"></button>
                 <TEnmoCard/>
-            </section>            
+            </section>
+
+            <section v-show="showTECoffeeCard" class="p-2 mx-auto card">
+                <button type="button" class="btn-close" @click="showTECoffeeCard = false"></button>
+                <TECoffeeCard/>
+            </section>
 
             <section v-show="showJoltCard" class="p-2 mx-auto card">
                 <button type="button" class="btn-close" @click="showJoltCard = false"></button>
@@ -83,6 +88,7 @@
 <script>
 import TEVendingMachineCard from './cards/TEVendingMachineCard.vue';
 import TEnmoCard from './cards/TEnmoCard.vue';
+import TECoffeeCard from './cards/TECoffeeCard.vue';
 import JoltCard from './cards/JoltCard.vue';
 import BestBudsCard from './cards/BestBudsCard.vue';
 import InventoryManagementCard from './cards/InventoryManagementCard.vue';
@@ -92,14 +98,16 @@ export default {
     components: {
         TEVendingMachineCard,
         TEnmoCard,
+        TECoffeeCard,
         JoltCard,
         BestBudsCard,
         InventoryManagementCard
     },
     data() {
         return {
-            showTEVendingMachineCard: false, // State to show/hide TE Vending Machine Card
+            showTEVendingMachineCard: false, // State to show/hide TE Vending Machine card
             showTEnmoCard: false, // State to show/hide TEnmo card
+            showTECoffeeCard: false, // State to show/hide TE Coffee card
             showJoltCard: false, // State to show/hide Jolt card
             showBestBudsCard: false, // State to show/hide Best Buds card
             showInventoryManagementCard: false // State to show/hide Inventory Management card

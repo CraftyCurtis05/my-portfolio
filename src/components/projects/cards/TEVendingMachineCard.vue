@@ -18,17 +18,17 @@
         <!-- Card Body -->
         <section class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title ml-5">Vending Machine Application</h5>
+            <h5 class="card-title ml-5">"TE" Vending Machine Application</h5>
             <p class="card-text lead"><b>Tech Stack:</b> Java, Object-Oriented Programming, Command-Line Interface</p>
             <p class="card-text lead">
                 This backend project simulates a vending machine’s functionality through a simple command-line interface. Users can select products, insert virtual currency, and receive change, while the application manages product inventory and transaction processing.
             </p>
             <ul class="lead">
-                <li>Inventory management for products</li>
-                <li>Transaction processing</li>
-                <li>Error handling</li>
-                <li>Focus on object-oriented design principles</li>
-                <li>Test-driven development (TDD)</li>
+                <li>Inventory Management</li>
+                <li>Transaction Processing</li>
+                <li>Error Handling</li>
+                <li>Focus on Object-Oriented Design Principles</li>
+                <li>Test-Driven Development</li>
             </ul>
             <p class="card-text text-muted lead"><em>A simple backend system, emphasizing core programming and software design practices.</em></p>
           </div>
