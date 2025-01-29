@@ -26,7 +26,9 @@
           <span><em>(placeholder picture)</em></span>
           <img src="@/assets/about/portfolio_portrait_temp.jpg" alt="Picture of Jennifer Curtis" style="width: 30vw"/>
           <div class="col-sm-4 resume">
-            <a href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" class="btn">View My Resume</a>
+            <a href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" class="btn">
+              <span>View My Resume</span>
+            </a>
           </div>
         </div>
       </div>
@@ -53,37 +55,62 @@ export default {
   margin-top: 2rem;
 }
 
+/* Base Styling for the Button */
 .btn {
-    width: 10vw;
-    font-size: .9rem;
-    color: #858585;
-    background-color: #dadae2;
-    border: 1px #b9b8b8 solid;
-    margin-top: .5vw;
-    transition: transform 0.3s ease-in;
+  width: 12rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #7c7c8a;
+  background-color: #f8f8fa;
+  border: 2px solid #7c7c8a;
+  border-radius: 2rem;
+  padding: .5vw 1.5vw;
+  margin-top: 1vw;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .btn:hover {
-    font-weight: 500;
-    color: #696969;
-    background-image: radial-gradient(circle, #b9b9d7, #dadae2);
-    background-size: 300% 300%; /* Makes the gradient larger than the element */
-    animation: gradient-animation 3s ease infinite; /* Applies the animation */
-    border: 1px #b9b9d7 solid;
-    margin-top: .5vw;
-    transform: scale(1.05);
+  color: #ffffff;
+  background-image: radial-gradient(circle, #8787c3, #b9b9c6); /* Subtle gradient background */
+  background-size: 300% 300%;
+  border: 2px solid #cccce4;
+  transform: scale(1.1) translateY(-5px); /* Adds 3D effect */
+  animation: gradient-animation 2s ease infinite;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
 }
 
 /* Define the animation */
 @keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%; /* Start position */
-    }
-    50% {
-        background-position: 100% 50%; /* End position */
-    }
-    100% {
-        background-position: 0% 50%; /* Back to start */
-    }
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* End position */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
+}
+
+/* Create a subtle glow effect around the button */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  border-radius: 2rem;
+  transition: opacity 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  opacity: 1; /* Glow effect on hover */
 }
 </style>
