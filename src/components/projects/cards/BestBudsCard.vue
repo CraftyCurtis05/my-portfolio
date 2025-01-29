@@ -1,8 +1,10 @@
+<!-- Best Buds Card Component -->
 <template>
-    <article class="card mb-3" style="max-width: 45vw;">
-        <div class="row g-0">
+    <component class="card mb-3" style="max-width: 45vw;">
+        <article class="row g-0">
+
+            <!-- Screenshot Carousel -->
             <section class="carousel-container col-md-4">
-                <!-- Image Carousel -->
                 <div id="carouselSlidesOnly" class="carousel-main slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -43,40 +45,50 @@
                         </div>
                     </div>
                 </div>
-                <button @click="openCarouselModalBestBuds" class="btn">View in Full Screen</button>
+                <button @click="openCarouselModalBestBuds" class="btn mt-2 lead">View in Full Screen</button>
             </section>
 
+            <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="https://github.com/CraftyCurtis05/best-buds-dispensary-locator" target="_blank">"Best Buds" Dispensary Locator App</a></h5>
-                    <p class="card-text"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Google Maps API, TheNews API, Axios</p>
-                    <p class="card-text">
+                    <h5 class="card-title ml-5">
+                        <a href="https://github.com/CraftyCurtis05/best-buds-dispensary-locator" target="_blank" title="Visit Code on Github">
+                            "Best Buds" Dispensary Locator App
+                        </a>
+                    </h5>
+                    <p class="card-text lead"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Google Maps API, TheNews API, Axios</p>
+                    <p class="card-text lead">
                         Best Buds helps users find nearby dispensaries, learn about cannabis, and access important information about product choices, legality, and safety.
                     </p>
-                    <ul>
+                    <ul class="lead">
                         <li>User Authentication & Profile Management</li>
                         <li>Locator with Google Maps for nearby dispensaries</li>
                         <li>State Law SVG map for cannabis legality</li>
                         <li>Tips & Tricks, News, and Articles on Cannabis</li>
                         <li>Contact form for user inquiries (Email.js)</li>
                     </ul>
-                    <p class="card-text"><small class="text-muted">Originally designed to provide a comprehensive cannabis resource, now continuously enhanced with new features.</small></p>
+                    <p class="card-text text-muted lead"><em>Originally designed to provide a comprehensive cannabis resource, now continuously enhanced with new features.</em></p>
                 </div>
             </section>
-        </div>
-    </article>
+
+        </article>
+    </component>
     
     <!-- Modal -->
-    <div class="modal fade" id="carouselModalBestBuds" tabindex="-1" aria-labelledby="carouselModalBestBudsLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+    <modal class="modal fade" id="carouselModalBestBuds" tabindex="-1" aria-labelledby="carouselModalBestBudsLabel" aria-hidden="true">
+        <article class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="carouselModalBestBudsLabel">"Best Buds" Screenshots"</h5>
+
+                <!-- Modal Header -->
+                <section class="modal-header">
+                    <h4 class="modal-title lead" id="carouselModalBestBudsLabel"><b>"Best Buds" Screenshots"</b></h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Modal Carousel -->
+                </section>
+
+                <!-- Modal Carousel Body -->
+                <section class="modal-body">
                     <div id="carouselSlidesOnlyBestBudsModal" class="carousel slide" data-bs-ride="carousel">
+                        
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -91,6 +103,7 @@
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="10" aria-label="Slide 11"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="11" aria-label="Slide 12"></button>
                         </div>
+
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/1-best-buds-login.png" class="d-block w-100" alt="Best Buds App Screenshot 1">
@@ -130,7 +143,7 @@
                             </div>
                         </div>
 
-                        <!-- Carousel Controls -->
+                        <!-- Modal Carousel Controls -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -139,11 +152,12 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+
                     </div>
-                </div>
+                </section>
             </div>
-        </div>
-    </div>    
+        </article>
+    </modal>    
 </template>
 
 <script>
@@ -160,24 +174,11 @@ export default {
 </script>
 
 <style scoped>
-h5,
-a {
-    color: black;
-    transition: transform 0.1s ease;
-}
-
-h5:hover, 
-a:hover {
-    cursor: pointer;
-    transform: scale(1.02);
-}
-
 .carousel-container  {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #dadae2;
-    padding: .2rem;
 }
 
 .carousel-main {
@@ -185,30 +186,37 @@ a:hover {
     border: 2px black solid;
 }
 
+h5,
+h5 a {
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+h5:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 /* Base Styling for the Button */
 .btn {
-  width: 10vw;
-  text-align: center;
-  text-decoration: none;
-  font-size: .8rem;
-  font-weight: 500;
   color: #7c7c8a;
   background-color: #f8f8fa;
-  border: 2px solid #7c7c8a;
-  border-radius: 2rem;
-  padding: .5vw;
-  margin-top: .5vw;
+  border: .1vw solid #7c7c8a;
+  border-radius: 1vw;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .btn:hover {
-  color: #ffffff;
-  background-image: radial-gradient(circle, #8787c3, #b9b9c6); /* Subtle gradient background */
-  background-size: 300% 300%;
-  border: 2px solid #cccce4;
-  transform: scale(1.05) translateY(-5px); /* Adds 3D effect */
-  animation: gradient-animation 2s ease infinite;
+  font-size: 1.03rem;
+  font-weight: 500;
+  color: white;
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
+  background-size: 500% 500%;
+  border: .1vw solid #cccce4;
+  transform: translateY(-1px); /* Adds 3D effect */
+  animation: gradient-animation 5s ease infinite;
   box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
 }
 
@@ -227,12 +235,6 @@ a:hover {
 
 /* Create a subtle glow effect around the button */
 .btn::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
   background: rgba(255, 255, 255, 0.1);
   opacity: 0;
   border-radius: 2rem;
