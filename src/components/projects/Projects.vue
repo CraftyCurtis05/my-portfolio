@@ -1,61 +1,67 @@
+<!-- Projects Component -->
 <template>
-    <!-- Projects Component -->
-    <main class="col-12">
+    <component class="col-12">
         
-        <!-- Description Container -->
+        <!-- Projects Container -->
         <article class="d-flex flex-row justify-content-center" id="desc-container">
-            <section class="p-6 mx-auto" id="desc">
-                <h2>Educational Projects</h2>
-                <ul>
+
+            <!-- Educational Projects -->
+            <section class="mx-auto" id="desc">
+                <h2 class="display-6">Educational Projects</h2>
+                <ul class="lead">
                     <li>"Tech Elevator" - Vending Machine Application</li>
                     <li>"Tech Elevator" - TEnmo Application</li>
-                    <li>
-                        <b><u><a :href="githubTECoffeeLocatorLink" target="_blank" id="title">"Tech Elevator" - Coffee Shop Locator Web Application</a></u></b>
+                    <li class="visit">
+                        <b><a :href="githubTECoffeeLocatorLink" target="_blank" title="Visit Code on GitHub">"Tech Elevator" - Coffee Shop Locator Web Application</a></b>
                     </li>
-                    <li>
-                        <b><u><a :href="githubWaterSensorsLink" target="_blank" id="title">"Spring Boot Course" - Water Quality Sensor Application</a></u></b>
+                    <li class="visit">
+                        <b><a :href="githubWaterSensorsLink" target="_blank" title="Visit Code on GitHub">"Spring Boot Course" - Water Quality Sensor Application</a></b>
                     </li>
-                    <li>
-                        <b><u><a :href="githubMiniProjectsLink" target="_blank" id="title">"Codecademy" - 25+ Mini Projects</a></u></b>
+                    <li class="visit" >
+                        <b><a :href="githubMiniProjectsLink" target="_blank" title="Visit Code on GitHub">"Codecademy" - 25+ Mini Projects</a></b>
                     </li>
                 </ul>
             </section>
 
-            <section class="p-2 mx-auto" id="desc">
-                <h2>Personal Projects</h2>
-                <ul>
-                    <!-- Add hover listeners to the specific list items -->
-                    <li @click="showJoltCard = true" id="title">
-                        <b><u>"Jolt" Coffee Shop Locator Web Application</u></b>
+            <!-- Personal Projects -->
+            <section class="mx-auto" id="desc">
+                <h2 class="display-6">Personal Projects</h2>
+                <ul class="lead">
+                    <li class="visit" @click="showJoltCard = true" id="title">
+                        <b>"Jolt" Coffee Shop Locator Web Application</b>
                     </li>
-                    <li @click="showBestBudsCard = true" id="title">
-                        <b><u>"Best Buds" Dispensary Locator Web Application</u></b>
+                    <li class="visit" @click="showBestBudsCard = true" id="title">
+                        <b>"Best Buds" Dispensary Locator Web Application</b>
                     </li>
-                    <li @click="showInventoryManagementCard = true" id="title">
-                        <b><u>Inventory Management Application</u></b><em> (Currently Under Design)</em>
+                    <li class="visit" @click="showInventoryManagementCard = true" id="title">
+                        <b>Inventory Management Application</b><em> (Currently Under Design)</em>
                     </li>
                 </ul>
             </section>
+
         </article>
 
         <!-- Project Cards Container -->
         <article class="d-flex flex-row" id="proj-container">
-            <!-- Conditionally render cards with close button -->
-            <component v-show="showJoltCard" class="p-2 mx-auto card">
+
+            <section v-show="showJoltCard" class="p-2 mx-auto card">
                 <button type="button" class="btn-close" @click="showJoltCard = false"></button>
                 <JoltCard />
-            </component>
-            <component v-show="showBestBudsCard" class="p-2 mx-auto card">
+            </section>
+
+            <section v-show="showBestBudsCard" class="p-2 mx-auto card">
                 <button type="button" class="btn-close" @click="showBestBudsCard = false"></button>   
                 <BestBudsCard />
-            </component>
-            <component v-show="showInventoryManagementCard" class="p-2 mx-auto card">
+            </section>
+
+            <section v-show="showInventoryManagementCard" class="p-2 mx-auto card">
                 <button type="button" class="btn-close" @click="showInventoryManagementCard = false"></button>
                 <InventoryManagementCard />
-            </component>
+            </section>
+
         </article>
 
-    </main>
+    </component>
 </template>
 
 <script>
@@ -84,36 +90,24 @@ export default {
 </script>
 
 <style scoped>
-main {
-  background-color: #dadae2;
-  margin-bottom: 4vw;
-}
-
-#desc-container {
-  padding-top: 2.5rem;
-}
-
-#title,
-a {
+li a {
     color: black;
-    transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
-a {
-    display: inline-block;
-}
-
-#title:hover,
-a:hover {
+.visit {
+    transition: transform 0.2s ease;
     cursor: pointer;
-    transform: scale(1.05);
+}
+
+.visit:hover {
+    transform: scale(1.03);
 }
 
 .btn-close {
   position: absolute;
   top: 10px;
   right: 10px;
-  cursor: pointer;
   z-index: 10; /* Ensure the close button stays on top of card content */
 }
 </style>

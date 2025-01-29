@@ -49,7 +49,7 @@
             <section class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title"><a href="https://github.com/CraftyCurtis05/best-buds-dispensary-locator" target="_blank">"Best Buds" Dispensary Locator App</a></h5>
-                    <p class="card-text"><strong>Tech Stack:</strong> Vue.js, Spring Boot, PostgreSQL, Yelp API, Google Maps API, TheNews API, Axios</p>
+                    <p class="card-text"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Google Maps API, TheNews API, Axios</p>
                     <p class="card-text">
                         Best Buds helps users find nearby dispensaries, learn about cannabis, and access important information about product choices, legality, and safety.
                     </p>

@@ -16,7 +16,7 @@
       <section class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">Inventory Management Application</h5>
-          <p class="card-text"><strong>Tech Stack:</strong> Vue.js, Spring Boot, PostgreSQL, Shippo API, Docker, Axios</p>
+          <p class="card-text"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Shippo API, Docker, Axios</p>
           <p class="card-text">
             Our inventory management application is designed to streamline the processes of storing, tracking, and shipping inventory items, with a focus on optimizing operational workflows for warehouses and inventory companies.
           </p>
