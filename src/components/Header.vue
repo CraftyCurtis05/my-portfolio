@@ -7,24 +7,24 @@
         <!-- Logo -->
         <div class="logo">
             <router-link to="/">
-                <img src="@/assets/logo/logo_blk_01.png" alt="logo">
+                <img src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go Home">
             </router-link>    
         </div>
 
         <!-- Header Component -->
         <header class="icons d-flex flex-row-reverse bd-highlight">  
             <!-- Social Media Icons -->
-            <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank">
-                <img class="icon" src="@/assets/icons/hackerrank_icon.png">
+            <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="My HackerRank Profile">
+                <img class="icon" src="@/assets/icons/hackerrank_icon.png" alt="HackerRank Logo">
             </a>
-            <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank">
-                <img class="icon" src="@/assets/icons/codecademy_icon.png">
+            <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="My Codecademy Profile">
+                <img class="icon" src="@/assets/icons/codecademy_icon.png" alt="Codecademy Logo">
             </a>
-            <a href="https://github.com/CraftyCurtis05">
-                <img class="icon" src="@/assets/icons/github_icon.png" target="_blank">
+            <a href="https://github.com/CraftyCurtis05" target="_blank" title="My GitHub Profile">
+                <img class="icon" src="@/assets/icons/github_icon.png" alt="GitHub Logo">
             </a>
-            <a href="https://www.linkedin.com/in/jcurtisdeveloper/">
-                <img class="icon" src="@/assets/icons/linkedin_icon.png" target="_blank">
+            <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="My LinkedIn Profile">
+                <img class="icon" src="@/assets/icons/linkedin_icon.png" alt="LinkedIn Logo">
             </a>
         </header>
 

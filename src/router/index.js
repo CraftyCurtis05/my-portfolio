@@ -3,10 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 // Import components
 import HomeView from '@/views/HomeView.vue';
 import AboutView from '@/views/AboutView.vue';
-import ContactView from '@/views/ContactView.vue';
 import EducationView from '@/views/EducationView.vue';
 import ExperienceView from '@/views/ExperienceView.vue';
 import ProjectsView from '@/views/ProjectsView.vue';
+import ContactView from '@/views/ContactView.vue';
+import SiteMapView from '@/views/SiteMapView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -30,11 +31,6 @@ const router = createRouter({
       component: AboutView
     },
     {
-      path: '/contact',
-      name: 'contact',
-      component: ContactView
-    },
-    {
       path: '/education',
       name: 'education',
       component: EducationView
@@ -48,6 +44,16 @@ const router = createRouter({
       path: '/projects',
       name: 'projects',
       component: ProjectsView
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: ContactView
+    },
+    {
+      path: '/sitemap',
+      name: 'sitemap',
+      component: SiteMapView
     }
   ]
 });
