@@ -1,20 +1,21 @@
+<!-- Projects View -->
 <template>
   <head>
     <title>Projects | J.Curtis Portfolio</title>
   </head>
 
   <header id="top">
-    <Header/>
+    <component><Header/></component>
   </header>
 
   <body>
     <main>
-      <Projects/>
+      <component><Projects/></component>
     </main>
   </body>
 
-  <footer>
-    <Footer/>
+  <footer id="bottom">
+    <component><Footer/></component>
   </footer>
 </template>
   

@@ -17,12 +17,13 @@ export default {
 body {
   width: 100vw;
   height: auto;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  background-color: #dadae2;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  font-family: Roboto, sans-serif;
-  font-size: 18px;
 }
 
 main {
@@ -30,5 +31,6 @@ main {
   width: 100vw;
   padding: 0;
   margin: 0;
+  margin-top: 2.5vw;
 }
 </style>

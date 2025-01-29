@@ -1,20 +1,21 @@
+<!-- Experience View -->
 <template>
   <head>
     <title>Experience | J.Curtis Portfolio</title>
   </head>
   
   <header id="top">
-    <Header/>
+    <component><Header/></component>
   </header>
   
   <body>
     <main>
-      <ExperienceCarousel/>
+      <component><ExperienceCarousel/></component>
     </main>
   </body>
 
-  <footer>
-    <Footer/>
+  <footer id="bottom">
+    <component><Footer/></component>
   </footer>
 </template>
   

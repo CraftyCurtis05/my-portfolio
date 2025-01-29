@@ -1,20 +1,21 @@
+<!-- Home View -->
 <template>
   <head>
     <title>Home | J.Curtis Portfolio</title>
   </head>
 
   <header id="top">
-    <Header/>
+    <component><Header/></component>
   </header>
 
   <body>
     <main>
-      <Jumbotron/>
+      <component><Jumbotron /></component>
     </main>
   </body>
 
-  <footer>
-    <Footer/>
+  <footer id="bottom">
+    <component><Footer/></component>
   </footer>
 </template>
 
@@ -44,9 +45,5 @@ body {
     99%,
     #dadae2
   );
-}
-
-main {
-  margin-top: 2.5vw;
 }
 </style>
