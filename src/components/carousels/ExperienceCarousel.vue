@@ -1,7 +1,7 @@
+<!-- Experience Carousel Component -->
 <template>
-    <!-- Experience Carousel -->
-    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
+    <component id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+        <article class="carousel-indicators">
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -22,230 +22,233 @@
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="17" aria-label="Slide 18"></button>
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="18" aria-label="Slide 19"></button>
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="19" aria-label="Slide 20"></button>
-        </div>
-        <div class="carousel-inner">
+        </article>
+
+        <article class="carousel-inner">
 
             <!-- Bootstrap Card -->
-            <div class="carousel-item active">
+            <section class="carousel-item active">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/bootstrap_icon.png" alt="bootstrap image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/bootstrap_icon.png" alt="Bootstrap 5 Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Bootstrap 5</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">1 year experience</h5>
+                        <h3 class="card-title">Bootstrap 5</h3>
+                        <h4 class="card-subtitle lead pb-5">1 year experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- CSS Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/css_icon.png" alt="css image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/css_icon.png" alt="CSS 3 Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">CSS 3</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">CSS 3</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Docker Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/docker_icon.png" alt="docker image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/docker_icon.png" alt="Docker Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Docker</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">1 year experience</h5>
+                        <h3 class="card-title">Docker</h3>
+                        <h4 class="card-subtitle lead pb-5">1 year experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Express Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/express_icon.png" alt="express image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/express_icon.png" alt="Adobe Express Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Express</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Express</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Git Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/git_icon.png" alt="git image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/git_icon.png" alt="Git Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Git</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Git</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- HTML Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/html_icon.png" alt="html image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/html_icon.png" alt="HTML 5 Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">HTML 5</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">3 years experience</h5>
+                        <h3 class="card-title">HTML 5</h3>
+                        <h4 class="card-subtitle lead pb-5">3 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Illustrator Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/illustrator_icon.png" alt="illustrator image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/illustrator_icon.png" alt="Adobe Illustrator Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Adobe Illustrator</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">3 years experience</h5>
+                        <h3 class="card-title">Adobe Illustrator</h3>
+                        <h4 class="card-subtitle lead pb-5">3 years experience</h4>
                     </div>
                 </div>
-            </div>  
+            </section>  
 
             <!-- Intellij Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/intellij_icon.png" alt="intellij image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/intellij_icon.png" alt="Intellij Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Intellij IDEA</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Intellij IDEA</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>  
+            </section>  
 
             <!-- Java Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/java_icon.png" alt="java image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/java_icon.png" alt="Java Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Java</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Java</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- JavaScript Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/javascript_icon.png" alt="javascript image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/javascript_icon.png" alt="JavaScript Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">JavaScript</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">JavaScript</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>  
+            </section>  
 
             <!-- JUnit Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/junit_icon.png" alt="junit image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/junit_icon.png" alt="J-Unit 5 Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">J-Unit 5</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">1 year experience</h5>
+                        <h3 class="card-title">J-Unit 5</h3>
+                        <h4 class="card-subtitle lead pb-5">1 year experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Nodejs Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/nodejs_icon.png" alt="nodejs image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/nodejs_icon.png" alt="Node.js Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Node.js</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Node.js</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Photoshop Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/photoshop_icon.png" alt="photoshop image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/photoshop_icon.png" alt="Adobe Photoshop Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Adobe Photoshop</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">5 years experience</h5>
+                        <h3 class="card-title">Adobe Photoshop</h3>
+                        <h4 class="card-subtitle lead pb-5">5 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- PostgreSQL Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/postgresql_icon.png" alt="postgresql image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/postgresql_icon.png" alt="PostgreSQL Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">PostgreSQL</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">PostgreSQL</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Python Card -->
-            <div class="carousel-item"> 
+            <section class="carousel-item"> 
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/python_icon.png" alt="python image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/python_icon.png" alt="Python Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Python</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Python</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Sketchup Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/sketchup_icon.png" alt="sketchup image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/sketchup_icon.png" alt="Sketchup Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">SketchUp</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">5 years experience</h5>
+                        <h3 class="card-title">SketchUp</h3>
+                        <h4 class="card-subtitle lead pb-5">5 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Spring Boot Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/spring_boot_icon.png" alt="spring image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/spring_boot_icon.png" alt="Spring Boot Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Spring Boot</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Spring Boot</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- SQL Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/sql_icon.png" alt="sql image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/sql_icon.png" alt="SQL Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">SQL</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">SQL</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- VSCode Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/vscode_icon.png" alt="vscode image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/vscode_icon.png" alt="VS Code Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Visual Studio Code</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Visual Studio Code</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>           
+            </section>           
 
             <!-- Vue Card -->
-            <div class="carousel-item">
+            <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/experience/vue_icon.png" alt="vue image card">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/vue_icon.png" alt="Vue.js Logo">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-center">Vue.js</h4>
-                        <h5 class="card-subtitle mb-2 text-muted text-center">2 years experience</h5>
+                        <h3 class="card-title">Vue.js</h3>
+                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
                     </div>
                 </div>
-            </div>
-        </div>    
+            </section>
 
+        </article>    
+
+        <!-- Carousel Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -254,7 +257,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+
+    </component>
 </template>
 
 <script>
@@ -265,8 +269,9 @@ export default {
 
 <style scoped>
 .carousel {
+    width: 500vw;
+    height: auto;
     background-color: #dadae2;
-    padding: 3rem 0rem;
     margin: auto;
 }
 
@@ -278,12 +283,12 @@ export default {
 }
 
 .card {
-    padding: 2rem 0rem;
+    padding-bottom: 2rem;
 }
 
 .card img {
-    height: 20rem;
-    width: 20rem;
+    height: 15rem;
+    width: 15rem;
 }
 
 .card ul {

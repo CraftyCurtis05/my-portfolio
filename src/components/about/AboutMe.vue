@@ -1,16 +1,18 @@
 <!-- About Me Component -->
 <template>
-  <main class="container">
-    <article class="row justify-content-center">
-      <section class="about-container col-sm-7">
-        <p class="about-text">
+  <component class="container d-flex align-items-center">
+    <article class="row d-flex justify-content-center">
+
+      <!-- About Me Text -->
+      <section class="text-container row col-sm-6">
+        <p>
           <span class="lead"><strong>Who is Jennifer Curtis?</strong></span>
           <br><br>
           <span class="lead">I'm a web developer who loves coding as much as I love finding the perfect coffee to fuel my sessions (and yes, that’s a journey on its own).</span>
           <br><br>
           <span class="lead">I’m an entry-level full-stack developer with hands-on experience in Java, Vue3, and PostgreSQL, thanks to completing Tech Elevator's Java Bootcamp.</span>
           <br><br>
-          <span class="lead">Since that time, I led teams through exciting projects like a dispensary locator app and an inventory management system. These projects not only let me flex my coding skills but also sharpened my leadership and mentoring abilities—because teaching others only strengthens your own knowledge, right?</span>
+          <span class="lead">Since that time, I have led teams through exciting projects like a dispensary locator app and an inventory management system. These projects not only let me flex my coding skills but also sharpened my leadership and mentoring abilities—because teaching others only strengthens your own knowledge, right?</span>
           <br><br>
           <span class="lead">Before diving into tech, I spent some time in business management, where I picked up key skills in communication, conflict resolution, and keeping customers happy. My journey in education was a bit of a twist: I started in general studies at Marion Technical College and later explored Architecture at Ohio State, where I honed my attention to detail and creative problem-solving—skills I now apply in my development work every day.</span>
           <br><br>
@@ -20,18 +22,21 @@
         </p>
       </section>
 
+      <!-- About Me Picture -->
       <section class="col-sm-5 d-flex flex-column align-items-center picture">
         <span><em>(placeholder picture)</em></span>
         <img src="@/assets/about/portfolio_portrait_temp.jpg" alt="Picture of Jennifer Curtis" style="width: 30vw"/>
-        <div class="col-sm-5 resume">
+
+        <!-- View Resume Button -->
+        <div class="col-sm-5">
           <a class="btn" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="My Resume">
-            <span class="lead">View My Resume</span>
+            <span>View My Resume</span>
           </a>
         </div>
       </section>
 
     </article>
-  </main>
+  </component>
 </template>
 
 <script>
@@ -41,25 +46,17 @@ export default {
 </script>
 
 <style scoped>
-.about-container {
-  margin-top: 3.5rem;
-}
-
-.about-text {
+.text-container {
+  min-width: 45vw;
   max-height: 30vw;
   background-color: #f9f9f9;
-  border-radius: .5rem;
-  padding: 2rem;
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
   overflow-y: scroll;
 }
 
-.picture {
-  margin-top: 2rem;
-}
-
 .picture img {
-  border-radius: .5rem;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -71,18 +68,20 @@ export default {
   border: .1vw solid #7c7c8a;
   border-radius: 2vw;
   padding: .5vw 1.5vw;
-  margin-top: 1vw;
+  margin-top: .5vw;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .btn:hover {
-  color: #ffffff;
-  background-image: radial-gradient(circle, #8787c3, #b9b9c6); /* Subtle gradient background */
-  background-size: 300% 300%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
+  background-size: 500% 500%;
   border: 2px solid #cccce4;
-  transform: scale(1.05) translateY(-5px); /* Adds 3D effect */
-  animation: gradient-animation 2s ease infinite;
+  transform: scale(1.01) translateY(-5px); /* Adds 3D effect */
+  animation: gradient-animation 5s ease infinite;
   box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
 }
 

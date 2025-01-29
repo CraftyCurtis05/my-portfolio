@@ -30,7 +30,7 @@ main {
   background-color: #dadae2;
   width: 100vw;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   margin-top: 2.5vw;
 }
 </style>

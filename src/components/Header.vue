@@ -1,19 +1,18 @@
-<!-- Header Component Display--->
+<!-- Header Component --->
 <template>
 
-    <!-- Display Component Body -->
-    <body>
+    <article>
 
         <!-- Logo -->
-        <div class="logo">
+        <section class="logo">
             <router-link to="/">
                 <img src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go Home">
             </router-link>    
-        </div>
+        </section>
 
-        <!-- Header Component -->
+        <!-- Header -->
         <header class="icons d-flex flex-row-reverse bd-highlight">  
-            <!-- Social Media Icons -->
+            <!-- Social Media -->
             <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="My HackerRank Profile">
                 <img class="icon" src="@/assets/icons/hackerrank_icon.png" alt="HackerRank Logo">
             </a>
@@ -28,12 +27,12 @@
             </a>
         </header>
 
-        <!-- Display NavBar Component -->
+        <!-- NavBar Component -->
         <section id="navbar">
-            <NavBar/>
+            <component><NavBar/></component>
         </section>
 
-    </body>
+    </article>
 
 </template>
 

@@ -1,31 +1,36 @@
-<!-- Footer Component Display--->
+<!-- Footer Component -->
 <template>
   <footer class="footer p-5">
-    <div class="container">
+    <article class="container">
       <div class="row">
-        <div class="col-md-3">
-          <!-- Logo -->
-          <div class="navbar-brand">
-            <router-link to="/" class="nav-item nav-link">
-              <img id="logo" src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go Home">
-            </router-link>    
-          </div>
-        </div>
-        <div class="col-md-3">
+
+        <!-- Logo -->
+        <section class="col-md-3 navbar-brand">
+          <router-link to="/" class="nav-item nav-link">
+            <img id="logo" src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go Home">
+          </router-link>
+        </section>
+
+        <!-- About Me -->
+        <section class="col-md-3">
           <h5><router-link to="/about" class="link" title="About Me">About Me</router-link></h5>
           <p>
             Code enthusiast, creative problem-solver, and your next favorite developer.
           </p>
-        </div>
-        <div class="col-md-3">
+        </section>
+
+        <!-- Contact Me -->
+        <section class="col-md-3">
           <h5><router-link to="/contact" class="link" title="Contact Me">Contact Me</router-link></h5>
           <ul class="list-unstyled">
             <li title="My Email">Email: craftycurtis05@gmail.com</li>
             <li title="My Phone">Phone: +16142031537</li>
             <li title="My Location">Location: Columbus, OH, USA</li>
           </ul>
-        </div>
-        <div class="col-md-3">
+        </section>
+
+        <!-- Follow Me -->
+        <section class="col-md-3">
           <h5>Follow Me</h5>
           <ul class="list-inline footer-links">
             <li class="list-inline-item">
@@ -49,16 +54,21 @@
               </a>
             </li>
           </ul>
-        </div>
+        </section>
+
       </div>
+
+      <!-- Horizontal Line -->
       <hr>
-      <div class="row">
+
+      <!-- Copyright & Links -->
+      <section class="row">
         <div class="col-md-6">
           <p>&copy; 2024 Jennifer Curtis. All rights reserved.</p>
         </div>
         <div class="col-md-6 text-end">
           <ul class="list-inline footer-links">
-            <li class="list-inline-item">
+            <li class="list-inline-item pr-3">
               <router-link to="/contact" class="text-white" title="Contact Me">Contact Me</router-link>
             </li>
             <li class="list-inline-item">
@@ -66,8 +76,9 @@
             </li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
+
+    </article>
   </footer>
 </template>
 
@@ -91,5 +102,9 @@ footer {
 .link:hover {
   text-decoration:underline;
   font-weight: 700;
+}
+
+.footer-links li:hover {
+  font-weight: 500;
 }
 </style>
