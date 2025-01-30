@@ -18,7 +18,11 @@
             <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title ml-5">"TE Captone" Coffee Shop Locator Web App</h5>
+                    <h5 class="card-title ml-5">
+                        <a href="https://github.com/CraftyCurtis05/te-capstone-coffee-shop-locator" target="_blank" title="Visit Code on Github">
+                            "TE Captone" Coffee Shop Locator Web App
+                        </a>    
+                    </h5>
                     <p class="card-text lead"><b>Tech Stack:</b> Vue.js, Yelp Fusion API, Spring Boot, Axios, JWT Authentication</p>
                     <p class="card-text lead">
                         This app helps users find nearby coffee shops using the Yelp Fusion API, displaying details like name, address, rating, and distance. It’s built with Vue.js and securely integrates with the Yelp API. Uses JWT token, axios and Spring to authenticate user details.
@@ -99,6 +103,11 @@ h5,
 h5 a {
     color: black;
     text-decoration: none;
+}
+
+h5:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Base Styling for the Button */

@@ -6,9 +6,9 @@
 
       <!-- About Me Text -->
       <section class="text-container row col-sm-6 mt-4 p-4">
+        <h4>About Me</h4>
+        <hr>
         <p>
-          <h4>About Me</h4>
-          <hr>
           <span class="lead">I'm a web developer who loves coding as much as I love finding the perfect coffee to fuel my sessions (and yes, that’s a journey on its own).</span>
           <br><br>
           <span class="lead">I’m an entry-level full-stack developer with hands-on experience in Java, Vue3, and PostgreSQL, thanks to completing Tech Elevator's Java Bootcamp.</span>
@@ -18,9 +18,9 @@
           <span class="lead">Before diving into tech, I spent some time in business management, where I picked up key skills in communication, conflict resolution, and keeping customers happy. My journey in education was a bit of a twist: I started in general studies at Marion Technical College and later explored Architecture at Ohio State, where I honed my attention to detail and creative problem-solving—skills I now apply in my development work every day.</span>
           <br><br>
           <span class="lead">When I’m not coding, you’ll find me remodeling a room in my home, geeking out over CAD software, or curating the perfect Spotify playlist. Music is my creative fuel—whether I’m working, brainstorming, or just relaxing, there’s always a beat in the background.</span>
-          <hr>
-          <span class="lead"><b>If you're looking for someone who can tackle challenges with a smile, work well in teams, and deliver solid results (all while jamming to some great tunes), I’m your person!</b></span>
         </p>
+        <hr>
+        <span class="lead"><b>If you're looking for someone who can tackle challenges with a smile, work well in teams, and deliver solid results (all while jamming to some great tunes), I’m your person!</b></span>
       </section>
 
       <!-- About Me Picture -->
