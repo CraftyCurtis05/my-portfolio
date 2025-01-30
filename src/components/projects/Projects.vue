@@ -13,18 +13,28 @@
                     <li class="visit" @click="showTEVendingMachineCard = true" title="Click to See More Information">
                         <b>"Tech Elevator" Vending Machine Application</b>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressTEVendingMachine"/></component>
+                    <hr>
                     <li class="visit" @click="showTEnmoCard = true" title="Click to See More Information">
                         <b>"Tech Elevator" TEnmo Application</b>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressTEnmo"/></component>
+                    <hr>
                     <li class="visit" @click="showTECoffeeCard = true" title="Click to See More Information">
                         <b>"Tech Elevator" Coffee Shop Locator Web Application</b>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressTECoffee"/></component>
+                    <hr>
                     <li class="visit" @click="showSBSensorCard = true" title="Click to See More Information">
                         <b>"Spring Boot Course" Water Quality Sensor Application</b>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressSBSensor"/></component>
+                    <hr>
                     <li class="visit" @click="showCodecademyCard = true" title="Click to See More Information">
                         <b>"Codecademy" 25+ Mini Projects</b>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressCodecademy"/></component>
+                    <hr>
                 </ul>
             </section>
 
@@ -36,12 +46,18 @@
                     <li class="visit" @click="showJoltCard = true" title="Click to See More Information">
                         <b>"Jolt" Coffee Shop Locator Web Application</b>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressJolt"/></component>
+                    <hr>
                     <li class="visit" @click="showBestBudsCard = true" title="Click to See More Information">
                         <b>"Best Buds" Dispensary Locator Web Application</b>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressBestBuds"/></component>
+                    <hr>
                     <li class="visit" @click="showInventoryManagementCard = true" title="Click to See More Information">
                         <b>Inventory Management Application</b><em> (Currently Under Design)</em>
                     </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressInventoryManagement"/></component>
+                    <hr>
                 </ul>
             </section>
 
@@ -104,6 +120,7 @@ import CodecademyCard from './cards/CodecademyCard.vue';
 import JoltCard from './cards/JoltCard.vue';
 import BestBudsCard from './cards/BestBudsCard.vue';
 import InventoryManagementCard from './cards/InventoryManagementCard.vue';
+import ProgressBar from './ProgressBar.vue';
 
 export default {
     name: "Projects",
@@ -115,24 +132,40 @@ export default {
         CodecademyCard,
         JoltCard,
         BestBudsCard,
-        InventoryManagementCard
+        InventoryManagementCard,
+        ProgressBar
     },
     data() {
         return {
-            showTEVendingMachineCard: false, // State to show/hide TE Vending Machine card
-            showTEnmoCard: false, // State to show/hide TEnmo card
-            showTECoffeeCard: false, // State to show/hide TE Coffee card
-            showSBSensorCard: false, // State to show/hide SB Sensor card
-            showCodecademyCard: false,  // State to show/hide Codecademy card
-            showJoltCard: false, // State to show/hide Jolt card
-            showBestBudsCard: false, // State to show/hide Best Buds card
-            showInventoryManagementCard: false // State to show/hide Inventory Management card
+            // State to show/hide cards
+            showTEVendingMachineCard: false,
+            showTEnmoCard: false,
+            showTECoffeeCard: false,
+            showSBSensorCard: false,
+            showCodecademyCard: false,
+            showJoltCard: false,
+            showBestBudsCard: false,
+            showInventoryManagementCard: false,
+
+            // Progress Bar data for each project
+            progressTEVendingMachine: 100,
+            progressTEnmo: 100,
+            progressTECoffee: 100,
+            progressSBSensor: 100,
+            progressCodecademy: 100,
+            progressJolt: 100,
+            progressBestBuds: 50,
+            progressInventoryManagement: 5
         };
     }
 }
 </script>
 
 <style scoped>
+ul {
+    list-style: none;
+}
+
 li a {
     color: black;
     text-decoration: none;
