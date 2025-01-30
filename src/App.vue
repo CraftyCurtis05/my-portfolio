@@ -1,5 +1,5 @@
 <!-- npm install -->
-<!-- npm install emailjs-com -->
+<!-- npm install @emailjs/browser@latest -->
 
 <template>
   <div id="portfolio-app">
@@ -24,6 +24,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  caret-color: transparent;
 }
 
 main {

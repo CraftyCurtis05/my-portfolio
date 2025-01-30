@@ -7,7 +7,7 @@
         <!-- Logo -->
         <section class="col-md-3 navbar-brand">
           <router-link to="/" class="nav-item nav-link">
-            <img id="logo" src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
+            <img id="logo" src="@/assets/logo/light_theme/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
           </router-link>
         </section>
 
@@ -35,22 +35,22 @@
           <ul class="list-inline footer-links">
             <li class="list-inline-item">
               <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="Visit My LinkedIn Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/linkedin_icon.png" alt="LinkedIn Icon">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/linkedin_icon_blk.png" alt="LinkedIn Icon">
               </a>
             </li>
             <li class="list-inline-item">
               <a href="https://github.com/CraftyCurtis05" target="_blank" title="Visit My GitHub Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/github_icon.png" alt="GitHub Icon">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/github_icon_blk.png" alt="GitHub Icon">
               </a>
             </li>
             <li class="list-inline-item">
               <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="Visit My Codecademy Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/codecademy_icon.png" alt="Codecademy Icon">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/codecademy_icon_blk.png" alt="Codecademy Icon">
               </a>
             </li>
             <li class="list-inline-item">
               <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="Visit My HackerRank Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/hackerrank_icon.png" alt="HackerRank Icon">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/hackerrank_icon_blk.png" alt="HackerRank Icon">
               </a>
             </li>
           </ul>

@@ -34,8 +34,8 @@ export default {
   
 <style scoped>
 body {
-  min-height: 31vh;
+  min-height: 45.7vh;
   background-color: #dadae2;
-   text-align: center;
+  text-align: center;
 }
 </style>

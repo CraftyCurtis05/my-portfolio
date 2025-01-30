@@ -3,12 +3,12 @@
     <component class="col-12">
         
         <!-- Projects Container -->
-        <article class="d-flex flex-row justify-content-center" id="desc-container">
+        <article class="d-flex flex-row justify-content-center pl-2" id="desc-container">
 
             <!-- Educational Projects -->
-            <section class="mx-auto">
+            <section id="list" class="mx-auto">
                 <h2 class="display-6">Educational Projects</h2>
-                <h3 class="lead"><em>Click each project for more information</em></h3>
+                <h3 class="lead"><em>Click project for more information</em></h3>
                 <ul class="lead">
                     <li class="visit mt-3" @click="showModal('TEVendingMachineCard', 'Educational')" title="Click to See More Information">
                         <b>"Tech Elevator" Vending Machine Application</b>
@@ -39,9 +39,9 @@
             </section>
 
             <!-- Personal Projects -->
-            <section class="mx-auto">
+            <section id="list" class="mx-auto">
                 <h2 class="display-6">Personal Projects</h2>
-                <h3 class="lead"><em>Click each project for more information</em></h3>
+                <h3 class="lead"><em>Click project for more information</em></h3>
                 <ul class="lead">
                     <li class="visit mt-3" @click="showModal('JoltCard', 'Personal')" title="Click to See More Information">
                         <b>"Jolt" Coffee Shop Locator Web Application</b>
@@ -148,6 +148,10 @@ export default {
 </script>
 
 <style scoped>
+#list {
+    padding-inline: -10px;
+}
+
 ul {
     list-style: none;
 }

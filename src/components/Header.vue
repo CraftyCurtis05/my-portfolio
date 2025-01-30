@@ -6,7 +6,7 @@
         <!-- Logo -->
         <section class="logo">
             <router-link to="/">
-                <img src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
+                <img src="@/assets/logo/light_theme/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
             </router-link>    
         </section>
 
@@ -14,16 +14,16 @@
         <header class="icons d-flex flex-row-reverse bd-highlight">  
             <!-- Social Media -->
             <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="Visit My HackerRank Profile">
-                <img class="icon" src="@/assets/icons/hackerrank_icon.png" alt="HackerRank Icon">
+                <img class="icon" src="@/assets/icons/light_theme/hackerrank_icon_blk.png" alt="HackerRank Icon">
             </a>
             <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="Visit My Codecademy Profile">
-                <img class="icon" src="@/assets/icons/codecademy_icon.png" alt="Codecademy Icon">
+                <img class="icon" src="@/assets/icons/light_theme/codecademy_icon_blk.png" alt="Codecademy Icon">
             </a>
             <a href="https://github.com/CraftyCurtis05" target="_blank" title="Visit My GitHub Profile">
-                <img class="icon" src="@/assets/icons/github_icon.png" alt="GitHub Icon">
+                <img class="icon" src="@/assets/icons/light_theme/github_icon_blk.png" alt="GitHub Icon">
             </a>
             <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="Visit My LinkedIn Profile">
-                <img class="icon" src="@/assets/icons/linkedin_icon.png" alt="LinkedIn Icon">
+                <img class="icon" src="@/assets/icons/light_theme/linkedin_icon_blk.png" alt="LinkedIn Icon">
             </a>
         </header>
 

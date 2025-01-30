@@ -1,57 +1,67 @@
 <!-- Contact Form Component -->
 <template>
   <component class="container">
-
-    <h2 class="text-center display-6 mb-2">Contact Me</h2>
+    <h2 class="text-center display-6">Contact Me</h2>
 
     <!-- Form -->
     <form class="m-auto lead" @submit.prevent="sendEmail" ref="form" style="width: 600px">
-
+      
       <!-- From Name Input -->
-      <section class="form-group">
+      <section class="form-group my-1">
         <label for="from_name">Your Name</label>
         <input
+          class="form-control"
+          id="from_name"
           type="text"
           v-model="formData.from_name"
-          id="from_name"
-          class="form-control"
           required
         />
       </section>
 
       <!-- From Email Input -->
-      <section class="form-group">
+      <section class="form-group my-1">
         <label for="from_email">Your Email</label>
         <input
+          class="form-control"
+          id="from_email"
           type="email"
           v-model="formData.from_email"
-          id="from_email"
-          class="form-control"
           required
         />
       </section>
 
+      <!-- From Phone Input -->
+      <section class="form-group my-1">
+        <label for="from_phone">Your Phone <em>(optional)</em></label>
+        <input
+          class="form-control"
+          id="from_phone"
+          type="phone"
+          v-model="formData.from_phone"
+        />
+      </section>
+
       <!-- Message Input -->
-      <section class="form-group">
+      <section class="form-group my-1">
         <label for="message">Message</label>
         <textarea
-          v-model="formData.message"
-          id="message"
           class="form-control"
+          id="message"
+          v-model="formData.message"
           rows="5"
           required
         ></textarea>
       </section>
 
       <!-- Submit Button -->
-      <button type="submit" :disabled="loading" class="btn btn-block">Send Message</button>
-
+      <button type="submit" class="btn btn-block my-2">Send Message</button>
     </form>
 
     <!-- Error Handling -->
-    <p v-if="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</p>
-    <p v-if="successMessage" class="alert alert-success mt-3">{{ successMessage }}</p>
-
+     <section class="error">
+      <p v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+      <p v-if="successMessage" class="alert alert-success ">{{ successMessage }}</p>
+    </section>
   </component>
 </template>
 
@@ -65,43 +75,41 @@ export default {
       formData: {
         from_name: "",
         from_email: "",
+        from_phone: "",
         message: "",
       },
-      loading: false,
       errorMessage: "",
-      successMessage: "",
+      successMessage: ""
     };
   },
   methods: {
-    async sendEmail() {
-      this.loading = true;
-      this.errorMessage = "";
-      this.successMessage = "";
-
-      try {
-        const response = await emailjs.sendForm(
-          "service_ug8f75f", // Email.js Service ID
-          "template_bqvi72t", // Email.js Template ID
-          this.$refs.form, // Reference to the form
-          "PBn8z_QyI9TZT19D7" // Email.js User ID
-        );
-        console.log("Email sent successfully", response);
+    sendEmail() {
+      emailjs.send (
+        "service_ug8f75f", // Email.js Service ID
+        "template_bqvi72t", // Email.js Template ID
+        this.formData, // Reference to the model
+        "PBn8z_QyI9TZT19D7" // Email.js User ID
+      )
+      .then((response) => {
+        console.log('Email sent successfully!', response);
         this.successMessage = "Your message has been sent successfully!";
-        this.formData = { from_name: "", from_email: "", message: "" }; // Reset form
-
-      } catch (error) {
-        console.error("Failed to send email", error);
+        this.formData = { from_name: "", from_email: "", from_phone: "", message: ""}; // Reset form
+      })
+      .catch((error) => {
+        console.error('Failed to send email:', error);
         this.errorMessage = "Something went wrong. Please try again later.";
-
-      } finally {
-        this.loading = false;
-      }
+      });
     }
   }
 };
 </script>
 
 <style scoped>
+.form-control,
+.btn {
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
 /* Base Styling for the Button */
 .btn {
   color: #7c7c8a;
@@ -121,7 +129,7 @@ export default {
   border: .1vw solid #cccce4;
   transform: translateY(-1px); /* Adds 3D effect */
   animation: gradient-animation 5s ease infinite;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
 }
 
 /* Define the animation */
@@ -148,5 +156,9 @@ export default {
 
 .btn:hover::before {
   opacity: 1; /* Glow effect on hover */
+}
+
+.error {
+  margin-top: -1vw;
 }
 </style>

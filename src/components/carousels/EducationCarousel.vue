@@ -9,7 +9,7 @@
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </article>
 
-        <article class="carousel-inner">
+        <article class="carousel-inner pt-2">
             
             <!-- Tech Elevator Card -->
             <section class="carousel-item active">

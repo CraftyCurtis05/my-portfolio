@@ -25,7 +25,7 @@
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="19" aria-label="Slide 20"></button>
         </article>
 
-        <article class="carousel-inner">
+        <article class="carousel-inner pt-2">
 
             <!-- Bootstrap Card -->
             <section class="carousel-item active">

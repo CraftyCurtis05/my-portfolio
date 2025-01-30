@@ -51,12 +51,14 @@ export default {
   min-width: 45vw;
   max-height: 33vw;
   background-color: #f9f9f9;
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
-  overflow-y: scroll;
+  border-radius: 1vw;
+  overflow: hidden scroll;
 }
 
-.picture img {
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+.text-container,
+.picture img,
+.btn {
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 /* Base Styling for the Button */
@@ -66,7 +68,6 @@ export default {
   border: .1vw solid #7c7c8a;
   border-radius: 1vw;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .btn:hover {
@@ -78,7 +79,7 @@ export default {
   border: .1vw solid #cccce4;
   transform: translateY(-1px); /* Adds 3D effect */
   animation: gradient-animation 5s ease infinite;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
 }
 
 /* Define the animation */

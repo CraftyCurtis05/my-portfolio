@@ -9,7 +9,7 @@
   </header>
 
   <body>
-    <main>
+    <main class="mt-1">
       <component><Contact/></component>
     </main>
   </body>

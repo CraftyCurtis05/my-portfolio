@@ -37,7 +37,7 @@ nav {
 
 .nav-item {
     font-weight: 300;
-    padding: .8vw 0;
+    height: 3.3vw;
     transition: all 0.1s ease-in-out;
 }
 
