@@ -7,13 +7,13 @@
         <!-- Logo -->
         <section class="col-md-3 navbar-brand">
           <router-link to="/" class="nav-item nav-link">
-            <img id="logo" src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go Home">
+            <img id="logo" src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
           </router-link>
         </section>
 
         <!-- About Me -->
         <section class="col-md-3">
-          <h5><router-link to="/about" class="link" title="About Me">About Me</router-link></h5>
+          <h5><router-link to="/about" class="link" title="Go to My About Me Page">About Me</router-link></h5>
           <p>
             Code enthusiast, creative problem-solver, and your next favorite developer.
           </p>
@@ -21,7 +21,7 @@
 
         <!-- Contact Me -->
         <section class="col-md-3">
-          <h5><router-link to="/contact" class="link" title="Contact Me">Contact Me</router-link></h5>
+          <h5><router-link to="/contact" class="link" title="Click Here to Contact Me">Contact Me</router-link></h5>
           <ul class="list-unstyled">
             <li title="My Email">Email: craftycurtis05@gmail.com</li>
             <li title="My Phone">Phone: +16142031537</li>
@@ -34,23 +34,23 @@
           <h5>Follow Me</h5>
           <ul class="list-inline footer-links">
             <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="My LinkedIn Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/linkedin_icon.png" alt="LinkedIn Logo">
+              <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="Visit My LinkedIn Profile">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/linkedin_icon.png" alt="LinkedIn Icon">
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/CraftyCurtis05" target="_blank" title="My GitHub Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/github_icon.png" title="My GitHub Profile">
+              <a href="https://github.com/CraftyCurtis05" target="_blank" title="Visit My GitHub Profile">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/github_icon.png" alt="GitHub Icon">
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="My Codecademy Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/codecademy_icon.png" alt="Codecademy Logo">
+              <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="Visit My Codecademy Profile">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/codecademy_icon.png" alt="Codecademy Icon">
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="My HackerRank Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/hackerrank_icon.png" title="My HackerRank Profile">
+              <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="Visit My HackerRank Profile">
+                <img id="footer-icons" class="img-responsive" src="@/assets/icons/hackerrank_icon.png" alt="HackerRank Icon">
               </a>
             </li>
           </ul>
@@ -69,10 +69,10 @@
         <div class="col-md-6 text-end">
           <ul class="list-inline footer-links">
             <li class="list-inline-item pr-3">
-              <router-link to="/contact" class="text-white" title="Contact Me">Contact Me</router-link>
+              <router-link to="/contact" class="text-white" title="Click Here to Contact Me">Contact Me</router-link>
             </li>
             <li class="list-inline-item">
-              <router-link to="/sitemap" class="text-white" title="Sitemap">Sitemap</router-link>
+              <router-link to="/sitemap" class="text-white" title="Go to Site Map">Sitemap</router-link>
             </li>
           </ul>
         </div>

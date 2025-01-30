@@ -43,7 +43,7 @@
             <section class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title ml-5">
-                        <a href="https://github.com/CraftyCurtis05/jolt-coffee-shop-locator" target="_blank" title="Visit Code on Github">
+                        <a href="https://github.com/CraftyCurtis05/jolt-coffee-shop-locator" target="_blank" title="Visit My Code on Github">
                             "Jolt" Coffee Shop Locator App
                         </a>
                     </h5>

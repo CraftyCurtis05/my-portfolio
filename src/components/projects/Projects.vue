@@ -6,31 +6,31 @@
         <article class="d-flex flex-row justify-content-center" id="desc-container">
 
             <!-- Educational Projects -->
-            <section class="mx-auto" id="desc">
+            <section class="mx-auto">
                 <h2 class="display-6">Educational Projects</h2>
-                <h3 class="lead"><em>Click project for more information</em></h3>
+                <h3 class="lead"><em>Click each project for more information</em></h3>
                 <ul class="lead">
-                    <li class="visit" @click="showTEVendingMachineCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('TEVendingMachineCard', 'Educational')" title="Click to See More Information">
                         <b>"Tech Elevator" Vending Machine Application</b>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressTEVendingMachine"/></component>
                     <hr>
-                    <li class="visit" @click="showTEnmoCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('TEnmoCard', 'Educational')" title="Click to See More Information">
                         <b>"Tech Elevator" TEnmo Application</b>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressTEnmo"/></component>
                     <hr>
-                    <li class="visit" @click="showTECoffeeCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('TECoffeeCard', 'Educational')" title="Click to See More Information">
                         <b>"Tech Elevator" Coffee Shop Locator Web Application</b>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressTECoffee"/></component>
                     <hr>
-                    <li class="visit" @click="showSBSensorCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('SBSensorCard', 'Educational')" title="Click to See More Information">
                         <b>"Spring Boot Course" Water Quality Sensor Application</b>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressSBSensor"/></component>
                     <hr>
-                    <li class="visit" @click="showCodecademyCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('CodecademyCard', 'Educational')" title="Click to See More Information">
                         <b>"Codecademy" 25+ Mini Projects</b>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressCodecademy"/></component>
@@ -39,75 +39,51 @@
             </section>
 
             <!-- Personal Projects -->
-            <section class="mx-auto" id="desc">
+            <section class="mx-auto">
                 <h2 class="display-6">Personal Projects</h2>
-                <h3 class="lead"><em>Click project for more information</em></h3>
+                <h3 class="lead"><em>Click each project for more information</em></h3>
                 <ul class="lead">
-                    <li class="visit" @click="showJoltCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('JoltCard', 'Personal')" title="Click to See More Information">
                         <b>"Jolt" Coffee Shop Locator Web Application</b>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressJolt"/></component>
                     <hr>
-                    <li class="visit" @click="showBestBudsCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('BestBudsCard', 'Personal')" title="Click to See More Information">
                         <b>"Best Buds" Dispensary Locator Web Application</b>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressBestBuds"/></component>
                     <hr>
-                    <li class="visit" @click="showInventoryManagementCard = true" title="Click to See More Information">
+                    <li class="visit mt-3" @click="showModal('InventoryManagementCard', 'Personal')" title="Click to See More Information">
                         <b>Inventory Management Application</b><em> (Currently Under Design)</em>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressInventoryManagement"/></component>
                     <hr>
+                    <li>
+                        <b>This area is reserved for future projects. Stay tuned!</b>
+                    </li>
+                    <component class="progress-bar"><ProgressBar :progress="progressFutureProject"/></component>
+                    <hr>
                 </ul>
             </section>
-
         </article>
 
-        <!-- Project Cards Container -->
-        <article class="d-flex flex-row" id="proj-container">
-
-            <section v-show="showTEVendingMachineCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showTEVendingMachineCard = false"></button>
-                <TEVendingMachineCard/>
-            </section>
-
-            <section v-show="showTEnmoCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showTEnmoCard = false"></button>
-                <TEnmoCard/>
-            </section>
-
-            <section v-show="showTECoffeeCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showTECoffeeCard = false"></button>
-                <TECoffeeCard/>
-            </section>
-
-            <section v-show="showSBSensorCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showSBSensorCard = false"></button>
-                <SBSensorCard/>
-            </section>
-
-            <section v-show="showCodecademyCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showCodecademyCard = false"></button>
-                <CodecademyCard/>
-            </section>
-
-            <section v-show="showJoltCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showJoltCard = false"></button>
-                <JoltCard/>
-            </section>
-
-            <section v-show="showBestBudsCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showBestBudsCard = false"></button>   
-                <BestBudsCard/>
-            </section>
-
-            <section v-show="showInventoryManagementCard" class="p-2 mx-auto card">
-                <button type="button" class="btn-close" @click="showInventoryManagementCard = false"></button>
-                <InventoryManagementCard/>
-            </section>
-
-        </article>
-
+        <!-- Modal for Project Cards -->
+        <div v-if="showCardModal" class="modal fade show" tabindex="-1" style="display: block;" aria-labelledby="exampleModalLabel" aria-hidden="true" 
+            :class="modalPositionClass">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <button type="button" class="btn-close" @click="closeModal()"></button>
+                    <div v-if="currentCard === 'TEVendingMachineCard'"><TEVendingMachineCard /></div>
+                    <div v-if="currentCard === 'TEnmoCard'"><TEnmoCard /></div>
+                    <div v-if="currentCard === 'TECoffeeCard'"><TECoffeeCard /></div>
+                    <div v-if="currentCard === 'SBSensorCard'"><SBSensorCard /></div>
+                    <div v-if="currentCard === 'CodecademyCard'"><CodecademyCard /></div>
+                    <div v-if="currentCard === 'JoltCard'"><JoltCard /></div>
+                    <div v-if="currentCard === 'BestBudsCard'"><BestBudsCard /></div>
+                    <div v-if="currentCard === 'InventoryManagementCard'"><InventoryManagementCard /></div>
+                </div>
+            </div>
+        </div>
     </component>
 </template>
 
@@ -137,15 +113,11 @@ export default {
     },
     data() {
         return {
-            // State to show/hide cards
-            showTEVendingMachineCard: false,
-            showTEnmoCard: false,
-            showTECoffeeCard: false,
-            showSBSensorCard: false,
-            showCodecademyCard: false,
-            showJoltCard: false,
-            showBestBudsCard: false,
-            showInventoryManagementCard: false,
+            // Modal state
+            showCardModal: false,
+            currentCard: '',
+            currentSection: '', // Track which section the modal is from (Educational or Personal)
+            modalPositionClass: '', // Dynamically set modal position class
 
             // Progress Bar data for each project
             progressTEVendingMachine: 100,
@@ -155,8 +127,22 @@ export default {
             progressCodecademy: 100,
             progressJolt: 100,
             progressBestBuds: 50,
-            progressInventoryManagement: 5
+            progressInventoryManagement: 10,
+            progressFutureProject: 0
         };
+    },
+    methods: {
+        showModal(cardName, section) {
+            this.currentCard = cardName;
+            this.currentSection = section;
+            this.modalPositionClass = section === 'Educational' ? 'modal-educational' : 'modal-personal'; // Set the class based on section
+            this.showCardModal = true;
+        },
+        closeModal() {
+            this.showCardModal = false;
+            this.currentCard = '';
+            this.modalPositionClass = ''; // Reset position class
+        }
     }
 }
 </script>
@@ -178,6 +164,29 @@ li a {
 
 .visit:hover {
     transform: scale(1.03);
+}
+
+.modal-dialog {
+    max-width: 90%;
+}
+
+/* Position Educational Modals */
+.modal-educational .modal-dialog {
+    left: 45%;
+    right: auto;
+    top: 5%;
+}
+
+/* Position Personal Modals */
+.modal-personal .modal-dialog {
+    left: auto;
+    right: 0%;
+    top: 5%;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 50%;
 }
 
 .btn-close {

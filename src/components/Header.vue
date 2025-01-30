@@ -6,24 +6,24 @@
         <!-- Logo -->
         <section class="logo">
             <router-link to="/">
-                <img src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go Home">
+                <img src="@/assets/logo/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
             </router-link>    
         </section>
 
         <!-- Header -->
         <header class="icons d-flex flex-row-reverse bd-highlight">  
             <!-- Social Media -->
-            <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="My HackerRank Profile">
-                <img class="icon" src="@/assets/icons/hackerrank_icon.png" alt="HackerRank Logo">
+            <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="Visit My HackerRank Profile">
+                <img class="icon" src="@/assets/icons/hackerrank_icon.png" alt="HackerRank Icon">
             </a>
-            <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="My Codecademy Profile">
-                <img class="icon" src="@/assets/icons/codecademy_icon.png" alt="Codecademy Logo">
+            <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="Visit My Codecademy Profile">
+                <img class="icon" src="@/assets/icons/codecademy_icon.png" alt="Codecademy Icon">
             </a>
-            <a href="https://github.com/CraftyCurtis05" target="_blank" title="My GitHub Profile">
-                <img class="icon" src="@/assets/icons/github_icon.png" alt="GitHub Logo">
+            <a href="https://github.com/CraftyCurtis05" target="_blank" title="Visit My GitHub Profile">
+                <img class="icon" src="@/assets/icons/github_icon.png" alt="GitHub Icon">
             </a>
-            <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="My LinkedIn Profile">
-                <img class="icon" src="@/assets/icons/linkedin_icon.png" alt="LinkedIn Logo">
+            <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="Visit My LinkedIn Profile">
+                <img class="icon" src="@/assets/icons/linkedin_icon.png" alt="LinkedIn Icon">
             </a>
         </header>
 

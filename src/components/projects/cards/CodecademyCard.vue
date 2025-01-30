@@ -19,7 +19,7 @@
             <section class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title ml-5">
-                        <a href="https://github.com/CraftyCurtis05/mini-projects" target="_blank" title="Visit Code on Github">
+                        <a href="https://github.com/CraftyCurtis05/mini-projects" target="_blank" title="Visit My Code on Github">
                             "Codecademy" Mini Projects
                         </a>
                     </h5>

@@ -19,7 +19,7 @@
             <section class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title ml-5">
-                        <a href="https://github.com/CraftyCurtis05/te-capstone-coffee-shop-locator" target="_blank" title="Visit Code on Github">
+                        <a href="https://github.com/CraftyCurtis05/te-capstone-coffee-shop-locator" target="_blank" title="Visit My Code on Github">
                             "TE Captone" Coffee Shop Locator Web App
                         </a>    
                     </h5>

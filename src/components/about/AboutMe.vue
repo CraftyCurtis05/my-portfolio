@@ -30,7 +30,7 @@
 
         <!-- View Resume Button -->
         <div class="col-sm-5">
-          <a class="btn my-2 py-2" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="My Resume" style="width:200px">
+          <a class="btn my-2 py-2" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="Click to View My Resume" style="width:200px">
             <span>View My Resume</span>
           </a>
         </div>

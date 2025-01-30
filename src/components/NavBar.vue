@@ -11,12 +11,12 @@
             <!-- Navbar Links List-->
             <section class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav mx-auto lead">
-                    <router-link to="/" class="nav-item nav-link px-4 mx-1" title="Home">Home</router-link>
-                    <router-link to="/about" class="nav-item nav-link ps-4 pe-4 mx-1" title="About Me">About</router-link>
-                    <router-link to="/education" class="nav-item nav-link ps-4 pe-4 mx-1" title="My Education">Education</router-link>
-                    <router-link to="/experience" class="nav-item nav-link ps-4 pe-4 mx-1" title="My Experience">Experience</router-link>
-                    <router-link to="/projects" class="nav-item nav-link ps-4 pe-4 mx-1" title="My Projects">Projects</router-link>
-                    <router-link to="/contact" class="nav-item nav-link px-4 mx-1" title="Contact Me">Contact</router-link> 
+                    <router-link to="/" class="nav-item nav-link px-4 mx-1" title="Go to Home Page">Home</router-link>
+                    <router-link to="/about" class="nav-item nav-link ps-4 pe-4 mx-1" title="Go to About Me Page">About</router-link>
+                    <router-link to="/education" class="nav-item nav-link ps-4 pe-4 mx-1" title="Go to Education Page">Education</router-link>
+                    <router-link to="/experience" class="nav-item nav-link ps-4 pe-4 mx-1" title="Go to Experience Page">Experience</router-link>
+                    <router-link to="/projects" class="nav-item nav-link ps-4 pe-4 mx-1" title="Go to Projects Page">Projects</router-link>
+                    <router-link to="/contact" class="nav-item nav-link px-4 mx-1" title="Go to Contact Me Page">Contact</router-link> 
                 </div>
             </section>
             
