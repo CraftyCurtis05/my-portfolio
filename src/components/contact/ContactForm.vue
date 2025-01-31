@@ -8,11 +8,13 @@
       
       <!-- From Name Input -->
       <section class="form-group my-1">
-        <label for="from_name">Your Name</label>
+        <label class="mt-1" for="from_name">Your Name</label>
         <input
+          type="text"
           class="form-control"
           id="from_name"
-          type="text"
+          name="name"
+          placeholder="Enter your full name"
           v-model="formData.from_name"
           required
         />
@@ -20,11 +22,13 @@
 
       <!-- From Email Input -->
       <section class="form-group my-1">
-        <label for="from_email">Your Email</label>
+        <label class="mt-1" for="from_email">Your Email</label>
         <input
+          type="email"
           class="form-control"
           id="from_email"
-          type="email"
+          name="email"
+          placeholder="example@email.com"
           v-model="formData.from_email"
           required
         />
@@ -32,21 +36,27 @@
 
       <!-- From Phone Input -->
       <section class="form-group my-1">
-        <label for="from_phone">Your Phone <em>(optional)</em></label>
+        <label class="mt-1" for="from_phone">Your Phone <em>(optional)</em></label>
         <input
+          type="tel"
           class="form-control"
           id="from_phone"
-          type="phone"
-          v-model="formData.from_phone"
+          name="phone"
+          placeholder="(123) 456-7890"
+          v-model="formattedPhoneNumber"
+          maxlength="14"
+          @input="validatePhoneNumber" 
         />
       </section>
 
       <!-- Message Input -->
       <section class="form-group my-1">
-        <label for="message">Message</label>
+        <label class="mt-1" for="message">Message</label>
         <textarea
+          name="email"
           class="form-control"
           id="message"
+          placeholder="Enter your message here..."
           v-model="formData.message"
           rows="5"
           required
@@ -54,13 +64,13 @@
       </section>
 
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-block my-2">Send Message</button>
+      <button type="submit" class="btn btn-block mt-2 mb-4">Send Message</button>
     </form>
 
     <!-- Error Handling -->
      <section class="error">
       <p v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
-      <p v-if="successMessage" class="alert alert-success ">{{ successMessage }}</p>
+      <p v-if="successMessage" class="alert alert-success">{{ successMessage }}</p>
     </section>
   </component>
 </template>
@@ -83,6 +93,19 @@ export default {
     };
   },
   methods: {
+    validatePhoneNumber(event) {
+      // Get the current input value
+      const rawValue = event.target.value;
+
+      // Remove all non-numeric characters
+      const numericValue = rawValue.replace(/\D/g, '');
+
+      // Update the value with only numeric characters
+      this.formData.from_phone = numericValue;
+
+      // Ensure the formattedPhoneNumber reflects this updated numeric value
+      this.$forceUpdate();  // This is to force Vue to re-render the component after manual update
+    },
     sendEmail() {
       emailjs.send (
         "service_ug8f75f", // Email.js Service ID
@@ -94,20 +117,66 @@ export default {
         console.log('Email sent successfully!', response);
         this.successMessage = "Your message has been sent successfully!";
         this.formData = { from_name: "", from_email: "", from_phone: "", message: ""}; // Reset form
+        this.clearMessages();  // Automatically clear message after 5 seconds
       })
       .catch((error) => {
         console.error('Failed to send email:', error);
         this.errorMessage = "Something went wrong. Please try again later.";
+        this.clearMessages();  // Automatically clear message after 5 seconds
       });
+    },
+    clearMessages() {
+      setTimeout(() => {
+        this.successMessage = ""; // Clear success message after timeout
+        this.errorMessage = "";   // Clear error message after timeout
+      }, 6000); // 5000ms = 5 seconds, you can change this time as needed
     }
-  }
+  },
+  computed: {
+    // Computed property to format the phone number
+    formattedPhoneNumber: {
+      get() {
+        // If there's no phone number, return empty string (prevent showing just parentheses)
+        if (!this.formData.from_phone) {
+          return "";
+        }
+
+        // Remove all non-numeric characters
+        let phoneNumber = this.formData.from_phone.replace(/\D/g, '');
+
+        // Format the phone number with parentheses and dashes
+        if (phoneNumber.length > 3 && phoneNumber.length <= 6) {
+          phoneNumber = `(${phoneNumber.substring(0, 3)}) ${phoneNumber.substring(3)}`;
+        } else if (phoneNumber.length > 6) {
+          phoneNumber = `(${phoneNumber.substring(0, 3)}) ${phoneNumber.substring(3, 6)}-${phoneNumber.substring(6, 10)}`;
+        } else {
+          phoneNumber = `(${phoneNumber.substring(0, 3)}`;
+        }
+        return phoneNumber;
+      },
+      set(value) {
+        // Strip non-numeric characters and update the formData model
+        this.formData.from_phone = value.replace(/\D/g, '');
+      }
+    }
+  },
 };
 </script>
 
 <style scoped>
+h2,
+label {
+  margin: -.5vw;
+}
+
 .form-control,
 .btn {
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(179, 178, 178);
 }
 
 /* Base Styling for the Button */
