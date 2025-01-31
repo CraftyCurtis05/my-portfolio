@@ -49,7 +49,7 @@
                     <component class="progress-bar"><ProgressBar :progress="progressJolt"/></component>
                     <hr>
                     <li class="visit mt-3" @click="showModal('BestBudsCard', 'Personal')" title="Click to See More Information">
-                        <b>"Best Buds" Dispensary Locator Web Application</b>
+                        <b>"Best Buds" Dispensary Locator Web Application</b><em> (Currently Under Development)</em>
                     </li>
                     <component class="progress-bar"><ProgressBar :progress="progressBestBuds"/></component>
                     <hr>
@@ -149,7 +149,8 @@ export default {
 
 <style scoped>
 #list {
-    padding-inline: -10px;
+    width: 50%;
+    padding-inline: 2vw;
 }
 
 ul {

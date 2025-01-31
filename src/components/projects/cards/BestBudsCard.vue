@@ -5,47 +5,65 @@
 
             <!-- Screenshot Carousel -->
             <section class="carousel-container col-md-4">
-                <div id="carouselSlidesOnly" class="carousel-main slide" data-bs-ride="carousel">
+                <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/1-best-buds-login.png" class="d-block w-100" alt="Best Buds App Screenshot 1">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/01-best-buds-register.png" class="d-block w-100" alt="Best Buds App Screenshot 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/2-best-buds-home-top.png" class="d-block w-100" alt="Best Buds App Screenshot 2">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/02-best-buds-login.png" class="d-block w-100" alt="Best Buds App Screenshot 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/3-best-buds-home-bottom.png" class="d-block w-100" alt="Best Buds App Screenshot 3">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/03-best-buds-home.png" class="d-block w-100" alt="Best Buds App Screenshot 3">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/4-best-buds-search.png" class="d-block w-100" alt="Best Buds App Screenshot 4">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/04-best-buds-profile.png" class="d-block w-100" alt="Best Buds App Screenshot 4">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/5-best-buds-shop.png" class="d-block w-100" alt="Best Buds App Screenshot 5">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/05-best-buds-locator.png" class="d-block w-100" alt="Best Buds App Screenshot 5">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/6-best-buds-tips-tricks-top.png" class="d-block w-100" alt="Best Buds App Screenshot 6">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/06-best-buds-shop.png" class="d-block w-100" alt="Best Buds App Screenshot 6">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/7-best-buds-tips-tricks-middle.png" class="d-block w-100" alt="Best Buds App Screenshot 7">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/07-best-buds-tips-tricks.png" class="d-block w-100" alt="Best Buds App Screenshot 7">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/8-best-buds-articles.png" class="d-block w-100" alt="Best Buds App Screenshot 8">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/08-best-buds-products.png" class="d-block w-100" alt="Best Buds App Screenshot 8">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/9-best-buds-news.png" class="d-block w-100" alt="Best Buds App Screenshot 9">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/09-best-buds-strain-guide.png" class="d-block w-100" alt="Best Buds App Screenshot 9">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/10-best-buds-about.png" class="d-block w-100" alt="Best Buds App Screenshot 10">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/10-best-buds-safety-tips.png" class="d-block w-100" alt="Best Buds App Screenshot 10">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/11-best-buds-contact.png" class="d-block w-100" alt="Best Buds App Screenshot 11">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/11-best-buds-too-much.png" class="d-block w-100" alt="Best Buds App Screenshot 11">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/12-best-buds-profile.png" class="d-block w-100" alt="Best Buds App Screenshot 12">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/12-best-buds-legality.png" class="d-block w-100" alt="Best Buds App Screenshot 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/13-best-buds-questions.png" class="d-block w-100" alt="Best Buds App Screenshot 13">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/14-best-buds-articles.png" class="d-block w-100" alt="Best Buds App Screenshot 14">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/15-best-buds-news.png" class="d-block w-100" alt="Best Buds App Screenshot 15">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/16-best-buds-about.png" class="d-block w-100" alt="Best Buds App Screenshot 16">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/17-best-buds-privacy.png" class="d-block w-100" alt="Best Buds App Screenshot 17">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/best-buds-screenshots/18-best-buds-contact.png" class="d-block w-100" alt="Best Buds App Screenshot 18">
                         </div>
                     </div>
                 </div>
-                <button @click="openCarouselModalBestBuds" class="btn mt-2 lead">View in Full Screen</button>
+                <button @click="openCarouselModalBestBuds" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button>
             </section>
 
             <!-- Card Body -->
@@ -62,10 +80,10 @@
                     </p>
                     <ul class="lead">
                         <li>User Authentication & Profile Management</li>
-                        <li>Locator with Google Maps for nearby dispensaries</li>
-                        <li>State Law SVG map for cannabis legality</li>
-                        <li>Tips & Tricks, News, and Articles on Cannabis</li>
-                        <li>Contact form for user inquiries (Email.js)</li>
+                        <li>Locator Search with Google Map & Yelp API</li>
+                        <li>Interactive State Legality SVG Map</li>
+                        <li>Tips & Tricks, News & Articles Information</li>
+                        <li>Contact Form using EmailJS</li>
                     </ul>
                     <p class="card-text text-muted lead"><em>Originally designed to provide a comprehensive cannabis resource, now continuously enhanced with new features.</em></p>
                 </div>
@@ -81,15 +99,17 @@
 
                 <!-- Modal Header -->
                 <section class="modal-header">
-                    <h4 class="modal-title lead" id="carouselModalBestBudsLabel"><b>"Best Buds" Screenshots</b></h4>
+                    <h4 class="modal-title lead" id="carouselModalBestBudsLabel">
+                        <b class="lead">{{ currentSlideTitle }}</b>
+                    </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </section>
 
                 <!-- Modal Carousel Body -->
                 <section class="modal-body">
-                    <div id="carouselSlidesOnlyBestBudsModal" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselSlidesOnlyBestBudsModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
                         
-                        <div class="carousel-indicators">
+                        <div class="carousel-indicators" id="indicators">
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -102,44 +122,68 @@
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="9" aria-label="Slide 10"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="10" aria-label="Slide 11"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="14" aria-label="Slide 15"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="15" aria-label="Slide 16"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="16" aria-label="Slide 17"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide-to="17" aria-label="Slide 18"></button>
                         </div>
 
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/1-best-buds-login.png" class="d-block w-100" alt="Best Buds App Screenshot 1">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/01-best-buds-register.png" class="d-block w-100" alt="Best Buds App Screenshot 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/2-best-buds-home-top.png" class="d-block w-100" alt="Best Buds App Screenshot 2">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/02-best-buds-login.png" class="d-block w-100" alt="Best Buds App Screenshot 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/3-best-buds-home-bottom.png" class="d-block w-100" alt="Best Buds App Screenshot 3">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/03-best-buds-home.png" class="d-block w-100" alt="Best Buds App Screenshot 3">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/4-best-buds-search.png" class="d-block w-100" alt="Best Buds App Screenshot 4">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/04-best-buds-profile.png" class="d-block w-100" alt="Best Buds App Screenshot 4">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/5-best-buds-shop.png" class="d-block w-100" alt="Best Buds App Screenshot 5">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/05-best-buds-locator.png" class="d-block w-100" alt="Best Buds App Screenshot 5">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/6-best-buds-tips-tricks-top.png" class="d-block w-100" alt="Best Buds App Screenshot 6">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/06-best-buds-shop.png" class="d-block w-100" alt="Best Buds App Screenshot 6">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/7-best-buds-tips-tricks-middle.png" class="d-block w-100" alt="Best Buds App Screenshot 7">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/07-best-buds-tips-tricks.png" class="d-block w-100" alt="Best Buds App Screenshot 7">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/8-best-buds-articles.png" class="d-block w-100" alt="Best Buds App Screenshot 8">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/08-best-buds-products.png" class="d-block w-100" alt="Best Buds App Screenshot 8">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/9-best-buds-news.png" class="d-block w-100" alt="Best Buds App Screenshot 9">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/09-best-buds-strain-guide.png" class="d-block w-100" alt="Best Buds App Screenshot 9">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/10-best-buds-about.png" class="d-block w-100" alt="Best Buds App Screenshot 10">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/10-best-buds-safety-tips.png" class="d-block w-100" alt="Best Buds App Screenshot 10">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/11-best-buds-contact.png" class="d-block w-100" alt="Best Buds App Screenshot 11">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/11-best-buds-too-much.png" class="d-block w-100" alt="Best Buds App Screenshot 11">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/best-buds-dispensary-locator-app/12-best-buds-profile.png" class="d-block w-100" alt="Best Buds App Screenshot 12">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/12-best-buds-legality.png" class="d-block w-100" alt="Best Buds App Screenshot 12">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/13-best-buds-questions.png" class="d-block w-100" alt="Best Buds App Screenshot 13">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/14-best-buds-articles.png" class="d-block w-100" alt="Best Buds App Screenshot 14">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/15-best-buds-news.png" class="d-block w-100" alt="Best Buds App Screenshot 15">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/16-best-buds-about.png" class="d-block w-100" alt="Best Buds App Screenshot 16">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/17-best-buds-privacy.png" class="d-block w-100" alt="Best Buds App Screenshot 17">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/best-buds-screenshots/18-best-buds-contact.png" class="d-block w-100" alt="Best Buds App Screenshot 18">
                             </div>
                         </div>
 
@@ -163,12 +207,58 @@
 <script>
 export default {
     name: "BestBudsCard",
+    data() {
+        return {
+            // Slide descriptions
+            slideTitles: [
+                "Register page to create a new Best Buds account by entering your username and password. (Under Development)",
+                "Login page for accessing your Best Buds account using your registered username and password. (Under Development)",
+                "Home screen overview of the Best Buds app with a spotlight feature on a top-rated dispensary. (Under Development)",
+                "User profile page where you can view and update your personal details and favorite dispensaries. (Under Development)",
+                "Find nearby dispensaries using our locator tool by entering your location for quick results and a map. (Under Development)",
+                "Shop page to explore a variety of cannabis products, including strains, edibles, and accessories. (Under Development)",
+                "Tips & Tricks page offering cannabis advice for both beginners and seasoned users. (Under Development)",
+                "Strain guide page to help you explore cannabis products and find the right one for your needs. (Under Development)",
+                "Explore our strain and terpene guide to discover the perfect cannabis match for your mood and preferences. (Under Development)",
+                "Safety tips page providing essential information on cannabis consumption, smoking, and topicals. (Under Development)",
+                "Learn how to identify symptoms of cannabis overconsumption and how to manage the experience. (Under Development)",
+                "Explore cannabis legality across U.S. states with an interactive map detailing state laws and regulations. (Under Development)",
+                "Comprehensive Q&A section answering all your cannabis-related questions, from dispensaries to consumption methods. (Under Development)",
+                "Cannabis Resource Center offering informative articles on strains, trends, and all things cannabis-related. (Under Development)",
+                "Stay up-to-date with the latest cannabis news, trends, and cultural shifts from around the world. (Under Development)",
+                "At Best Buds, we guide you through the world of cannabis, promoting informed choices and responsible use. (Under Development)",
+                "Our Privacy Policy outlines how we collect, use, and protect your data to ensure a secure and transparent experience. (Under Development)",
+                "Reach out to us through our contact form for any questions or feedback, and we’ll get back to you shortly. (Under Development)"
+            ],
+            currentSlideIndex: 0,  // Keep track of the current slide
+        };
+    },
+    computed: {
+        // Computed property to get the current slide title
+        currentSlideTitle() {
+            return this.slideTitles[this.currentSlideIndex];
+        }
+    },    
     methods: {
         openCarouselModalBestBuds() {
             // Use Bootstrap's modal functionality to show the modal
             const modal = new window.bootstrap.Modal(document.getElementById('carouselModalBestBuds'));
             modal.show();
+        },
+        // Method to update the current slide index on slide change
+        updateCurrentSlide(event) {
+            this.currentSlideIndex = event.to;
         }
+    },
+    mounted() {
+        // Attach the slide event listener to the carousel after the component is mounted
+        const carouselElement = document.getElementById('carouselSlidesOnlyBestBudsModal');
+        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+    },
+    beforeDestroy() {
+        // Clean up the event listener before the component is destroyed
+        const carouselElement = document.getElementById('carouselSlidesOnlyBestBudsModal');
+        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
     }
 };
 </script>
@@ -246,45 +336,59 @@ h5:hover {
   opacity: 1; /* Glow effect on hover */
 }
 
-.modal-body {
-    background-color: #dadae2;
-    padding: 3rem 4rem;
-    margin: auto;
-}
-
+/* Modal styling */
 .modal-dialog {
-    max-width: 80vw;
+    max-width: 90vw;
+    height: auto;
+    margin: 0 auto;
 }
 
-.carousel-indicators,
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    filter: invert(100%); /* Ensure the icons are visible */
-    margin: auto;
+.modal-body {
+    height: 90vh;
+    background-color: #dadae2;
+    padding: 1rem 1rem;
 }
 
-.carousel-indicators {
+#indicators {
     position: absolute;
-    top: 103%; /* Align vertically centered */
-    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
+    top: 80vh;
 }
 
-/* Position the carousel control buttons */
+#indicators button {
+    height: .2rem;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
-    position: absolute;
-    top: 50%; /* Align vertically centered */
-    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
-    z-index: 3000;  /* Ensure buttons are above other elements */
+    width: 5%;
+    height: 90vh;
+    transform: translateY(-15px); /* Adds 3D effect */
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+    object-fit: contain;
 }
 
-/* Move the "previous" button to the left */
 .carousel-control-prev {
-    left: -7.5vw; /* Adjust this value to push further towards the left */
+    left: -1rem;
 }
 
-/* Move the "next" button to the right */
 .carousel-control-next {
-    right: -7.5vw; /* Adjust this value to push further towards the right */
+    right: -1rem;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 </style>

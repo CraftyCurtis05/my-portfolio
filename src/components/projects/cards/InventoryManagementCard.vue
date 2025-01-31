@@ -5,14 +5,14 @@
 
       <!-- Screenshot Carousel -->
       <section class="carousel-container col-md-4">
-        <div id="carouselSlidesOnly" class="carousel-main slide" data-bs-ride="carousel">
+        <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="@/assets/projects/design-examples/inventory-mgmt-dashboard-design.png" class="d-block w-100" alt="Inventory Management Dashboard Wireframe">
             </div>
           </div>
         </div>
-        <button @click="openCarouselModalInventory" class="btn mt-2 lead">View in Full Screen</button>
+        <button @click="openCarouselModalInventory" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button>
       </section>
   
       <!-- Card Body -->
@@ -27,8 +27,8 @@
             <li>Dashboard Wireframe Completed</li>
             <li>Database Design for Inventory Tracking</li>
             <li>Integrated Shippo API for Shipping Logistics</li>
-            <li>Flow design for Inventory Processing, Storage, and Shipping</li>
-            <li>Research into Inventory Operations and Best Practices</li>
+            <li>Flow design for Inventory Processing, Storage & Shipping</li>
+            <li>Research into Inventory Operations & Best Practices</li>
           </ul>
           <p class="card-text text-muted lead"><em>Currently in early design with plans for full-scale implementation of the backend and additional features in the coming months.</em></p>
         </div>
@@ -44,15 +44,17 @@
 
         <!-- Modal Header -->
         <section class="modal-header">
-          <h5 class="modal-title lead" id="carouselModalInventoryLabel">Application Wireframe Screenshot</h5>
+          <h4 class="modal-title lead" id="carouselModalInventoryLabel">
+            <b class="lead">{{ currentSlideTitle }}</b>
+          </h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </section>
 
-        <!-- Modal Carousel -->
+        <!-- Modal Carousel Body -->
         <section class="modal-body">
-          <div id="carouselSlidesOnlyInventoryModal" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselSlidesOnlyInventoryModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
 
-            <div class="carousel-indicators">
+            <div class="carousel-indicators" id="indicators">
               <button type="button" data-bs-target="#carouselSlidesOnlyInventoryModal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             </div>
 
@@ -61,6 +63,16 @@
                 <img src="@/assets/projects/design-examples/inventory-mgmt-dashboard-design.png" class="d-block w-100" alt="Inventory Management Dashboard Wireframe">
               </div>
             </div>
+
+            <!-- Modal Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
 
           </div>
         </section>
@@ -72,33 +84,68 @@
 <script>
 export default {
   name: "InventoryManagementCard",
+  data() {
+    return {
+      // Slide descriptions
+      slideTitles: [
+        "Wireframe design showcasing the layout and key features of an inventory management application, including item tracking, stock levels and user navigation."
+      ],
+      currentSlideIndex: 0,  // Keep track of the current slide
+    };
+  },
+  computed: {
+      // Computed property to get the current slide title
+      currentSlideTitle() {
+          return this.slideTitles[this.currentSlideIndex];
+      }
+  },   
   methods: {
     openCarouselModalInventory() {
       // Use Bootstrap's modal functionality to show the modal
       const modal = new window.bootstrap.Modal(document.getElementById('carouselModalInventory'));
       modal.show();
+    },
+    // Method to update the current slide index on slide change
+    updateCurrentSlide(event) {
+      this.currentSlideIndex = event.to;
     }
-  } 
-}
+  },
+  mounted() {
+      // Attach the slide event listener to the carousel after the component is mounted
+      const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
+      carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+  },
+  beforeDestroy() {
+      // Clean up the event listener before the component is destroyed
+      const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
+      carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
+  }
+};
 </script>
   
 <style scoped>
 .carousel-container  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #dadae2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dadae2;
 }
 
 .carousel-main {
-  margin-top: 1vw;
-  border: 2px black solid;
+    margin-top: 1vw;
+    border: 2px black solid;
 }
 
 h5,
 h5 a {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+h5:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Base Styling for the Button */
@@ -149,24 +196,59 @@ h5 a {
   opacity: 1; /* Glow effect on hover */
 }
 
-.modal-body {
-  background-color: #dadae2;
-  padding: 3rem 4rem;
-  margin: auto;
-}
-
+/* Modal styling */
 .modal-dialog {
-  max-width: 80vw;
+  max-width: 90vw;
+  height: auto;
+  margin: 0 auto;
 }
 
-.carousel-indicators {
-  filter: invert(100%); /* Ensure the icons are visible */
-  margin: auto;
+.modal-body {
+  height: 90vh;
+  background-color: #dadae2;
+  padding: 1rem 1rem;
 }
 
-.carousel-indicators {
+#indicators {
   position: absolute;
-  top: 103%; /* Align vertically centered */
-  transform: translateY(-50%); /* Ensure it is exactly centered vertically */
+  top: 80vh;
+}
+
+#indicators button {
+  height: .2rem;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  height: 90vh;
+  transform: translateY(-15px); /* Adds 3D effect */
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 3000;
+  object-fit: contain;
+}
+
+.carousel-control-prev {
+  left: -1rem;
+}
+
+.carousel-control-next {
+  right: -1rem;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 </style>

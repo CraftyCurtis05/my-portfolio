@@ -1,12 +1,12 @@
 <!-- Contact Form Component -->
 <template>
   <article class="container">
-    <h2 class="text-center display-6 my-2">Contact Me</h2>
+    <h2 class="text-center display-6 pt-5 pb-4">Contact Me</h2>
 
     <!-- Error Handling -->
     <section class="error">
-      <p v-if="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</p>
-      <p v-if="successMessage" class="alert alert-success  mt-3">{{ successMessage }}</p>
+      <p v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+      <p v-if="successMessage" class="alert alert-success">{{ successMessage }}</p>
     </section>
 
     <!-- Form -->

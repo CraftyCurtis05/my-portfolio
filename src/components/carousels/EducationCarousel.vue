@@ -106,7 +106,7 @@ export default {
 
 <style scoped>
 .carousel {
-    width: 500vw;
+    width: 100vw;
     height: auto;
     background-color: #dadae2;
     margin: auto;

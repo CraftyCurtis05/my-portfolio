@@ -179,7 +179,7 @@ export default {
                 "Search results that display the nearest 20 coffee shops to user's location, with shop details and links to Google directions and Yelp Reviews.",
                 "Save to favorites where you can save coffee shops to your profile for quick access and future reference.",
                 "Manage your favorite coffee shops in your profile, including viewing and editing the list of your top picks.",
-                "Shop for different coffee items, including coffee, coffee equipment, coffee merchandise and coffee-related snacks",
+                "Shop for different coffee items, including coffee, coffee equipment, coffee merchandise and coffee-related snacks.",
                 "Articles page where you can read content related to coffee culture, health advice, and user tips for coffee lovers.",
                 "About page describing the development team behind the project, along with descriptions about each and links to their LinkedIn profiles."
             ],
