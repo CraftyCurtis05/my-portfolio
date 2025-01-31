@@ -9,18 +9,17 @@
         <h4>About Me</h4>
         <hr>
         <p>
-          <span class="lead">I'm a web developer who loves coding as much as I love finding the perfect coffee to fuel my sessions (and yes, that’s a journey on its own).</span>
+          <span class="lead">Hi there! I’m Jennifer, a full-stack web developer with a strong focus on problem-solving and building dynamic, user-friendly applications.</span>
           <br><br>
-          <span class="lead">I’m an entry-level full-stack developer with hands-on experience in Java, Vue3, and PostgreSQL, thanks to completing Tech Elevator's Java Bootcamp.</span>
+          <span class="lead">I completed Tech Elevator's Full-Stack Java Bootcamp, where I gained hands-on experience working with technologies like Java, Vue3, and PostgreSQL. I’ve had the opportunity to lead teams in creating impactful projects like a dispensary locator and an inventory management system, which not only honed my coding skills but also sharpened my leadership and mentoring abilities.</span>
           <br><br>
-          <span class="lead">Since that time, I have led teams through exciting projects like a dispensary locator app and an inventory management system. These projects not only let me flex my coding skills but also sharpened my leadership and mentoring abilities—because teaching others only strengthens your own knowledge, right?</span>
+          <span class="lead">Before diving into tech, I spent over 10 years in business management, where I developed crucial skills in communication, conflict resolution, and customer satisfaction. This background has been invaluable in my approach to both teamwork and client relations. My journey also took me through architecture studies at Ohio State University, which refined my attention to detail and creative problem-solving — skills I apply every day in my development work.</span>
           <br><br>
-          <span class="lead">Before diving into tech, I spent some time in business management, where I picked up key skills in communication, conflict resolution, and keeping customers happy. My journey in education was a bit of a twist: I started in general studies at Marion Technical College and later explored Architecture at Ohio State, where I honed my attention to detail and creative problem-solving—skills I now apply in my development work every day.</span>
+          <span class="lead">When I'm not coding, I enjoy remodeling spaces in my home and diving into CAD software to design new projects. I’m also a coffee enthusiast, always in search of the perfect brew to fuel my work sessions, and I love curating the perfect Spotify playlist to keep me motivated. Whether I’m working on a new app feature, brainstorming ideas, or relaxing after a long day, there's always a great tune or a fresh cup of coffee to accompany me.</span>
           <br><br>
-          <span class="lead">When I’m not coding, you’ll find me remodeling a room in my home, geeking out over CAD software, or curating the perfect Spotify playlist. Music is my creative fuel—whether I’m working, brainstorming, or just relaxing, there’s always a beat in the background.</span>
         </p>
         <hr>
-        <span class="lead"><b>If you're looking for someone who can tackle challenges with a smile, work well in teams, and deliver solid results (all while jamming to some great tunes), I’m your person!</b></span>
+        <span class="lead"><b>If you're looking for someone who’s passionate about coding, enjoys collaboration, and thrives on bringing creative solutions to life, I’d love to connect and work with you!</b></span>
       </section>
 
       <!-- About Me Picture -->
@@ -37,12 +36,21 @@
       </section>
 
     </article>
+
+    <article class="timeline">
+      <ExperienceTimeline/>
+    </article>
   </aside>
 </template>
 
 <script>
+import ExperienceTimeline from './TimeLine.vue';
+
 export default {
-    name: "AboutMe"
+    name: "AboutMe",
+    components: {
+      ExperienceTimeline
+    }
 }
 </script>
 
@@ -51,7 +59,7 @@ export default {
   min-width: 45vw;
   max-height: 33vw;
   background-color: #f9f9f9;
-  border-radius: 1vw;
+  border-radius: 1rem;
   overflow: hidden scroll;
 }
 
@@ -63,10 +71,11 @@ export default {
 
 /* Base Styling for the Button */
 .btn {
+  font-size: 1rem;
   color: #7c7c8a;
   background-color: #f8f8fa;
-  border: .1vw solid #7c7c8a;
-  border-radius: 1vw;
+  border: .1rem solid #7c7c8a;
+  border-radius: 1rem;
   transition: all 0.3s ease-in-out;
 }
 

@@ -1,6 +1,6 @@
 <!-- Projects Component -->
 <template>
-    <component class="col-12">
+    <aside class="col-12 mt-5">
         
         <!-- Projects Container -->
         <article class="d-flex flex-row justify-content-center pl-2" id="desc-container">
@@ -13,27 +13,27 @@
                     <li class="visit mt-3" @click="showModal('TEVendingMachineCard', 'Educational')" title="Click to See More Information">
                         <b>"Tech Elevator" Vending Machine Application</b>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressTEVendingMachine"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressTEVendingMachine"/></div>
                     <hr>
                     <li class="visit mt-3" @click="showModal('TEnmoCard', 'Educational')" title="Click to See More Information">
                         <b>"Tech Elevator" TEnmo Application</b>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressTEnmo"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressTEnmo"/></div>
                     <hr>
                     <li class="visit mt-3" @click="showModal('TECoffeeCard', 'Educational')" title="Click to See More Information">
                         <b>"Tech Elevator" Coffee Shop Locator Web Application</b>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressTECoffee"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressTECoffee"/></div>
                     <hr>
                     <li class="visit mt-3" @click="showModal('SBSensorCard', 'Educational')" title="Click to See More Information">
                         <b>"Spring Boot Course" Water Quality Sensor Application</b>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressSBSensor"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressSBSensor"/></div>
                     <hr>
                     <li class="visit mt-3" @click="showModal('CodecademyCard', 'Educational')" title="Click to See More Information">
                         <b>"Codecademy" 25+ Mini Projects</b>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressCodecademy"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressCodecademy"/></div>
                     <hr>
                 </ul>
             </section>
@@ -46,22 +46,22 @@
                     <li class="visit mt-3" @click="showModal('JoltCard', 'Personal')" title="Click to See More Information">
                         <b>"Jolt" Coffee Shop Locator Web Application</b>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressJolt"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressJolt"/></div>
                     <hr>
                     <li class="visit mt-3" @click="showModal('BestBudsCard', 'Personal')" title="Click to See More Information">
                         <b>"Best Buds" Dispensary Locator Web Application</b><em> (Currently Under Development)</em>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressBestBuds"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressBestBuds"/></div>
                     <hr>
                     <li class="visit mt-3" @click="showModal('InventoryManagementCard', 'Personal')" title="Click to See More Information">
                         <b>Inventory Management Application</b><em> (Currently Under Design)</em>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressInventoryManagement"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressInventoryManagement"/></div>
                     <hr>
                     <li>
                         <b>This area is reserved for future projects. Stay tuned!</b>
                     </li>
-                    <component class="progress-bar"><ProgressBar :progress="progressFutureProject"/></component>
+                    <div class="progress-bar"><ProgressBar :progress="progressFutureProject"/></div>
                     <hr>
                 </ul>
             </section>
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-    </component>
+    </aside>
 </template>
 
 <script>

@@ -29,7 +29,7 @@
 
         <!-- NavBar Component -->
         <section id="navbar">
-            <component><NavBar/></component>
+            <NavBar/>
         </section>
 
     </article>

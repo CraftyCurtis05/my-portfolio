@@ -5,7 +5,7 @@
   </head>
 
   <header id="top">
-    <component><Header/></component>
+    <Header/>
   </header>
 
   <body>
@@ -15,7 +15,7 @@
   </body>
 
   <footer id="bottom">
-    <component><Footer/></component>
+    <Footer/>
   </footer>
 </template>
   

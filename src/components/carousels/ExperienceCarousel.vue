@@ -30,7 +30,7 @@
             <!-- Bootstrap Card -->
             <section class="carousel-item active">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/bootstrap_icon.png" alt="Bootstrap 5 Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/bootstrap_icon.png" alt="Bootstrap 5 Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Bootstrap 5</h3>
                         <h4 class="card-subtitle lead pb-5">1 year experience</h4>
@@ -41,7 +41,7 @@
             <!-- CSS Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/css_icon.png" alt="CSS 3 Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/css_icon.png" alt="CSS 3 Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">CSS 3</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -52,7 +52,7 @@
             <!-- Docker Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/docker_icon.png" alt="Docker Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/docker_icon.png" alt="Docker Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Docker</h3>
                         <h4 class="card-subtitle lead pb-5">1 year experience</h4>
@@ -63,7 +63,7 @@
             <!-- Express Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/express_icon.png" alt="Adobe Express Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/express_icon.png" alt="Adobe Express Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Express</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -74,7 +74,7 @@
             <!-- Git Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/git_icon.png" alt="Git Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/git_icon.png" alt="Git Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Git</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -85,7 +85,7 @@
             <!-- HTML Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/html_icon.png" alt="HTML 5 Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/html_icon.png" alt="HTML 5 Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">HTML 5</h3>
                         <h4 class="card-subtitle lead pb-5">3 years experience</h4>
@@ -96,7 +96,7 @@
             <!-- Illustrator Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/illustrator_icon.png" alt="Adobe Illustrator Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/illustrator_icon.png" alt="Adobe Illustrator Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Adobe Illustrator</h3>
                         <h4 class="card-subtitle lead pb-5">3 years experience</h4>
@@ -107,7 +107,7 @@
             <!-- Intellij Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/intellij_icon.png" alt="Intellij Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/intellij_icon.png" alt="Intellij Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Intellij IDEA</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -118,7 +118,7 @@
             <!-- Java Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/java_icon.png" alt="Java Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/java_icon.png" alt="Java Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Java</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -129,7 +129,7 @@
             <!-- JavaScript Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/javascript_icon.png" alt="JavaScript Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/javascript_icon.png" alt="JavaScript Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">JavaScript</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -140,7 +140,7 @@
             <!-- JUnit Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/junit_icon.png" alt="J-Unit 5 Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/junit_icon.png" alt="J-Unit 5 Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">J-Unit 5</h3>
                         <h4 class="card-subtitle lead pb-5">1 year experience</h4>
@@ -151,7 +151,7 @@
             <!-- Nodejs Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/nodejs_icon.png" alt="Node.js Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/nodejs_icon.png" alt="Node.js Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Node.js</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -162,7 +162,7 @@
             <!-- Photoshop Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/photoshop_icon.png" alt="Adobe Photoshop Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/photoshop_icon.png" alt="Adobe Photoshop Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Adobe Photoshop</h3>
                         <h4 class="card-subtitle lead pb-5">5 years experience</h4>
@@ -173,7 +173,7 @@
             <!-- PostgreSQL Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/postgresql_icon.png" alt="PostgreSQL Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/postgresql_icon.png" alt="PostgreSQL Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">PostgreSQL</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -184,7 +184,7 @@
             <!-- Python Card -->
             <section class="carousel-item"> 
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/python_icon.png" alt="Python Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/python_icon.png" alt="Python Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Python</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -195,7 +195,7 @@
             <!-- Sketchup Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/sketchup_icon.png" alt="Sketchup Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/sketchup_icon.png" alt="Sketchup Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">SketchUp</h3>
                         <h4 class="card-subtitle lead pb-5">5 years experience</h4>
@@ -206,7 +206,7 @@
             <!-- Spring Boot Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/spring_boot_icon.png" alt="Spring Boot Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/spring_boot_icon.png" alt="Spring Boot Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Spring Boot</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -217,7 +217,7 @@
             <!-- SQL Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/sql_icon.png" alt="SQL Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/sql_icon.png" alt="SQL Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">SQL</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -228,7 +228,7 @@
             <!-- VSCode Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/vscode_icon.png" alt="VS Code Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/vscode_icon.png" alt="VS Code Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Visual Studio Code</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>
@@ -239,7 +239,7 @@
             <!-- Vue Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/vue_icon.png" alt="Vue.js Logo">
+                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/vue_icon.png" alt="Vue.js Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Vue.js</h3>
                         <h4 class="card-subtitle lead pb-5">2 years experience</h4>

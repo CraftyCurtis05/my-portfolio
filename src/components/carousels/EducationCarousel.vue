@@ -14,7 +14,7 @@
             <!-- Tech Elevator Card -->
             <section class="carousel-item active">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/te_logo.png" alt="Tech Elevator Logo">
+                    <img class="card-img-top m-auto" src="@/assets/education/logos/te_logo.png" alt="Tech Elevator Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Tech Elevator Bootcamp</h3>
                         <h4 class="card-subtitle mb-2 text-muted">2023 - 2023</h4>
@@ -32,7 +32,7 @@
             <!-- Ohio State Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/osu_logo.png" alt="Ohio State University Logo">
+                    <img class="card-img-top m-auto" src="@/assets/education/logos/osu_logo.png" alt="Ohio State University Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Ohio State University</h3>
                         <h4 class="card-subtitle mb-2 text-muted">2009-2010</h4>
@@ -50,7 +50,7 @@
             <!-- Marion Technical Card -->
             <section class="carousel-item"> 
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/mtc_logo.png" alt="Marion Technical College Logo">
+                    <img class="card-img-top m-auto" src="@/assets/education/logos/mtc_logo.png" alt="Marion Technical College Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Marion Technical College</h3>
                         <h4 class="card-subtitle mb-2 text-muted">2006 - 2008</h4>
@@ -68,7 +68,7 @@
             <!-- Canal Winchester Card -->
             <section class="carousel-item">
                 <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/cwhs_logo.png" alt="Canal Winchester High School Logo">
+                    <img class="card-img-top m-auto" src="@/assets/education/logos/cwhs_logo.png" alt="Canal Winchester High School Logo">
                     <div class="card-body text-center">
                         <h3 class="card-title">Canal Winchester High School</h3>
                         <h4 class="card-subtitle mb-2 text-muted">2001 - 2005</h4>

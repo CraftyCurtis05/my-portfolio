@@ -34,7 +34,7 @@ export default {
     height: 20px;
     background-color: #fff;
     border: 2px solid #505050; /* Black border around the progress bar */
-    border-radius: 15px;
+    border-radius: 1rem;
     margin: 10px 0;
     overflow: hidden; /* To ensure rounded corners show correctly */
     box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */

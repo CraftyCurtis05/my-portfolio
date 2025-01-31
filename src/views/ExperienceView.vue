@@ -5,17 +5,17 @@
   </head>
   
   <header id="top">
-    <component><Header/></component>
+    <Header/>
   </header>
   
   <body>
     <main>
-      <component><ExperienceCarousel/></component>
+      <ExperienceCarousel/>
     </main>
   </body>
 
   <footer id="bottom">
-    <component><Footer/></component>
+    <Footer/>
   </footer>
 </template>
   
