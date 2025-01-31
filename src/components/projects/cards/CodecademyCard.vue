@@ -1,6 +1,6 @@
 <!-- Codecademy Card Component -->
 <template>
-    <component class="card mb-3" style="max-width: 45vw;">
+    <aside class="card mb-3" style="max-width: 45vw;">
         <article class="row g-0">
 
             <!-- Screenshot Carousel -->
@@ -39,10 +39,10 @@
             </section>
 
         </article>
-    </component>
+    </aside>
   
     <!-- Modal for Full Screen Carousel -->
-    <modal class="modal fade" id="carouselModalCodecademy" tabindex="-1" aria-labelledby="carouselModalLabelCodecademy" aria-hidden="true">
+    <aside class="modal fade" id="carouselModalCodecademy" tabindex="-1" aria-labelledby="carouselModalLabelCodecademy" aria-hidden="true">
         <article class="modal-dialog modal-lg">
             <div class="modal-content">
     
@@ -70,7 +70,7 @@
                 </section>
             </div>
         </article>
-    </modal>
+    </aside>
 </template>
   
 <script>

@@ -1,10 +1,10 @@
 <!-- Progress Bar Component -->
 <template>
-    <component class="progress-bar-container">
+    <article class="progress-bar-container">
         <section class="progress-bar" :style="progressStyle" title="Progress Completed">
             <span class="progress-text lead">{{ progress }}%</span>
         </section>
-    </component>
+    </article>
 </template>
   
 <script>

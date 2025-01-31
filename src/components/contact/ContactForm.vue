@@ -1,6 +1,6 @@
 <!-- Contact Form Component -->
 <template>
-  <component class="container">
+  <article class="container">
     <h2 class="text-center display-6 my-2">Contact Me</h2>
 
     <!-- Error Handling -->
@@ -73,7 +73,7 @@
       <button type="submit" class="btn btn-block mt-2 mb-4">Send Message</button>
     </form>
 
-  </component>
+  </article>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <!-- Jolt Card Component -->
 <template>
-    <component class="card mb-3" style="max-width: 45vw;">
+    <aside class="card mb-3" style="max-width: 45vw;">
         <article class="row g-0">
 
             <!-- Screenshot Carousel -->
@@ -8,31 +8,40 @@
                 <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/1-jolt-login.png" class="d-block w-100" alt="Jolt App Screenshot 1">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/01-jolt-register.png" class="d-block w-100" alt="Jolt App Screenshot 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/2-jolt-home.png" class="d-block w-100" alt="Jolt App Screenshot 2">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/02-jolt-login.png" class="d-block w-100" alt="Jolt App Screenshot 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/3-jolt-locator.png" class="d-block w-100" alt="Jolt App Screenshot 3">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/03-jolt-home.png" class="d-block w-100" alt="Jolt App Screenshot 3">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/4-jolt-locator-search.png" class="d-block w-100" alt="Jolt App Screenshot 4">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/04-jolt-profile-form.png" class="d-block w-100" alt="Jolt App Screenshot 4">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/5-jolt-shop.png" class="d-block w-100" alt="Jolt App Screenshot 5">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/05-jolt-profile-user.png" class="d-block w-100" alt="Jolt App Screenshot 5">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/6-jolt-articles.png" class="d-block w-100" alt="Jolt App Screenshot 6">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/06-jolt-locator.png" class="d-block w-100" alt="Jolt App Screenshot 6">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/7-jolt-about.png" class="d-block w-100" alt="Jolt App Screenshot 7">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/07-jolt-locator-search.png" class="d-block w-100" alt="Jolt App Screenshot 7">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/8-jolt-about-select.png" class="d-block w-100" alt="Jolt App Screenshot 8">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/08-jolt-locator-fav.png" class="d-block w-100" alt="Jolt App Screenshot 8">
                         </div>
                         <div class="carousel-item">
-                            <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/9-jolt-profile.png" class="d-block w-100" alt="Jolt App Screenshot 9">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/09-jolt-profile-favs.png" class="d-block w-100" alt="Jolt App Screenshot 9">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/10-jolt-shop.png" class="d-block w-100" alt="Jolt App Screenshot 10">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/11-jolt-articles.png" class="d-block w-100" alt="Jolt App Screenshot 11">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@/assets/projects/project-examples/jolt-screenshots/12-jolt-about.png" class="d-block w-100" alt="Jolt App Screenshot 12">
                         </div>
                     </div>
                 </div>
@@ -64,24 +73,26 @@
             </section>
 
         </article>
-    </component>    
+    </aside>    
   
     <!-- Modal -->
-    <modal class="modal fade" id="carouselModalJolt" tabindex="-1" aria-labelledby="carouselModalJoltLabel" aria-hidden="true">
+    <aside class="modal fade" id="carouselModalJolt" tabindex="-1" aria-labelledby="carouselModalJoltLabel" aria-hidden="true">
         <article class="modal-dialog modal-lg">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <section class="modal-header">
-                    <h4 class="modal-title lead" id="carouselModalJoltLabel"><b>"Jolt" Screenshots</b></h4>
+                    <h4 class="modal-title lead" id="carouselModalJoltLabel">
+                        <b class="lead">{{ currentSlideTitle }}</b>
+                    </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </section>
 
                 <!-- Modal Carousel Body -->
                 <section class="modal-body">
-                    <div id="carouselSlidesOnlyJoltModal" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselSlidesOnlyJoltModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
 
-                        <div class="carousel-indicators">
+                        <div class="carousel-indicators" id="indicators">
                             <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -91,35 +102,47 @@
                             <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="6" aria-label="Slide 7"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="7" aria-label="Slide 8"></button>
                             <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                            <button type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide-to="11" aria-label="Slide 12"></button>
                         </div>
 
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/1-jolt-login.png" class="d-block w-100" alt="Jolt App Screenshot 1">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/01-jolt-register.png" class="d-block w-100" alt="Jolt App Screenshot 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/2-jolt-home.png" class="d-block w-100" alt="Jolt App Screenshot 2">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/02-jolt-login.png" class="d-block w-100" alt="Jolt App Screenshot 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/3-jolt-locator.png" class="d-block w-100" alt="Jolt App Screenshot 3">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/03-jolt-home.png" class="d-block w-100" alt="Jolt App Screenshot 3">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/4-jolt-locator-search.png" class="d-block w-100" alt="Jolt App Screenshot 4">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/04-jolt-profile-form.png" class="d-block w-100" alt="Jolt App Screenshot 4">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/5-jolt-shop.png" class="d-block w-100" alt="Jolt App Screenshot 5">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/05-jolt-profile-user.png" class="d-block w-100" alt="Jolt App Screenshot 5">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/6-jolt-articles.png" class="d-block w-100" alt="Jolt App Screenshot 6">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/06-jolt-locator.png" class="d-block w-100" alt="Jolt App Screenshot 6">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/7-jolt-about.png" class="d-block w-100" alt="Jolt App Screenshot 7">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/07-jolt-locator-search.png" class="d-block w-100" alt="Jolt App Screenshot 7">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/8-jolt-about-select.png" class="d-block w-100" alt="Jolt App Screenshot 8">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/08-jolt-locator-fav.png" class="d-block w-100" alt="Jolt App Screenshot 8">
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/projects/project-examples/jolt-coffee-shop-locator-app/9-jolt-profile.png" class="d-block w-100" alt="Jolt App Screenshot 9">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/09-jolt-profile-favs.png" class="d-block w-100" alt="Jolt App Screenshot 9">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/10-jolt-shop.png" class="d-block w-100" alt="Jolt App Screenshot 10">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/11-jolt-articles.png" class="d-block w-100" alt="Jolt App Screenshot 11">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/projects/project-examples/jolt-screenshots/12-jolt-about.png" class="d-block w-100" alt="Jolt App Screenshot 12">
                             </div>
                         </div>
 
@@ -137,18 +160,58 @@
                 </section>
             </div>
         </article>
-    </modal>
+    </aside>
 </template>
   
 <script>
 export default {
     name: "JoltCard",
+    data() {
+        return {
+            // Slide descriptions
+            slideTitles: [
+                "Register page for creating a new account on the Jolt app by providing your username and password.",
+                "Login page for accessing your Jolt account by entering your registered username and password.",
+                "Home screen displaying an app description, along with a currated stock image carousel to match design.",
+                "Profile form for entering personal information such as your name, profile picture, and preferences to personalize your Jolt experience.",
+                "User profile page where you can view and update your personal details, including your name, email, and uploaded profile picture.",
+                "Locator page showing a search bar for user input and a button to search near the user's saved profile address.",
+                "Search results that display the nearest 20 coffee shops to user's location, with shop details and links to Google directions and Yelp Reviews.",
+                "Save to favorites where you can save coffee shops to your profile for quick access and future reference.",
+                "Manage your favorite coffee shops in your profile, including viewing and editing the list of your top picks.",
+                "Shop for different coffee items, including coffee, coffee equipment, coffee merchandise and coffee-related snacks",
+                "Articles page where you can read content related to coffee culture, health advice, and user tips for coffee lovers.",
+                "About page describing the development team behind the project, along with descriptions about each and links to their LinkedIn profiles."
+            ],
+            currentSlideIndex: 0,  // Keep track of the current slide
+        };
+    },
+    computed: {
+        // Computed property to get the current slide title
+        currentSlideTitle() {
+            return this.slideTitles[this.currentSlideIndex];
+        }
+    },    
     methods: {
         openCarouselModalJolt() {
             // Use Bootstrap's modal functionality to show the modal
             const modal = new window.bootstrap.Modal(document.getElementById('carouselModalJolt'));
             modal.show();
+        },
+        // Method to update the current slide index on slide change
+        updateCurrentSlide(event) {
+            this.currentSlideIndex = event.to;
         }
+    },
+    mounted() {
+        // Attach the slide event listener to the carousel after the component is mounted
+        const carouselElement = document.getElementById('carouselSlidesOnlyJoltModal');
+        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+    },
+    beforeDestroy() {
+        // Clean up the event listener before the component is destroyed
+        const carouselElement = document.getElementById('carouselSlidesOnlyJoltModal');
+        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
     }
 }
 </script>
@@ -226,45 +289,59 @@ h5:hover {
   opacity: 1; /* Glow effect on hover */
 }
 
-.modal-body {
-    background-color: #dadae2;
-    padding: 3rem 4rem;
-    margin: auto;
-}
-
+/* Modal styling */
 .modal-dialog {
-    max-width: 80vw;
+    max-width: 90vw;
+    height: auto;
+    margin: 0 auto;
 }
 
-.carousel-indicators,
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    filter: invert(100%); /* Ensure the icons are visible */
-    margin: auto;
+.modal-body {
+    height: 90vh;
+    background-color: #dadae2;
+    padding: 1rem 1rem;
 }
 
-.carousel-indicators {
+#indicators {
     position: absolute;
-    top: 103%; /* Align vertically centered */
-    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
+    top: 80vh;
 }
 
-/* Position the carousel control buttons */
+#indicators button {
+    height: .2rem;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
-    position: absolute;
-    top: 50%; /* Align vertically centered */
-    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
-    z-index: 3000;  /* Ensure buttons are above other elements */
+    width: 5%;
+    height: 90vh;
+    transform: translateY(-15px); /* Adds 3D effect */
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+    object-fit: contain;
 }
 
-/* Move the "previous" button to the left */
 .carousel-control-prev {
-    left: -7.5vw; /* Adjust this value to push further towards the left */
+    left: -1rem;
 }
 
-/* Move the "next" button to the right */
 .carousel-control-next {
-    right: -7.5vw; /* Adjust this value to push further towards the right */
+    right: -1rem;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 </style>

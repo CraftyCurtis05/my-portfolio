@@ -1,6 +1,6 @@
 <!-- Best Buds Card Component -->
 <template>
-    <component class="card mb-3" style="max-width: 45vw;">
+    <aside class="card mb-3" style="max-width: 45vw;">
         <article class="row g-0">
 
             <!-- Screenshot Carousel -->
@@ -72,16 +72,16 @@
             </section>
 
         </article>
-    </component>
+    </aside>
     
     <!-- Modal -->
-    <modal class="modal fade" id="carouselModalBestBuds" tabindex="-1" aria-labelledby="carouselModalBestBudsLabel" aria-hidden="true">
+    <aside class="modal fade" id="carouselModalBestBuds" tabindex="-1" aria-labelledby="carouselModalBestBudsLabel" aria-hidden="true">
         <article class="modal-dialog modal-lg">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <section class="modal-header">
-                    <h4 class="modal-title lead" id="carouselModalBestBudsLabel"><b>"Best Buds" Screenshots"</b></h4>
+                    <h4 class="modal-title lead" id="carouselModalBestBudsLabel"><b>"Best Buds" Screenshots</b></h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </section>
 
@@ -157,7 +157,7 @@
                 </section>
             </div>
         </article>
-    </modal>    
+    </aside> 
 </template>
 
 <script>
@@ -170,7 +170,7 @@ export default {
             modal.show();
         }
     }
-}
+};
 </script>
 
 <style scoped>

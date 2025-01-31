@@ -1,6 +1,6 @@
 <!-- About Me Component -->
 <template>
-  <component class="container d-flex flex-column align-items-center mb-5">
+  <aside class="container d-flex flex-column align-items-center mb-5">
 
     <article class="row d-flex justify-content-center">
 
@@ -37,7 +37,7 @@
       </section>
 
     </article>
-  </component>
+  </aside>
 </template>
 
 <script>

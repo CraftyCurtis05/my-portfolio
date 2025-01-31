@@ -170,6 +170,10 @@ li a {
     transform: scale(1.03);
 }
 
+.modal {
+    overflow: hidden;
+}
+
 .modal-dialog {
     max-width: 90%;
 }

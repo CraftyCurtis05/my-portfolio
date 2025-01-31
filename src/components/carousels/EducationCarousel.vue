@@ -1,6 +1,6 @@
 <!-- Education Carousel Component-->
 <template>
-    <component id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+    <aside id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
         
         <article class="carousel-indicators">
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -95,7 +95,7 @@
             <span class="visually-hidden">Next</span>
         </button>
 
-    </component>
+    </aside>
 </template>
 
 <script>
