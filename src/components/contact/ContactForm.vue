@@ -1,14 +1,20 @@
 <!-- Contact Form Component -->
 <template>
   <component class="container">
-    <h2 class="text-center display-6">Contact Me</h2>
+    <h2 class="text-center display-6 my-2">Contact Me</h2>
+
+    <!-- Error Handling -->
+    <section class="error">
+      <p v-if="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</p>
+      <p v-if="successMessage" class="alert alert-success  mt-3">{{ successMessage }}</p>
+    </section>
 
     <!-- Form -->
     <form class="m-auto lead" @submit.prevent="sendEmail" ref="form" style="width: 600px">
       
       <!-- From Name Input -->
       <section class="form-group my-1">
-        <label class="mt-1" for="from_name">Your Name</label>
+        <label for="from_name">Your Name</label>
         <input
           type="text"
           class="form-control"
@@ -67,11 +73,6 @@
       <button type="submit" class="btn btn-block mt-2 mb-4">Send Message</button>
     </form>
 
-    <!-- Error Handling -->
-     <section class="error">
-      <p v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
-      <p v-if="successMessage" class="alert alert-success">{{ successMessage }}</p>
-    </section>
   </component>
 </template>
 
@@ -117,19 +118,19 @@ export default {
         console.log('Email sent successfully!', response);
         this.successMessage = "Your message has been sent successfully!";
         this.formData = { from_name: "", from_email: "", from_phone: "", message: ""}; // Reset form
-        this.clearMessages();  // Automatically clear message after 5 seconds
+        this.clearMessages();  // Automatically clear message after 4 seconds
       })
       .catch((error) => {
         console.error('Failed to send email:', error);
         this.errorMessage = "Something went wrong. Please try again later.";
-        this.clearMessages();  // Automatically clear message after 5 seconds
+        this.clearMessages();  // Automatically clear message after 4 seconds
       });
     },
     clearMessages() {
       setTimeout(() => {
         this.successMessage = ""; // Clear success message after timeout
         this.errorMessage = "";   // Clear error message after timeout
-      }, 6000); // 5000ms = 5 seconds, you can change this time as needed
+      }, 4000); // 4000ms = 4 seconds
     }
   },
   computed: {
