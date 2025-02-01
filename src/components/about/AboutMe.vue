@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import ExperienceTimeline from './TimeLine.vue';
+import ExperienceTimeline from './Timeline.vue';
 
 export default {
     name: "AboutMe",
