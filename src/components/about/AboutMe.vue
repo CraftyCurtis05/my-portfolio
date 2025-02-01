@@ -1,47 +1,46 @@
 <!-- About Me Component -->
 <template>
-  <aside class="container d-flex flex-column align-items-center mb-5">
-
-    <article class="row d-flex justify-content-center">
-
-      <!-- About Me Text -->
-      <section class="text-container row col-sm-6 mt-4 p-4">
-        <h4>About Me</h4>
-        <hr>
-        <p>
-          <span class="lead">Hi there! I’m Jennifer, a full-stack web developer with a strong focus on problem-solving and building dynamic, user-friendly applications.</span>
-          <br><br>
-          <span class="lead">I completed Tech Elevator's Full-Stack Java Bootcamp, where I gained hands-on experience working with technologies like Java, Vue3, and PostgreSQL. I’ve had the opportunity to lead teams in creating impactful projects like a dispensary locator and an inventory management system, which not only honed my coding skills but also sharpened my leadership and mentoring abilities.</span>
-          <br><br>
-          <span class="lead">Before diving into tech, I spent over 10 years in business management, where I developed crucial skills in communication, conflict resolution, and customer satisfaction. This background has been invaluable in my approach to both teamwork and client relations. My journey also took me through architecture studies at Ohio State University, which refined my attention to detail and creative problem-solving — skills I apply every day in my development work.</span>
-          <br><br>
-          <span class="lead">When I'm not coding, I enjoy remodeling spaces in my home and diving into CAD software to design new projects. I’m also a coffee enthusiast, always in search of the perfect brew to fuel my work sessions, and I love curating the perfect Spotify playlist to keep me motivated. Whether I’m working on a new app feature, brainstorming ideas, or relaxing after a long day, there's always a great tune or a fresh cup of coffee to accompany me.</span>
-          <br><br>
-        </p>
-        <hr>
-        <span class="lead"><b>If you're looking for someone who’s passionate about coding, enjoys collaboration, and thrives on bringing creative solutions to life, I’d love to connect and work with you!</b></span>
-      </section>
+  <aside class="container d-flex flex-column mb-5">
+    
+    <!-- About Me Section -->
+    <article class="row">
 
       <!-- About Me Picture -->
-      <section class="picture col-sm-5 d-flex flex-column align-items-center mt-3">
-        <span><em>(placeholder picture)</em></span>
-        <img src="@/assets/about/portfolio_portrait_temp.jpg" alt="Picture of Jennifer Curtis" style="width: 30vw"/>
-
-        <!-- View Resume Button -->
-        <div class="col-sm-5">
-          <a class="btn my-2 py-2" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="Click to View My Resume" style="width:200px">
-            <span>View My Resume</span>
+      <section class="picture d-flex flex-column align-items-center mt-3">
+        <img src="@/assets/about/portfolio_portrait_temp.jpg" alt="Picture of Jennifer Curtis" title="Jennifer Curtis"/>
+        <div class="mt-3">
+          <a class="btn text-align-center" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="Click to View My Resume">
+            My Resume
           </a>
         </div>
       </section>
 
+      <!-- About Me Text -->
+      <section class="text-container col-lg-6 col-md-8 col-sm-12 p-4">
+        <p class="title lead ml-1">About Jennifer Curtis</p>
+        <hr>
+        <p class="about lead ">
+          <b><em>I’m a full-stack web developer from Columbus, Ohio, with a passion for creating apps that are as clever as they are easy to use—where code meets creativity!</em></b>
+        </p>
+        <p class="background lead">
+          After completing Tech Elevator’s bootcamp, I’ve worked on projects like dispensary locators and inventory systems, honing my coding and leadership skills. With a background in business management, I bring strong communication and problem-solving to every project. Outside of coding, I’m all about remodeling, perfecting my coffee brew, and curating playlists for inspiration.
+        </p>
+        <hr>
+        <span class="sell lead text-center">
+          <b>If you're looking for a passionate, collaborative developer, let's create something amazing together!</b>
+        </span>
+      </section>
+
+      <!-- Experience Timeline -->
+      <section class="timeline">
+        <ExperienceTimeline/>
+      </section>
+
     </article>
 
-    <article class="timeline">
-      <ExperienceTimeline/>
-    </article>
   </aside>
 </template>
+
 
 <script>
 import ExperienceTimeline from './Timeline.vue';
@@ -55,22 +54,21 @@ export default {
 </script>
 
 <style scoped>
-.text-container {
-  min-width: 45vw;
-  max-height: 33vw;
-  background-color: #f9f9f9;
-  border-radius: 1rem;
-  overflow: hidden scroll;
+.container {
+  width: 100vw;
 }
 
-.text-container,
-.picture img,
-.btn {
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+.picture {
+  width: 30%;
 }
 
-/* Base Styling for the Button */
+.picture img {
+  width: 100%;
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
+}
+
 .btn {
+  width: 10rem;
   font-size: 1rem;
   color: #7c7c8a;
   background-color: #f8f8fa;
@@ -83,37 +81,54 @@ export default {
   font-size: 1.05rem;
   font-weight: 500;
   color: white;
-  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
   background-size: 500% 500%;
   border: .1vw solid #cccce4;
-  transform: translateY(-1px); /* Adds 3D effect */
+  transform: translateY(-1px);
   animation: gradient-animation 5s ease infinite;
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
 }
 
-/* Define the animation */
+/* Animation for button */
 @keyframes gradient-animation {
   0% {
-    background-position: 0% 50%; /* Start position */
+    background-position: 0% 50%;
   }
   50% {
-    background-position: 100% 50%; /* End position */
+    background-position: 100% 50%;
   }
   100% {
-    background-position: 0% 50%; /* Back to start */
+    background-position: 0% 50%;
   }
 }
 
-/* Create a subtle glow effect around the button */
-.btn::before {
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  border-radius: 2rem;
-  transition: opacity 0.4s ease-in-out;
-  z-index: -1;
+.text-container {
+  width: 45%;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: -1.2rem;
 }
 
-.btn:hover::before {
-  opacity: 1; /* Glow effect on hover */
+.text-container hr {
+
+}
+
+.about {
+  font-size: 1.1rem;
+  padding: .5rem 0;
+}
+
+.background {
+  font-size: 1.05rem;
+}
+
+.sell {
+
+}
+
+.timeline {
+  width: 25%;
 }
 </style>

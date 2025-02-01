@@ -1,41 +1,30 @@
 <template>
-  <hr class="mt-3">
-  <aside class="timeline-container py-2">
-    <h2 class="text-center display-5 py-3">My Journey</h2>
-  
+  <aside class="timeline-container">
     <!-- Timeline Wrapper -->
     <article class="timeline-wrapper mx-auto">
-  
-      <!-- Horizontal Timeline Line -->
+      <!-- Vertical Timeline Line -->
       <section class="timeline-line lead">
-
         <!-- Year Markers -->
-        <div class="timeline-marker" style="left: 0%;">2005</div>
-
-        <div class="timeline-marker" style="left: 25%;">2010</div>
-
-        <div class="timeline-marker" style="left: 50%;">2015</div>
-
-        <div class="timeline-marker" style="left: 75%;">2020</div>
-
-        <div class="timeline-marker" style="left: 100%;">Present</div>
+        <div class="timeline-marker" style="top: 0%;">2005</div>
+        <div class="timeline-marker" style="top: 25%;">2010</div>
+        <div class="timeline-marker" style="top: 50%;">2015</div>
+        <div class="timeline-marker" style="top: 75%;">2020</div>
+        <div class="timeline-marker" style="top: 100%;">Present</div>
       </section>
-  
+
       <!-- Timeline Items -->
-      <section class="timeline-items pt-5">
+      <section class="timeline-items d-flex">
         <!-- Loop through timeline events -->
-        <div
-          v-for="(item, index) in timelineItems"
-          :key="index"
-          class="timeline-item  pt-1"
-        >
-          <!-- Event Bar -->
-          <div 
-            class="timeline-bar"
-            :style="{
-                width: itemWidth(item.start, item.end) + 'vw', 
-                transform: `translateX(${itemPosition(item.start)}vw)`, 
-                background: `linear-gradient(to right, ${item.color})`
+        <div v-for="(item, index) in timelineItems" :key="index" class="text-center timeline-item">
+          <!-- Event Circle -->
+          <div
+            class="timeline-circle"
+            :style="{ 
+              width: itemWidth(item.start, item.end) + 'px',
+              height: itemWidth(item.start, item.end) + 'px',
+              transform: `translateY(${itemPosition(item.start)}px)`,
+              left: getXPosition(index),
+              background: `linear-gradient(to bottom, ${item.color})`
             }"
             @mouseover="showDescription(index)"
             @mouseleave="hideDescription"
@@ -44,20 +33,30 @@
           </div>
 
           <!-- Description Box -->
-          <div v-if="isHovered === index" class="timeline-description p-3 lead">
-            <p>{{ item.dates }}</p>
-            <p>{{ item.place }}</p>
-            <p><b>{{ item.title }}</b></p>
-            <p>{{ item.description }}</p>
-          </div>
+          <div v-if="isHovered === index" class="timeline-description p-4 rounded shadow-lg bg-white">
+            <div class="d-flex flex-column">
+              <!-- Dates and Place -->
+              <div class="mb-3">
+                <p class="text-muted mb-1"><strong>Dates:</strong> {{ item.dates }}</p>
+                <p class="text-muted"><strong>Place:</strong> {{ item.place }}</p>
+              </div>
 
+              <!-- Title -->
+              <div class="mb-3">
+                <p class="h5 font-weight-bold">{{ item.title }}</p>
+              </div>
+
+              <!-- Description -->
+              <div>
+                <p class="text-dark">{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
     </article>
   </aside>
 </template>
-
 
 <script>
 export default {
@@ -65,6 +64,7 @@ export default {
   data() {
     return {
       isHovered: null,
+      xPositions: [], // Store x positions to check for overlaps
       timelineItems: [
         {
           nickname: "MTC",
@@ -148,64 +148,101 @@ export default {
     },
     itemWidth(start, end) {
       const yearDifference = end - start;
-      console.log(`Width for item (${start} - ${end}): ${yearDifference * 5}vw`);
-      return yearDifference * 5;
+      return yearDifference * 25; // Adjust multiplier as needed for the circle's size
     },
     itemPosition(start) {
       const baseYear = 2005; // Starting year
-      const yearRange = 2025 - baseYear; // Total year range
+      const totalYears = 2025 - baseYear; // Total year range
       const yearDifference = start - baseYear;
-      const maxWidth = 88;
-      return (yearDifference / yearRange) * maxWidth;
+      const maxHeight = 550; // Max height for the vertical timeline
+
+      // Calculate the position as a percentage relative to the total year range
+      return (yearDifference / totalYears) * maxHeight;
+    },
+    randomXPosition() {
+      const maxWidth = 90; // Max width as a percentage
+      return Math.random() * maxWidth; // Generate random value between 0 and maxWidth
+    },
+    isOverlap(newX, circles) {
+      // Check if the new x position overlaps with any existing circles
+      const tolerance = 15; // Tolerance to prevent overlap (adjust as needed)
+      return circles.some(circle => Math.abs(circle.x - newX) < tolerance);
+    },
+    getXPosition(index) {
+      let attempts = 0;
+      const maxAttempts = 100; // Max attempts to avoid infinite loops
+      let xPos = this.randomXPosition();
+
+      // Try to find a non-overlapping position
+      while (this.isOverlap(xPos, this.xPositions) && attempts < maxAttempts) {
+        xPos = this.randomXPosition();
+        attempts++;
+      }
+
+      if (attempts >= maxAttempts) {
+        console.warn(`Max attempts reached for item ${index}. Using fallback position.`);
+      }
+
+      // Store the x position for this item to check future overlaps
+      this.xPositions.push({ index, x: xPos });
+
+      return `${xPos}%`; // Return as a percentage
     }
   }
 };
 </script>
-
   
 <style scoped>
 .timeline-wrapper {
   position: relative;
-  width: 90vw;
-  max-width: 100%;
-  padding-bottom: 12vw;
+  max-width: 25vw;
+  height: 70vh;
 }
 
 .timeline-line {
   position: absolute;
-  width: 100%;
-  height: .5rem;
-  background: linear-gradient(to right, #c2fdcf, #70d3fb, #bef454);
+  width: .3rem;
+  height: 100%;
+  background: linear-gradient(to bottom, #c2fdcf, #70d3fb, #bef454);
   border-radius: 1rem;
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
 .timeline-marker {
   position: absolute;
-  font-size: 1.7rem;
+  font-size: 1rem;
   font-weight: 800;
-  color: #ffffff;
-  transform: translateX(-50%);
+  color: #666666;
+  transform: translateY(-50%);
+}
+
+.timeline-items {
+  height: 100%;
 }
 
 .timeline-item {
-  text-align: center;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-.timeline-item .timeline-bar {
+.timeline-item:hover {
+  transform: scale(1.05);
+}
+
+.timeline-circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
-  background-color: transparent;
-  color: #515151;
-  border: .1rem black solid;
-  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 50%;
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-.timeline-item .timeline-title {
-  font-size: 1.1rem;
+.timeline-title {
+  font-size: 1rem;
 }
 
 .timeline-description {
@@ -216,36 +253,12 @@ export default {
   color: #000000;
   border-radius: 1rem;
   z-index: 10;
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 5000;
 }
 
 .timeline-description p {
-  padding: -1rem;
-  margin: .1rem;
+  margin: .5rem 0;
 }
-
-@media (max-width: 768px) {
-  .timeline-wrapper {
-    flex-direction: column;
-  }
-
-  .timeline-items {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .timeline-line {
-      width: .2rem;
-      height: 100%;
-      top: 11rem;
-  }
-
-  .timeline-item {
-      margin-bottom: 40px;
-  }
-
-  .timeline-description {
-      width: 80%;
-  }
-}
-</style> 
+</style>
