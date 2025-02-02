@@ -1,15 +1,37 @@
 <!-- npm install -->
+<!-- npm install bootstrap -->
 <!-- npm install @emailjs/browser@latest -->
 
 <template>
   <div id="portfolio-app">
-    <router-view />
+    
+    <header id="top">
+      <Header/>
+    </header>
+    
+    <body>
+      <router-view />
+    </body>
+    
+    <footer id="bottom">
+      <Footer/>
+    </footer>
+
   </div>
 </template>
 
 <script>
-export default {
+import Header from './components/Header.vue';
+import NavBar from './components/NavBar.vue';
+import Footer from './components/Footer.vue';
 
+export default {
+  name: "App",
+  components: {
+    Header,
+    NavBar,
+    Footer
+  }
 }
 </script>
 

@@ -23,7 +23,7 @@
               width: itemWidth(item.start, item.end) + 'px',
               height: itemWidth(item.start, item.end) + 'px',
               transform: `translateY(${itemPosition(item.start)}px)`,
-              left: getXPosition(index),
+              // left: getXPosition(index),
               background: `linear-gradient(to bottom, ${item.color})`
             }"
             @mouseover="showDescription(index)"
