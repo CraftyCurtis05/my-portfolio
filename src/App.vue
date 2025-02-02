@@ -3,21 +3,21 @@
 <!-- npm install @emailjs/browser@latest -->
 
 <template>
-  <div id="portfolio-app">
+  <body id="portfolio-app" class="d-flex flex-column justify-content-center align-items-center mx-auto p-0">
     
     <header id="top">
       <Header/>
     </header>
     
-    <body>
+    <main class="m-auto px-2 pt-5 pb-3">
       <router-view />
-    </body>
+    </main>
     
     <footer id="bottom">
       <Footer/>
     </footer>
 
-  </div>
+  </body>
 </template>
 
 <script>
@@ -36,24 +36,45 @@ export default {
 </script>
 
 <style>
-body {
+html {
   width: 100vw;
   height: auto;
-  font-family: Roboto, sans-serif;
+  min-height: 100vh;
   font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
   background-color: #dadae2;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
   caret-color: transparent;
 }
 
-main {
+header,
+main,
+footer {
+  width: 100%;
   background-color: #dadae2;
-  width: 100vw;
-  padding: 0;
-  margin: 0 auto;
-  margin-top: 2.5vw;
+}
+
+/* Custom Scroll */
+::-webkit-scrollbar {
+  width: .55rem; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom, #c2fdcf, #70d3fb, #bef454);
+  background-size: 300% 300%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-position: 100% 100%;
 }
 </style>

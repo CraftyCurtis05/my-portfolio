@@ -187,8 +187,7 @@ textarea::placeholder {
   background-color: #f8f8fa;
   border: .1rem solid #7c7c8a;
   border-radius: 1rem;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {

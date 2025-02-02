@@ -17,25 +17,25 @@
             </button>
 
             <!-- Navbar Links List-->
-            <section class="collapse navbar-collapse bg-light  d-flex justify-content-center align-items-center" id="navbarNav">
+            <section class="collapse navbar-collapse bg-light d-flex justify-content-center align-items-center" id="navbarNav">
                 <ul class="navbar-nav nav lead mx-auto">
-                    <li class="nav-item">
-                        <router-link to="/" class="nav-link px-4 mx-1" title="Go to Home Page">Home</router-link>
+                    <li class="nav-item py-1 px-3">
+                        <router-link to="/" class="nav-link" active-class="active-link" title="Go to Home Page">Home</router-link>
                     </li>
-                    <li class="nav-item">
-                        <router-link to="/about" class="nav-link px-4 mx-1" title="Go to About Me Page">About</router-link>
+                    <li class="nav-item py-1 px-3">
+                        <router-link to="/about" class="nav-link" active-class="active-link" title="Go to About Me Page">About</router-link>
                     </li>
-                    <li class="nav-item">
-                        <router-link to="/education" class="nav-link px-4 mx-1" title="Go to Education Page">Education</router-link>
+                    <li class="nav-item py-1 px-3">
+                        <router-link to="/education" class="nav-link" active-class="active-link" title="Go to Education Page">Education</router-link>
                     </li>
-                    <li class="nav-item">
-                        <router-link to="/experience" class="nav-link px-4 mx-1" title="Go to Experience Page">Experience</router-link>
+                    <li class="nav-item py-1 px-3">
+                        <router-link to="/experience" class="nav-link" active-class="active-link" title="Go to Experience Page">Experience</router-link>
                     </li>
-                    <li class="nav-item">
-                        <router-link to="/projects" class="nav-link px-4 mx-1" title="Go to Projects Page">Projects</router-link>
+                    <li class="nav-item py-1 px-3">
+                        <router-link to="/projects" class="nav-link" active-class="active-link" title="Go to Projects Page">Projects</router-link>
                     </li>
-                    <li class="nav-item">
-                        <router-link to="/contact" class="nav-link px-4 mx-1" title="Go to Contact Me Page">Contact</router-link>
+                    <li class="nav-item py-1 px-3">
+                        <router-link to="/contact" class="nav-link" active-class="active-link" title="Go to Contact Me Page">Contact</router-link>
                     </li>
                 </ul>
             </section>
@@ -81,8 +81,13 @@ nav {
     font-weight: 400;
     background-image: radial-gradient(circle, #dadae2, #f8f9fb); /* Subtle gradient background */
     background-size: 300% 300%;
-    transform: scale(1.01);
-    animation: gradient-animation 2s ease infinite;
+    transform: scale(1.02);
+    animation: gradient-animation 3s ease infinite;
+}
+
+.nav-item .active-link {
+    font-weight: 400;
+    transform: scale(1.02);
 }
 
 /* Define the animation */

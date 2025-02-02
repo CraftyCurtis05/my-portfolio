@@ -1,89 +1,44 @@
 <!-- Education Carousel Component-->
 <template>
-    <aside id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
-        
-        <article class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </article>
+    <article id="carouselIndicators" class="carousel slide mx-auto px-2 mx-5" data-bs-ride="carousel">
+        <section class="carousel-indicators m-auto">
+            <button
+                v-for="(item, index) in education"
+                :key="item.id"
+                type="button"
+                :data-bs-target="'#carouselIndicators'"
+                :data-bs-slide-to="index"
+                :class="{ active: index === 0 }"
+                :aria-current="index === 0 ? 'true' : undefined"
+                :aria-label="'Slide ' + (index + 1)"
+            ></button>
+        </section>
 
-        <article class="carousel-inner pt-2">
-            
-            <!-- Tech Elevator Card -->
-            <section class="carousel-item active">
-                <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/logos/te_logo.png" alt="Tech Elevator Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Tech Elevator Bootcamp</h3>
-                        <h4 class="card-subtitle mb-2 text-muted">2023 - 2023</h4>
-                        <ul class="card-text mr-4">
-                            <li class="gpa my-1 text-muted h6">100% Completed</li>
-                            <li class="degree my-1 h5">Certificate of Completion</li>
-                            <li class="major my-1 lead">Full-Stack Web Application</li>
-                            <li class="skills my-1 lead">Java, Vue.js, PostgreSQL Stack</li>
-                            <li class="card-link"><a href="https://www.techelevator.com/" target="_blank" title="Visit Tech Elevator">Visit Website</a></li>
-                        </ul>    
+        <section class="carousel-inner">
+
+            <div
+                v-for="(item, index) in education"
+                :key="item.id"
+                :class="['carousel-item', { active: index === 0 }]"
+            >
+                <div class="card text-center pb-5 mx-auto">
+                    <img 
+                        class="card-img-top mx-auto"
+                        :src="(`src/assets/education/logos/${item.image}`)"
+                        :alt="item.alt"
+                    />
+                    <div class="card-body">
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <h4 class="card-subtitle text-muted mb-2" >{{ item.dates }}</h4>
+                        <p class="degree h5 my-1">{{ item.degree }}</p>
+                        <p class="major lead my-1">{{ item.major }}</p>
+                        <p class="skills lead my-1">{{ item.skills }}</p>
+                        <p class="card-link"><a :href="item.website" target="_blank" :title="item.siteTitle">{{ item.siteTitle }}</a></p>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Ohio State Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/logos/osu_logo.png" alt="Ohio State University Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Ohio State University</h3>
-                        <h4 class="card-subtitle mb-2 text-muted">2009-2010</h4>
-                        <ul class="card-text mr-4">
-                            <li class="gpa my-1 text-muted h6">3.2 GPA</li>
-                            <li class="degree my-1 h5">Knowlton School of Architecture</li>
-                            <li class="major my-1 lead">Completed 111 credit hrs towards BS Architecture</li>
-                            <li class="skills my-1 lead">CAD, Sketchup, Adobe Suite & Photoshop</li>
-                            <li class="card-link"><a href="https://www.osu.edu/" target="_blank" title="Visit Ohio State University">Visit Website</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Marion Technical Card -->
-            <section class="carousel-item"> 
-                <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/logos/mtc_logo.png" alt="Marion Technical College Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Marion Technical College</h3>
-                        <h4 class="card-subtitle mb-2 text-muted">2006 - 2008</h4>
-                        <ul class="card-text mr-4">
-                            <li class="gpa my-1 text-muted h6">3.9 GPA</li>
-                            <li class="degree my-1 h5">Dean's List</li>
-                            <li class="major my-1 lead">Completed 74 credit hours to transfer</li>
-                            <li class="skills my-1 lead">General studies & STNA Certification</li>
-                            <li class="card-link"><a href="https://www.mtc.edu/" target="_blank" title="Visit Marion Technical College">Visit Website</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Canal Winchester Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto" src="@/assets/education/logos/cwhs_logo.png" alt="Canal Winchester High School Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Canal Winchester High School</h3>
-                        <h4 class="card-subtitle mb-2 text-muted">2001 - 2005</h4>
-                        <ul class="card-text mr-4">
-                            <li class="gpa my-1 text-muted h6">3.5 GPA</li>
-                            <li class="degree my-1 h5">College Prep & Advanced Placement</li>
-                            <li class="major my-1 lead">Art, French & Pride Club</li>
-                            <li class="skills my-1 lead">Cheerleading</li>
-                            <li class="card-link"><a href="https://highschool.cwschools.org/" target="_blank" title="Visit Canal Winchester High School">Visit Website</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-        </article>
+        </section>
 
         <!-- Carousel Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
@@ -95,32 +50,83 @@
             <span class="visually-hidden">Next</span>
         </button>
 
-    </aside>
+    </article>
 </template>
 
 <script>
 export default {
-    name: "EducationCarousel"
+    name: "EducationCarousel",
+    data() {
+        return {
+            education: [
+                {
+                    id: 1,
+                    title: "Tech Elevator Bootcamp",
+                    dates: "2023 - 2023",
+                    degree: "Certificate of Completion",
+                    major: "Java Full-Stack Web Application",
+                    skills: "Java, Vue.js, PostgreSQL Stack",
+                    image: "te_logo.png",
+                    alt: "Tech Elevator Logo",
+                    website: "https://www.techelevator.com/",
+                    siteTitle: "Visit Tech Elevator"
+                },
+                {
+                    id: 2,
+                    title: "Ohio State University",
+                    dates: "2009 - 2010",
+                    degree: "Knowlton School of Architecture",
+                    major: "Completed 111 credit hrs towards BS Architecture",
+                    skills: "CAD, Sketchup, Adobe Suite & Photoshop",
+                    image: "osu_logo.png",
+                    alt: "Ohio State University Logo",
+                    website: "https://www.osu.edu/",
+                    siteTitle: "Visit Ohio State University"
+                },
+                {
+                    id: 3,
+                    title: "Marion Technical College",
+                    dates: "2006 - 2008",
+                    degree: "General Studies",
+                    major: "Completed 74 credit hours to transfer",
+                    skills: "Dean's List & STNA Certification",
+                    image: "mtc_logo.png",
+                    alt: "Marion Technical College Logo",
+                    website: "https://www.mtc.edu/",
+                    siteTitle: "Visit Marion Technical College"
+                },
+                {
+                    id: 4,
+                    title: "Canal Winchester High School",
+                    dates: "2001 - 2005",
+                    degree: "College Prep & Advanced Placement",
+                    major: "Art, French & Pride Club",
+                    skills: "Cheerleading",
+                    image: "cwhs_logo.png",
+                    alt: "Canal Winchester High School Logo",
+                    website: "https://highschool.cwschools.org/",
+                    siteTitle: "Visit Canal Winchester High School"
+                }
+            ]
+        }
+    }        
 }
 </script>
 
 <style scoped>
-.carousel {
-    width: 100vw;
-    height: auto;
-    background-color: #dadae2;
-    margin: auto;
+article {
+    width: 75%;
+    height: 40%;
 }
 
 .carousel-indicators,
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-    filter: invert(100%);
-    margin: auto;
+    filter: invert(50%);
 }
 
-.card {
-    padding-bottom: 2rem;
+.carousel-inner {
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -128,15 +134,35 @@ export default {
     width: 15rem;
 }
 
-.card ul {
-    list-style: none;
-}
-
 .card-link a:hover {
     font-weight: 500;
 }
 
 button {
+    width: 5%;
     background-color: #dadae2;
+}
+
+button:hover {
+    background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+    background-size: 250% 250%;
+    border: .1vw solid #cccce4;
+    border-radius: .2rem;
+    opacity: .7;
+    animation: gradient-animation 3s ease infinite;
+    box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
+}
+
+/* Define the animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* End position */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
 }
 </style>

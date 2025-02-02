@@ -1,32 +1,31 @@
 <!-- About Me Component -->
 <template>
-  <aside class="container d-flex flex-column mb-5">
-    
+
     <!-- About Me Section -->
-    <article class="row">
+    <article class="row mt-3">
 
       <!-- About Me Picture -->
-      <section class="picture d-flex flex-column align-items-center mt-3">
+      <section class="picture d-flex flex-column align-items-center">
         <img src="@/assets/about/portfolio_portrait_temp.jpg" alt="Picture of Jennifer Curtis" title="Jennifer Curtis"/>
         <div class="mt-3">
-          <a class="btn text-align-center" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="Click to View My Resume">
+          <a class="btn w-100" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="Click to View My Resume">
             My Resume
           </a>
         </div>
       </section>
 
       <!-- About Me Text -->
-      <section class="text-container col-lg-6 col-md-8 col-sm-12 p-4">
-        <p class="title lead ml-1">About Jennifer Curtis</p>
+      <section class="text-container lead p-3 mt-2">
+        <p class="title ml-1">About Jennifer Curtis</p>
         <hr>
-        <p class="about lead ">
+        <p class="about py-2">
           <b><em>I’m a full-stack web developer from Columbus, Ohio, with a passion for creating apps that are as clever as they are easy to use—where code meets creativity!</em></b>
         </p>
-        <p class="background lead">
+        <p class="background pb-2">
           After completing Tech Elevator’s bootcamp, I’ve worked on projects like dispensary locators and inventory systems, honing my coding and leadership skills. With a background in business management, I bring strong communication and problem-solving to every project. Outside of coding, I’m all about remodeling, perfecting my coffee brew, and curating playlists for inspiration.
         </p>
         <hr>
-        <span class="sell lead text-center">
+        <span class="sell pt-2">
           <b>If you're looking for a passionate, collaborative developer, let's create something amazing together!</b>
         </span>
       </section>
@@ -37,9 +36,7 @@
       </section>
 
     </article>
-
-  </aside>
-</template>
+  </template>
 
 
 <script>
@@ -54,12 +51,8 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  width: 100vw;
-}
-
 .picture {
-  width: 30%;
+  width: 25%;
 }
 
 .picture img {
@@ -68,7 +61,6 @@ export default {
 }
 
 .btn {
-  width: 10rem;
   font-size: 1rem;
   color: #7c7c8a;
   background-color: #f8f8fa;
@@ -103,29 +95,21 @@ export default {
 }
 
 .text-container {
-  width: 45%;
+  width: 40%;
 }
+
 .title {
   font-size: 1.5rem;
   font-weight: 500;
   margin: -1.2rem;
 }
 
-.text-container hr {
-
-}
-
 .about {
   font-size: 1.1rem;
-  padding: .5rem 0;
 }
 
 .background {
   font-size: 1.05rem;
-}
-
-.sell {
-
 }
 
 .timeline {

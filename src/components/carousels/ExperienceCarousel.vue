@@ -1,302 +1,250 @@
 <!-- Experience Carousel Component -->
 <template>
-    <aside id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
-        
-        <article class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="13" aria-label="Slide 14"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="14" aria-label="Slide 15"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="15" aria-label="Slide 16"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="16" aria-label="Slide 17"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="17" aria-label="Slide 18"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="18" aria-label="Slide 19"></button>
-            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="19" aria-label="Slide 20"></button>
-        </article>
+    <article id="carouselIndicators" class="carousel slide mx-auto px-2 mx-5" data-bs-ride="carousel">
 
-        <article class="carousel-inner pt-2">
-
-            <!-- Bootstrap Card -->
-            <section class="carousel-item active">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/bootstrap_icon.png" alt="Bootstrap 5 Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Bootstrap 5</h3>
-                        <h4 class="card-subtitle lead pb-5">1 year experience</h4>
+        <section class="carousel-indicators m-auto">
+            <button
+                v-for="(item, index) in experience"
+                :key="item.id"
+                type="button"
+                :data-bs-target="'#carouselIndicators'"
+                :data-bs-slide-to="index"
+                :class="{ active: index === 0 }"
+                :aria-current="index === 0 ? 'true' : undefined"
+                :aria-label="'Slide ' + (index + 1)"
+            ></button>
+        </section>
+    
+        <section class="carousel-inner">
+            <div
+                v-for="(item, index) in experience"
+                :key="item.id"
+                :class="['carousel-item', { active: index === 0 }]"
+            >
+                <div class="card text-center mx-auto">
+                    <img 
+                        class="card-img-top mx-auto"
+                        :src="(`src/assets/experience/icons/${item.image}`)"
+                        :alt="item.alt"
+                    />
+                    <div class="card-body">
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <h4 class="card-subtitle text-muted mb-2">{{ item.subtitle }}</h4>
                     </div>
                 </div>
-            </section>
-
-            <!-- CSS Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/css_icon.png" alt="CSS 3 Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">CSS 3</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Docker Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/docker_icon.png" alt="Docker Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Docker</h3>
-                        <h4 class="card-subtitle lead pb-5">1 year experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Express Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/express_icon.png" alt="Adobe Express Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Express</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Git Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/git_icon.png" alt="Git Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Git</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- HTML Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/html_icon.png" alt="HTML 5 Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">HTML 5</h3>
-                        <h4 class="card-subtitle lead pb-5">3 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Illustrator Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/illustrator_icon.png" alt="Adobe Illustrator Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Adobe Illustrator</h3>
-                        <h4 class="card-subtitle lead pb-5">3 years experience</h4>
-                    </div>
-                </div>
-            </section>  
-
-            <!-- Intellij Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/intellij_icon.png" alt="Intellij Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Intellij IDEA</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>  
-
-            <!-- Java Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/java_icon.png" alt="Java Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Java</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- JavaScript Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/javascript_icon.png" alt="JavaScript Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">JavaScript</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>  
-
-            <!-- JUnit Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/junit_icon.png" alt="J-Unit 5 Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">J-Unit 5</h3>
-                        <h4 class="card-subtitle lead pb-5">1 year experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Nodejs Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/nodejs_icon.png" alt="Node.js Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Node.js</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Photoshop Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/photoshop_icon.png" alt="Adobe Photoshop Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Adobe Photoshop</h3>
-                        <h4 class="card-subtitle lead pb-5">5 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PostgreSQL Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/postgresql_icon.png" alt="PostgreSQL Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">PostgreSQL</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Python Card -->
-            <section class="carousel-item"> 
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/python_icon.png" alt="Python Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Python</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sketchup Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/sketchup_icon.png" alt="Sketchup Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">SketchUp</h3>
-                        <h4 class="card-subtitle lead pb-5">5 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Spring Boot Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/spring_boot_icon.png" alt="Spring Boot Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Spring Boot</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SQL Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/sql_icon.png" alt="SQL Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">SQL</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-            <!-- VSCode Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/vscode_icon.png" alt="VS Code Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Visual Studio Code</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>           
-
-            <!-- Vue Card -->
-            <section class="carousel-item">
-                <div class="card">
-                    <img class="card-img-top m-auto my-5" src="@/assets/experience/icons/vue_icon.png" alt="Vue.js Logo">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Vue.js</h3>
-                        <h4 class="card-subtitle lead pb-5">2 years experience</h4>
-                    </div>
-                </div>
-            </section>
-
-        </article>    
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-
-    </aside>
-</template>
+            </div>
+        </section>
+  
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      
+    </article>
+  </template>
 
 <script>
 export default {
-    name: "ExperienceCarousel"
-}
+  name: "ExperienceCarousel",
+  data() {
+    return {
+      experience: [
+        {
+          id: 1,
+          title: "Bootstrap 5",
+          subtitle: "1 year experience",
+          image: "bootstrap_icon.png",
+          alt: "Bootstrap 5 Logo"
+        },
+        {
+          id: 2,
+          title: "CSS 3",
+          subtitle: "2 years experience",
+          image: "css_icon.png",
+          alt: "CSS 3 Logo"
+        },
+        {
+          id: 3,
+          title: "Docker",
+          subtitle: "1 year experience",
+          image: "docker_icon.png",
+          alt: "Docker Logo"
+        },
+        {
+          id: 4,
+          title: "Express",
+          subtitle: "2 years experience",
+          image: "express_icon.png",
+          alt: "Express Logo"
+        },
+        {
+          id: 5,
+          title: "Git",
+          subtitle: "2 years experience",
+          image: "git_icon.png",
+          alt: "Git Logo"
+        },
+        {
+          id: 6,
+          title: "HTML 5",
+          subtitle: "3 years experience",
+          image: "html_icon.png",
+          alt: "HTML 5 Logo"
+        },
+        {
+          id: 7,
+          title: "Adobe Illustrator",
+          subtitle: "3 years experience",
+          image: "illustrator_icon.png",
+          alt: "Adobe Illustrator Logo"
+        },
+        {
+          id: 8,
+          title: "Intellij IDEA",
+          subtitle: "2 years experience",
+          image: "intellij_icon.png",
+          alt: "Intellij IDEA Logo"
+        },
+        {
+          id: 9,
+          title: "Java",
+          subtitle: "2 years experience",
+          image: "java_icon.png",
+          alt: "Java Logo"
+        },
+        {
+          id: 10,
+          title: "JavaScript",
+          subtitle: "2 years experience",
+          image: "javascript_icon.png",
+          alt: "JavaScript Logo"
+        },
+        {
+          id: 11,
+          title: "J-Unit 5",
+          subtitle: "1 year experience",
+          image: "junit_icon.png",
+          alt: "J-Unit 5 Logo"
+        },
+        {
+          id: 12,
+          title: "Node.js",
+          subtitle: "2 years experience",
+          image: "nodejs_icon.png",
+          alt: "Node.js Logo"
+        },
+        {
+          id: 13,
+          title: "Adobe Photoshop",
+          subtitle: "5 years experience",
+          image: "photoshop_icon.png",
+          alt: "Adobe Photoshop Logo"
+        },
+        {
+          id: 14,
+          title: "PostgreSQL",
+          subtitle: "2 years experience",
+          image: "postgresql_icon.png",
+          alt: "PostgreSQL Logo"
+        },
+        {
+          id: 15,
+          title: "Python",
+          subtitle: "2 years experience",
+          image: "python_icon.png",
+          alt: "Python Logo"
+        },
+        {
+          id: 16,
+          title: "SketchUp",
+          subtitle: "5 years experience",
+          image: "sketchup_icon.png",
+          alt: "SketchUp Logo"
+        },
+        {
+          id: 17,
+          title: "Spring Boot",
+          subtitle: "2 years experience",
+          image: "spring_boot_icon.png",
+          alt: "Spring Boot Logo"
+        },
+        {
+          id: 18,
+          title: "SQL",
+          subtitle: "2 years experience",
+          image: "sql_icon.png",
+          alt: "SQL Logo"
+        },
+        {
+          id: 19,
+          title: "Visual Studio Code",
+          subtitle: "2 years experience",
+          image: "vscode_icon.png",
+          alt: "Visual Studio Code Logo"
+        },
+        {
+          id: 20,
+          title: "Vue.js",
+          subtitle: "2 years experience",
+          image: "vue_icon.png",
+          alt: "Vue.js Logo"
+        }
+      ]
+    };
+  }
+};
 </script>
 
 <style scoped>
-.carousel {
-    width: 100vw;
-    height: auto;
-    background-color: #dadae2;
-    margin: auto;
+article {
+  width: 75%;
 }
 
 .carousel-indicators,
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-    filter: invert(100%);
-    margin: auto;
+  filter: invert(50%);
 }
 
-.card {
-    padding-bottom: 2rem;
+.carousel-inner {
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
 .card img {
-    height: 15rem;
-    width: 15rem;
-}
-
-.card ul {
-    list-style: none;
+  height: 15rem;
+  width: 15rem;
 }
 
 button {
-    background-color: #dadae2;
+  width: 5%;
+  background-color: #dadae2;
+}
+
+button:hover {
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+  background-size: 250% 250%;
+  border: .1vw solid #cccce4;
+  border-radius: .2rem;
+  opacity: .7;
+  animation: gradient-animation 3s ease infinite;
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
+}
+
+/* Define the animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* End position */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
 }
 </style>

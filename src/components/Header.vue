@@ -6,7 +6,7 @@
         <!-- Logo -->
         <section class="logo">
             <router-link to="/">
-                <img src="@/assets/logo/light_theme/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
+                <img src="@/assets/logo/light_theme/logo_blk_01.png" alt="Jennifer Curtis Logo" title="Go to My Home Page">
             </router-link>    
         </section>
 
