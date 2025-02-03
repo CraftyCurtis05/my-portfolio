@@ -2,38 +2,15 @@
 <template>
 
     <!-- About Me Section -->
-    <article class="row mx-auto">
+    <article class="row ml-5">
 
       <!-- About Me Picture -->
-      <section class="container position-relative d-flex flex-column justify-content-center p-0 m-0 mx-auto">
-        <div class="image-container position-relative">
-          <img 
-            src="@/assets/about/generated_pic.webp" 
-            class="top-image img-fluid position-absolute" 
-            alt="Picture of Jennifer Curtis" 
-            title="Jennifer Curtis"
-          />
-          <img 
-            src="@/assets/about/portfolio_portrait_temp.jpg" 
-            class="bottom-image img-fluid position-absolute" 
-            alt="Picture of Jennifer Curtis" 
-            title="Jennifer Curtis"
-          />
-        </div>
-        <div class="btn-container d-flex justify-content-center mt-2">
-          <a 
-            class="btn position-absolute mx-auto"
-            href="src/assets/about/jennifer_curtis_resume.pdf" 
-            target="_blank" 
-            title="Click to View My Resume"
-          >
-            My Resume
-          </a>
-        </div>
+      <section class="image-container col-3 p-1 m-5">
+        <Image/>
       </section>
 
       <!-- About Me Text -->
-      <section class="text-container lead d-flex flex-column justify-content-center m-0 p-0 mx-auto">
+      <section class="text-container col-6 lead py-5 my-5">
         <p class="title ml-1">About Jennifer Curtis</p>
         <hr>
         <p class="about py-2">
@@ -49,8 +26,8 @@
       </section>
 
       <!-- Experience Timeline -->
-      <section class="timeline">
-        <ExperienceTimeline/>
+      <section class="timeline-container col-1 mx-4">
+        <Timeline/>
       </section>
 
     </article>
@@ -58,91 +35,31 @@
 
 
 <script>
-import ExperienceTimeline from './Timeline.vue';
+import Image from './Image.vue';
+import Timeline from './Timeline.vue';
 
 export default {
     name: "AboutMe",
     components: {
-      ExperienceTimeline
+      Image,
+      Timeline
     }
 }
 </script>
 
 <style scoped>
-article {
-  height: 70vh;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 25vw;
-}
-
 .image-container {
-  width: 100%;
-  height: 70%;
-  overflow: hidden;
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
-}
-
-.top-image,
-.bottom-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  transition: opacity 10s ease;
-}
-
-.top-image {
-  z-index: 2; /* Ensures the top image is above the bottom image */
-}
-
-.image-container:hover .top-image {
-  opacity: 0; /* Fade out top image */
-}
-
-.image-container:hover .bottom-image {
-  opacity: 1; /* Ensure bottom image is visible */
-}
-
-.btn {
-  width: 25vw;
-  color: #7c7c8a;
-  background-color: #f8f8fa;
-  border: 1px solid #7c7c8a;
-  border-radius: 15px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: white;
-  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
-  background-size: 500% 500%;
-  border: 1px solid #cccce4;
-  transform: translateY(-1px);
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
-  animation: gradient-animation 5s ease infinite;
-}
-
-/* Animation for button */
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  z-index: 0;
 }
 
 .text-container {
-  width: 40vw;
+  width: 50vw;
+  background-color: #dadae2;
+  z-index: 1;
+}
+
+.timeline-container {
+  z-index: 2;
 }
 
 .title {
@@ -157,9 +74,5 @@ article {
 
 .background {
   font-size: 1.05rem;
-}
-
-.timeline {
-  width: 30vw;
 }
 </style>
