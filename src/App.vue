@@ -47,7 +47,7 @@ html {
 body {
   background-color: #dadae2;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+ 
   caret-color: transparent;
 }
 

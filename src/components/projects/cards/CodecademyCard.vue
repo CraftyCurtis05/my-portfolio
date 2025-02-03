@@ -7,12 +7,20 @@
             <section class="carousel-container col-md-4">
                 <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="@/assets/projects/default_image.png" class="d-block w-100" alt="No Image Available">
+                        <div 
+                            v-for="(screenshot, index) in screenshots"
+                            :key="screenshot.id"
+                            :class="['carousel-item', { active: index === 0 }]"
+                        >
+                            <img 
+                                class="d-block w-100" 
+                                :src="(`src/assets/projects/${screenshot.image}`)" 
+                                :alt="screenshot.alt"
+                            >
                         </div>
                     </div>
                 </div>
-                <!-- <button @click="openCarouselModalCodecademy" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button> -->
+            <!-- <button @click="openCarouselModalCodecademy" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button> -->
             </section>
 
             <!-- Card Body -->
@@ -42,29 +50,57 @@
     </aside>
   
     <!-- Modal for Full Screen Carousel -->
-    <aside class="modal fade" id="carouselModalCodecademy" tabindex="-1" aria-labelledby="carouselModalLabelCodecademy" aria-hidden="true">
+    <aside class="modal fade" id="carouselModalCodecademy" tabindex="-1" aria-labelledby="carouselModalCodecademyLabel" aria-hidden="true">
         <article class="modal-dialog modal-lg">
             <div class="modal-content">
     
                 <!-- Modal Header -->
                 <section class="modal-header">
-                    <h5 class="modal-title lead" id="carouselModalCodecademy">No Image Available</h5>
+                    <h4 class="modal-title lead" id="carouselModalCodecademyLabel">
+                        <b class="lead">{{ currentSlideTitle }}</b>
+                    </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </section>
         
                 <!-- Modal Carousel -->
                 <section class="modal-body">
-                    <div id="carouselSlidesOnlyModal" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselSlidesOnlyCodecademyModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
 
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselSlidesOnlyCodecademy" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <div class="carousel-indicators m-auto">
+                            <button
+                                v-for="(screenshot, index) in screenshots"
+                                :key="screenshot.id"
+                                type="button"
+                                data-bs-target="#carouselSlidesOnlyCodecademyModal"
+                                :data-bs-slide-to="index"
+                                :class="{ active: index === 0 }"
+                                aria-label="Slide {{ index + 1 }}"
+                            ></button>
                         </div>
 
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="@/assets/projects/default_image.png" class="d-block w-100" alt="No Image Available">
+                            <div 
+                                v-for="(screenshot, index) in screenshots"
+                                :key="screenshot.id"
+                                :class="['carousel-item', { active: index === 0 }]"
+                            >
+                                <img 
+                                    class="d-block w-100" 
+                                    :src="(`src/assets/projects/${screenshot.image}`)" 
+                                    :alt="screenshot.alt"
+                                >
                             </div>
                         </div>
+
+                        <!-- Modal Carousel Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyCodecademyModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyCodecademyModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>   
 
                     </div>
                 </section>
@@ -76,14 +112,49 @@
 <script>
 export default {
     name: "CodecademyCard",
+    data() {
+        return {
+            screenshots: [
+                {
+                    id: 1,
+                    image: "default_image.png",
+                    alt: "No Image Available"
+                }
+            ],
+            slideTitles: [
+                "No Image Available"
+            ],
+            currentSlideIndex: 0 // Keep track of the current slide
+        };
+    },
+    computed: {
+        // Computed property to get the current slide title
+        currentSlideTitle() {
+            return this.slideTitles[this.currentSlideIndex];
+        }
+    }, 
     methods: {
         openCarouselModalCodecademy() {
-        // Use Bootstrap's modal functionality to show the modal
-        const modal = new window.bootstrap.Modal(document.getElementById('carouselModalCodecademy'));
-        modal.show();
+            // Use Bootstrap's modal functionality to show the modal
+            const modal = new window.bootstrap.Modal(document.getElementById('carouselModalCodecademy'));
+            modal.show();
+        },
+        // Method to update the current slide index on slide change
+        updateCurrentSlide(event) {
+            this.currentSlideIndex = event.to;
         }
+    },
+    mounted() {
+        // Attach the slide event listener to the carousel after the component is mounted
+        const carouselElement = document.getElementById('carouselSlidesOnlyCodecademyModal');
+        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+    },
+    beforeDestroy() {
+        // Clean up the event listener before the component is destroyed
+        const carouselElement = document.getElementById('carouselSlidesOnlyCodecademyModal');
+        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
     }
-}
+};
 </script>
 
 <style scoped>
@@ -158,24 +229,59 @@ h5:hover {
     opacity: 1; /* Glow effect on hover */
 }
 
-.modal-body {
-    background-color: #dadae2;
-    padding: 3rem 4rem;
-    margin: auto;
-}
-
+/* Modal styling */
 .modal-dialog {
-    max-width: 80vw;
+    max-width: 90vw;
+    height: auto;
+    margin: 0 auto;
 }
 
-.carousel-indicators {
-    filter: invert(100%); /* Ensure the icons are visible */
-    margin: auto;
+.modal-body {
+    height: 90vh;
+    background-color: #dadae2;
+    padding: 1rem 1rem;
 }
 
 .carousel-indicators {
     position: absolute;
-    top: 103%; /* Align vertically centered */
-    transform: translateY(-50%); /* Ensure it is exactly centered vertically */
+    top: 80vh;
+}
+
+.carousel-indicators button {
+    height: .2rem;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    height: 90vh;
+    transform: translateY(-15px); /* Adds 3D effect */
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+    object-fit: contain;
+}
+
+.carousel-control-prev {
+    left: -1rem;
+}
+
+.carousel-control-next {
+    right: -1rem;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 </style>

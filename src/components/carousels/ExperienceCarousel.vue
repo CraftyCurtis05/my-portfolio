@@ -1,6 +1,6 @@
 <!-- Experience Carousel Component -->
 <template>
-    <article id="carouselIndicators" class="carousel slide mx-auto px-2 mx-5" data-bs-ride="carousel">
+    <article id="carouselIndicators" class="carousel slide mx-auto mx-5" data-bs-ride="carousel">
 
         <section class="carousel-indicators m-auto">
             <button
@@ -21,15 +21,15 @@
                 :key="item.id"
                 :class="['carousel-item', { active: index === 0 }]"
             >
-                <div class="card text-center mx-auto">
+                <div class="card text-center pb-4 mx-auto">
                     <img 
-                        class="card-img-top mx-auto"
+                        class="card-img-top mx-auto my-5"
                         :src="(`src/assets/experience/icons/${item.image}`)"
                         :alt="item.alt"
                     />
-                    <div class="card-body">
+                    <div class="card-body my-4">
                         <h3 class="card-title">{{ item.title }}</h3>
-                        <h4 class="card-subtitle text-muted mb-2">{{ item.subtitle }}</h4>
+                        <h4 class="card-subtitle text-muted">{{ item.subtitle }}</h4>
                     </div>
                 </div>
             </div>

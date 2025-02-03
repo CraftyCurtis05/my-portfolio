@@ -1,90 +1,114 @@
 <!-- Projects Component -->
 <template>
-    <aside class="col-12 mt-5">
         
-        <!-- Projects Container -->
-        <article class="d-flex flex-row justify-content-center pl-2" id="desc-container">
+    <article class="d-flex flex-row justify-content-center m-3">
 
-            <!-- Educational Projects -->
-            <section id="list" class="mx-auto">
-                <h2 class="display-6">Educational Projects</h2>
-                <h3 class="lead"><em>Click project for more information</em></h3>
-                <ul class="lead">
-                    <li class="visit mt-3" @click="showModal('TEVendingMachineCard', 'Educational')" title="Click to See More Information">
-                        <b>"Tech Elevator" Vending Machine Application</b>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressTEVendingMachine"/></div>
-                    <hr>
-                    <li class="visit mt-3" @click="showModal('TEnmoCard', 'Educational')" title="Click to See More Information">
-                        <b>"Tech Elevator" TEnmo Application</b>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressTEnmo"/></div>
-                    <hr>
-                    <li class="visit mt-3" @click="showModal('TECoffeeCard', 'Educational')" title="Click to See More Information">
-                        <b>"Tech Elevator" Coffee Shop Locator Web Application</b>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressTECoffee"/></div>
-                    <hr>
-                    <li class="visit mt-3" @click="showModal('SBSensorCard', 'Educational')" title="Click to See More Information">
-                        <b>"Spring Boot Course" Water Quality Sensor Application</b>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressSBSensor"/></div>
-                    <hr>
-                    <li class="visit mt-3" @click="showModal('CodecademyCard', 'Educational')" title="Click to See More Information">
-                        <b>"Codecademy" 25+ Mini Projects</b>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressCodecademy"/></div>
-                    <hr>
-                </ul>
-            </section>
+        <!-- Educational Projects -->
+        <section class="list px-5 mx-auto">
+            <h2 class="display-6 ml-4">Educational Projects</h2>
+            <h3 class="lead ml-4"><em>Click project for more information</em></h3>
+            <ul class="lead">
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('TEVendingMachineCard', 'Educational')" 
+                    title="Click to See More Information"
+                ><b>"Tech Elevator" Vending Machine Application</b>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressTEVendingMachine"/></div>
+                <hr>
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('TEnmoCard', 'Educational')" 
+                    title="Click to See More Information"
+                ><b>"Tech Elevator" TEnmo Application</b>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressTEnmo"/></div>
+                <hr>
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('TECoffeeCard', 'Educational')" 
+                    title="Click to See More Information"
+                ><b>"Tech Elevator" Coffee Shop Locator Web Application</b>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressTECoffee"/></div>
+                <hr>
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('SBSensorCard', 'Educational')" 
+                    title="Click to See More Information"
+                ><b>"Spring Boot Course" Water Quality Sensor Application</b>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressSBSensor"/></div>
+                <hr>
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('CodecademyCard', 'Educational')" 
+                    title="Click to See More Information"
+                ><b>"Codecademy" 25+ Mini Projects</b>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressCodecademy"/></div>
+                <hr>
+            </ul>
+        </section>
 
-            <!-- Personal Projects -->
-            <section id="list" class="mx-auto">
-                <h2 class="display-6">Personal Projects</h2>
-                <h3 class="lead"><em>Click project for more information</em></h3>
-                <ul class="lead">
-                    <li class="visit mt-3" @click="showModal('JoltCard', 'Personal')" title="Click to See More Information">
-                        <b>"Jolt" Coffee Shop Locator Web Application</b>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressJolt"/></div>
-                    <hr>
-                    <li class="visit mt-3" @click="showModal('BestBudsCard', 'Personal')" title="Click to See More Information">
-                        <b>"Best Buds" Dispensary Locator Web Application</b><em> (Currently Under Development)</em>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressBestBuds"/></div>
-                    <hr>
-                    <li class="visit mt-3" @click="showModal('InventoryManagementCard', 'Personal')" title="Click to See More Information">
-                        <b>Inventory Management Application</b><em> (Currently Under Design)</em>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressInventoryManagement"/></div>
-                    <hr>
-                    <li>
-                        <b>This area is reserved for future projects. Stay tuned!</b>
-                    </li>
-                    <div class="progress-bar"><ProgressBar :progress="progressFutureProject"/></div>
-                    <hr>
-                </ul>
-            </section>
-        </article>
+        <!-- Personal Projects -->
+        <section class="list px-5 mx-auto">
+            <h2 class="display-6 ml-4">Personal Projects</h2>
+            <h3 class="lead ml-4"><em>Click project for more information</em></h3>
+            <ul class="lead">
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('JoltCard', 'Personal')" 
+                    title="Click to See More Information"
+                ><b>"Jolt" Coffee Shop Locator Web Application</b>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressJolt"/></div>
+                <hr>
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('BestBudsCard', 'Personal')" 
+                    title="Click to See More Information"
+                ><b>"Best Buds" Dispensary Locator Web Application</b><em> (Under Dev)</em>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressBestBuds"/></div>
+                <hr>
+                <li 
+                    class="visit mt-4" 
+                    @click="showModal('InventoryManagementCard', 'Personal')" 
+                    title="Click to See More Information"
+                ><b>Inventory Management Application</b><em> (Under Design)</em>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressInventoryManagement"/></div>
+                <hr>
+                <li>
+                    <b>This area is reserved for future projects. Stay tuned!</b>
+                </li
+                    class="visit mt-4"
+                >
+                <div class="progress-bar"><ProgressBar :progress="progressFutureProject"/></div>
+                <hr>
+            </ul>
+        </section>
+    </article>
 
-        <!-- Modal for Project Cards -->
-        <div v-if="showCardModal" class="modal fade show" tabindex="-1" style="display: block;" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-            :class="modalPositionClass">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <button type="button" class="btn-close" @click="closeModal()"></button>
-                    <div v-if="currentCard === 'TEVendingMachineCard'"><TEVendingMachineCard /></div>
-                    <div v-if="currentCard === 'TEnmoCard'"><TEnmoCard /></div>
-                    <div v-if="currentCard === 'TECoffeeCard'"><TECoffeeCard /></div>
-                    <div v-if="currentCard === 'SBSensorCard'"><SBSensorCard /></div>
-                    <div v-if="currentCard === 'CodecademyCard'"><CodecademyCard /></div>
-                    <div v-if="currentCard === 'JoltCard'"><JoltCard /></div>
-                    <div v-if="currentCard === 'BestBudsCard'"><BestBudsCard /></div>
-                    <div v-if="currentCard === 'InventoryManagementCard'"><InventoryManagementCard /></div>
-                </div>
+    <!-- Modal for Project Cards -->
+    <article v-if="showCardModal" class="modal fade show" tabindex="-1" style="display: block;" aria-labelledby="exampleModalLabel" aria-hidden="true" 
+        :class="modalPositionClass">
+        <section class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close" @click="closeModal()"></button>
+                <div v-if="currentCard === 'TEVendingMachineCard'"><TEVendingMachineCard /></div>
+                <div v-if="currentCard === 'TEnmoCard'"><TEnmoCard /></div>
+                <div v-if="currentCard === 'TECoffeeCard'"><TECoffeeCard /></div>
+                <div v-if="currentCard === 'SBSensorCard'"><SBSensorCard /></div>
+                <div v-if="currentCard === 'CodecademyCard'"><CodecademyCard /></div>
+                <div v-if="currentCard === 'JoltCard'"><JoltCard /></div>
+                <div v-if="currentCard === 'BestBudsCard'"><BestBudsCard /></div>
+                <div v-if="currentCard === 'InventoryManagementCard'"><InventoryManagementCard /></div>
             </div>
-        </div>
-    </aside>
+        </section>
+    </article>
+
 </template>
 
 <script>
@@ -148,9 +172,8 @@ export default {
 </script>
 
 <style scoped>
-#list {
-    width: 50%;
-    padding-inline: 2vw;
+.list {
+    width: 43%;
 }
 
 ul {
@@ -183,7 +206,7 @@ li a {
 .modal-educational .modal-dialog {
     left: 45%;
     right: auto;
-    top: 5%;
+    top: 7%;
 }
 
 /* Position Personal Modals */

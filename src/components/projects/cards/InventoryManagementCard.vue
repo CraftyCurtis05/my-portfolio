@@ -7,8 +7,16 @@
       <section class="carousel-container col-md-4">
         <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="@/assets/projects/design-examples/inventory-mgmt-dashboard-design.png" class="d-block w-100" alt="Inventory Management Dashboard Wireframe">
+            <div 
+              v-for="(screenshot, index) in screenshots"
+              :key="screenshot.id"
+              :class="['carousel-item', { active: index === 0 }]"
+            >
+              <img 
+                class="d-block w-100"
+                :src="(`src/assets/projects/design-examples/${screenshot.image}`)" 
+                :alt="screenshot.alt"
+              >
             </div>
           </div>
         </div>
@@ -37,7 +45,7 @@
     </article>
   </aside>
   
-  <!-- Modal -->
+  <!-- Modal for Full Screen Carousel -->
   <aside class="modal fade" id="carouselModalInventory" tabindex="-1" aria-labelledby="carouselModalInventoryLabel" aria-hidden="true">
     <article class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -50,29 +58,45 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </section>
 
-        <!-- Modal Carousel Body -->
+        <!-- Modal Carousel -->
         <section class="modal-body">
           <div id="carouselSlidesOnlyInventoryModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
 
             <div class="carousel-indicators" id="indicators">
-              <button type="button" data-bs-target="#carouselSlidesOnlyInventoryModal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button
+                v-for="(screenshot, index) in screenshots"
+                :key="screenshot.id"
+                type="button"
+                data-bs-target="#carouselSlidesOnlyInventoryModal"
+                :data-bs-slide-to="index"
+                :class="{ active: index === 0 }"
+                aria-label="Slide {{ index + 1 }}"
+              ></button>
             </div>
 
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="@/assets/projects/design-examples/inventory-mgmt-dashboard-design.png" class="d-block w-100" alt="Inventory Management Dashboard Wireframe">
+              <div 
+                v-for="(screenshot, index) in screenshots"
+                :key="screenshot.id"
+                :class="['carousel-item', { active: index === 0 }]"
+              >
+                <img 
+                  class="d-block w-100"
+                  :src="(`src/assets/projects/design-examples/${screenshot.image}`)" 
+                  :alt="screenshot.alt"
+                >
               </div>
             </div>
 
             <!-- Modal Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide="prev">
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyInventoryModal" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyInventoryModal" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
-            </button>
+            </button> -->
 
           </div>
         </section>
@@ -86,7 +110,13 @@ export default {
   name: "InventoryManagementCard",
   data() {
     return {
-      // Slide descriptions
+      screenshots: [
+        { 
+          id: 1, 
+          image: "inventory-mgmt-dashboard-design.png",
+          alt: "Inventory Management Dashboard Wireframe" 
+        }
+      ],
       slideTitles: [
         "Wireframe design showcasing the layout and key features of an inventory management application, including item tracking, stock levels and user navigation."
       ],
@@ -94,10 +124,10 @@ export default {
     };
   },
   computed: {
-      // Computed property to get the current slide title
-      currentSlideTitle() {
-          return this.slideTitles[this.currentSlideIndex];
-      }
+    // Computed property to get the current slide title
+    currentSlideTitle() {
+      return this.slideTitles[this.currentSlideIndex];
+    }
   },   
   methods: {
     openCarouselModalInventory() {
@@ -111,42 +141,41 @@ export default {
     }
   },
   mounted() {
-      // Attach the slide event listener to the carousel after the component is mounted
-      const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
-      carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+    // Attach the slide event listener to the carousel after the component is mounted
+    const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
+    carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
   },
   beforeDestroy() {
-      // Clean up the event listener before the component is destroyed
-      const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
-      carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
+    // Clean up the event listener before the component is destroyed
+    const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
+    carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
   }
 };
 </script>
   
 <style scoped>
 .carousel-container  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #dadae2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dadae2;
 }
 
 .carousel-main {
-    margin-top: 1vw;
-    border: 2px black solid;
+  margin-top: 1vw;
+  border: 2px black solid;
 }
 
 h5,
 h5 a {
-    color: black;
-    text-decoration: none;
-    transition: transform 0.3s ease;
+  color: black;
+  text-decoration: none;
 }
 
-h5:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
+/* h5:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+} */
 
 /* Base Styling for the Button */
 .btn {
@@ -209,12 +238,12 @@ h5:hover {
   padding: 1rem 1rem;
 }
 
-#indicators {
+.carousel-indicators {
   position: absolute;
   top: 80vh;
 }
 
-#indicators button {
+.carousel-indicators button {
   height: .2rem;
 }
 

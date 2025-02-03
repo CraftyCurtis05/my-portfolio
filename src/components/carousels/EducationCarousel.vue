@@ -1,6 +1,6 @@
 <!-- Education Carousel Component-->
 <template>
-    <article id="carouselIndicators" class="carousel slide mx-auto px-2 mx-5" data-bs-ride="carousel">
+    <article id="carouselIndicators" class="carousel slide mx-auto" data-bs-ride="carousel">
         <section class="carousel-indicators m-auto">
             <button
                 v-for="(item, index) in education"
@@ -21,7 +21,7 @@
                 :key="item.id"
                 :class="['carousel-item', { active: index === 0 }]"
             >
-                <div class="card text-center pb-5 mx-auto">
+                <div class="card text-center pb-4 mx-auto">
                     <img 
                         class="card-img-top mx-auto"
                         :src="(`src/assets/education/logos/${item.image}`)"
@@ -110,7 +110,7 @@ export default {
             ]
         }
     }        
-}
+};
 </script>
 
 <style scoped>
@@ -148,7 +148,8 @@ button:hover {
     background-size: 250% 250%;
     border: .1vw solid #cccce4;
     border-radius: .2rem;
-    opacity: .7;
+    opacity: .7
+    ;
     animation: gradient-animation 3s ease infinite;
     box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
 }
