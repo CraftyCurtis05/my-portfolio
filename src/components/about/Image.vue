@@ -5,13 +5,13 @@
     <!-- Transition Image -->
     <section class="image position-relative">
       <img
-        src="@/assets/about/top_image.webp"
+        src="@/assets/about/images/top_image.webp"
         class="top-image img-fluid position-absolute"
         alt="Picture of Jennifer Curtis"
         title="Jennifer Curtis"
       />
       <img 
-        src="@/assets/about/bottom_image.jpg"
+        src="@/assets/about/images/bottom_image.jpg"
         class="bottom-image img-fluid position-absolute"
         alt="Picture of Jennifer Curtis"
         title="Jennifer Curtis"
@@ -32,6 +32,7 @@
 
     <!-- Certificates Button with Modal Trigger -->
     <section class="btn-container mt-1">
+      <!-- Add Certificate button styled like Resume Button -->
       <a
         class="btn"
         data-bs-toggle="modal"
@@ -43,108 +44,16 @@
     </section>
 
   </article>
-
-  <!-- Modal for Full-Screen Carousel -->
-  <aside class="modal fade" id="carouselModalCertificate" tabindex="-1" aria-labelledby="carouselModalCertificateLabel" aria-hidden="true">
-    <article class="modal-dialog modal-fullscreen m-auto">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <section class="modal-header">
-          <h4 class="modal-title lead" id="carouselModalCertificateLabel">
-            <b class="lead">{{ currentSlideTitle }}</b>
-          </h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </section>
-
-        <!-- Modal Carousel Body -->
-        <section class="modal-body">
-          <div id="carouselSlidesOnlyCertificateModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
-
-            <div class="carousel-indicators position-absolute m-auto">
-              <button
-                v-for="(screenshot, index) in screenshots"
-                :key="screenshot.id"
-                type="button"
-                data-bs-target="#carouselSlidesOnlyCertificateModal"
-                :data-bs-slide-to="index"
-                :class="{ active: index === 0 }"
-                aria-label="Slide {{ index + 1 }}"
-              ></button>
-            </div>
-
-            <div class="carousel-inner position-relative">
-              <div 
-                v-for="(screenshot, index) in screenshots"
-                :key="screenshot.id"
-                :class="['carousel-item', { active: index === 0 }]"
-              >
-                <img 
-                  class="d-block w-100" 
-                  :src="(`src/assets/about/certificates/${screenshot.image}`)" 
-                  :alt="screenshot.alt"
-                >
-              </div>
-            </div>
-
-            <!-- Modal Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-
-          </div>
-        </section>
-      </div>
-    </article>
-  </aside>
 </template>
 
 <script>
+import Certificates from './Certificates.vue';
+
 export default {
-    name: "Image",
-    data() {
-        return {
-            screenshots: [
-                {
-                    id: 1,
-                    image: "Tech_Elevator_Certificate.pdf",
-                    alt: "Certificate of Completion for Tech Elevator",
-                    title: "Certificate of Completion for Tech Elevator"
-                }
-            ],
-            slideTitles: [
-                "Certificate of Completion for Tech Elevator",
-            ],
-            currentSlideIndex: 0
-        };
-    },
-    computed: {
-      // Computed property to get the current slide title
-      currentSlideTitle() {
-          return this.slideTitles[this.currentSlideIndex];
-      }
-    },
-    methods: {
-              // Method to update the current slide index on slide change
-              updateCurrentSlide(event) {
-            this.currentSlideIndex = event.to;
-        }
-    },
-    mounted() {
-        // Attach the slide event listener to the carousel after the component is mounted
-        const carouselElement = document.getElementById('carouselSlidesOnlyBestBudsModal');
-        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
-    },
-    beforeDestroy() {
-        // Clean up the event listener before the component is destroyed
-        const carouselElement = document.getElementById('carouselSlidesOnlyBestBudsModal');
-        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
-    } 
+  name: "Image",
+  components: {
+    Certificates
+  }
 };
 </script>
 
@@ -209,9 +118,5 @@ export default {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.modal {
-  z-index: 1000;
 }
 </style>

@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .image-container {
-  z-index: 0;
+  z-index: 3;
 }
 
 .text-container {
