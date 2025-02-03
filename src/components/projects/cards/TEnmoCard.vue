@@ -1,11 +1,11 @@
 <!-- TEnmo Card Component -->
 <template>
-    <aside class="card mb-3" style="max-width: 45vw;">
+    <aside class="card mb-3" style="max-width: 45vw; min-height: 68vh;">
         <article class="row g-0">
 
             <!-- Screenshot Carousel -->
-            <section class="carousel-container col-md-4">
-                <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
+            <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
+                <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div 
                             v-for="(screenshot, index) in screenshots"
@@ -26,12 +26,12 @@
             <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title ml-5">
+                <h5 class="card-title text-center">
                     "TEnmo" P2P Online Payment Service API
                 </h5>
                 <p class="card-text lead"><b>Tech Stack:</b> Spring Boot, PostgreSQL, RESTful API, JDBC, JWT Authentication</p>
                 <p class="card-text lead">
-                    Worked with a team to design and develop a Spring Boot RESTful API for a peer-to-peer payment service, enabling money transfers, balance checks, and transfer requests, with PostgreSQL for data storage and efficient transaction management.
+                    Developed a Spring Boot RESTful API for a peer-to-peer payment service, enabling transfers, balance checks, and requests, with PostgreSQL for transaction management.
                 </p>
                 <ul class="lead">
                     <li>Designed Models & Controllers Schemas</li>
@@ -49,7 +49,7 @@
 
     <!-- Modal for Full Screen Carousel -->
     <aside class="modal fade" id="carouselModalTEnmo" tabindex="-1" aria-labelledby="carouselModalTEnmoLabel" aria-hidden="true">
-        <article class="modal-dialog modal-lg">
+        <article class="modal-dialog modal-lg m-auto">
             <div class="modal-content">
 
                <!-- Modal Header -->
@@ -64,7 +64,7 @@
                 <section class="modal-body">
                     <div id="carouselSlidesOnlyTEnmoModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
 
-                        <div class="carousel-indicators m-auto">
+                        <div class="carousel-indicators position-absolute m-auto">
                             <button
                                 v-for="(screenshot, index) in screenshots"
                                 :key="screenshot.id"
@@ -76,7 +76,7 @@
                             ></button>
                         </div>
 
-                        <div class="carousel-inner">
+                        <div class="carousel-inner position-relative">
                             <div 
                                 v-for="(screenshot, index) in screenshots"
                                 :key="screenshot.id"
@@ -157,129 +157,120 @@ export default {
 
 <style scoped>
 .carousel-container  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #dadae2;
+  background-color: #dadae2;
 }
 
 .carousel-main {
-    margin-top: 1vw;
-    border: 2px black solid;
+  border: 1px black solid;
 }
 
-h5,
-h5 a {
-    color: black;
-    text-decoration: none;
+.carousel-inner {
+  width: 100%;
 }
 
-/* h5:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-} */
-
-/* Base Styling for the Button */
-.btn {
-    color: #7c7c8a;
-    background-color: #f8f8fa;
-    border: .1vw solid #7c7c8a;
-    border-radius: 1rem;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+.carousel-item img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
 }
 
-.btn:hover {
-    font-size: 1.03rem;
-    font-weight: 500;
-    color: white;
-    background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
-    background-size: 500% 500%;
-    border: .1vw solid #cccce4;
-    transform: translateY(-1px); /* Adds 3D effect */
-    animation: gradient-animation 5s ease infinite;
-    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+.carousel-container .btn {
+  color: #7c7c8a;
+  background-color: #f8f8fa;
+  border: 1px solid #7c7c8a;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.carousel-container .btn:hover {
+  font-size: 1.03rem;
+  font-weight: 500;
+  color: white;
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
+  background-size: 500% 500%;
+  border: 1px solid #cccce4;
+  transform: translateY(-1px); /* Adds 3D effect */
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  animation: gradient-animation 5s ease infinite;
 }
 
 /* Define the animation */
 @keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%; /* Start position */
-    }
-    50% {
-        background-position: 100% 50%; /* End position */
-    }
-    100% {
-        background-position: 0% 50%; /* Back to start */
-    }
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* End position */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
 }
 
-/* Create a subtle glow effect around the button */
-.btn::before {
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    border-radius: 2rem;
-    transition: opacity 0.4s ease-in-out;
-    z-index: -1;
+h5,
+h5 a {
+  color: black;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-.btn:hover::before {
-    opacity: 1; /* Glow effect on hover */
-}
+/* h5:hover {
+  transform: scale(1.05);
+} */
 
 /* Modal styling */
 .modal-dialog {
-    max-width: 90vw;
-    height: auto;
-    margin: 0 auto;
+  max-width: 90vw;
+  height: auto;
 }
 
 .modal-body {
-    height: 90vh;
-    background-color: #dadae2;
-    padding: 1rem 1rem;
+  height: 90vh;
+  background-color: #dadae2;
+}
+
+.carousel-indicators,
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(50%);
 }
 
 .carousel-indicators {
-    position: absolute;
-    top: 80vh;
+  top: 80vh;
 }
 
 .carousel-indicators button {
-    height: .2rem;
-}
-
-.carousel-inner {
-    position: relative;
-    width: 100%;
-}
-
-.carousel-item img {
-    width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
+  height: .2rem;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%;
-    height: 90vh;
-    transform: translateY(-15px); /* Adds 3D effect */
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 3000;
-    object-fit: contain;
+  width: 5%;
+  height: 90vh;
+  top: -.2vh;
+  transform: translateY(-15px); /* Adds 3D effect */
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 3000;
+  object-fit: contain;
 }
 
 .carousel-control-prev {
-    left: -1rem;
+  left: -1rem;
 }
 
 .carousel-control-next {
-    right: -1rem;
+  right: -1rem;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background: rgba(0, 0, 0, 0.3);
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+  background-size: 250% 250%;
+  border: 1px solid #cccce4;
+  border-radius: .2rem;
+  opacity: .7;
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
+  animation: gradient-animation 3s ease infinite;
 }
 </style>

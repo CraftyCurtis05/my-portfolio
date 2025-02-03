@@ -148,8 +148,7 @@ button:hover {
     background-size: 250% 250%;
     border: .1vw solid #cccce4;
     border-radius: .2rem;
-    opacity: .7
-    ;
+    opacity: .7;
     animation: gradient-animation 3s ease infinite;
     box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
 }

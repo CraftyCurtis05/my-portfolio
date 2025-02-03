@@ -1,11 +1,11 @@
 <!-- TE Vending Machine Card Component -->
 <template>
-  <aside class="card mb-3" style="max-width: 45vw;">
+  <aside class="card mb-3" style="max-width: 45vw; min-height: 68vh;">
     <article class="row g-0">
   
       <!-- Screenshot Carousel -->
-      <section class="carousel-container col-md-4">
-        <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
+      <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
+        <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div 
               v-for="(screenshot, index) in screenshots"
@@ -26,12 +26,12 @@
       <!-- Card Body -->
       <section class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title ml-5">
+          <h5 class="card-title text-center">
             "TE" Vending Machine Application
           </h5>
           <p class="card-text lead"><b>Tech Stack:</b> Java, Object-Oriented Programming, Command-Line Interface</p>
           <p class="card-text lead">
-            This backend project simulates a vending machine’s functionality through a simple command-line interface. Users can select products, insert virtual currency, and receive change, while the application manages product inventory and transaction processing.
+            This backend project simulates a vending machine with a command-line interface, allowing users to select products, insert virtual currency and receive change, while managing inventory and transactions.
           </p>
           <ul class="lead">
             <li>Inventory Management</li>
@@ -49,7 +49,7 @@
     
   <!-- Modal for Full Screen Carousel -->
   <aside class="modal fade" id="carouselModalTEVendingMachine" tabindex="-1" aria-labelledby="carouselModalTEVendingMachineLabel" aria-hidden="true">
-    <article class="modal-dialog modal-lg">
+    <article class="modal-dialog modal-lg m-auto">
       <div class="modal-content">
   
         <!-- Modal Header -->
@@ -64,7 +64,7 @@
         <section class="modal-body">
           <div id="carouselSlidesOnlyTEVendingMachineModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
 
-            <div class="carousel-indicators m-auto">
+            <div class="carousel-indicators position-absolute m-auto">
               <button
                 v-for="(screenshot, index) in screenshots"
                 :key="screenshot.id"
@@ -76,7 +76,7 @@
               ></button>
             </div>
 
-            <div class="carousel-inner">
+            <div class="carousel-inner position-relative">
               <div 
                 v-for="(screenshot, index) in screenshots"
                 :key="screenshot.id"
@@ -158,100 +158,14 @@ export default {
     
 <style scoped>
 .carousel-container  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #dadae2;
 }
 
 .carousel-main {
-  margin-top: 1vw;
-  border: 2px black solid;
-}
-
-h5,
-h5 a {
-  color: black;
-  text-decoration: none;
-}
-
-/* h5:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-} */
-
-/* Base Styling for the Button */
-.btn {
-  color: #7c7c8a;
-  background-color: #f8f8fa;
-  border: .1vw solid #7c7c8a;
-  border-radius: 1rem;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
-}
-
-.btn:hover {
-  font-size: 1.03rem;
-  font-weight: 500;
-  color: white;
-  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
-  background-size: 500% 500%;
-  border: .1vw solid #cccce4;
-  transform: translateY(-1px); /* Adds 3D effect */
-  animation: gradient-animation 5s ease infinite;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
-}
-
-/* Define the animation */
-@keyframes gradient-animation {
-  0% {
-      background-position: 0% 50%; /* Start position */
-  }
-  50% {
-      background-position: 100% 50%; /* End position */
-  }
-  100% {
-      background-position: 0% 50%; /* Back to start */
-  }
-}
-
-/* Create a subtle glow effect around the button */
-.btn::before {
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  border-radius: 2rem;
-  transition: opacity 0.4s ease-in-out;
-  z-index: -1;
-}
-
-.btn:hover::before {
-  opacity: 1; /* Glow effect on hover */
-}
-
-/* Modal styling */
-.modal-dialog {
-  max-width: 90vw;
-  height: auto;
-  margin: 0 auto;
-}
-
-.modal-body {
-  height: 90vh;
-  background-color: #dadae2;
-  padding: 1rem 1rem;
-}
-
-.carousel-indicators {
-  position: absolute;
-  top: 80vh;
-}
-
-.carousel-indicators button {
-  height: .2rem;
+  border: 1px black solid;
 }
 
 .carousel-inner {
-  position: relative;
   width: 100%;
 }
 
@@ -261,12 +175,83 @@ h5 a {
   object-fit: contain;
 }
 
+.carousel-container .btn {
+  color: #7c7c8a;
+  background-color: #f8f8fa;
+  border: 1px solid #7c7c8a;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.carousel-container .btn:hover {
+  font-size: 1.03rem;
+  font-weight: 500;
+  color: white;
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
+  background-size: 500% 500%;
+  border: 1px solid #cccce4;
+  transform: translateY(-1px); /* Adds 3D effect */
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  animation: gradient-animation 5s ease infinite;
+}
+
+/* Define the animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* End position */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
+}
+
+h5,
+h5 a {
+  color: black;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* h5:hover {
+  transform: scale(1.05);
+} */
+
+/* Modal styling */
+.modal-dialog {
+  max-width: 90vw;
+  height: auto;
+}
+
+.modal-body {
+  height: 90vh;
+  background-color: #dadae2;
+}
+
+.carousel-indicators,
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(50%);
+}
+
+.carousel-indicators {
+  top: 80vh;
+}
+
+.carousel-indicators button {
+  height: .2rem;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
   height: 90vh;
+  top: -.2vh;
   transform: translateY(-15px); /* Adds 3D effect */
-  background: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: 3000;
   object-fit: contain;
 }
@@ -281,6 +266,12 @@ h5 a {
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+  background-size: 250% 250%;
+  border: 1px solid #cccce4;
+  border-radius: .2rem;
+  opacity: .7;
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
+  animation: gradient-animation 3s ease infinite;
 }
 </style>

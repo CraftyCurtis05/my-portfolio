@@ -1,12 +1,12 @@
 <!-- Jolt Card Component -->
 <template>
-    <aside class="card mb-3" style="max-width: 45vw;">
+    <aside class="card mb-3" style="max-width: 45vw; min-height: 68vh;">
         <article class="row g-0">
 
             <!-- Screenshot Carousel -->
-            <section class="carousel-container col-md-4">
-                <div id="carouselSlidesOnly" class="carousel-main slide mt-4" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+            <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
+                <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
+                    <div class="carousel-inner position-relative">
                         <div 
                             v-for="(screenshot, index) in screenshots"
                             :key="screenshot.id"
@@ -26,7 +26,7 @@
             <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title ml-5">
+                    <h5 class="card-title text-center">
                         <a href="https://github.com/CraftyCurtis05/jolt-coffee-shop-locator" target="_blank" title="Visit My Code on Github">
                             "Jolt" Coffee Shop Locator App
                         </a>
@@ -34,7 +34,7 @@
                     <hr>
                     <p class="card-text lead"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Axios</p>
                     <p class="card-text lead">
-                        Jolt helps users locate nearby coffee shops by integrating with the Yelp API. With user profiles, favorites, and personalized experiences, Jolt makes coffee shop discovery easy.
+                        Jolt helps users locate nearby coffee shops by integrating with the Yelp API. With user profiles, favorites and personalized experiences, Jolt makes coffee shop discovery easy.
                     </p>
                     <ul class="lead">
                         <li>User Authentication & Profile Management</li>
@@ -52,7 +52,7 @@
   
     <!-- Modal for Full Screen Carousel -->
     <aside class="modal fade" id="carouselModalJolt" tabindex="-1" aria-labelledby="carouselModalJoltLabel" aria-hidden="true">
-        <article class="modal-dialog modal-lg">
+        <article class="modal-dialog modal-lg m-auto">
             <div class="modal-content">
 
                 <!-- Modal Header -->
@@ -67,7 +67,7 @@
                 <section class="modal-body">
                     <div id="carouselSlidesOnlyJoltModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
 
-                        <div class="carousel-indicators m-auto">
+                        <div class="carousel-indicators position-absolute m-auto">
                             <button
                                 v-for="(screenshot, index) in screenshots"
                                 :key="screenshot.id"
@@ -79,7 +79,7 @@
                             ></button>
                         </div>
 
-                        <div class="carousel-inner">
+                        <div class="carousel-inner position-relative">
                             <div 
                                 v-for="(screenshot, index) in screenshots"
                                 :key="screenshot.id"
@@ -226,49 +226,42 @@ export default {
   
 <style scoped>
 .carousel-container  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #dadae2;
 }
 
 .carousel-main {
-    margin-top: 1vw;
-    border: 2px black solid;
+    border: 1px black solid;
 }
 
-h5,
-h5 a {
-    color: black;
-    text-decoration: none;
-    transition: transform 0.3s ease;
+.carousel-inner {
+    width: 100%;
 }
 
-h5:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+.carousel-item img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
 }
 
-/* Base Styling for the Button */
-.btn {
+.carousel-container .btn {
   color: #7c7c8a;
   background-color: #f8f8fa;
-  border: .1vw solid #7c7c8a;
-  border-radius: 1rem;
+  border: 1px solid #7c7c8a;
+  border-radius: 15px;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-.btn:hover {
+.carousel-container .btn:hover {
   font-size: 1.03rem;
   font-weight: 500;
   color: white;
   background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
   background-size: 500% 500%;
-  border: .1vw solid #cccce4;
+  border: 1px solid #cccce4;
   transform: translateY(-1px); /* Adds 3D effect */
-  animation: gradient-animation 5s ease infinite;
   box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  animation: gradient-animation 5s ease infinite;
 }
 
 /* Define the animation */
@@ -284,58 +277,49 @@ h5:hover {
   }
 }
 
-/* Create a subtle glow effect around the button */
-.btn::before {
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  border-radius: 2rem;
-  transition: opacity 0.4s ease-in-out;
-  z-index: -1;
+h5,
+h5 a {
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
-.btn:hover::before {
-  opacity: 1; /* Glow effect on hover */
+h5:hover {
+    transform: scale(1.05);
 }
 
 /* Modal styling */
 .modal-dialog {
     max-width: 90vw;
     height: auto;
-    margin: 0 auto;
 }
 
 .modal-body {
     height: 90vh;
     background-color: #dadae2;
-    padding: 1rem 1rem;
 }
 
-#indicators {
-    position: absolute;
+.carousel-indicators,
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(50%);
+}
+
+.carousel-indicators {
     top: 80vh;
 }
 
-#indicators button {
+.carousel-indicators button {
     height: .2rem;
-}
-
-.carousel-inner {
-    position: relative;
-    width: 100%;
-}
-
-.carousel-item img {
-    width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
     width: 5%;
     height: 90vh;
+    top: -.2vh;
     transform: translateY(-15px); /* Adds 3D effect */
-    background: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: 3000;
     object-fit: contain;
 }
@@ -350,6 +334,12 @@ h5:hover {
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background: rgba(0, 0, 0, 0.3);
+    background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+    background-size: 250% 250%;
+    border: 1px solid #cccce4;
+    border-radius: .2rem;
+    opacity: .7;
+    box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
+    animation: gradient-animation 3s ease infinite;
 }
 </style>
