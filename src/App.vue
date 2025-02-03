@@ -45,6 +45,7 @@ html {
 }
 
 body {
+  min-height: 75vh;
   background-color: #dadae2;
   overflow-x: hidden;
   scroll-behavior: smooth;

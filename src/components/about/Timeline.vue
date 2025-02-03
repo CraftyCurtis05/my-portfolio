@@ -1,61 +1,58 @@
 <template>
-  <aside class="timeline-container">
-    <!-- Timeline Wrapper -->
-    <article class="timeline-wrapper mx-auto">
-      <!-- Vertical Timeline Line -->
-      <section class="timeline-line lead">
-        <!-- Year Markers -->
-        <div class="timeline-marker" style="top: 0%;">2005</div>
-        <div class="timeline-marker" style="top: 25%;">2010</div>
-        <div class="timeline-marker" style="top: 50%;">2015</div>
-        <div class="timeline-marker" style="top: 75%;">2020</div>
-        <div class="timeline-marker" style="top: 100%;">Present</div>
-      </section>
+  <article class="timeline-container row position-relative d-flex align-items-center pt-4">
 
-      <!-- Timeline Items -->
-      <section class="timeline-items d-flex">
-        <!-- Loop through timeline events -->
-        <div v-for="(item, index) in timelineItems" :key="index" class="text-center timeline-item">
-          <!-- Event Circle -->
-          <div
-            class="timeline-circle"
-            :style="{ 
-              width: itemWidth(item.start, item.end) + 'px',
-              height: itemWidth(item.start, item.end) + 'px',
-              transform: `translateY(${itemPosition(item.start)}px)`,
-              // left: getXPosition(index),
-              background: `linear-gradient(to bottom, ${item.color})`
-            }"
-            @mouseover="showDescription(index)"
-            @mouseleave="hideDescription"
-          >
-            <span class="timeline-title">{{ item.nickname }}</span>
-          </div>
+    <!-- Vertical Timeline Line -->
+    <section class="timeline-line position-absolute lead">
+      <div class="timeline-marker position-absolute" style="top: 2%;">2005</div>
+      <div class="timeline-marker position-absolute" style="top: 27%;">2010</div>
+      <div class="timeline-marker position-absolute" style="top: 50%;">2015</div>
+      <div class="timeline-marker position-absolute" style="top: 73%;">2020</div>
+      <div class="timeline-marker position-absolute" style="top: 96%;">Present</div>
+    </section>
 
-          <!-- Description Box -->
-          <div v-if="isHovered === index" class="timeline-description p-4 rounded shadow-lg bg-white">
-            <div class="d-flex flex-column">
-              <!-- Dates and Place -->
-              <div class="mb-3">
-                <p class="text-muted mb-1"><strong>Dates:</strong> {{ item.dates }}</p>
-                <p class="text-muted"><strong>Place:</strong> {{ item.place }}</p>
-              </div>
+    <!-- Timeline Items -->
+    <section class="timeline-items d-flex">
+      <!-- Loop through timeline events -->
+      <div v-for="(item, index) in timelineItems" :key="index" class="timeline-item text-center">
+        <!-- Event Circle -->
+        <div
+          class="timeline-circle"
+          :style="{ 
+            width: itemWidth(item.start, item.end) + 'px',
+            height: itemWidth(item.start, item.end) + 'px',
+            transform: `translateY(${itemPosition(item.start)}px)`,
+            // left: getXPosition(index),
+            background: `linear-gradient(to bottom, ${item.color})`
+          }"
+          @mouseover="showDescription(index)"
+          @mouseleave="hideDescription"
+        >
+          <span class="timeline-title">{{ item.nickname }}</span>
+        </div>
 
-              <!-- Title -->
-              <div class="mb-3">
-                <p class="h5 font-weight-bold">{{ item.title }}</p>
-              </div>
+        <!-- Description Box -->
+        <div v-if="isHovered === index" class="timeline-description rounded shadow-lg bg-white p-4">
+          <div class="d-flex flex-column">
+            <!-- Dates and Place -->
+            <div class="mb-3">
+              <p class="text-muted mb-1"><strong>Dates:</strong> {{ item.dates }}</p>
+              <p class="text-muted"><strong>Place:</strong> {{ item.place }}</p>
+            </div>
 
-              <!-- Description -->
-              <div>
-                <p class="text-dark">{{ item.description }}</p>
-              </div>
+            <!-- Title -->
+            <div class="mb-3">
+              <p class="h5 font-weight-bold">{{ item.title }}</p>
+            </div>
+
+            <!-- Description -->
+            <div>
+              <p class="text-dark">{{ item.description }}</p>
             </div>
           </div>
         </div>
-      </section>
-    </article>
-  </aside>
+      </div>
+    </section>
+  </article>
 </template>
 
 <script>
@@ -193,23 +190,21 @@ export default {
 </script>
   
 <style scoped>
-.timeline-wrapper {
-  position: relative;
-  max-width: 25vw;
-  height: 70vh;
+.timeline-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .timeline-line {
-  position: absolute;
-  width: .3rem;
+  width: 1%;
   height: 100%;
   background: linear-gradient(to bottom, #c2fdcf, #70d3fb, #bef454);
-  border-radius: 1rem;
+  border-radius: 15px;
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
 .timeline-marker {
-  position: absolute;
   font-size: 1rem;
   font-weight: 800;
   color: #666666;

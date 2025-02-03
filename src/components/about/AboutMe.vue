@@ -69,6 +69,12 @@ export default {
 </script>
 
 <style scoped>
+article {
+  height: 70vh;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   width: 25vw;
 }
