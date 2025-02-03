@@ -2,30 +2,48 @@
 <template>
 
     <!-- About Me Section -->
-    <article class="row mt-3">
+    <article class="row mx-auto">
 
       <!-- About Me Picture -->
-      <section class="picture d-flex flex-column align-items-center">
-        <img src="@/assets/about/portfolio_portrait_temp.jpg" alt="Picture of Jennifer Curtis" title="Jennifer Curtis"/>
-        <div class="mt-3">
-          <a class="btn w-100" href="src/assets/about/jennifer_curtis_resume.pdf" target="_blank" title="Click to View My Resume">
+      <section class="container position-relative d-flex flex-column justify-content-center p-0 m-0 mx-auto">
+        <div class="image-container position-relative">
+          <img 
+            src="@/assets/about/generated_pic.webp" 
+            class="top-image img-fluid position-absolute" 
+            alt="Picture of Jennifer Curtis" 
+            title="Jennifer Curtis"
+          />
+          <img 
+            src="@/assets/about/portfolio_portrait_temp.jpg" 
+            class="bottom-image img-fluid position-absolute" 
+            alt="Picture of Jennifer Curtis" 
+            title="Jennifer Curtis"
+          />
+        </div>
+        <div class="btn-container d-flex justify-content-center mt-2">
+          <a 
+            class="btn position-absolute mx-auto"
+            href="src/assets/about/jennifer_curtis_resume.pdf" 
+            target="_blank" 
+            title="Click to View My Resume"
+          >
             My Resume
           </a>
         </div>
       </section>
 
       <!-- About Me Text -->
-      <section class="text-container lead p-3 mt-2">
+      <section class="text-container lead d-flex flex-column justify-content-center m-0 p-0 mx-auto">
         <p class="title ml-1">About Jennifer Curtis</p>
         <hr>
         <p class="about py-2">
           <b><em>I’m a full-stack web developer from Columbus, Ohio, with a passion for creating apps that are as clever as they are easy to use—where code meets creativity!</em></b>
         </p>
-        <p class="background pb-2">
+        <p class="background pb-1">
           After completing Tech Elevator’s bootcamp, I’ve worked on projects like dispensary locators and inventory systems, honing my coding and leadership skills. With a background in business management, I bring strong communication and problem-solving to every project. Outside of coding, I’m all about remodeling, perfecting my coffee brew, and curating playlists for inspiration.
         </p>
         <hr>
-        <span class="sell pt-2">
+        <span class="sell">
           <b>If you're looking for a passionate, collaborative developer, let's create something amazing together!</b>
         </span>
       </section>
@@ -51,22 +69,45 @@ export default {
 </script>
 
 <style scoped>
-.picture {
-  width: 25%;
+.container {
+  width: 25vw;
 }
 
-.picture img {
+.image-container {
   width: 100%;
+  height: 70%;
+  overflow: hidden;
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
+.top-image,
+.bottom-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: opacity 10s ease;
+}
+
+.top-image {
+  z-index: 2; /* Ensures the top image is above the bottom image */
+}
+
+.image-container:hover .top-image {
+  opacity: 0; /* Fade out top image */
+}
+
+.image-container:hover .bottom-image {
+  opacity: 1; /* Ensure bottom image is visible */
+}
+
 .btn {
-  font-size: 1rem;
+  width: 25vw;
   color: #7c7c8a;
   background-color: #f8f8fa;
-  border: .1rem solid #7c7c8a;
-  border-radius: 1rem;
+  border: 1px solid #7c7c8a;
+  border-radius: 15px;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
@@ -75,10 +116,10 @@ export default {
   color: white;
   background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
   background-size: 500% 500%;
-  border: .1vw solid #cccce4;
+  border: 1px solid #cccce4;
   transform: translateY(-1px);
-  animation: gradient-animation 5s ease infinite;
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
+  animation: gradient-animation 5s ease infinite;
 }
 
 /* Animation for button */
@@ -95,7 +136,7 @@ export default {
 }
 
 .text-container {
-  width: 40%;
+  width: 40vw;
 }
 
 .title {
@@ -113,6 +154,6 @@ export default {
 }
 
 .timeline {
-  width: 25%;
+  width: 30vw;
 }
 </style>

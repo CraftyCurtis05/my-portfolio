@@ -60,7 +60,7 @@ footer {
 
 /* Custom Scroll */
 ::-webkit-scrollbar {
-  width: .55rem; /* Width of the scrollbar */
+  width: .6rem; /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {

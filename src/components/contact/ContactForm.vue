@@ -1,7 +1,7 @@
 <!-- Contact Form Component -->
 <template>
   <article class="container">
-    <h2 class="text-center display-6 pt-5 pb-4">Contact Me</h2>
+    <h2 class="text-center display-6 pb-3">Contact Me</h2>
 
     <!-- Error Handling -->
     <section class="error">
@@ -182,11 +182,11 @@ textarea::placeholder {
 
 /* Base Styling for the Button */
 .btn {
-  font-size: 1rem;
   color: #7c7c8a;
   background-color: #f8f8fa;
-  border: .1rem solid #7c7c8a;
-  border-radius: 1rem;
+  border: 1px solid #7c7c8a;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
   box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
@@ -196,10 +196,10 @@ textarea::placeholder {
   color: white;
   background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
   background-size: 500% 500%;
-  border: .1vw solid #cccce4;
+  border: 1px solid #cccce4;
   transform: translateY(-1px); /* Adds 3D effect */
-  animation: gradient-animation 5s ease infinite;
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+  animation: gradient-animation 5s ease infinite;
 }
 
 /* Define the animation */
@@ -213,19 +213,6 @@ textarea::placeholder {
   100% {
     background-position: 0% 50%; /* Back to start */
   }
-}
-
-/* Create a subtle glow effect around the button */
-.btn::before {
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  border-radius: 2rem;
-  transition: opacity 0.4s ease-in-out;
-  z-index: -1;
-}
-
-.btn:hover::before {
-  opacity: 1; /* Glow effect on hover */
 }
 
 .error {

@@ -173,7 +173,7 @@ export default {
 
 <style scoped>
 .list {
-    width: 43%;
+    width: 40%;
 }
 
 ul {
@@ -213,7 +213,7 @@ li a {
 .modal-personal .modal-dialog {
     left: auto;
     right: 0%;
-    top: 5%;
+    top: 9%;
 }
 
 .modal-content {
