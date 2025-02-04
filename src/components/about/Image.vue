@@ -1,9 +1,11 @@
 <!-- Image Component -->
 <template>
-  <article class="image-container position-relative d-flex flex-column justify-content-center mx-auto">
+  <article 
+    class="image-container position-relative d-flex flex-column justify-content-center mx-auto" 
+  >
 
     <!-- Transition Image -->
-    <section class="image position-relative">
+    <section class="image position-relative" :class="{ 'no-hover': receivedData }">
       <img
         src="@/assets/about/images/top_image.webp"
         class="top-image img-fluid position-absolute"
@@ -23,7 +25,18 @@
 
 <script>
 export default {
-  name: "Image"
+  name: "Image",
+  props: {
+    receivedData: {
+      type: Boolean,
+      required: true
+    }  
+  },
+  watch: {
+    receivedData() {
+      this.receivedData;
+    }
+  }
 };
 </script>
 
@@ -54,4 +67,14 @@ export default {
 .image-container:hover .bottom-image {
   opacity: 1; /* Ensure bottom image is visible */
 }
+
+.no-hover .top-image {
+  transition: none; /* Prevent hover effect */
+  visibility: visible; /* Ensure top image is visible */
+}
+
+.no-hover .bottom-image {
+  display: none; /* Hide bottom image */
+  visibility: hidden; /* Hide bottom image */
+} 
 </style>

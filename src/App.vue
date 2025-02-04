@@ -59,6 +59,11 @@ footer {
   background-color: #dadae2;
 }
 
+/* Scoped or global CSS to disable interaction with the backdrop when the modal is active */
+.modal-backdrop {
+  pointer-events: none; /* This will disable interaction with the backdrop */
+}
+
 /* Custom Scroll */
 ::-webkit-scrollbar {
   width: .6rem; /* Width of the scrollbar */

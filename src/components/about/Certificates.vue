@@ -155,7 +155,7 @@ export default {
                 },
                 {
                     id: 10,
-                    image: "10_CSS_Box_Model_And_Loayout.png",
+                    image: "10_CSS_Box_Model_And_Layout.png",
                     title: "Learn CSS: Box Model and Layout Course Certificate"
                 },
                 {
@@ -165,7 +165,7 @@ export default {
                 },
                 {
                     id: 12,
-                    image: "12_CSS_Colors",
+                    image: "12_CSS_Colors.png",
                     title: "Learn CSS: Colors Course Certificate"
                 },
                 {
@@ -250,7 +250,7 @@ export default {
                 },
                 {
                     id: 29,
-                    image: "29_Spring_Building:An_App.png",
+                    image: "29_Spring_Building_An_App.png",
                     title: "Learn Spring: Building an App Course Certificate"
                 },
                 {
@@ -299,6 +299,9 @@ export default {
     methods: {
         // Open modal and set current title based on the slide
         openCarouselModalCertificate() {
+            // Send data for open modal to about view
+            this.$emit( 'data-sent', true );
+            
             this.currentTitle = this.screenshots[0].title;
             const modal = new window.bootstrap.Modal(document.getElementById('carouselModalCertificate'));
             modal.show();
@@ -310,6 +313,9 @@ export default {
         },
         // Reset modal and carousel when modal is closed
         resetModal() {
+            // Send data for closed modal to about view
+            this.$emit( 'data-sent', false );
+
             // Reset the title to the first slide
             this.currentTitle = this.screenshots[0].title;
 

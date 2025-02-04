@@ -10,8 +10,8 @@
 
       <!-- About Me Image -->
       <section class="image-container col-3 d-flex flex-column pt-3">
-        <Image/>
-        <Certificates/>
+        <Image :receivedData="dataFromCertificates"/>
+        <Certificates @data-sent="receiveData"/>
       </section>
 
       <!-- About Me Text -->
@@ -42,6 +42,17 @@ export default {
     Certificates,
     AboutMe,
     Timeline
+  },
+  data() {
+    return {
+      dataFromCertificates: false
+    };
+  },
+  methods: {
+    // Pass data from certificates to image about model open/close
+    receiveData(data) {
+      this.dataFromCertificates = data;
+    }
   }
 };
 </script>
