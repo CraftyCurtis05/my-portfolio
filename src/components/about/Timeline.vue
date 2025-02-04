@@ -1,6 +1,6 @@
 <!-- Timeline Component -->
 <template>
-  <article class="timeline-container row position-relative p-0 m-0">
+  <article class="timeline-container position-relative p-0 m-0">
 
     <!-- Vertical Timeline Line -->
     <section class="timeline-line position-absolute lead">
@@ -16,7 +16,7 @@
       <div v-for="(item, index) in timelineItems" :key="index" class="timeline-item"
         @mouseover="showDescription(index)"
         @mouseleave="hideDescription(index)"
-        :style="{ transform: `translateY(${itemPosition(item.start)}px)` }">
+        :style="{ transform: `translateY(${itemPosition(item.start)}vw)` }">
 
         <!-- Event Circle -->
         <div
@@ -142,7 +142,7 @@ export default {
       const baseYear = 2005; // Starting year
       const totalYears = 2025 - baseYear; // Total year range
       const yearDifference = start - baseYear;
-      const maxHeight = 290; // Max height for the vertical timeline
+      const maxHeight = 15; // Max height for the vertical timeline
 
       // Calculate the position as a percentage relative to the total year range
       return (yearDifference / totalYears) * maxHeight;
@@ -154,14 +154,14 @@ export default {
 <style scoped>
 article {
   height: 100%;
+  right: 20%;
 }
 
 .timeline-line {
-  width: 1px;
+  width: 10px;
   height: 100%;
   background-color: #bbbbbb;
   border-radius: 15px;
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
 }
 
 .timeline-marker {

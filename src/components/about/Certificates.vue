@@ -1,75 +1,86 @@
 <!-- Certificates Component -->
 <template>
     <article>
+
+    <!-- Resume Button -->
+    <section class="btn-container mt-2">
+      <a
+        class="btn"
+        href="src/assets/about/jennifer_curtis_resume.pdf"
+        target="_blank"
+        title="Click to View My Resume"
+      >
+        My Resume
+      </a>
+    </section>  
+
         <!-- Certificates Button with Modal Trigger -->
         <section class="btn-container mt-1">
-            <a
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#carouselModalCertificate"
+            <button
+                class="btn mt-2 lead"
                 title="Click to View My Certificates"
-                @click="openModal(null)"
+                @click="openCarouselModalCertificate"
             >
                 My Certificates
-            </a>
+            </button>
         </section>
 
         <!-- Modal for Full-Screen Carousel -->
         <aside class="modal fade" id="carouselModalCertificate" tabindex="-1" aria-labelledby="carouselModalCertificateLabel" aria-hidden="true">
-            <article class="modal-dialog modal-fullscreen m-auto">
-            <div class="modal-content">
+            <article class="modal-dialog modal-lg m-auto">
+                <div class="modal-content">
 
-                <!-- Modal Header -->
-                <section class="modal-header">
-                <h4 class="modal-title lead" id="carouselModalCertificateLabel">
-                    <b class="lead">{{ currentTitle }}</b>
-                </h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </section>
+                    <!-- Modal Header -->
+                    <section class="modal-header">
+                        <h4 class="modal-title lead" id="carouselModalCertificateLabel">
+                            <b class="lead">{{ currentTitle }}</b>
+                        </h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </section>
 
-                <!-- Modal Carousel Body -->
-                <section class="modal-body">
-                <div id="carouselSlidesOnlyCertificateModal" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Modal Carousel Body -->
+                        <section class="modal-body">
+                        <div id="carouselSlidesOnlyCertificateModal" class="carousel slide" data-bs-ride="carousel">
 
-                    <div class="carousel-indicators position-absolute m-auto">
-                    <button
-                        v-for="(screenshot, index) in screenshots"
-                        :key="screenshot.id"
-                        type="button"
-                        data-bs-target="#carouselSlidesOnlyCertificateModal"
-                        :data-bs-slide-to="index"
-                        :class="{ active: index === 0 }"
-                        aria-label="Slide {{ index + 1 }}"
-                    ></button>
-                    </div>
+                            <div class="carousel-indicators position-absolute m-auto">
+                            <button
+                                v-for="(screenshot, index) in screenshots"
+                                :key="screenshot.id"
+                                type="button"
+                                data-bs-target="#carouselSlidesOnlyCertificateModal"
+                                :data-bs-slide-to="index"
+                                :class="{ active: index === 0 }"
+                                aria-label="Slide {{ index + 1 }}"
+                            ></button>
+                            </div>
 
-                    <div class="carousel-inner position-relative">
-                    <div 
-                        v-for="(screenshot, index) in screenshots"
-                        :key="screenshot.id"
-                        :class="['carousel-item', { active: index === 0 }]"
-                    >
-                        <img 
-                        class="d-block w-100" 
-                        :src="(`src/assets/about/certificates/${screenshot.image}`)" 
-                        :alt="screenshot.title"
-                        >
-                    </div>
-                    </div>
+                            <div class="carousel-inner position-relative">
+                                <div 
+                                    v-for="(screenshot, index) in screenshots"
+                                    :key="screenshot.id"
+                                    :class="['carousel-item', { active: index === 0 }]"
+                                >
+                                    <img 
+                                    class="d-block w-100" 
+                                    :src="(`src/assets/about/certificates/${screenshot.image}`)" 
+                                    :alt="screenshot.title"
+                                    >
+                                </div>
+                            </div>
 
-                    <!-- Modal Carousel Controls -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                            <!-- Modal Carousel Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
 
+                        </div>
+                    </section>
                 </div>
-                </section>
-            </div>
             </article>
         </aside>
     </article>
@@ -272,11 +283,147 @@ export default {
     },
     methods: {
         // Method to open modal and set current title based on the certificate clicked
-        openModal(certificate) {
+        openCarouselModalCertificate(certificate) {
             if (certificate) {
                 this.currentTitle = certificate.title; // Set the title dynamically when a certificate is clicked
             }
-        }
+            // Set the initial title based on the first slide if no title is set yet
+            if (!this.currentTitle && this.screenshots.length > 0) {
+                this.currentTitle = this.screenshots[0].title;
+            }
+            const modal = new bootstrap.Modal(document.getElementById('carouselModalCertificate'));
+            modal.show();
+        },
+        updateCurrentSlide(event) {
+            const currentSlideIndex = event.to;
+            this.currentTitle = this.screenshots[currentSlideIndex].title;
+        },
+          // Reset modal and carousel when modal is closed
+        resetModal() {
+            // Reset the title to the first slide
+            this.currentTitle = this.screenshots[0].title;
+
+            // Reset the carousel to the first slide using Bootstrap's carousel API
+            const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
+            const carousel = new bootstrap.Carousel(carouselElement);
+            carousel.to(0); // Navigate to the first slide (index 0)
+    }
+    },
+    mounted() {
+        const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
+        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+      
+        // Add event listener for modal close
+        const modalElement = document.getElementById('carouselModalCertificate');
+        modalElement.addEventListener('hidden.bs.modal', this.resetModal);
+    },
+    beforeDestroy() {
+        const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
+        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
+
+        const modalElement = document.getElementById('carouselModalCertificate');
+        modalElement.removeEventListener('hidden.bs.modal', this.resetModal);
     }
 };
 </script>
+
+<style scoped>
+.btn {
+  width: 25rem;
+  color: #7c7c8a;
+  background-color: #f8f8fa;
+  border: 1px solid #7c7c8a;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: white;
+  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+  background-size: 500% 500%;
+  border: 1px solid #cccce4;
+  transform: translateY(-1px);
+  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
+  animation: gradient-animation 5s ease infinite;
+}
+
+/* Animation for button */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.carousel-inner {
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.modal-dialog {
+    max-width: 90vw;
+    height: auto;
+}
+
+.modal-body {
+    height: 90vh;
+    background-color: #dadae2;
+}
+
+.carousel-indicators,
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(50%);
+}
+
+.carousel-indicators {
+    top: 80vh;
+}
+
+.carousel-indicators button {
+    height: .2rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    height: 90vh;
+    top: -.2vh;
+    transform: translateY(-15px); /* Adds 3D effect */
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 3000;
+    object-fit: contain;
+}
+
+.carousel-control-prev {
+    left: -1rem;
+}
+
+.carousel-control-next {
+    right: -1rem;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+    background-size: 250% 250%;
+    border: 1px solid #cccce4;
+    border-radius: .2rem;
+    opacity: .7;
+    box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
+    animation: gradient-animation 3s ease infinite;
+}
+</style>

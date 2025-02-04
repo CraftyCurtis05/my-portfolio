@@ -18,49 +18,19 @@
       />
     </section>
 
-    <!-- Resume Button -->
-    <section class="btn-container mt-2">
-      <a
-        class="btn"
-        href="src/assets/about/jennifer_curtis_resume.pdf"
-        target="_blank"
-        title="Click to View My Resume"
-      >
-        My Resume
-      </a>
-    </section>
-
-    <!-- Certificates Button with Modal Trigger -->
-    <section class="btn-container mt-1">
-      <!-- Add Certificate button styled like Resume Button -->
-      <a
-        class="btn"
-        data-bs-toggle="modal"
-        data-bs-target="#carouselModalCertificate"
-        title="Click to View My Certificates"
-      >
-        My Certificates
-      </a>
-    </section>
-
   </article>
 </template>
 
 <script>
-import Certificates from './Certificates.vue';
-
 export default {
-  name: "Image",
-  components: {
-    Certificates
-  }
+  name: "Image"
 };
 </script>
 
 <style scoped>
 .image {
-  width: 25rem;
-  height: 25rem;
+  width: 25vw;
+  height: 25vw;
   border-radius: 15px;
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
 }
@@ -83,40 +53,5 @@ export default {
 
 .image-container:hover .bottom-image {
   opacity: 1; /* Ensure bottom image is visible */
-}
-
-.btn {
-  width: 25rem;
-  color: #7c7c8a;
-  background-color: #f8f8fa;
-  border: 1px solid #7c7c8a;
-  border-radius: 15px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: white;
-  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
-  background-size: 500% 500%;
-  border: 1px solid #cccce4;
-  transform: translateY(-1px);
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
-  animation: gradient-animation 5s ease infinite;
-}
-
-/* Animation for button */
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 </style>
