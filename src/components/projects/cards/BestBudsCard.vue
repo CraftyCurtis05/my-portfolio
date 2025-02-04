@@ -5,33 +5,41 @@
 
             <!-- Screenshot Carousel -->
             <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
-                <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
+                <div class="carousel-main slide mt-5" data-bs-ride="carousel">
                     <div class="carousel-inner position-relative">
-                        <div 
+                        <div
                             v-for="(screenshot, index) in screenshots"
                             :key="screenshot.id"
                             :class="['carousel-item', { active: index === 0 }]"
                         >
-                            <img 
-                                class="d-block w-100" 
-                                :src="(`src/assets/projects/project-examples/best-buds-screenshots/${screenshot.image}`)" 
+                            <img
+                                :src="(`src/assets/projects/project-examples/best-buds-screenshots/${screenshot.image}`)"
                                 :alt="screenshot.alt"
                             >
                         </div>
                     </div>
                 </div>
-                <button @click="openCarouselModalBestBuds" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button>
+                <button
+                    @click="openCarouselModalBestBuds"
+                    class="btn mt-2 lead"
+                    title="View Carousel in Full Screen"
+                >View in Full Screen</button>
             </section>
 
             <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title text-center">
-                        <a href="https://github.com/CraftyCurtis05/best-buds-dispensary-locator" target="_blank" title="Visit My Code on Github">
-                            "Best Buds" Dispensary Locator App
-                        </a>
+                        <a
+                            href="https://github.com/CraftyCurtis05/best-buds-dispensary-locator"
+                            target="_blank"
+                            title="Visit My Code on Github"
+                        >"Best Buds" Dispensary Locator App</a>
                     </h5>
-                    <p class="card-text lead"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Google Maps API, TheNews API, Axios</p>
+                    <hr>
+                    <p class="card-text lead">
+                        <b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Google Maps API, TheNews API, Axios
+                    </p>
                     <p class="card-text lead">
                         Best Buds helps users find dispensaries and access info on cannabis products, legality and safety. With real-time data, locator search, articles and tips, it keeps users informed to make confident decisions.
                     </p>
@@ -42,30 +50,47 @@
                         <li>Tips & Tricks, News & Articles Information</li>
                         <li>Contact Form using EmailJS</li>
                     </ul>
-                    <p class="card-text text-muted lead"><em>Originally designed as a cannabis resource, now continuously updated with new features.</em></p>
+                    <p class="card-text text-muted lead">
+                        <em>Originally designed as a cannabis resource, now continuously updated with new features.</em>
+                    </p>
                 </div>
             </section>
 
         </article>
     </aside>
-    
+
     <!-- Modal for Full Screen Carousel -->
-    <aside class="modal fade" id="carouselModalBestBuds" tabindex="-1" aria-labelledby="carouselModalBestBudsLabel" aria-hidden="true">
+    <aside
+        class="modal fade"
+        id="carouselModalBestBuds"
+        tabindex="-1"
+        aria-labelledby="carouselModalBestBudsLabel"
+    >
         <article class="modal-dialog modal-lg m-auto">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <section class="modal-header">
                     <h4 class="modal-title lead" id="carouselModalBestBudsLabel">
-                        <b class="lead">{{ currentSlideTitle }}</b>
+                        <b class="lead">{{ currentTitle }}</b>
                     </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
                 </section>
 
                 <!-- Modal Carousel Body -->
                 <section class="modal-body">
-                    <div id="carouselSlidesOnlyBestBudsModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
-                        
+                    <div
+                        id="carouselSlidesOnlyBestBudsModal"
+                        class="carousel slide"
+                        data-bs-ride="carousel"
+                        @slide.bs.carousel="updateCurrentSlide"
+                    >
+                        <!-- Indicators -->
                         <div class="carousel-indicators position-absolute m-auto">
                             <button
                                 v-for="(screenshot, index) in screenshots"
@@ -78,27 +103,37 @@
                             ></button>
                         </div>
 
+                        <!-- Carousel Items -->
                         <div class="carousel-inner position-relative">
-                            <div 
+                            <div
                                 v-for="(screenshot, index) in screenshots"
                                 :key="screenshot.id"
                                 :class="['carousel-item', { active: index === 0 }]"
                             >
-                                <img 
-                                    class="d-block w-100" 
-                                    :src="(`src/assets/projects/project-examples/best-buds-screenshots/${screenshot.image}`)" 
+                                <img
+                                    :src="(`src/assets/projects/project-examples/best-buds-screenshots/${screenshot.image}`)"
                                     :alt="screenshot.alt"
                                 >
                             </div>
                         </div>
 
                         <!-- Modal Carousel Controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselSlidesOnlyBestBudsModal"
+                            data-bs-slide="prev"
+                        >
+                            <span class="carousel-control-prev-icon"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyBestBudsModal" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselSlidesOnlyBestBudsModal"
+                            data-bs-slide="next"
+                        >
+                            <span class="carousel-control-next-icon"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
 
@@ -106,7 +141,7 @@
                 </section>
             </div>
         </article>
-    </aside> 
+    </aside>
 </template>
 
 <script>
@@ -114,147 +149,158 @@ export default {
     name: "BestBudsCard",
     data() {
         return {
+            currentTitle: '',
             screenshots: [
                 {
                     id: 1,
                     image: "01-best-buds-register.png",
-                    alt: "Best Buds App Screenshot 1"
+                    alt: "Best Buds App Screenshot 1",
+                    title: "Register page to create a new Best Buds account by entering your username and password. (Under Development)"
                 },
                 {
                     id: 2,
                     image: "02-best-buds-login.png",
-                    alt: "Best Buds App Screenshot 2"
+                    alt: "Best Buds App Screenshot 2",
+                    title: "Login page for accessing your Best Buds account using your registered username and password. (Under Development)"
                 },
                 {
                     id: 3,
                     image: "03-best-buds-home.png",
-                    alt: "Best Buds App Screenshot 3"
+                    alt: "Best Buds App Screenshot 3",
+                    title: "Home screen overview of the Best Buds app with a spotlight feature on a top-rated dispensary. (Under Development)"
                 },
                 {
-                    id: 4, 
+                    id: 4,
                     image: "04-best-buds-profile.png",
-                    alt: "Best Buds App Screenshot 4"
+                    alt: "Best Buds App Screenshot 4",
+                    title: "User profile page where you can view and update your personal details and favorite dispensaries. (Under Development)"
                 },
                 {
                     id: 5,
                     image: "05-best-buds-locator.png",
-                    alt: "Best Buds App Screenshot 5"
+                    alt: "Best Buds App Screenshot 5",
+                    title: "Find nearby dispensaries using our locator tool by entering your location for quick results and a map. (Under Development)"
                 },
                 {
                     id: 6,
                     image: "06-best-buds-shop.png",
-                    alt: "Best Buds App Screenshot 6"
+                    alt: "Best Buds App Screenshot 6",
+                    title: "Shop page to explore a variety of cannabis products, including strains, edibles, and accessories. (Under Development)"
                 },
                 {
                     id: 7,
                     image: "07-best-buds-tips-tricks.png",
-                    alt: "Best Buds App Screenshot 7"
+                    alt: "Best Buds App Screenshot 7",
+                    title: "Tips & Tricks page offering cannabis advice for both beginners and seasoned users. (Under Development)"
                 },
                 {
                     id: 8,
                     image: "08-best-buds-products.png",
-                    alt: "Best Buds App Screenshot 8"
+                    alt: "Best Buds App Screenshot 8",
+                    title: "Strain guide page to help you explore cannabis products and find the right one for your needs. (Under Development)"
                 },
                 {
                     id: 9,
                     image: "09-best-buds-strain-guide.png",
-                    alt: "Best Buds App Screenshot 9"
+                    alt: "Best Buds App Screenshot 9",
+                    title: "Explore our strain and terpene guide to discover the perfect cannabis match for your mood and preferences. (Under Development)"
                 }, 
                 {
                     id: 10,
                     image: "10-best-buds-safety-tips.png",
-                    alt: "Best Buds App Screenshot 10"
+                    alt: "Best Buds App Screenshot 10",
+                    title: "Safety tips page providing essential information on cannabis consumption, smoking, and topicals. (Under Development)"
                 },
                 {
                     id: 11,
                     image: "11-best-buds-too-much.png",
-                    alt: "Best Buds App Screenshot 11"
+                    alt: "Best Buds App Screenshot 11",
+                    title: "Learn how to identify symptoms of cannabis overconsumption and how to manage the experience. (Under Development)"
                 },
                 {
                     id: 12,
                     image: "12-best-buds-legality.png",
-                    alt: "Best Buds App Screenshot 12"
+                    alt: "Best Buds App Screenshot 12",
+                    title: "Explore cannabis legality across U.S. states with an interactive map detailing state laws and regulations. (Under Development)"
                 },
                 {
                     id: 13,
                     image: "13-best-buds-questions.png",
-                    alt: "Best Buds App Screenshot 13"
+                    alt: "Best Buds App Screenshot 13",
+                    title: "Comprehensive Q&A section answering all your cannabis-related questions, from dispensaries to consumption methods. (Under Development)"
                 },
                 {
                     id: 14,
                     image: "14-best-buds-articles.png",
-                    alt: "Best Buds App Screenshot 14"
+                    alt: "Best Buds App Screenshot 14",
+                    title: "Cannabis Resource Center offering informative articles on strains, trends, and all things cannabis-related. (Under Development)"
                 },
                 {
                     id: 15,
                     image: "15-best-buds-news.png",
-                    alt: "Best Buds App Screenshot 15"
+                    alt: "Best Buds App Screenshot 15",
+                    title: "Stay up-to-date with the latest cannabis news, trends, and cultural shifts from around the world. (Under Development)"
                 },
                 {
                     id: 16,
                     image: "16-best-buds-about.png",
-                    alt: "Best Buds App Screenshot 16"
+                    alt: "Best Buds App Screenshot 16",
+                    title: "At Best Buds, we guide you through the world of cannabis, promoting informed choices and responsible use. (Under Development)"
                 },
                 {
                     id: 17,
                     image: "17-best-buds-privacy.png",
-                    alt: "Best Buds App Screenshot 17"
+                    alt: "Best Buds App Screenshot 17",
+                    title: "Our Privacy Policy outlines how we collect, use, and protect your data to ensure a secure and transparent experience. (Under Development)"
                 },
                 {
                     id: 18,
                     image: "18-best-buds-contact.png",
-                    alt: "Best Buds App Screenshot 18"
-                }    
-            ],
-            slideTitles: [
-                "Register page to create a new Best Buds account by entering your username and password. (Under Development)",
-                "Login page for accessing your Best Buds account using your registered username and password. (Under Development)",
-                "Home screen overview of the Best Buds app with a spotlight feature on a top-rated dispensary. (Under Development)",
-                "User profile page where you can view and update your personal details and favorite dispensaries. (Under Development)",
-                "Find nearby dispensaries using our locator tool by entering your location for quick results and a map. (Under Development)",
-                "Shop page to explore a variety of cannabis products, including strains, edibles, and accessories. (Under Development)",
-                "Tips & Tricks page offering cannabis advice for both beginners and seasoned users. (Under Development)",
-                "Strain guide page to help you explore cannabis products and find the right one for your needs. (Under Development)",
-                "Explore our strain and terpene guide to discover the perfect cannabis match for your mood and preferences. (Under Development)",
-                "Safety tips page providing essential information on cannabis consumption, smoking, and topicals. (Under Development)",
-                "Learn how to identify symptoms of cannabis overconsumption and how to manage the experience. (Under Development)",
-                "Explore cannabis legality across U.S. states with an interactive map detailing state laws and regulations. (Under Development)",
-                "Comprehensive Q&A section answering all your cannabis-related questions, from dispensaries to consumption methods. (Under Development)",
-                "Cannabis Resource Center offering informative articles on strains, trends, and all things cannabis-related. (Under Development)",
-                "Stay up-to-date with the latest cannabis news, trends, and cultural shifts from around the world. (Under Development)",
-                "At Best Buds, we guide you through the world of cannabis, promoting informed choices and responsible use. (Under Development)",
-                "Our Privacy Policy outlines how we collect, use, and protect your data to ensure a secure and transparent experience. (Under Development)",
-                "Reach out to us through our contact form for any questions or feedback, and we’ll get back to you shortly. (Under Development)"
-            ],
-            currentSlideIndex: 0  // Keep track of the current slide
+                    alt: "Best Buds App Screenshot 18",
+                    title: "Reach out to us through our contact form for any questions or feedback, and we’ll get back to you shortly. (Under Development)"
+                }
+            ]
         };
     },
-    computed: {
-        // Computed property to get the current slide title
-        currentSlideTitle() {
-            return this.slideTitles[this.currentSlideIndex];
-        }
-    },    
     methods: {
+        // Open modal and set current title based on the slide
         openCarouselModalBestBuds() {
-            // Use Bootstrap's modal functionality to show the modal
+            this.currentTitle = this.screenshots[0].title;
             const modal = new window.bootstrap.Modal(document.getElementById('carouselModalBestBuds'));
             modal.show();
         },
         // Method to update the current slide index on slide change
         updateCurrentSlide(event) {
-            this.currentSlideIndex = event.to;
+            const currentSlideIndex = event.to;
+            this.currentTitle = this.screenshots[currentSlideIndex].title;
+        },
+        // Reset modal and carousel when modal is closed
+        resetModal() {
+            // Reset the title to the first slide
+            this.currentTitle = this.screenshots[0].title;
+
+            // Reset the carousel to the first slide using Bootstrap's carousel API
+            const carouselElement = document.getElementById('carouselSlidesOnlyBestBudsModal');
+            const carousel = new bootstrap.Carousel(carouselElement);
+            carousel.to(0); // Navigate to the first slide (index 0)
         }
     },
     mounted() {
         // Attach the slide event listener to the carousel after the component is mounted
         const carouselElement = document.getElementById('carouselSlidesOnlyBestBudsModal');
         carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+
+        // Add event listener for modal close
+        const modalElement = document.getElementById('carouselModalBestBuds');
+        modalElement.addEventListener('hidden.bs.modal', this.resetModal);
     },
-    beforeDestroy() {
+    beforeUnmout() {
         // Clean up the event listener before the component is destroyed
         const carouselElement = document.getElementById('carouselSlidesOnlyBestBudsModal');
         carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
+
+        const modalElement = document.getElementById('carouselModalBestBuds');
+        modalElement.removeEventListener('hidden.bs.modal', this.resetModal);
     }
 };
 </script>

@@ -1,15 +1,17 @@
 <!-- Progress Bar Component -->
 <template>
     <article class="progress-bar-container position-relative my-2">
-        <section 
-            class="progress-bar position-relative" 
-            :style="{ width: progress + '%' }" 
+
+        <section
+            class="progress-bar position-relative"
+            :style="{ width: progress + '%' }"
             title="Progress Completed"
         ><span class="progress-text position-absolute lead">{{ progress }}%</span>
         </section>
+
     </article>
 </template>
-  
+
 <script>
 export default {
     name: 'ProgressBar',

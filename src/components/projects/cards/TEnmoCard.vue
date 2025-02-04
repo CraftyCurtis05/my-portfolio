@@ -1,157 +1,70 @@
 <!-- TEnmo Card Component -->
 <template>
-    <aside class="card mb-3" style="max-width: 45vw; min-height: 68vh;">
-        <article class="row g-0">
+  <aside class="card mb-3" style="max-width: 45vw; min-height: 68vh;">
+    <article class="row g-0">
 
-            <!-- Screenshot Carousel -->
-            <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
-                <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div 
-                            v-for="(screenshot, index) in screenshots"
-                            :key="screenshot.id"
-                            :class="['carousel-item', { active: index === 0 }]"
-                        >
-                            <img 
-                                class="d-block w-100" 
-                                :src="(`src/assets/projects/${screenshot.image}`)" 
-                                :alt="screenshot.alt"
-                            >
-                        </div>
-                    </div>
-                </div>
-                <!-- <button @click="openCarouselModalTEnmo" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button> -->
-            </section>
-
-            <!-- Card Body -->
-            <section class="col-md-8">
-                <div class="card-body">
-                <h5 class="card-title text-center">
-                    "TEnmo" P2P Online Payment Service API
-                </h5>
-                <p class="card-text lead"><b>Tech Stack:</b> Spring Boot, PostgreSQL, RESTful API, JDBC, JWT Authentication</p>
-                <p class="card-text lead">
-                    Developed a Spring Boot RESTful API for a peer-to-peer payment service, enabling transfers, balance checks, and requests, with PostgreSQL for transaction management.
-                </p>
-                <ul class="lead">
-                    <li>Designed Models & Controllers Schemas</li>
-                    <li>Database Creation & Management</li>
-                    <li>Used DAO & JDBC DAO</li>
-                    <li>User Authentication with JWT</li>
-                    <li>Integration Testing using Postman</li>
-                </ul>
-                <p class="card-text text-muted lead"><em>This project is a peer-to-peer payment solution for managing transactions and transfers securely.</em></p>
-                </div>
-            </section>
-
-        </article>
-    </aside>
-
-    <!-- Modal for Full Screen Carousel -->
-    <aside class="modal fade" id="carouselModalTEnmo" tabindex="-1" aria-labelledby="carouselModalTEnmoLabel" aria-hidden="true">
-        <article class="modal-dialog modal-lg m-auto">
-            <div class="modal-content">
-
-               <!-- Modal Header -->
-               <section class="modal-header">
-                    <h4 class="modal-title lead" id="carouselModalTEnmoLabel">
-                        <b class="lead">{{ currentSlideTitle }}</b>
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </section>
-        
-                <!-- Modal Carousel -->
-                <section class="modal-body">
-                    <div id="carouselSlidesOnlyTEnmoModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
-
-                        <div class="carousel-indicators position-absolute m-auto">
-                            <button
-                                v-for="(screenshot, index) in screenshots"
-                                :key="screenshot.id"
-                                type="button"
-                                data-bs-target="#carouselSlidesOnlyTEnmoModal"
-                                :data-bs-slide-to="index"
-                                :class="{ active: index === 0 }"
-                                aria-label="Slide {{ index + 1 }}"
-                            ></button>
-                        </div>
-
-                        <div class="carousel-inner position-relative">
-                            <div 
-                                v-for="(screenshot, index) in screenshots"
-                                :key="screenshot.id"
-                                :class="['carousel-item', { active: index === 0 }]"
-                            >
-                                <img 
-                                    class="d-block w-100" 
-                                    :src="(`src/assets/projects/${screenshot.image}`)" 
-                                    :alt="screenshot.alt"
-                                >
-                            </div>
-                        </div>
-
-                        <!-- Modal Carousel Controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyTEnmoModal" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyTEnmoModal" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>   
-
-                    </div>
-                </section>
+      <!-- Screenshot Carousel -->
+      <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
+        <div class="carousel-main slide mt-5" data-bs-ride="carousel">
+          <div class="carousel-inner position-relative">
+            <div
+              v-for="(screenshot, index) in screenshots"
+              :key="screenshot.id"
+              :class="['carousel-item', { active: index === 0 }]"
+            >
+              <img
+                :src="(`src/assets/projects/${screenshot.image}`)"
+                :alt="screenshot.alt"
+              >
             </div>
-        </article>
-    </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card Body -->
+      <section class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            "TEnmo" P2P Online Payment Service API
+          </h5>
+          <hr>
+          <p class="card-text lead">
+            <b>Tech Stack:</b> Spring Boot, PostgreSQL, RESTful API, JDBC, JWT Authentication
+          </p>
+          <p class="card-text lead">
+            Developed a Spring Boot RESTful API for a peer-to-peer payment service, enabling transfers, balance checks, and requests, with PostgreSQL for transaction management.
+          </p>
+          <ul class="lead">
+            <li>Designed Models & Controllers Schemas</li>
+            <li>Database Creation & Management</li>
+            <li>Used DAO & JDBC DAO</li>
+            <li>User Authentication with JWT</li>
+            <li>Integration Testing using Postman</li>
+          </ul>
+          <p class="card-text text-muted lead">
+            <em>This project is a peer-to-peer payment solution for managing transactions and transfers securely.</em>
+          </p>
+        </div>
+      </section>
+
+    </article>
+  </aside>
 </template>
 
 <script>
 export default {
-    name: "TEnmoCard",
-    data() {
-        return {
-            screenshots: [
-                {
-                    id: 1,
-                    image: "default_image.png",
-                    alt: "No Image Available"
-                }
-            ],
-            slideTitles: [
-                "No Image Available"
-            ],
-            currentSlideIndex: 0 // Keep track of the current slide
+  name: "TEnmoCard",
+  data() {
+    return {
+      screenshots: [
+        {
+          id: 1,
+          image: "default_image.png",
+          alt: "No Image Available"
         }
-    },
-    computed: {
-        // Computed property to get the current slide title
-        currentSlideTitle() {
-            return this.slideTitles[this.currentSlideIndex];
-        }
-    },     
-    methods: {
-        openCarouselModalTEnmo() {
-            // Use Bootstrap's modal functionality to show the modal
-            const modal = new window.bootstrap.Modal(document.getElementById('carouselModalTEnmo'));
-            modal.show();
-        },
-        // Method to update the current slide index on slide change
-        updateCurrentSlide(event) {
-            this.currentSlideIndex = event.to;
-        }
-    },
-    mounted() {
-        // Attach the slide event listener to the carousel after the component is mounted
-        const carouselElement = document.getElementById('carouselSlidesOnlyTEnmoModal');
-        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
-    },
-    beforeDestroy() {
-        // Clean up the event listener before the component is destroyed
-        const carouselElement = document.getElementById('carouselSlidesOnlyTEnmoModal');
-        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
-    }   
+      ]
+    }
+  } 
 };
 </script>
 

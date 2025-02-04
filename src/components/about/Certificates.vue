@@ -9,10 +9,8 @@
         href="src/assets/about/jennifer_curtis_resume.pdf"
         target="_blank"
         title="Click to View My Resume"
-      >
-        My Resume
-      </a>
-    </section>  
+      >My Resume</a>
+    </section>
 
         <!-- Certificates Button with Modal Trigger -->
         <section class="btn-container mt-1">
@@ -20,13 +18,16 @@
                 class="btn mt-2 lead"
                 title="Click to View My Certificates"
                 @click="openCarouselModalCertificate"
-            >
-                My Certificates
-            </button>
+            >My Certificates</button>
         </section>
 
         <!-- Modal for Full-Screen Carousel -->
-        <aside class="modal fade" id="carouselModalCertificate" tabindex="-1" aria-labelledby="carouselModalCertificateLabel" aria-hidden="true">
+        <aside
+            class="modal fade"
+            id="carouselModalCertificate"
+            tabindex="-1"
+            aria-labelledby="carouselModalCertificateLabel"
+        >
             <article class="modal-dialog modal-lg m-auto">
                 <div class="modal-content">
 
@@ -35,11 +36,16 @@
                         <h4 class="modal-title lead" id="carouselModalCertificateLabel">
                             <b class="lead">{{ currentTitle }}</b>
                         </h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </section>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </section>
 
-                        <!-- Modal Carousel Body -->
-                        <section class="modal-body">
+                    <!-- Modal Carousel Body -->
+                    <section class="modal-body">
                         <div id="carouselSlidesOnlyCertificateModal" class="carousel slide" data-bs-ride="carousel">
 
                             <div class="carousel-indicators position-absolute m-auto">
@@ -55,26 +61,35 @@
                             </div>
 
                             <div class="carousel-inner position-relative">
-                                <div 
+                                <div
                                     v-for="(screenshot, index) in screenshots"
                                     :key="screenshot.id"
                                     :class="['carousel-item', { active: index === 0 }]"
                                 >
-                                    <img 
-                                    class="d-block w-100" 
-                                    :src="(`src/assets/about/certificates/${screenshot.image}`)" 
-                                    :alt="screenshot.title"
+                                    <img
+                                        :src="(`src/assets/about/certificates/${screenshot.image}`)"
+                                        :alt="screenshot.title"
                                     >
                                 </div>
                             </div>
 
                             <!-- Modal Carousel Controls -->
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselSlidesOnlyCertificateModal"
+                                data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyCertificateModal" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselSlidesOnlyCertificateModal"
+                                data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
 
@@ -282,23 +297,18 @@ export default {
         };
     },
     methods: {
-        // Method to open modal and set current title based on the certificate clicked
-        openCarouselModalCertificate(certificate) {
-            if (certificate) {
-                this.currentTitle = certificate.title; // Set the title dynamically when a certificate is clicked
-            }
-            // Set the initial title based on the first slide if no title is set yet
-            if (!this.currentTitle && this.screenshots.length > 0) {
-                this.currentTitle = this.screenshots[0].title;
-            }
-            const modal = new bootstrap.Modal(document.getElementById('carouselModalCertificate'));
+        // Open modal and set current title based on the slide
+        openCarouselModalCertificate() {
+            this.currentTitle = this.screenshots[0].title;
+            const modal = new window.bootstrap.Modal(document.getElementById('carouselModalCertificate'));
             modal.show();
         },
+        // Method to update the current slide index on slide change
         updateCurrentSlide(event) {
             const currentSlideIndex = event.to;
             this.currentTitle = this.screenshots[currentSlideIndex].title;
         },
-          // Reset modal and carousel when modal is closed
+        // Reset modal and carousel when modal is closed
         resetModal() {
             // Reset the title to the first slide
             this.currentTitle = this.screenshots[0].title;
@@ -307,9 +317,10 @@ export default {
             const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
             const carousel = new bootstrap.Carousel(carouselElement);
             carousel.to(0); // Navigate to the first slide (index 0)
-    }
+        }
     },
     mounted() {
+        // Attach the slide event listener to the carousel after the component is mounted
         const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
         carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
       
@@ -318,6 +329,7 @@ export default {
         modalElement.addEventListener('hidden.bs.modal', this.resetModal);
     },
     beforeDestroy() {
+        // Clean up the event listener before the component is destroyed
         const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
         carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
 

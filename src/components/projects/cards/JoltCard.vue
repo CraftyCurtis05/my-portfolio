@@ -5,34 +5,41 @@
 
             <!-- Screenshot Carousel -->
             <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
-                <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
+                <div class="carousel-main slide mt-5" data-bs-ride="carousel">
                     <div class="carousel-inner position-relative">
-                        <div 
+                        <div
                             v-for="(screenshot, index) in screenshots"
                             :key="screenshot.id"
                             :class="['carousel-item', { active: index === 0 }]"
                         >
-                            <img 
-                                class="d-block w-100" 
-                                :src="(`src/assets/projects/project-examples/jolt-screenshots/${screenshot.image}`)" 
+                            <img
+                                :src="(`src/assets/projects/project-examples/jolt-screenshots/${screenshot.image}`)"
                                 :alt="screenshot.alt"
                             >
                         </div>
                     </div>
                 </div>
-                <button @click="openCarouselModalJolt" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button>
+                <button
+                    @click="openCarouselModalJolt"
+                    class="btn mt-2 lead"
+                    title="View Carousel in Full Screen"
+                >View in Full Screen</button>
             </section>
 
             <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title text-center">
-                        <a href="https://github.com/CraftyCurtis05/jolt-coffee-shop-locator" target="_blank" title="Visit My Code on Github">
-                            "Jolt" Coffee Shop Locator App
-                        </a>
+                        <a
+                            href="https://github.com/CraftyCurtis05/jolt-coffee-shop-locator"
+                            target="_blank"
+                            title="Visit My Code on Github"
+                        >"Jolt" Coffee Shop Locator App</a>
                     </h5>
                     <hr>
-                    <p class="card-text lead"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Axios</p>
+                    <p class="card-text lead">
+                        <b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Yelp API, Axios
+                    </p>
                     <p class="card-text lead">
                         Jolt helps users locate nearby coffee shops by integrating with the Yelp API. With user profiles, favorites and personalized experiences, Jolt makes coffee shop discovery easy.
                     </p>
@@ -43,30 +50,47 @@
                         <li>Upload and Update Profile Picture</li>
                         <li>Personalized Search Using Profile Details</li>
                     </ul>
-                    <p class="card-text text-muted lead"><em>Originally created as a Tech Elevator capstone project, redesigned with enhanced features.</em></p>
+                    <p class="card-text text-muted lead">
+                        <em>Originally created as a Tech Elevator capstone project, redesigned with enhanced features.</em>
+                    </p>
                 </div>
             </section>
 
         </article>
-    </aside>    
-  
+    </aside>
+
     <!-- Modal for Full Screen Carousel -->
-    <aside class="modal fade" id="carouselModalJolt" tabindex="-1" aria-labelledby="carouselModalJoltLabel" aria-hidden="true">
+    <aside
+        class="modal fade"
+        id="carouselModalJolt"
+        tabindex="-1"
+        aria-labelledby="carouselModalJoltLabel"
+    >
         <article class="modal-dialog modal-lg m-auto">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <section class="modal-header">
                     <h4 class="modal-title lead" id="carouselModalJoltLabel">
-                        <b class="lead">{{ currentSlideTitle }}</b>
+                        <b class="lead">{{ currentTitle }}</b>
                     </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
                 </section>
 
                 <!-- Modal Carousel Body -->
                 <section class="modal-body">
-                    <div id="carouselSlidesOnlyJoltModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
-
+                    <div
+                        id="carouselSlidesOnlyJoltModal"
+                        class="carousel slide"
+                        data-bs-ride="carousel"
+                        @slide.bs.carousel="updateCurrentSlide"
+                    >
+                        <!-- Indicators -->
                         <div class="carousel-indicators position-absolute m-auto">
                             <button
                                 v-for="(screenshot, index) in screenshots"
@@ -79,27 +103,37 @@
                             ></button>
                         </div>
 
+                        <!-- Carousel Items -->
                         <div class="carousel-inner position-relative">
-                            <div 
+                            <div
                                 v-for="(screenshot, index) in screenshots"
                                 :key="screenshot.id"
                                 :class="['carousel-item', { active: index === 0 }]"
                             >
-                                <img 
-                                    class="d-block w-100" 
-                                    :src="(`src/assets/projects/project-examples/jolt-screenshots/${screenshot.image}`)" 
+                                <img
+                                    :src="(`src/assets/projects/project-examples/jolt-screenshots/${screenshot.image}`)"
                                     :alt="screenshot.alt"
                                 >
                             </div>
                         </div>
 
                         <!-- Modal Carousel Controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselSlidesOnlyJoltModal"
+                            data-bs-slide="prev"
+                        >
+                            <span class="carousel-control-prev-icon"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyJoltModal" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselSlidesOnlyJoltModal"
+                            data-bs-slide="next"
+                        >
+                            <span class="carousel-control-next-icon"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
 
@@ -109,121 +143,132 @@
         </article>
     </aside>
 </template>
-  
+
 <script>
 export default {
     name: "JoltCard",
     data() {
         return {
+            currentTitle: '',
             screenshots: [
                 {
                     id: 1,
                     image: "01-jolt-register.png",
-                    alt: "Jolt App Screenshot 1"
+                    alt: "Jolt App Screenshot 1",
+                    title: "Register page for creating a new account on the Jolt app by providing your username and password."
                 },
                 {
                     id: 2,
                     image: "02-jolt-login.png",
-                    alt: "Jolt App Screenshot 2"
+                    alt: "Jolt App Screenshot 2",
+                    title: "Login page for accessing your Jolt account by entering your registered username and password."
                 },
                 {
                     id: 3,
                     image: "03-jolt-home.png",
-                    alt: "Jolt App Screenshot 3"
+                    alt: "Jolt App Screenshot 3",
+                    title: "Home screen displaying an app description, along with a currated stock image carousel to match design."
                 },
                 {
                     id: 4,
                     image: "04-jolt-profile-form.png",
-                    alt: "Jolt App Screenshot 4"
+                    alt: "Jolt App Screenshot 4",
+                    title: "Profile form for entering personal information such as your name, profile picture and preferences to personalize your Jolt experience."
                 },
                 {
                     id: 5,
                     image: "05-jolt-profile-user.png",
-                    alt: "Jolt App Screenshot 5"
+                    alt: "Jolt App Screenshot 5",
+                    title: "User profile page where you can view and update your personal details, including your name, email and uploaded profile picture."
                 },
                 {
                     id: 6,
                     image: "06-jolt-locator.png",
-                    alt: "Jolt App Screenshot 6"
+                    alt: "Jolt App Screenshot 6",
+                    title: "Locator page showing a search bar for user input and a button to search near the user's saved profile address."
                 },
                 {
                     id: 7,
                     image: "07-jolt-locator-search.png",
-                    alt: "Jolt App Screenshot 7"
+                    alt: "Jolt App Screenshot 7",
+                    title: "Search results that display the nearest 20 coffee shops to user's location, with shop details and links to Google directions and Yelp Reviews."
                 },
                 {
                     id: 8,
                     image: "08-jolt-locator-fav.png",
-                    alt: "Jolt App Screenshot 8"
+                    alt: "Jolt App Screenshot 8",
+                    title: "Save to favorites where you can save coffee shops to your profile for quick access and future reference."
                 },
                 {
                     id: 9,
                     image: "09-jolt-profile-favs.png",
-                    alt: "Jolt App Screenshot 9"
+                    alt: "Jolt App Screenshot 9",
+                    title: "Manage your favorite coffee shops in your profile, including viewing and editing the list of your top picks."
                 },
                 {
                     id: 10,
                     image: "10-jolt-shop.png",
-                    alt: "Jolt App Screenshot 10"
+                    alt: "Jolt App Screenshot 10",
+                    title: "Shop for different coffee items, including coffee, coffee equipment, coffee merchandise and coffee-related snacks."
                 },
                 {
                     id: 11,
                     image: "11-jolt-articles.png",
-                    alt: "Jolt App Screenshot 11"
+                    alt: "Jolt App Screenshot 11",
+                    title: "Articles page where you can read content related to coffee culture, health advice and user tips for coffee lovers."
                 },
                 {
                     id: 12,
                     image: "12-jolt-about.png",
-                    alt: "Jolt App Screenshot 12"
+                    alt: "Jolt App Screenshot 12",
+                    title: "About page describing the development team behind the project, along with descriptions about each and links to their LinkedIn profiles."
                 }
-            ],
-            slideTitles: [
-                "Register page for creating a new account on the Jolt app by providing your username and password.",
-                "Login page for accessing your Jolt account by entering your registered username and password.",
-                "Home screen displaying an app description, along with a currated stock image carousel to match design.",
-                "Profile form for entering personal information such as your name, profile picture, and preferences to personalize your Jolt experience.",
-                "User profile page where you can view and update your personal details, including your name, email, and uploaded profile picture.",
-                "Locator page showing a search bar for user input and a button to search near the user's saved profile address.",
-                "Search results that display the nearest 20 coffee shops to user's location, with shop details and links to Google directions and Yelp Reviews.",
-                "Save to favorites where you can save coffee shops to your profile for quick access and future reference.",
-                "Manage your favorite coffee shops in your profile, including viewing and editing the list of your top picks.",
-                "Shop for different coffee items, including coffee, coffee equipment, coffee merchandise and coffee-related snacks.",
-                "Articles page where you can read content related to coffee culture, health advice, and user tips for coffee lovers.",
-                "About page describing the development team behind the project, along with descriptions about each and links to their LinkedIn profiles."
-            ],
-            currentSlideIndex: 0,  // Keep track of the current slide
+            ]
         };
     },
-    computed: {
-        // Computed property to get the current slide title
-        currentSlideTitle() {
-            return this.slideTitles[this.currentSlideIndex];
-        }
-    },    
     methods: {
+        // Open modal and set current title based on the slide
         openCarouselModalJolt() {
-            // Use Bootstrap's modal functionality to show the modal
+            this.currentTitle = this.screenshots[0].title;
             const modal = new window.bootstrap.Modal(document.getElementById('carouselModalJolt'));
             modal.show();
         },
         // Method to update the current slide index on slide change
         updateCurrentSlide(event) {
-            this.currentSlideIndex = event.to;
+            const currentSlideIndex = event.to;
+            this.currentTitle = this.screenshots[currentSlideIndex].title;
+        },
+        // Reset modal and carousel when modal is closed
+        resetModal() {
+            // Reset the title to the first slide
+            this.currentTitle = this.screenshots[0].title;
+
+            // Reset the carousel to the first slide using Bootstrap's carousel API
+            const carouselElement = document.getElementById('carouselSlidesOnlyJoltModal');
+            const carousel = new bootstrap.Carousel(carouselElement);
+            carousel.to(0); // Navigate to the first slide (index 0)
         }
     },
     mounted() {
         // Attach the slide event listener to the carousel after the component is mounted
         const carouselElement = document.getElementById('carouselSlidesOnlyJoltModal');
         carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+
+        // Add event listener for modal close
+        const modalElement = document.getElementById('carouselModalJolt');
+        modalElement.addEventListener('hidden.bs.modal', this.resetModal);
     },
-    beforeDestroy() {
+    beforeUnmout() {
         // Clean up the event listener before the component is destroyed
         const carouselElement = document.getElementById('carouselSlidesOnlyJoltModal');
         carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
+
+        const modalElement = document.getElementById('carouselModalJolt');
+        modalElement.removeEventListener('hidden.bs.modal', this.resetModal);
     }
 };
 </script>
-  
+
 <style scoped>
 .carousel-container  {
     background-color: #dadae2;

@@ -1,6 +1,5 @@
 <!-- Projects Component -->
 <template>
-        
     <article class="d-flex flex-row justify-content-center m-3">
 
         <!-- Educational Projects -->
@@ -8,41 +7,41 @@
             <h2 class="display-6 ml-4">Educational Projects</h2>
             <h3 class="lead ml-4"><em>Click project for more information</em></h3>
             <ul class="lead">
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('TEVendingMachineCard', 'Educational')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('TEVendingMachineCard', 'Educational')"
                     title="Click to See More Information"
                 ><b>"Tech Elevator" Vending Machine Application</b>
                 </li>
                 <div class="progress-bar"><ProgressBar :progress="progressTEVendingMachine"/></div>
                 <hr>
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('TEnmoCard', 'Educational')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('TEnmoCard', 'Educational')"
                     title="Click to See More Information"
                 ><b>"Tech Elevator" TEnmo Application</b>
                 </li>
                 <div class="progress-bar"><ProgressBar :progress="progressTEnmo"/></div>
                 <hr>
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('TECoffeeCard', 'Educational')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('TECoffeeCard', 'Educational')"
                     title="Click to See More Information"
                 ><b>"Tech Elevator" Coffee Shop Locator Web Application</b>
                 </li>
                 <div class="progress-bar"><ProgressBar :progress="progressTECoffee"/></div>
                 <hr>
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('SBSensorCard', 'Educational')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('SBSensorCard', 'Educational')"
                     title="Click to See More Information"
                 ><b>"Spring Boot Course" Water Quality Sensor Application</b>
                 </li>
                 <div class="progress-bar"><ProgressBar :progress="progressSBSensor"/></div>
                 <hr>
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('CodecademyCard', 'Educational')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('CodecademyCard', 'Educational')"
                     title="Click to See More Information"
                 ><b>"Codecademy" 25+ Mini Projects</b>
                 </li>
@@ -56,25 +55,25 @@
             <h2 class="display-6 ml-4">Personal Projects</h2>
             <h3 class="lead ml-4"><em>Click project for more information</em></h3>
             <ul class="lead">
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('JoltCard', 'Personal')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('JoltCard', 'Personal')"
                     title="Click to See More Information"
                 ><b>"Jolt" Coffee Shop Locator Web Application</b>
                 </li>
                 <div class="progress-bar"><ProgressBar :progress="progressJolt"/></div>
                 <hr>
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('BestBudsCard', 'Personal')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('BestBudsCard', 'Personal')"
                     title="Click to See More Information"
                 ><b>"Best Buds" Dispensary Locator Web Application</b><em> (Under Dev)</em>
                 </li>
                 <div class="progress-bar"><ProgressBar :progress="progressBestBuds"/></div>
                 <hr>
-                <li 
-                    class="visit mt-4" 
-                    @click="showModal('InventoryManagementCard', 'Personal')" 
+                <li
+                    class="visit mt-4"
+                    @click="showModal('InventoryManagementCard', 'Personal')"
                     title="Click to See More Information"
                 ><b>Inventory Management Application</b><em> (Under Design)</em>
                 </li>
@@ -92,8 +91,14 @@
     </article>
 
     <!-- Modal for Project Cards -->
-    <article v-if="showCardModal" class="modal fade show" tabindex="-1" style="display: block;" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-        :class="modalPositionClass">
+    <article
+        v-if="showCardModal"
+        class="modal fade show"
+        tabindex="-1"
+        style="display: block;"
+        aria-labelledby="exampleModalLabel"
+        :class="modalPositionClass"
+    >
         <section class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="btn-close" @click="closeModal()"></button>
@@ -108,7 +113,6 @@
             </div>
         </section>
     </article>
-
 </template>
 
 <script>
@@ -137,10 +141,9 @@ export default {
     },
     data() {
         return {
-            // Modal state
             showCardModal: false,
             currentCard: '',
-            currentSection: '', // Track which section the modal is from (Educational or Personal)
+            currentSection: '', // (Educational or Personal)
             modalPositionClass: '', // Dynamically set modal position class
 
             // Progress Bar data for each project
@@ -159,7 +162,7 @@ export default {
         showModal(cardName, section) {
             this.currentCard = cardName;
             this.currentSection = section;
-            this.modalPositionClass = section === 'Educational' ? 'modal-educational' : 'modal-personal'; // Set the class based on section
+            this.modalPositionClass = section === 'Educational' ? 'modal-educational' : 'modal-personal';
             this.showCardModal = true;
         },
         closeModal() {
@@ -168,7 +171,7 @@ export default {
             this.modalPositionClass = ''; // Reset position class
         }
     }
-}
+};
 </script>
 
 <style scoped>

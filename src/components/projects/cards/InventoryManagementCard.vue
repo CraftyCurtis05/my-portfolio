@@ -5,22 +5,25 @@
 
       <!-- Screenshot Carousel -->
       <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
-        <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div 
+        <div class="carousel-main slide mt-5" data-bs-ride="carousel">
+          <div class="carousel-inner position-relative">
+            <div
               v-for="(screenshot, index) in screenshots"
               :key="screenshot.id"
               :class="['carousel-item', { active: index === 0 }]"
             >
-              <img 
-                class="d-block w-100"
-                :src="(`src/assets/projects/design-examples/${screenshot.image}`)" 
+              <img
+                :src="(`src/assets/projects/design-examples/${screenshot.image}`)"
                 :alt="screenshot.alt"
               >
             </div>
           </div>
         </div>
-        <button @click="openCarouselModalInventory" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button>
+        <button
+          @click="openCarouselModalInventory"
+          class="btn mt-2 lead"
+          title="View Carousel in Full Screen"
+        >View in Full Screen</button>
       </section>
   
       <!-- Card Body -->
@@ -29,7 +32,10 @@
           <h5 class="card-title text-center">
             Inventory Management Application
           </h5>
-          <p class="card-text lead"><b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Shippo API, Docker, Axios</p>
+          <hr>
+          <p class="card-text lead">
+            <b>Tech Stack:</b> Vue.js, Spring Boot, PostgreSQL, Shippo API, Docker, Axios
+          </p>
           <p class="card-text lead">
             Our inventory management application streamlines storing, tracking and shipping inventory items, with a focus on optimizing operational workflows for warehouses and inventory companies.
           </p>
@@ -40,30 +46,47 @@
             <li>Inventory Management Flow Design</li>
             <li>Inventory Operations & Best Practices Research</li>
           </ul>
-          <p class="card-text text-muted lead"><em>In early design, with plans for backend implementation and features in the coming months.</em></p>
+          <p class="card-text text-muted lead">
+            <em>In early design, with plans for backend implementation and features in the coming months.</em>
+          </p>
         </div>
       </section>
 
     </article>
   </aside>
-  
+
   <!-- Modal for Full Screen Carousel -->
-  <aside class="modal fade" id="carouselModalInventory" tabindex="-1" aria-labelledby="carouselModalInventoryLabel" aria-hidden="true">
+  <aside
+    class="modal fade"
+    id="carouselModalInventory"
+    tabindex="-1"
+    aria-labelledby="carouselModalInventoryLabel"
+  >
     <article class="modal-dialog modal-lg m-auto">
       <div class="modal-content">
 
         <!-- Modal Header -->
         <section class="modal-header">
           <h4 class="modal-title lead" id="carouselModalInventoryLabel">
-            <b class="lead">{{ currentSlideTitle }}</b>
+            <b class="lead">{{ currentTitle }}</b>
           </h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </section>
 
-        <!-- Modal Carousel -->
+        <!-- Modal Carousel Body -->
         <section class="modal-body">
-          <div id="carouselSlidesOnlyInventoryModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
-
+          <div
+            id="carouselSlidesOnlyInventoryModal"
+            class="carousel slide"
+            data-bs-ride="carousel"
+            @slide.bs.carousel="updateCurrentSlide"
+          >
+            <!-- Indicators -->
             <div class="carousel-indicators position-absolute m-auto">
               <button
                 v-for="(screenshot, index) in screenshots"
@@ -76,29 +99,38 @@
               ></button>
             </div>
 
+            <!-- Carousel Items -->
             <div class="carousel-inner position-relative">
-              <div 
+              <div
                 v-for="(screenshot, index) in screenshots"
                 :key="screenshot.id"
                 :class="['carousel-item', { active: index === 0 }]"
               >
-                <img 
-                  class="d-block w-100"
-                  :src="(`src/assets/projects/design-examples/${screenshot.image}`)" 
+                <img
+                  :src="(`src/assets/projects/design-examples/${screenshot.image}`)"
                   :alt="screenshot.alt"
                 >
               </div>
             </div>
 
             <!-- Modal Carousel Controls -->
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyInventoryModal" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyInventoryModal" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button> -->
+            <!-- <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselSlidesOnlyInventoryModal"
+                    data-bs-slide="prev"
+                  >
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselSlidesOnlyInventoryModal"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button> -->
 
           </div>
         </section>
@@ -106,55 +138,66 @@
     </article>
   </aside>
 </template>
-  
+
 <script>
 export default {
   name: "InventoryManagementCard",
   data() {
     return {
+      currentTitle: '',
       screenshots: [
-        { 
-          id: 1, 
+        {
+          id: 1,
           image: "inventory-mgmt-dashboard-design.png",
-          alt: "Inventory Management Dashboard Wireframe" 
+          alt: "Inventory Management Dashboard Wireframe",
+          title: "Wireframe design showcasing the layout and key features of an inventory management application, including item tracking, stock levels and user navigation."
         }
-      ],
-      slideTitles: [
-        "Wireframe design showcasing the layout and key features of an inventory management application, including item tracking, stock levels and user navigation."
-      ],
-      currentSlideIndex: 0,  // Keep track of the current slide
+      ]
     };
-  },
-  computed: {
-    // Computed property to get the current slide title
-    currentSlideTitle() {
-      return this.slideTitles[this.currentSlideIndex];
-    }
-  },   
+  }, 
   methods: {
+    // Open modal and set current title based on the slide
     openCarouselModalInventory() {
-      // Use Bootstrap's modal functionality to show the modal
+      this.currentTitle = this.screenshots[0].title;
       const modal = new window.bootstrap.Modal(document.getElementById('carouselModalInventory'));
       modal.show();
     },
     // Method to update the current slide index on slide change
     updateCurrentSlide(event) {
-      this.currentSlideIndex = event.to;
+      const currentSlideIndex = event.to;
+      this.currentTitle = this.screenshots[currentSlideIndex].title;
+    },
+    // Reset modal and carousel when modal is closed
+    resetModal() {
+      // Reset the title to the first slide
+      this.currentTitle = this.screenshots[0].title;
+
+      // Reset the carousel to the first slide using Bootstrap's carousel API
+      const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
+      const carousel = new bootstrap.Carousel(carouselElement);
+      carousel.to(0); // Navigate to the first slide (index 0)
     }
   },
   mounted() {
     // Attach the slide event listener to the carousel after the component is mounted
     const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
     carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+
+    // Add event listener for modal close
+    const modalElement = document.getElementById('carouselModalInventory');
+    modalElement.addEventListener('hidden.bs.modal', this.resetModal);
   },
-  beforeDestroy() {
+  beforeUnmout() {
     // Clean up the event listener before the component is destroyed
     const carouselElement = document.getElementById('carouselSlidesOnlyInventoryModal');
     carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
+
+    const modalElement = document.getElementById('carouselModalInventory');
+    modalElement.removeEventListener('hidden.bs.modal', this.resetModal);
   }
 };
 </script>
-  
+
 <style scoped>
 .carousel-container  {
   background-color: #dadae2;

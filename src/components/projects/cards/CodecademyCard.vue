@@ -5,33 +5,36 @@
 
             <!-- Screenshot Carousel -->
             <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
-                <div id="carouselSlidesOnly" class="carousel-main slide mt-5" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div 
+                <div class="carousel-main slide mt-5" data-bs-ride="carousel">
+                    <div class="carousel-inner position-relative">
+                        <div
                             v-for="(screenshot, index) in screenshots"
                             :key="screenshot.id"
                             :class="['carousel-item', { active: index === 0 }]"
                         >
-                            <img 
-                                class="d-block w-100" 
-                                :src="(`src/assets/projects/${screenshot.image}`)" 
+                            <img
+                                :src="(`src/assets/projects/${screenshot.image}`)"
                                 :alt="screenshot.alt"
                             >
                         </div>
                     </div>
                 </div>
-            <!-- <button @click="openCarouselModalCodecademy" class="btn mt-2 lead" title="View Carousel in Full Screen">View in Full Screen</button> -->
             </section>
 
             <!-- Card Body -->
             <section class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title text-center">
-                        <a href="https://github.com/CraftyCurtis05/mini-projects" target="_blank" title="Visit My Code on Github">
-                            "Codecademy" Mini Projects
-                        </a>
+                        <a
+                            href="https://github.com/CraftyCurtis05/mini-projects"
+                            target="_blank"
+                            title="Visit My Code on Github"
+                        >"Codecademy" Mini Projects</a>
                     </h5>
-                    <p class="card-text lead"><b>Tech Stack:</b> HTML, CSS, Java, JavaScript, Bootstrap, Flexbox, Spring Boot</p>
+                    <hr>
+                    <p class="card-text lead">
+                        <b>Tech Stack:</b> HTML, CSS, Java, JavaScript, Bootstrap, Flexbox, Spring Boot
+                    </p>
                     <p class="card-text lead">
                         A collection of mini projects from Codecademy courses, showcasing HTML, CSS, Java, and JavaScript skills, covering Bootstrap, Flexbox and Async/Await to build a strong web development foundation.
                     </p>
@@ -42,73 +45,16 @@
                         <li>Async Programming (Async/Await, Promises)</li>
                         <li>Class & Module-based Projects</li>
                     </ul>
-                    <p class="card-text text-muted lead"><em>Explore web development concepts through hands-on HTML, CSS, Java, and JavaScript projects.</em></p>
+                    <p class="card-text text-muted lead">
+                        <em>Explore web development concepts through hands-on HTML, CSS, Java, and JavaScript projects.</em>
+                    </p>
                 </div>
             </section>
 
         </article>
     </aside>
-  
-    <!-- Modal for Full Screen Carousel -->
-    <aside class="modal fade" id="carouselModalCodecademy" tabindex="-1" aria-labelledby="carouselModalCodecademyLabel" aria-hidden="true">
-        <article class="modal-dialog modal-lg m-auto">
-            <div class="modal-content">
-    
-                <!-- Modal Header -->
-                <section class="modal-header">
-                    <h4 class="modal-title lead" id="carouselModalCodecademyLabel">
-                        <b class="lead">{{ currentSlideTitle }}</b>
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </section>
-        
-                <!-- Modal Carousel -->
-                <section class="modal-body">
-                    <div id="carouselSlidesOnlyCodecademyModal" class="carousel slide" data-bs-ride="carousel" @slide.bs.carousel="updateCurrentSlide">
-
-                        <div class="carousel-indicators position-absolute m-auto">
-                            <button
-                                v-for="(screenshot, index) in screenshots"
-                                :key="screenshot.id"
-                                type="button"
-                                data-bs-target="#carouselSlidesOnlyCodecademyModal"
-                                :data-bs-slide-to="index"
-                                :class="{ active: index === 0 }"
-                                aria-label="Slide {{ index + 1 }}"
-                            ></button>
-                        </div>
-
-                        <div class="carousel-inner position-relative">
-                            <div 
-                                v-for="(screenshot, index) in screenshots"
-                                :key="screenshot.id"
-                                :class="['carousel-item', { active: index === 0 }]"
-                            >
-                                <img 
-                                    class="d-block w-100" 
-                                    :src="(`src/assets/projects/${screenshot.image}`)" 
-                                    :alt="screenshot.alt"
-                                >
-                            </div>
-                        </div>
-
-                        <!-- Modal Carousel Controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnlyCodecademyModal" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnlyCodecademyModal" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>   
-
-                    </div>
-                </section>
-            </div>
-        </article>
-    </aside>
 </template>
-  
+
 <script>
 export default {
     name: "CodecademyCard",
@@ -120,39 +66,8 @@ export default {
                     image: "default_image.png",
                     alt: "No Image Available"
                 }
-            ],
-            slideTitles: [
-                "No Image Available"
-            ],
-            currentSlideIndex: 0 // Keep track of the current slide
-        };
-    },
-    computed: {
-        // Computed property to get the current slide title
-        currentSlideTitle() {
-            return this.slideTitles[this.currentSlideIndex];
+            ]
         }
-    }, 
-    methods: {
-        openCarouselModalCodecademy() {
-            // Use Bootstrap's modal functionality to show the modal
-            const modal = new window.bootstrap.Modal(document.getElementById('carouselModalCodecademy'));
-            modal.show();
-        },
-        // Method to update the current slide index on slide change
-        updateCurrentSlide(event) {
-            this.currentSlideIndex = event.to;
-        }
-    },
-    mounted() {
-        // Attach the slide event listener to the carousel after the component is mounted
-        const carouselElement = document.getElementById('carouselSlidesOnlyCodecademyModal');
-        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
-    },
-    beforeDestroy() {
-        // Clean up the event listener before the component is destroyed
-        const carouselElement = document.getElementById('carouselSlidesOnlyCodecademyModal');
-        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
     }
 };
 </script>
