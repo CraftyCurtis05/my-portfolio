@@ -13,7 +13,7 @@
               :class="['carousel-item', { active: index === 0 }]"
             >
               <img
-                :src="(`src/assets/projects/design-examples/${screenshot.image}`)"
+                :src="(`/projects/design-examples/${screenshot.image}`)"
                 :alt="screenshot.alt"
               >
             </div>
@@ -107,7 +107,7 @@
                 :class="['carousel-item', { active: index === 0 }]"
               >
                 <img
-                  :src="(`src/assets/projects/design-examples/${screenshot.image}`)"
+                  :src="(`/projects/design-examples/${screenshot.image}`)"
                   :alt="screenshot.alt"
                 >
               </div>
@@ -315,5 +315,35 @@ h5 a {
   opacity: .7;
   box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
   animation: gradient-animation 3s ease infinite;
+}
+
+/* Extra Small (Mobile) */
+@media (max-width: 480px) {
+  /* Styles for phones in portrait mode */
+}
+
+/* Small (Mobile) */
+@media (max-width: 600px) {
+  /* Styles for phones in landscape mode */
+}
+
+/* Medium (Tablet) */
+@media (max-width: 768px) {
+  /* Styles for tablets in portrait mode */
+}
+
+/* Large (Tablet, Small Laptops) */
+@media (max-width: 1024px) {
+  /* Styles for small laptops and tablets in landscape mode */
+}
+
+/* Extra Large (Laptops, Desktops) */
+@media (min-width: 1025px) {
+  /* Styles for laptops and desktop screens */
+}
+
+/* Ultra Large (Wider Desktop Screens) */
+@media (min-width: 1440px) {
+  /* Styles for large desktop displays */
 }
 </style>

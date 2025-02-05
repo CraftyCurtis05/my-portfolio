@@ -24,7 +24,7 @@
                 <div class="card text-center pb-4 mx-auto">
                     <img 
                         class="card-img-top mx-auto my-5"
-                        :src="(`src/assets/experience/icons/${item.image}`)"
+                        :src="(`/experience/icons/${item.image}`)"
                         :alt="item.alt"
                     />
                     <div class="card-body my-4">
@@ -246,5 +246,35 @@ button:hover {
   100% {
     background-position: 0% 50%; /* Back to start */
   }
+}
+
+/* Extra Small (Mobile) */
+@media (max-width: 480px) {
+  /* Styles for phones in portrait mode */
+}
+
+/* Small (Mobile) */
+@media (max-width: 600px) {
+  /* Styles for phones in landscape mode */
+}
+
+/* Medium (Tablet) */
+@media (max-width: 768px) {
+  /* Styles for tablets in portrait mode */
+}
+
+/* Large (Tablet, Small Laptops) */
+@media (max-width: 1024px) {
+  /* Styles for small laptops and tablets in landscape mode */
+}
+
+/* Extra Large (Laptops, Desktops) */
+@media (min-width: 1025px) {
+  /* Styles for laptops and desktop screens */
+}
+
+/* Ultra Large (Wider Desktop Screens) */
+@media (min-width: 1440px) {
+  /* Styles for large desktop displays */
 }
 </style>

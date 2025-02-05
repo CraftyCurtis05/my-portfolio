@@ -46,30 +46,59 @@ export default {
 </script>
 
 <style scoped>
-.logo {
-    position: absolute;
-    z-index: 1000;
-    padding: 1rem;
+/* Ultra Large (Wider Desktop Screens) */
+@media (min-width: 1440px) {
+
+    .logo {
+        position: absolute;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .logo img {
+        width: 12rem;
+        height: auto;
+    }
+
+    header {
+        width: 100vw;
+        block-size: 4rem;
+        background-color: #dadae2;
+    }
+
+    header .icon {
+        margin-right: 1rem;
+    }
+
+    .icon {
+        width: 3rem;
+        height: auto;
+        padding: .2rem;
+    }
 }
 
-.logo img {
-    width: 12rem;
-    height: auto;
+/* Extra Small (Mobile) */
+@media (max-width: 480px) {
+  /* Styles for phones in portrait mode */
 }
 
-header {
-    width: 100vw;
-    block-size: 4rem;
-    background-color: #dadae2;
+/* Small (Mobile) */
+@media (max-width: 600px) {
+  /* Styles for phones in landscape mode */
 }
 
-header .icon {
-    margin-right: 1rem;
+/* Medium (Tablet) */
+@media (max-width: 768px) {
+  /* Styles for tablets in portrait mode */
 }
 
-.icon {
-    width: 3rem;
-    height: auto;
-    padding: .2rem;
+/* Large (Tablet, Small Laptops) */
+@media (max-width: 1024px) {
+  /* Styles for small laptops and tablets in landscape mode */
+}
+
+/* Extra Large (Laptops, Desktops) */
+@media (min-width: 1025px) {
+  /* Styles for laptops and desktop screens */
 }
 </style>

@@ -176,7 +176,7 @@ export default {
 
 <style scoped>
 .list {
-    width: 43%;
+    width: 45%;
 }
 
 ul {
@@ -229,5 +229,35 @@ li a {
   top: 10px;
   right: 10px;
   z-index: 10; /* Ensure the close button stays on top of card content */
+}
+
+/* Extra Small (Mobile) */
+@media (max-width: 480px) {
+  /* Styles for phones in portrait mode */
+}
+
+/* Small (Mobile) */
+@media (max-width: 600px) {
+  /* Styles for phones in landscape mode */
+}
+
+/* Medium (Tablet) */
+@media (max-width: 768px) {
+  /* Styles for tablets in portrait mode */
+}
+
+/* Large (Tablet, Small Laptops) */
+@media (max-width: 1024px) {
+  /* Styles for small laptops and tablets in landscape mode */
+}
+
+/* Extra Large (Laptops, Desktops) */
+@media (min-width: 1025px) {
+  /* Styles for laptops and desktop screens */
+}
+
+/* Ultra Large (Wider Desktop Screens) */
+@media (min-width: 1440px) {
+  /* Styles for large desktop displays */
 }
 </style>
