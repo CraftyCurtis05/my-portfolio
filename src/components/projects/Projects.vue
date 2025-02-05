@@ -176,7 +176,7 @@ export default {
 
 <style scoped>
 .list {
-    width: 40%;
+    width: 43%;
 }
 
 ul {
