@@ -1,6 +1,6 @@
 <!-- Navbar Component -->
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light row d-flex justify-content-center align-items-center mx-1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light row d-flex justify-content-center align-items-center mx-auto">
         <article class="container-fluid">
    
             <!-- Navbar Toggler Button -->
@@ -19,22 +19,22 @@
             <!-- Navbar Links List-->
             <section class="collapse navbar-collapse bg-light d-flex justify-content-center align-items-center" id="navbarNav">
                 <ul class="navbar-nav nav lead mx-auto">
-                    <li class="nav-item py-1 px-3">
+                    <li class="nav-item">
                         <router-link to="/" class="nav-link" active-class="active-link" title="Go to Home Page">Home</router-link>
                     </li>
-                    <li class="nav-item py-1 px-3">
+                    <li class="nav-item">
                         <router-link to="/about" class="nav-link" active-class="active-link" title="Go to About Me Page">About</router-link>
                     </li>
-                    <li class="nav-item py-1 px-3">
+                    <li class="nav-item">
                         <router-link to="/education" class="nav-link" active-class="active-link" title="Go to Education Page">Education</router-link>
                     </li>
-                    <li class="nav-item py-1 px-3">
+                    <li class="nav-item">
                         <router-link to="/experience" class="nav-link" active-class="active-link" title="Go to Experience Page">Experience</router-link>
                     </li>
-                    <li class="nav-item py-1 px-3">
+                    <li class="nav-item">
                         <router-link to="/projects" class="nav-link" active-class="active-link" title="Go to Projects Page">Projects</router-link>
                     </li>
-                    <li class="nav-item py-1 px-3">
+                    <li class="nav-item">
                         <router-link to="/contact" class="nav-link" active-class="active-link" title="Go to Contact Me Page">Contact</router-link>
                     </li>
                 </ul>
@@ -53,18 +53,8 @@ export default {
 <style scoped>
 nav {
     width: 100vw;
-    height: calc(2rem + 1.5vw); /* Combines fixed and viewport-relative units */
+    height: calc(1.5rem + 2.3vw); /* Combines fixed and viewport-relative units */
     z-index: 500;
-}
-
-.navbar-brand {
-    width: 13vw;
-}
-
-.navbar-brand img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
 }
 
 .navbar-toggler-icon {
@@ -74,6 +64,8 @@ nav {
 .nav-item {
     font-size: clamp(1.125rem, 1vw + .25rem, 2.5rem);
     font-weight: 300;
+    padding-inline: clamp(.5rem, 1vw, 2.5rem);
+    padding-block: clamp(.2rem, .3vw, 2.5rem);
     transition: all 0.1s ease-in-out;
 }
 

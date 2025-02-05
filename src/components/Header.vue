@@ -46,35 +46,30 @@ export default {
 </script>
 
 <style scoped>
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
+.logo {
+    position: absolute;
+    padding: clamp(.7rem, .8vw, 1rem);
+    z-index: 1000;
+}
 
-    .logo {
-        position: absolute;
-        padding: 1rem;
-        z-index: 1000;
-    }
+.logo img {
+    width: clamp(10.5rem, 13vw, 18rem);
+    height: auto;
+}
 
-    .logo img {
-        width: 12rem;
-        height: auto;
-    }
+header {
+    height: clamp(3.5rem, 4vw, 5.5rem);
+}
 
-    header {
-        width: 100vw;
-        block-size: 4rem;
-        background-color: #dadae2;
-    }
+header .icon {
+    margin-right: clamp(.2rem, .5vw, 1rem);
+}
 
-    header .icon {
-        margin-right: 1rem;
-    }
-
-    .icon {
-        width: 3rem;
-        height: auto;
-        padding: .2rem;
-    }
+.icon {
+    width: clamp(2.5rem, 3vw, 4.5rem);
+    height: auto;
+    margin-inline: clamp(.5rem, .5vw, .6rem);
+    margin-block: clamp(.5rem, .7vw, .6rem);
 }
 
 /* Extra Small (Mobile) */
@@ -100,5 +95,10 @@ export default {
 /* Extra Large (Laptops, Desktops) */
 @media (min-width: 1025px) {
   /* Styles for laptops and desktop screens */
+}
+
+/* Ultra Large (Wider Desktop Screens) */
+@media (min-width: 1440px) {
+  /* Styles for large desktop displays */
 }
 </style>
