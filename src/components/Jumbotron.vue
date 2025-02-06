@@ -28,21 +28,23 @@ export default {
 </script>
 
 <style scoped>
-.jumbotron {
-  height: 35vw;
-  background: url('/home/temp_portrait.jpg') no-repeat center center;
-  background-size: 100vw auto;
-}
+@media (min-width: 1000px) {
+  .jumbotron {
+    height: 35vw;
+    background: url('/home/temp_portrait.jpg') no-repeat center center;
+    background-size: 100vw auto;
+  }
 
-h1 {
-  font-size: clamp(1.9rem, 2.4vw, 4rem); /* 1024px - 2560 */
-  font-weight: 300;
-  margin-inline: clamp(-1rem, -1.5vw, -1.75rem); /* 1024px - 2560 */
-}
+  h1 {
+    font-size: clamp(1.9rem, 2.4vw, 4rem); /* 1024px - 2560 */
+    font-weight: 300;
+    margin-inline: clamp(-1rem, -1.5vw, -1.75rem); /* 1024px - 2560 */
+  }
 
-p {
-  font-size: clamp(1.15rem, 1.35vw, 2.15rem); /* 1024px - 2560 */
-  margin-inline: clamp(-1rem, -1.5vw, -1.75rem); /* 1024px - 2560 */
+  p {
+    font-size: clamp(1.15rem, 1.35vw, 2.15rem); /* 1024px - 2560 */
+    margin-inline: clamp(-1rem, -1.5vw, -1.75rem); /* 1024px - 2560 */
+  }
 }
 
 /* Extra Small (Mobile) */

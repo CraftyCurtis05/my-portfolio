@@ -51,58 +51,60 @@ export default {
 </script>
 
 <style scoped>
-nav {
-  width: 100vw;
-  height: clamp(3rem, 3.5vw, 4.8rem); /* 1024px - 2560 */
-  z-index: 500;
-}
-
-.navbar-toggler-icon {
-    width: calc(1rem + 2vw); /* Combines fixed and viewport-relative units */
-}
-
-.nav-item {
-    font-size: clamp(1.125rem, 1vw + .3rem, 2.5rem);  /* 1024px - 2560 */
-    font-weight: 300;
-    padding-inline: clamp(.5rem, 1vw, 1.6rem); /* 1024px - 2560 */
-    padding-block: clamp(.125rem, .25vw, .5rem); /* 1024px - 2560 */
-    transition: all 0.1s ease-in-out;
-}
-
-.nav-item:hover {
-    font-weight: 400;
-    background-image: radial-gradient(circle, #dadae2, #f8f9fb);
-    background-size: 300% 300%;
-    transform: scale(1.02);
-    animation: gradient-animation 3s ease infinite;
-}
-
-.nav-item .active-link {
-    font-weight: 400;
-    transform: scale(1.02);
-}
-
-/* Define the animation */
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%; /* Start position */
+@media (min-width: 1000px) {
+  nav {
+    width: 100vw;
+    height: clamp(3rem, 3.5vw, 4.8rem); /* 1024px - 2560 */
+    z-index: 500;
   }
-  50% {
-    background-position: 100% 50%; /* End position */
-  }
-  100% {
-    background-position: 0% 50%; /* Back to start */
-  }
-}
 
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
-}
+  .navbar-toggler-icon {
+      width: calc(1rem + 2vw); /* Combines fixed and viewport-relative units */
+  }
 
-/* Small (Mobile) */
-@media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
+  .nav-item {
+      font-size: clamp(1.125rem, 1vw + .3rem, 2.5rem);  /* 1024px - 2560 */
+      font-weight: 300;
+      padding-inline: clamp(.5rem, 1vw, 1.6rem); /* 1024px - 2560 */
+      padding-block: clamp(.125rem, .25vw, .5rem); /* 1024px - 2560 */
+      transition: all 0.1s ease-in-out;
+  }
+
+  .nav-item:hover {
+      font-weight: 400;
+      background-image: radial-gradient(circle, #dadae2, #f8f9fb);
+      background-size: 300% 300%;
+      transform: scale(1.02);
+      animation: gradient-animation 3s ease infinite;
+  }
+
+  .nav-item .active-link {
+      font-weight: 400;
+      transform: scale(1.02);
+  }
+
+  /* Define the animation */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%; /* Start position */
+    }
+    50% {
+      background-position: 100% 50%; /* End position */
+    }
+    100% {
+      background-position: 0% 50%; /* Back to start */
+    }
+  }
+
+  /* Extra Small (Mobile) */
+  @media (max-width: 480px) {
+    /* Styles for phones in portrait mode */
+  }
+
+  /* Small (Mobile) */
+  @media (max-width: 600px) {
+    /* Styles for phones in landscape mode */
+  }
 }
 
 /* Medium (Tablet) */

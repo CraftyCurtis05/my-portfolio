@@ -4,7 +4,7 @@
       <div class="row">
 
         <!-- Logo -->
-        <section class="col-3 logo">
+        <section class="col-3 logo column">
           <router-link to="/">
             <img
               src="@/assets/logo/light_theme/logo_blk_01.png"
@@ -15,7 +15,7 @@
         </section>
 
         <!-- About Me -->
-        <section class="col-3 about">
+        <section class="col-3 about column lead">
           <h5>
             <router-link
               to="/about"
@@ -24,42 +24,90 @@
             >About Me</router-link>
           </h5>
           <p>
-            Code enthusiast, creative problem-solver, and your next favorite developer.
+            Code enthusiast, creative <br>
+            problem-solver and your <br>
+            next favorite developer!
           </p>
         </section>
 
         <!-- Contact Me -->
-        <section class="col-3 contact">
-          <h5><router-link to="/contact" class="link" title="Click Here to Contact Me">Contact Me</router-link></h5>
+        <section class="col-3 contact column lead">
+          <h5>
+            <router-link to="/contact"
+              class="link"
+              title="Click Here to Contact Me"
+            >Contact Me</router-link>
+          </h5>
           <ul class="list-unstyled">
-            <li title="My Email">Email: craftycurtis05@gmail.com</li>
-            <li title="My Phone">Phone: +16142031537</li>
-            <li title="My Location">Location: Columbus, OH, USA</li>
+            <li title="My Email">
+              <span class="text-muted">email: </span>
+              craftycurtis05@gmail.com
+            </li>
+            <li title="My Phone">
+              <span class="text-muted">phone: </span>
+              +16142031537
+            </li>
+            <li title="My Location">
+              <span class="text-muted">location: </span>
+              Columbus, OH, USA
+            </li>
           </ul>
         </section>
 
         <!-- Follow Me -->
-        <section class="col-3">
+        <section class="col-3 column">
           <h5>Follow Me</h5>
           <ul class="list-inline d-flex flex-row">
             <li class="icons list-inline-item">
-              <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="Visit My LinkedIn Profile">
-                <img class="icon" src="@/assets/icons/light_theme/linkedin_icon_blk.png" alt="LinkedIn Icon">
+              <a
+                href="https://www.linkedin.com/in/jcurtisdeveloper/"
+                target="_blank"
+                title="Visit My LinkedIn Profile"
+              >
+                <img
+                  class="icon"
+                  src="@/assets/icons/light_theme/linkedin_icon_blk.png"
+                  alt="LinkedIn Icon"
+                >
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/CraftyCurtis05" target="_blank" title="Visit My GitHub Profile">
-                <img class="icon" src="@/assets/icons/light_theme/github_icon_blk.png" alt="GitHub Icon">
+              <a
+                href="https://github.com/CraftyCurtis05"
+                target="_blank"
+                title="Visit My GitHub Profile"
+              >
+                <img
+                  class="icon"
+                  src="@/assets/icons/light_theme/github_icon_blk.png"
+                  alt="GitHub Icon"
+                >
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="Visit My Codecademy Profile">
-                <img class="icon" src="@/assets/icons/light_theme/codecademy_icon_blk.png" alt="Codecademy Icon">
+              <a
+                href="https://www.codecademy.com/profiles/CraftyCurtis05"
+                target="_blank"
+                title="Visit My Codecademy Profile"
+              >
+                <img
+                  class="icon"
+                  src="@/assets/icons/light_theme/codecademy_icon_blk.png"
+                  alt="Codecademy Icon"
+                >
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="Visit My HackerRank Profile">
-                <img class="icon" src="@/assets/icons/light_theme/hackerrank_icon_blk.png" alt="HackerRank Icon">
+              <a
+                href="https://www.hackerrank.com/profile/craftycurtis05"
+                target="_blank"
+                title="Visit My HackerRank Profile"
+              >
+                <img
+                  class="icon"
+                  src="@/assets/icons/light_theme/hackerrank_icon_blk.png"
+                  alt="HackerRank Icon"
+                >
               </a>
             </li>
           </ul>
@@ -71,21 +119,30 @@
       <hr>
 
       <!-- Copyright & Links -->
-      <section class="row">
-        <div class="col-md-6">
-          <p>&copy; 2024 Jennifer Curtis. All rights reserved.</p>
+      <section class="row lead">
+        <div class="col-6">
+          <p class="copyright">&copy; 2024 Jennifer Curtis. All rights reserved.</p>
         </div>
-        <div class="col-md-6 text-end">
+        <div class="col-6 text-end">
           <ul class="list-inline footer-links">
             <li class="list-inline-item pr-3">
-              <router-link to="/contact" class="text-white" title="Click Here to Contact Me">Contact Me</router-link>
+              <router-link
+                to="/contact"
+                class="text-white"
+                title="Click Here to Contact Me"
+              >Contact Me</router-link>
             </li>
             <li class="list-inline-item">
-              <router-link to="/sitemap" class="text-white" title="Go to Site Map">Sitemap</router-link>
+              <router-link
+                to="/sitemap"
+                class="text-white"
+                title="Go to Site Map"
+              >Sitemap</router-link>
             </li>
           </ul>
         </div>
       </section>
+
   </footer>
 </template>
 
@@ -96,50 +153,72 @@ export default {
 </script>
 
 <style scoped>
-footer {
-  width: 100vw;
-  height: clamp(15rem, 17vw, 20rem);
-  background-color: #dadae2;
-  padding: 20px;
-}
+@media (min-width: 1000px) {
+  footer {
+    width: 100vw;
+    height: clamp(12.2rem, 14vw, 18rem);
+    background-color: #dadae2;
+    padding-top: 1vh;
+  }
 
-.logo img {
-    width: clamp(7rem, 11.9vw, 16.4rem);  /* 1024px - 2560 */
+  .column {
+    padding-left: clamp(1rem, 4vw, 7.5rem);
+  }
+
+  .logo img {
+    width: clamp(9rem, 10.5vw, 15rem);
     height: auto;
-}
+    margin-left: 1.5vw;
+  }
 
-h5 {
-  font-size: clamp(1.1rem, 1.3vw, 2rem);  /* 1024px - 2560 */
-}
+  h5 {
+    font-size: clamp(1.1rem, 1.3vw, 2rem);
+    font-weight: 400;
+  }
 
-.link {
-  color: black;
-  text-decoration: none;
-}
+  .link {
+    color: black;
+    text-decoration: none;
+  }
 
-.link:hover {
-  text-decoration:underline;
-  font-weight: 700;
-}
+  .link:hover {
+    text-decoration:underline;
+    font-weight: 500;
+  }
 
-li, p {
-  font-size: clamp(.9rem, 1vw, 1.5rem);  /* 1024px - 2560 */
-}
+  li, p {
+    font-size: clamp(.95rem, 1.1vw, 1.7rem);
+  }
 
-.footer-links li:hover {
-  font-weight: 500;
-}
+  .icon {
+    width: clamp(2.4rem, 2.75vw, 4.1rem);
+    height: auto;
+    margin-inline: clamp(.1rem, .1vw, 1rem);
+    margin-block: clamp(.1rem, .25vw, .5rem);
+  }
 
-.icon {
-  width: clamp(2.4rem, 2.75vw, 4.1rem);  /* 1024px - 2560 */
-  height: auto;
-  margin-inline: clamp(.1rem, .1vw, 1rem);  /* 1024px - 2560 */
-  margin-block: clamp(.1rem, .25vw, .5rem);  /* 1024px - 2560 */
-}
+  .copyright {
+    font-size: clamp(.9rem, 1vw, 1.5rem);
+    margin-left: 2vw;
+  }
 
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
+  .footer-links {
+    margin-right: 1.5vw;
+  }
+
+  .footer-links li {
+    font-size: clamp(1rem, 1.1vw, 1.6rem);
+    font-weight: 300;
+  }
+
+  .footer-links li:hover {
+    font-weight: 500;
+  }
+
+  /* Extra Small (Mobile) */
+  @media (max-width: 480px) {
+    /* Styles for phones in portrait mode */
+  }
 }
 
 /* Small (Mobile) */

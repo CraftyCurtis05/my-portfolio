@@ -74,30 +74,32 @@ export default {
 </script>
 
 <style scoped>
-.logo {
-    position: absolute;
-    padding: clamp(1.1rem, 1vw, 1.6rem); /* 1024px - 2560 */
-    z-index: 1000;
-}
+@media (min-width: 1000px) {
+    .logo {
+        position: absolute;
+        padding: clamp(1.1rem, 1vw, 1.6rem); /* 1024px - 2560 */
+        z-index: 1000;
+    }
 
-.logo img {
-    width: clamp(10rem, 11.9vw, 16.4rem);  /* 1024px - 2560 */
-    height: auto;
-}
+    .logo img {
+        width: clamp(10rem, 11.9vw, 16.4rem);  /* 1024px - 2560 */
+        height: auto;
+    }
 
-header {
-    height: clamp(3.5rem, 4vw, 5.5rem);  /* 1024px - 2560 */
-}
+    header {
+        height: clamp(3.5rem, 4vw, 5.5rem);  /* 1024px - 2560 */
+    }
 
-header .icon {
-    margin-right: clamp(.4rem, .5vw, 1rem);  /* 1024px - 2560 */
-}
+    header .icon {
+        margin-right: clamp(.4rem, .5vw, 1rem);  /* 1024px - 2560 */
+    }
 
-.icon {
-    width: clamp(2.4rem, 2.75vw, 4.1rem);  /* 1024px - 2560 */
-    height: auto;
-    margin-inline: clamp(.4rem, .5vw, .6rem);  /* 1024px - 2560 */
-    margin-block: clamp(.5rem, .6vw, .75rem);  /* 1024px - 2560 */
+    .icon {
+        width: clamp(2.4rem, 2.75vw, 4.1rem);  /* 1024px - 2560 */
+        height: auto;
+        margin-inline: clamp(.4rem, .5vw, .6rem);  /* 1024px - 2560 */
+        margin-block: clamp(.5rem, .6vw, .75rem);  /* 1024px - 2560 */
+    }
 }
 
 /* Extra Small (Mobile) */
