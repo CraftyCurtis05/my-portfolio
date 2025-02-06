@@ -52,26 +52,26 @@ export default {
 
 <style scoped>
 nav {
-    width: 100vw;
-    height: calc(1.5rem + 2.3vw); /* Combines fixed and viewport-relative units */
-    z-index: 500;
+  width: 100vw;
+  height: clamp(3rem, 3.5vw, 4.8rem); /* 1024px - 2560 */
+  z-index: 500;
 }
 
 .navbar-toggler-icon {
-    width: calc(1.2rem + 2vw); /* Combines fixed and viewport-relative units */
+    width: calc(1rem + 2vw); /* Combines fixed and viewport-relative units */
 }
 
 .nav-item {
-    font-size: clamp(1.125rem, 1vw + .25rem, 2.5rem);
+    font-size: clamp(1.125rem, 1vw + .3rem, 2.5rem);  /* 1024px - 2560 */
     font-weight: 300;
-    padding-inline: clamp(.5rem, 1vw, 2.5rem);
-    padding-block: clamp(.2rem, .3vw, 2.5rem);
+    padding-inline: clamp(.5rem, 1vw, 1.6rem); /* 1024px - 2560 */
+    padding-block: clamp(.125rem, .25vw, .5rem); /* 1024px - 2560 */
     transition: all 0.1s ease-in-out;
 }
 
 .nav-item:hover {
     font-weight: 400;
-    background-image: radial-gradient(circle, #dadae2, #f8f9fb); /* Subtle gradient background */
+    background-image: radial-gradient(circle, #dadae2, #f8f9fb);
     background-size: 300% 300%;
     transform: scale(1.02);
     animation: gradient-animation 3s ease infinite;

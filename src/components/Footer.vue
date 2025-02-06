@@ -1,26 +1,35 @@
 <!-- Footer Component -->
 <template>
-  <footer class="footer p-5">
-    <article class="container">
+  <footer>
       <div class="row">
 
         <!-- Logo -->
-        <section class="col-md-3 navbar-brand">
-          <router-link to="/" class="nav-item nav-link">
-            <img id="logo" src="@/assets/logo/light_theme/logo_blk_01.png" alt="Jannifer Curtis Logo" title="Go to My Home Page">
+        <section class="col-3 logo">
+          <router-link to="/">
+            <img
+              src="@/assets/logo/light_theme/logo_blk_01.png"
+              alt="Jannifer Curtis Logo"
+              title="Go to My Home Page"
+            >
           </router-link>
         </section>
 
         <!-- About Me -->
-        <section class="col-md-3">
-          <h5><router-link to="/about" class="link" title="Go to My About Me Page">About Me</router-link></h5>
+        <section class="col-3 about">
+          <h5>
+            <router-link
+              to="/about"
+              class="link"
+              title="Go to My About Me Page"
+            >About Me</router-link>
+          </h5>
           <p>
             Code enthusiast, creative problem-solver, and your next favorite developer.
           </p>
         </section>
 
         <!-- Contact Me -->
-        <section class="col-md-3">
+        <section class="col-3 contact">
           <h5><router-link to="/contact" class="link" title="Click Here to Contact Me">Contact Me</router-link></h5>
           <ul class="list-unstyled">
             <li title="My Email">Email: craftycurtis05@gmail.com</li>
@@ -30,27 +39,27 @@
         </section>
 
         <!-- Follow Me -->
-        <section class="col-md-3">
+        <section class="col-3">
           <h5>Follow Me</h5>
-          <ul class="list-inline footer-links">
-            <li class="list-inline-item">
+          <ul class="list-inline d-flex flex-row">
+            <li class="icons list-inline-item">
               <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="Visit My LinkedIn Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/linkedin_icon_blk.png" alt="LinkedIn Icon">
+                <img class="icon" src="@/assets/icons/light_theme/linkedin_icon_blk.png" alt="LinkedIn Icon">
               </a>
             </li>
             <li class="list-inline-item">
               <a href="https://github.com/CraftyCurtis05" target="_blank" title="Visit My GitHub Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/github_icon_blk.png" alt="GitHub Icon">
+                <img class="icon" src="@/assets/icons/light_theme/github_icon_blk.png" alt="GitHub Icon">
               </a>
             </li>
             <li class="list-inline-item">
               <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="Visit My Codecademy Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/codecademy_icon_blk.png" alt="Codecademy Icon">
+                <img class="icon" src="@/assets/icons/light_theme/codecademy_icon_blk.png" alt="Codecademy Icon">
               </a>
             </li>
             <li class="list-inline-item">
               <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="Visit My HackerRank Profile">
-                <img id="footer-icons" class="img-responsive" src="@/assets/icons/light_theme/hackerrank_icon_blk.png" alt="HackerRank Icon">
+                <img class="icon" src="@/assets/icons/light_theme/hackerrank_icon_blk.png" alt="HackerRank Icon">
               </a>
             </li>
           </ul>
@@ -77,8 +86,6 @@
           </ul>
         </div>
       </section>
-
-    </article>
   </footer>
 </template>
 
@@ -90,8 +97,19 @@ export default {
 
 <style scoped>
 footer {
+  width: 100vw;
+  height: clamp(15rem, 17vw, 20rem);
   background-color: #dadae2;
-  height: 17rem;
+  padding: 20px;
+}
+
+.logo img {
+    width: clamp(7rem, 11.9vw, 16.4rem);  /* 1024px - 2560 */
+    height: auto;
+}
+
+h5 {
+  font-size: clamp(1.1rem, 1.3vw, 2rem);  /* 1024px - 2560 */
 }
 
 .link {
@@ -104,8 +122,19 @@ footer {
   font-weight: 700;
 }
 
+li, p {
+  font-size: clamp(.9rem, 1vw, 1.5rem);  /* 1024px - 2560 */
+}
+
 .footer-links li:hover {
   font-weight: 500;
+}
+
+.icon {
+  width: clamp(2.4rem, 2.75vw, 4.1rem);  /* 1024px - 2560 */
+  height: auto;
+  margin-inline: clamp(.1rem, .1vw, 1rem);  /* 1024px - 2560 */
+  margin-block: clamp(.1rem, .25vw, .5rem);  /* 1024px - 2560 */
 }
 
 /* Extra Small (Mobile) */

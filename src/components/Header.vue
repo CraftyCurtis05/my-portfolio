@@ -6,25 +6,53 @@
         <!-- Logo -->
         <section class="logo">
             <router-link to="/">
-                <img src="@/assets/logo/light_theme/logo_blk_01.png" alt="Jennifer Curtis Logo" title="Go to My Home Page">
+                <img
+                    src="@/assets/logo/light_theme/logo_blk_01.png"
+                    alt="Jennifer Curtis Logo"
+                    title="Go to My Home Page"
+                >
             </router-link>    
         </section>
 
         <!-- Header -->
         <header class="icons d-flex flex-row-reverse bd-highlight">  
             <!-- Social Media -->
-            <a href="https://www.hackerrank.com/profile/craftycurtis05" target="_blank" title="Visit My HackerRank Profile">
-                <img class="icon" src="@/assets/icons/light_theme/hackerrank_icon_blk.png" alt="HackerRank Icon">
-            </a>
-            <a href="https://www.codecademy.com/profiles/CraftyCurtis05" target="_blank" title="Visit My Codecademy Profile">
-                <img class="icon" src="@/assets/icons/light_theme/codecademy_icon_blk.png" alt="Codecademy Icon">
-            </a>
-            <a href="https://github.com/CraftyCurtis05" target="_blank" title="Visit My GitHub Profile">
-                <img class="icon" src="@/assets/icons/light_theme/github_icon_blk.png" alt="GitHub Icon">
-            </a>
-            <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank" title="Visit My LinkedIn Profile">
-                <img class="icon" src="@/assets/icons/light_theme/linkedin_icon_blk.png" alt="LinkedIn Icon">
-            </a>
+            <a
+                href="https://www.hackerrank.com/profile/craftycurtis05"
+                target="_blank"
+                title="Visit My HackerRank Profile"
+            ><img
+                class="icon"
+                src="@/assets/icons/light_theme/hackerrank_icon_blk.png"
+                alt="HackerRank Icon"
+            ></a>
+            <a
+                href="https://www.codecademy.com/profiles/CraftyCurtis05"
+                target="_blank"
+                title="Visit My Codecademy Profile"
+            ><img
+                class="icon"
+                src="@/assets/icons/light_theme/codecademy_icon_blk.png"
+                alt="Codecademy Icon"
+            ></a>
+            <a
+                href="https://github.com/CraftyCurtis05"
+                target="_blank"
+                title="Visit My GitHub Profile"
+            ><img
+                class="icon"
+                src="@/assets/icons/light_theme/github_icon_blk.png"
+                alt="GitHub Icon"
+            ></a>
+            <a
+                href="https://www.linkedin.com/in/jcurtisdeveloper/"
+                target="_blank"
+                title="Visit My LinkedIn Profile"
+            ><img
+                class="icon"
+                src="@/assets/icons/light_theme/linkedin_icon_blk.png"
+                alt="LinkedIn Icon"
+            ></a>
         </header>
 
         <!-- NavBar Component -->
@@ -48,28 +76,28 @@ export default {
 <style scoped>
 .logo {
     position: absolute;
-    padding: clamp(.7rem, .8vw, 1rem);
+    padding: clamp(1.1rem, 1vw, 1.6rem); /* 1024px - 2560 */
     z-index: 1000;
 }
 
 .logo img {
-    width: clamp(10.5rem, 13vw, 18rem);
+    width: clamp(10rem, 11.9vw, 16.4rem);  /* 1024px - 2560 */
     height: auto;
 }
 
 header {
-    height: clamp(3.5rem, 4vw, 5.5rem);
+    height: clamp(3.5rem, 4vw, 5.5rem);  /* 1024px - 2560 */
 }
 
 header .icon {
-    margin-right: clamp(.2rem, .5vw, 1rem);
+    margin-right: clamp(.4rem, .5vw, 1rem);  /* 1024px - 2560 */
 }
 
 .icon {
-    width: clamp(2.5rem, 3vw, 4.5rem);
+    width: clamp(2.4rem, 2.75vw, 4.1rem);  /* 1024px - 2560 */
     height: auto;
-    margin-inline: clamp(.5rem, .5vw, .6rem);
-    margin-block: clamp(.5rem, .7vw, .6rem);
+    margin-inline: clamp(.4rem, .5vw, .6rem);  /* 1024px - 2560 */
+    margin-block: clamp(.5rem, .6vw, .75rem);  /* 1024px - 2560 */
 }
 
 /* Extra Small (Mobile) */
