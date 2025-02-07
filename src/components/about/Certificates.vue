@@ -1,21 +1,21 @@
 <!-- Certificates Component -->
 <template>
-    <article>
+    <article class="d-flex flex-column lead p-0 m-0">
 
-    <!-- Resume Button -->
-    <section class="btn-container mt-2">
-      <a
-        class="btn"
-        href="/about/jennifer_curtis_resume.pdf"
-        target="_blank"
-        title="Click to View My Resume"
-      >My Resume</a>
-    </section>
+        <!-- Resume Button -->
+        <section class="btn-container">
+        <a
+            class="btn d-flex justify-content-center align-items-center"
+            href="/about/jennifer_curtis_resume.pdf"
+            target="_blank"
+            title="Click to View My Resume"
+        >My Resume</a>
+        </section>
 
         <!-- Certificates Button with Modal Trigger -->
-        <section class="btn-container mt-1">
+        <section class="btn-container">
             <button
-                class="btn mt-2 lead"
+                class="btn d-flex justify-content-center align-items-center"
                 title="Click to View My Certificates"
                 @click="openCarouselModalCertificate"
             >My Certificates</button>
@@ -34,7 +34,7 @@
                     <!-- Modal Header -->
                     <section class="modal-header">
                         <h4 class="modal-title lead" id="carouselModalCertificateLabel">
-                            <b class="lead">{{ currentTitle }}</b>
+                            <b class="title lead">{{ currentTitle }}</b>
                         </h4>
                         <button
                             type="button"
@@ -346,103 +346,112 @@ export default {
 </script>
 
 <style scoped>
-.btn {
-  width: 25rem;
-  color: #7c7c8a;
-  background-color: #f8f8fa;
-  border: 1px solid #7c7c8a;
-  border-radius: 15px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
-}
+@media (min-width: 1000px) {
+    .btn {
+        width: clamp(15rem, 20vw, 35rem);
+        height: 4vh;
+        font-size: clamp(1rem, 1.1vw, 1.5rem);
+        color: #7c7c8a;
+        background-color: rgb(248, 248, 250, 0.7);
+        border: 1px solid #7c7c8a;
+        border-radius: 1rem;
+        margin-block: .5vh;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
+    }
 
-.btn:hover {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: white;
-  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
-  background-size: 500% 500%;
-  border: 1px solid #cccce4;
-  transform: translateY(-1px);
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
-  animation: gradient-animation 5s ease infinite;
-}
+    .btn:hover {
+        font-size: clamp(1.05rem, 1.2vw, 1.6rem);
+        font-weight: 500;
+        color: white;
+        background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+        background-size: 500% 500%;
+        border: 1px solid #cccce4;
+        transform: translateY(-1px);
+        box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
+        animation: gradient-animation 5s ease infinite;
+    }
 
-/* Animation for button */
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    /* Animation for button */
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 
-.carousel-inner {
-    width: 100%;
-}
+    .carousel-inner {
+        width: 100%;
+    }
 
-.carousel-item img {
-    width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-}
+    .carousel-item img {
+        width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+    }
 
-.modal-dialog {
-    max-width: 90vw;
-    height: auto;
-}
+    .modal-dialog {
+        max-width: 90vw;
+        height: auto;
+    }
+    
+    .title {
+        font-size: clamp(1.2rem, 1.3vw, 2rem);
+    }
 
-.modal-body {
-    height: 90vh;
-    background-color: #dadae2;
-}
+    .modal-body {
+        height: 90vh;
+        background-color: #dadae2;
+    }
 
-.carousel-indicators,
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    filter: invert(50%);
-}
+    .carousel-indicators,
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        filter: invert(50%);
+    }
 
-.carousel-indicators {
-    top: 80vh;
-}
+    .carousel-indicators {
+        top: 80vh;
+    }
 
-.carousel-indicators button {
-    height: .2rem;
-}
+    .carousel-indicators button {
+        height: .3vh;
+    }
 
-.carousel-control-prev,
-.carousel-control-next {
-    width: 5%;
-    height: 90vh;
-    top: -.2vh;
-    transform: translateY(-15px); /* Adds 3D effect */
-    background-color: rgba(0, 0, 0, 0.1);
-    z-index: 3000;
-    object-fit: contain;
-}
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+        height: 90vh;
+        top: -.2vh;
+        transform: translateY(-15px); /* Adds 3D effect */
+        background-color: rgba(0, 0, 0, 0.1);
+        object-fit: contain;
+        z-index: 3000;
+    }
 
-.carousel-control-prev {
-    left: -1rem;
-}
+    .carousel-control-prev {
+        left: -1rem;
+    }
 
-.carousel-control-next {
-    right: -1rem;
-}
+    .carousel-control-next {
+        right: -1rem;
+    }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
-    background-size: 250% 250%;
-    border: 1px solid #cccce4;
-    border-radius: .2rem;
-    opacity: .7;
-    box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
-    animation: gradient-animation 3s ease infinite;
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
+        background-size: 250% 250%;
+        border: 1px solid #cccce4;
+        border-radius: .2rem;
+        opacity: .7;
+        box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
+        animation: gradient-animation 3s ease infinite;
+    }
 }
 
 /* Extra Small (Mobile) */

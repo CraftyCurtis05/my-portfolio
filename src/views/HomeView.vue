@@ -25,16 +25,10 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-image: linear-gradient(
-    to bottom,
-    #dadae2,
-    1%,
-    #dddbe7,
-    #d5d3e0,
-    99%,
-    #dadae2
-  );
+main {
+  width: 100%;
+  background: #dadae2 url('/home/jumbotron_bg_image.png') no-repeat center center;
+  background-size: contain;
 }
 
 /* Extra Small (Mobile) */

@@ -1,6 +1,6 @@
 <!-- Footer Component -->
 <template>
-  <footer>
+  <footer class="footer px-0 pb-0 m-0">
       <div class="row">
 
         <!-- Logo -->
@@ -118,6 +118,7 @@
       <!-- Horizontal Line -->
       <hr>
 
+
       <!-- Copyright & Links -->
       <section class="row lead">
         <div class="col-6">
@@ -156,9 +157,9 @@ export default {
 @media (min-width: 1000px) {
   footer {
     width: 100vw;
-    height: clamp(12.2rem, 14vw, 18rem);
+    height: clamp(12.5rem, 14.5vw, 18.5rem);
     background-color: #dadae2;
-    padding-top: 1vh;
+    padding-block: 1%;
   }
 
   .column {

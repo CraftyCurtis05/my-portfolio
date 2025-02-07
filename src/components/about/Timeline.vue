@@ -152,55 +152,57 @@ export default {
 </script>
   
 <style scoped>
-article {
-  height: 100%;
-  right: 20%;
-}
+@media (min-width: 1000px) {
+  article {
+    height: 100%;
+    right: 20%;
+  }
 
-.timeline-line {
-  width: 10px;
-  height: 100%;
-  background-color: #bbbbbb;
-  border-radius: 15px;
-}
+  .timeline-line {
+    width: 10px;
+    height: 100%;
+    background-color: #bbbbbb;
+    border-radius: 15px;
+  }
 
-.timeline-marker {
-  font-size: 1rem;
-  font-weight: 800;
-  color: #666666;
-  transform: translateY(-50%);
-}
+  .timeline-marker {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #666666;
+    transform: translateY(-50%);
+  }
 
-.timeline-item {
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
+  .timeline-item {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
 
-.timeline-item:hover {
-  transform: scale(1.01);
-}
+  .timeline-item:hover {
+    transform: scale(1.01);
+  }
 
-.timeline-circle {
-  width: 40px;
-  height: 40px;
-  font-weight: 700;
-  color: #ffffff;
-  border-radius: 50%;
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease; /* Smooth transition for background color */
-  z-index: 1;
-}
+  .timeline-circle {
+    width: 40px;
+    height: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    border-radius: 50%;
+    box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for background color */
+    z-index: 1;
+  }
 
-.timeline-description {
-  width: 30vw;
-  top: 30%;
-  right: 15%;
-  background-color: #fff;
-  font-size: 1rem;
-  border-radius: 15px;
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
-  z-index: 500;
-  overflow-y: auto;
+  .timeline-description {
+    width: 30vw;
+    top: 30%;
+    right: 15%;
+    background-color: #fff;
+    font-size: 1rem;
+    border-radius: 15px;
+    box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.1);
+    z-index: 500;
+    overflow-y: auto;
+  }
 }
 
 /* Transition effect for description */

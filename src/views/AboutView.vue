@@ -6,21 +6,21 @@
   </head>
 
   <body>
-    <main class="row d-flex flex-row justify-content-center mx-auto">
+    <main class="row g-0">
 
       <!-- About Me Image -->
-      <section class="image-container col-3 d-flex flex-column pt-3">
+      <section class="image-container col-3">
         <Image :receivedData="dataFromCertificates"/>
         <Certificates @data-sent="receiveData"/>
       </section>
 
       <!-- About Me Text -->
-      <section class="text-container col-6 pt-5 mx-3">
+      <section class="text-container col-6">
         <AboutMe/>
       </section>
 
       <!-- Experience Timeline -->
-      <section class="timeline-container col-1">
+      <section class="timeline-container col-2">
         <Timeline/>
       </section>
 
@@ -60,6 +60,11 @@ export default {
 <style scoped>
 body {
   background-color: #dadae2;
+}
+
+main {
+  margin-block: 5vh;
+  transform: translateX(10%);
 }
 
 /* Extra Small (Mobile) */

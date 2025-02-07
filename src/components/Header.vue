@@ -90,7 +90,11 @@ export default {
         height: clamp(3.5rem, 4vw, 5.5rem);  /* 1024px - 2560 */
     }
 
-    header .icon {
+    .icons {
+        margin-left: -1vw;
+    }
+
+    .icon {
         margin-right: clamp(.4rem, .5vw, 1rem);  /* 1024px - 2560 */
     }
 

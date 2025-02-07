@@ -2,16 +2,16 @@
 <template>
 
     <!-- About Me Section -->
-    <article class="row px-5">
+    <article class="row p-0 m-0">
 
       <!-- About Me Text -->
-      <section class="text-container lead">
-        <p class="title ml-1">About Jennifer Curtis</p>
+      <section class="text-container lead d-flex flex-column">
+        <p class="title">About Jennifer Curtis</p>
         <hr>
-        <p class="about py-2">
+        <p class="about">
           <b><em>I’m a full-stack web developer from Columbus, Ohio, with a passion for creating apps that are as clever as they are easy to use—where code meets creativity!</em></b>
         </p>
-        <p class="background pb-1">
+        <p class="background">
           After completing Tech Elevator’s bootcamp, I’ve worked on projects like dispensary locators and inventory systems, honing my coding and leadership skills. 
           With a background in business management, I bring strong communication and problem-solving to every project. 
           Outside of coding, I’m all about remodeling, perfecting my coffee brew and curating playlists for inspiration.
@@ -37,24 +37,33 @@ export default {
 </script>
 
 <style scoped>
-.text-container {
-  width: 50vw;
-  background-color: #dadae2;
-  z-index: 1;
-}
+@media (min-width: 1000px) {
+  .text-container {
+    width: 50vw;
+    background-color: transparent;
+    background-size: contain;
+    padding-inline: 3vw;
+    z-index: 10;
+  }
 
-.title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: -1.2rem;
-}
+  .title {
+    font-size: clamp(1.25rem, 1.5vw, 2.5rem);
+    font-weight: 500;
+    margin-block: -.5vw;
+  }
 
-.about {
-  font-size: 1.1rem;
-}
+  .about {
+    font-size: clamp(1.1rem, 1.25vw, 1.9rem);
+  }
 
-.background {
-  font-size: 1.05rem;
+  .background {
+    font-size: clamp(1rem, 1.2vw, 1.8rem);
+  }
+
+  .sell {
+    font-size: clamp(1.1rem, 1.25vw, 1.9rem);
+    margin-block: -.5vw;
+  }
 }
 
 /* Extra Small (Mobile) */
