@@ -1,15 +1,17 @@
-<!-- npm install -->
-<!-- npm install bootstrap -->
-<!-- npm install @emailjs/browser@latest -->
+<!-- DOWNLOAD BEFORE RUN -->
+<!-- npm install                            (v 10.9.0) -->
+<!-- npm install -g @vue/cli                (v 3.5.13) -->
+<!-- npm install bootstrap                  (v 5.3.3) -->
+<!-- npm install @emailjs/browser@latest    (v 4.4.1) -->
 
 <template>
-  <body id="portfolio-app" class="d-flex flex-column justify-content-center align-items-center mx-auto p-0">
+  <body id="portfolio-app" class="d-flex flex-column justify-content-center align-items-center p-0 m-0">
     
     <header id="top">
       <Header/>
     </header>
     
-    <main class="m-auto px-2 pt-5 pb-3">
+    <main class="d-flex flex-row justify-content-center align-items-center p-0 py-5 m-0">
       <router-view />
     </main>
     
@@ -22,14 +24,12 @@
 
 <script>
 import Header from './components/Header.vue';
-import NavBar from './components/NavBar.vue';
 import Footer from './components/Footer.vue';
 
 export default {
   name: "App",
   components: {
     Header,
-    NavBar,
     Footer
   }
 }
@@ -45,8 +45,8 @@ html {
 }
 
 body {
-  min-height: 75vh;
-  background-color: #dadae2;
+  min-height: 48vh;
+  background-color: #dadae2 !important;
   overflow-x: hidden;
   scroll-behavior: smooth;
   caret-color: transparent;

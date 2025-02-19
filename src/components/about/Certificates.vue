@@ -230,7 +230,7 @@ export default {
                 },
                 {
                     id: 25,
-                    image: "25_Learn_BootStrap.png",
+                    image: "25_Learn_Bootstrap.png",
                     title: "Learn BootStrap Certificate"
                 },
                 {

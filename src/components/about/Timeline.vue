@@ -12,11 +12,11 @@
     </section>
 
     <!-- Timeline Items -->
-    <section class="timeline-items d-flex flex-column ml-5">
+    <section class="timeline-items d-flex flex-column ml-4">
       <div v-for="(item, index) in timelineItems" :key="index" class="timeline-item"
         @mouseover="showDescription(index)"
         @mouseleave="hideDescription(index)"
-        :style="{ transform: `translateY(${itemPosition(item.start)}vw)` }">
+        :style="{ transform: `translateY(${itemPosition(item.start)}vh)` }">
 
         <!-- Event Circle -->
         <div
@@ -154,7 +154,7 @@ export default {
 <style scoped>
 @media (min-width: 1000px) {
   article {
-    height: 100%;
+    height: 50vh;
     right: 20%;
   }
 

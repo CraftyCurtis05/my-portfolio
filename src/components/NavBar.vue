@@ -1,43 +1,91 @@
 <!-- Navbar Component -->
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light row d-flex justify-content-center align-items-center mx-auto">
-        <article class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <article class="container-fluid">
    
-            <!-- Navbar Toggler Button -->
-            <button
-                    class="navbar-toggler m-auto p-0"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <!-- Navbar Toggler Button -->
+      <button
+        class="navbar-toggler m-auto p-0"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <!-- Navbar Links List-->
-            <section class="collapse navbar-collapse bg-light d-flex justify-content-center align-items-center" id="navbarNav">
-                <ul class="navbar-nav nav lead mx-auto">
+      <!-- Navbar Links List-->
+      <section 
+        class="offcanvas offcanvas-end bg-light" 
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <!-- Logo -->
+            <section class="logo">
+              <router-link to="/">
+                <img
+                  src="/logo/light_theme/logo_blk_01.png"
+                  alt="Jennifer Curtis Logo"
+                  title="Go to My Home Page"
+                >
+              </router-link>    
+            </section>
+          </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 lead justify-content-center">
                     <li class="nav-item">
-                        <router-link to="/" class="nav-link" active-class="active-link" title="Go to Home Page">Home</router-link>
+                        <a
+                          class="nav-link active"
+                          href="/"
+                          aria-current="page"
+                          title="Go to Home Page"
+                        >Home</a>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/about" class="nav-link" active-class="active-link" title="Go to About Me Page">About</router-link>
+                        <a
+                          class="nav-link"
+                          href="/about"
+                          title="Go to About Me Page"
+                        >About</a>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/education" class="nav-link" active-class="active-link" title="Go to Education Page">Education</router-link>
+                        <a
+                          class="nav-link"
+                          href="/education"
+                          title="Go to Education Page"
+                        >Education</a>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/experience" class="nav-link" active-class="active-link" title="Go to Experience Page">Experience</router-link>
+                        <a
+                          class="nav-link"
+                          href="/experience"
+                          title="Go to Experience Page"
+                        >Experience</a>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/projects" class="nav-link" active-class="active-link" title="Go to Projects Page">Projects</router-link>
+                        <a
+                          class="nav-link"
+                          href="/projects"
+                          title="Go to Projects Page"
+                        >Projects</a>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/contact" class="nav-link" active-class="active-link" title="Go to Contact Me Page">Contact</router-link>
+                        <a
+                          class="nav-link"
+                          href="/contact"
+                          title="Go to Contact Me Page"
+                        >Contact</a>
                     </li>
                 </ul>
+              </div>
             </section>
 
         </article>

@@ -2,7 +2,7 @@
 <template>
     <article id="carouselIndicators" class="carousel slide mx-auto" data-bs-ride="carousel">
         
-        <section class="carousel-indicators m-auto">
+        <section class="carousel-indicators mx-auto">
             <button
                 v-for="(item, index) in education"
                 :key="item.id"
@@ -116,8 +116,7 @@ export default {
 
 <style scoped>
 article {
-    width: 75%;
-    height: 40%;
+    width: 75vw;
 }
 
 .carousel-indicators,

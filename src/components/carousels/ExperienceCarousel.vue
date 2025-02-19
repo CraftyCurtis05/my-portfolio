@@ -1,8 +1,8 @@
 <!-- Experience Carousel Component -->
 <template>
-    <article id="carouselIndicators" class="carousel slide mx-auto mx-5" data-bs-ride="carousel">
+    <article id="carouselIndicators" class="carousel slide mx-auto" data-bs-ride="carousel">
 
-        <section class="carousel-indicators m-auto">
+        <section class="carousel-indicators mx-auto">
             <button
                 v-for="(item, index) in experience"
                 :key="item.id"
@@ -202,7 +202,7 @@ export default {
 
 <style scoped>
 article {
-  width: 75%;
+  width: 75vw;
 }
 
 .carousel-indicators,

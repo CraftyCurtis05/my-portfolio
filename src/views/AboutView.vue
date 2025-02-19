@@ -6,21 +6,21 @@
   </head>
 
   <body>
-    <main class="row g-0">
+    <main class="main-content d-flex flex-row justify-content-center align-items-center">
 
       <!-- About Me Image -->
-      <section class="image-container col-3">
+      <section class="image-container col-3 d-flex flex-column justify-content-center align-items-center p-0 m-0">
         <Image :receivedData="dataFromCertificates"/>
         <Certificates @data-sent="receiveData"/>
       </section>
 
       <!-- About Me Text -->
-      <section class="text-container col-6">
+      <section class="text-container col-6 d-flex flex-column justify-content-center align-items-center p-0 m-0">
         <AboutMe/>
       </section>
 
       <!-- Experience Timeline -->
-      <section class="timeline-container col-2">
+      <section class="timeline-container col-1 d-flex flex-column justify-content-center align-items-center p-0 m-0">
         <Timeline/>
       </section>
 
@@ -58,13 +58,21 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-color: #dadae2;
+.main-content {
+  margin-block: 8vh;
 }
 
-main {
-  margin-block: 5vh;
-  transform: translateX(10%);
+.image-container {
+
+}
+
+.text-container {
+
+}
+
+
+.timeline-container {
+
 }
 
 /* Extra Small (Mobile) */

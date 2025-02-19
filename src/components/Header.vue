@@ -7,11 +7,11 @@
         <section class="logo">
             <router-link to="/">
                 <img
-                    src="@/assets/logo/light_theme/logo_blk_01.png"
+                    src="/logo/light_theme/logo_blk_01.png"
                     alt="Jennifer Curtis Logo"
                     title="Go to My Home Page"
                 >
-            </router-link>    
+            </router-link>
         </section>
 
         <!-- Header -->
@@ -23,7 +23,7 @@
                 title="Visit My HackerRank Profile"
             ><img
                 class="icon"
-                src="@/assets/icons/light_theme/hackerrank_icon_blk.png"
+                src="/icons/light_theme/hackerrank_icon_blk.png"
                 alt="HackerRank Icon"
             ></a>
             <a
@@ -32,7 +32,7 @@
                 title="Visit My Codecademy Profile"
             ><img
                 class="icon"
-                src="@/assets/icons/light_theme/codecademy_icon_blk.png"
+                src="/icons/light_theme/codecademy_icon_blk.png"
                 alt="Codecademy Icon"
             ></a>
             <a
@@ -41,7 +41,7 @@
                 title="Visit My GitHub Profile"
             ><img
                 class="icon"
-                src="@/assets/icons/light_theme/github_icon_blk.png"
+                src="/icons/light_theme/github_icon_blk.png"
                 alt="GitHub Icon"
             ></a>
             <a
@@ -50,7 +50,7 @@
                 title="Visit My LinkedIn Profile"
             ><img
                 class="icon"
-                src="@/assets/icons/light_theme/linkedin_icon_blk.png"
+                src="/icons/light_theme/linkedin_icon_blk.png"
                 alt="LinkedIn Icon"
             ></a>
         </header>

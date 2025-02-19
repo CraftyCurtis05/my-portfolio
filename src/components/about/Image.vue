@@ -7,13 +7,13 @@
     <!-- Transition Image -->
     <section class="image position-relative" :class="{ 'no-hover': receivedData }">
       <img
-        src="@/assets/about/images/top_image.webp"
+        src="/about/images/top_image.png"
         class="top-image img-fluid position-absolute"
         alt="Picture of Jennifer Curtis"
         title="Jennifer Curtis"
       />
       <img 
-        src="@/assets/about/images/bottom_image.jpg"
+        src="/about/images/bottom_image.jpg"
         class="bottom-image img-fluid position-absolute"
         alt="Picture of Jennifer Curtis"
         title="Jennifer Curtis"

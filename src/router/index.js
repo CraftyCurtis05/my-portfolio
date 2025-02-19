@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 // Import components
-import HomeView from '@/views/HomeView.vue';
-import AboutView from '@/views/AboutView.vue';
-import EducationView from '@/views/EducationView.vue';
-import ExperienceView from '@/views/ExperienceView.vue';
-import ProjectsView from '@/views/ProjectsView.vue';
-import ContactView from '@/views/ContactView.vue';
-import SiteMapView from '@/views/SiteMapView.vue';
+import HomeView from '../views/HomeView.vue';
+import AboutView from '../views/AboutView.vue';
+import EducationView from '../views/EducationView.vue';
+import ExperienceView from '../views/ExperienceView.vue';
+import ProjectsView from '../views/ProjectsView.vue';
+import ContactView from '../views/ContactView.vue';
+import SiteMapView from '../views/SiteMapView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component

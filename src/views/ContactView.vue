@@ -25,10 +25,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-color: #dadae2;
-}
-
 /* Extra Small (Mobile) */
 @media (max-width: 480px) {
   /* Styles for phones in portrait mode */

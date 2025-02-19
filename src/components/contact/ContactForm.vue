@@ -70,7 +70,7 @@
       </section>
 
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-block mt-2 mb-4">Send Message</button>
+      <button type="submit" class="btn btn-block col-12 justify-content-center mt-2 mb-4">Send Message</button>
     </form>
 
   </article>

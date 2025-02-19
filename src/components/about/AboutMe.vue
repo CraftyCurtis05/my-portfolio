@@ -39,29 +39,28 @@ export default {
 <style scoped>
 @media (min-width: 1000px) {
   .text-container {
-    width: 50vw;
+    width: 90%;
     background-color: transparent;
     background-size: contain;
-    padding-inline: 3vw;
     z-index: 10;
   }
 
   .title {
-    font-size: clamp(1.25rem, 1.5vw, 2.5rem);
+    font-size: clamp(1.1rem, 1.5vw, 2.5rem);
     font-weight: 500;
     margin-block: -.5vw;
   }
 
   .about {
-    font-size: clamp(1.1rem, 1.25vw, 1.9rem);
+    font-size: clamp(1rem, 1.25vw, 1.9rem);
   }
 
   .background {
-    font-size: clamp(1rem, 1.2vw, 1.8rem);
+    font-size: clamp(.95rem, 1.2vw, 1.8rem);
   }
 
   .sell {
-    font-size: clamp(1.1rem, 1.25vw, 1.9rem);
+    font-size: clamp(1rem, 1.25vw, 1.9rem);
     margin-block: -.5vw;
   }
 }

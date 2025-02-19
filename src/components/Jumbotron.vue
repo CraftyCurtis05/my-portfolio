@@ -3,21 +3,21 @@
     <article class="jumbotron jumbotron-fluid p-0 m-0">
 
         <!-- Full-Stack Dev Paragraph -->
-        <section class="paragraph text-dark text-left">
+        <section class="paragraph text-dark text-left text-start">
             <h1 class="display-4">Full-Stack Developer</h1>
             <p class="lead">
-              Versatile with experience in Java, Python, JavaScript, PostgreSQL, 
-              SQL + multiple frameworks - such as Spring, Bootstrap, Vue3 - 
+              Versatile with experience in Java, Python, JavaScript, SQL, PostgreSQL  
+              + multiple frameworks - such as Spring, Bootstrap, Vue3 - 
               building seamless, data-driven applications from 
               front-end to back-end.</p>
         </section>
 
         <!-- UI/UX Designer Paragraph -->
-        <section class="paragraph text-dark text-right">
+        <section class="paragraph text-dark text-right text-end">
             <h1 class="display-4">UI/UX Designer</h1>
             <p class="lead">
                 Creative with experience in Adobe Suite, CAD, HTML5, 
-                CSS - crafting captivating, user-friendly designs by 
+                CSS3 - crafting captivating, user-friendly designs by 
                 blending innovation with an understanding 
                 of aesthetics and functionality.</p>
         </section>
@@ -59,7 +59,7 @@ export default {
   }
 
   .text-right {
-    width: 33%;
+    width: 34%;
     bottom: 25%;
     left: 65%;
   }
