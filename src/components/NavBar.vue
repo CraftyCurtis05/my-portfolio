@@ -26,8 +26,11 @@
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
             <!-- Logo -->
-            <section class="logo">
-              <router-link to="/">
+            <section class="logo" data-bs-dismiss="offcanvas">
+              <router-link 
+                to="/"
+                title="Go to Home Page"
+              >
                 <img
                   src="/logo/light_theme/logo_blk_01.png"
                   alt="Jennifer Curtis Logo"
@@ -41,48 +44,53 @@
 
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 lead justify-content-center">
-                    <li class="nav-item">
-                        <a
-                          class="nav-link active"
-                          href="/"
-                          aria-current="page"
+                    <li class="nav-item" data-bs-dismiss="offcanvas">
+                        <router-link
+                          class="nav-link"
+                          to="/"
+                          exact-active-class="active"
                           title="Go to Home Page"
-                        >Home</a>
+                        >Home</router-link>
                     </li>
-                    <li class="nav-item">
-                        <a
+                    <li class="nav-item" data-bs-dismiss="offcanvas">
+                        <router-link
                           class="nav-link"
-                          href="/about"
+                          to="/about"
+                          exact-active-class="active"
                           title="Go to About Me Page"
-                        >About</a>
+                        >About</router-link>
                     </li>
-                    <li class="nav-item">
-                        <a
+                    <li class="nav-item" data-bs-dismiss="offcanvas">
+                        <router-link
                           class="nav-link"
-                          href="/education"
+                          to="/education"
+                          exact-active-class="active"
                           title="Go to Education Page"
-                        >Education</a>
+                        >Education</router-link>
                     </li>
-                    <li class="nav-item">
-                        <a
+                    <li class="nav-item" data-bs-dismiss="offcanvas">
+                        <router-link
                           class="nav-link"
-                          href="/experience"
+                          to="/experience"
+                          exact-active-class="active"
                           title="Go to Experience Page"
-                        >Experience</a>
+                        >Experience</router-link>
                     </li>
-                    <li class="nav-item">
-                        <a
+                    <li class="nav-item" data-bs-dismiss="offcanvas">
+                        <router-link
                           class="nav-link"
-                          href="/projects"
+                          to="/projects"
+                          exact-active-class="active"
                           title="Go to Projects Page"
-                        >Projects</a>
+                        >Projects</router-link>
                     </li>
-                    <li class="nav-item">
-                        <a
+                    <li class="nav-item" data-bs-dismiss="offcanvas">
+                        <router-link
                           class="nav-link"
-                          href="/contact"
+                          to="/contact"
+                          exact-active-class="active"
                           title="Go to Contact Me Page"
-                        >Contact</a>
+                        >Contact</router-link>
                     </li>
                 </ul>
               </div>
@@ -126,7 +134,7 @@ export default {
       animation: gradient-animation 3s ease infinite;
   }
 
-  .nav-item .active-link {
+  .nav-link.active {
       font-weight: 400;
       transform: scale(1.02);
   }

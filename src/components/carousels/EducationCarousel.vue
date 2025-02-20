@@ -115,8 +115,10 @@ export default {
 </script>
 
 <style scoped>
-article {
+.carousel,
+.card {
     width: 75vw;
+    height: 75vh;
 }
 
 .carousel-indicators,

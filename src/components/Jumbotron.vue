@@ -3,7 +3,7 @@
     <article class="jumbotron jumbotron-fluid p-0 m-0">
 
         <!-- Full-Stack Dev Paragraph -->
-        <section class="paragraph text-dark text-left text-start">
+        <section class="paragraph text-dark text-left text-start col-md-4">
             <h1 class="display-4">Full-Stack Developer</h1>
             <p class="lead">
               Versatile with experience in Java, Python, JavaScript, SQL, PostgreSQL  
@@ -13,7 +13,7 @@
         </section>
 
         <!-- UI/UX Designer Paragraph -->
-        <section class="paragraph text-dark text-right text-end">
+        <section class="paragraph text-dark text-right text-end col-md-4">
             <h1 class="display-4">UI/UX Designer</h1>
             <p class="lead">
                 Creative with experience in Adobe Suite, CAD, HTML5, 
