@@ -6,7 +6,7 @@
         <section class="paragraph text-dark text-left text-start col-md-4">
             <h1 class="display-4">Full-Stack Developer</h1>
             <p class="lead">
-              Versatile with experience in Java, Python, JavaScript, SQL, PostgreSQL  
+              Versatile with experience in Java, Python, JavaScript, SQL, PostgreSQL 
               + multiple frameworks - such as Spring, Bootstrap, Vue3 - 
               building seamless, data-driven applications from 
               front-end to back-end.</p>
@@ -55,7 +55,7 @@ export default {
   .text-left {
     width: 33%;
     bottom: 43%;
-    left: 2%;
+    left: 3%;
   }
 
   .text-right {
