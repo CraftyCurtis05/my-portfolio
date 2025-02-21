@@ -23,37 +23,116 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        title: 'Home - My Portfolio',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'Welcome to my portfolio website.'
+          },
+          {
+            property: 'og:title',
+            content: 'Home - My Portfolio'
+          },
+          {
+            property: 'og:description',
+            content: 'Welcome to my portfolio website.'
+          }
+        ]
+      }
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component: AboutView,
+      meta: {
+        title: 'About - My Portfolio',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'Learn more about me and my background.'
+          },
+          {
+            property: 'og:title',
+            content: 'About - My Portfolio'
+          },
+          {
+            property: 'og:description',
+            content: 'Learn more about me and my background.'
+          }
+        ]
+      }
     },
     {
       path: '/education',
       name: 'education',
-      component: EducationView
+      component: EducationView,
+      meta: {
+        title: 'Education - My Portfolio',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'My educational background and qualifications.'
+          }
+        ]
+      }
     },
     {
       path: '/experience',
       name: 'experience',
-      component: ExperienceView
+      component: ExperienceView,
+      meta: {
+        title: 'Experience - My Portfolio',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A summary of my professional experience.'
+          }
+        ]
+      }
     },
     {
       path: '/projects',
       name: 'projects',
-      component: ProjectsView
+      component: ProjectsView,
+      meta: {
+        title: 'Projects - My Portfolio',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'View my projects and work samples.'
+          }
+        ]
+      }
     },
     {
       path: '/contact',
       name: 'contact',
-      component: ContactView
+      component: ContactView,
+      meta: {
+        title: 'Contact - My Portfolio',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'Get in touch with me for potential opportunities.'
+          }
+        ]
+      }
     },
     {
       path: '/sitemap',
       name: 'sitemap',
-      component: SiteMapView
+      component: SiteMapView,
+      meta: {
+        title: 'Site Map - My Portfolio',
+        metaTags: [
+          {
+            name: 'description',
+            content: 'A map of all the pages in my portfolio website.'
+          }
+        ]
+      }
     }
   ]
 });
