@@ -59,7 +59,7 @@ export default {
       screenshots: [
         {
           id: 1,
-          image: "default_image.png",
+          image: "default_image.webp",
           alt: "No Image Available"
         }
       ]

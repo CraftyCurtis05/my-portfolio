@@ -59,7 +59,7 @@
       <section class="form-group my-1">
         <label class="mt-1" for="message">Message</label>
         <textarea
-          name="email"
+          name="message"
           class="form-control"
           id="message"
           placeholder="Enter your message here..."

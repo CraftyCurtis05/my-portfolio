@@ -153,73 +153,73 @@ export default {
             screenshots: [
                 {
                     id: 1,
-                    image: "01-jolt-register.png",
+                    image: "01-jolt-register.webp",
                     alt: "Jolt App Screenshot 1",
                     title: "Register page for creating a new account on the Jolt app by providing your username and password."
                 },
                 {
                     id: 2,
-                    image: "02-jolt-login.png",
+                    image: "02-jolt-login.webp",
                     alt: "Jolt App Screenshot 2",
                     title: "Login page for accessing your Jolt account by entering your registered username and password."
                 },
                 {
                     id: 3,
-                    image: "03-jolt-home.png",
+                    image: "03-jolt-home.webp",
                     alt: "Jolt App Screenshot 3",
                     title: "Home screen displaying an app description, along with a currated stock image carousel to match design."
                 },
                 {
                     id: 4,
-                    image: "04-jolt-profile-form.png",
+                    image: "04-jolt-profile-form.webp",
                     alt: "Jolt App Screenshot 4",
                     title: "Profile form for entering personal information such as your name, profile picture and preferences to personalize your Jolt experience."
                 },
                 {
                     id: 5,
-                    image: "05-jolt-profile-user.png",
+                    image: "05-jolt-profile-user.webp",
                     alt: "Jolt App Screenshot 5",
                     title: "User profile page where you can view and update your personal details, including your name, email and uploaded profile picture."
                 },
                 {
                     id: 6,
-                    image: "06-jolt-locator.png",
+                    image: "06-jolt-locator.webp",
                     alt: "Jolt App Screenshot 6",
                     title: "Locator page showing a search bar for user input and a button to search near the user's saved profile address."
                 },
                 {
                     id: 7,
-                    image: "07-jolt-locator-search.png",
+                    image: "07-jolt-locator-search.webp",
                     alt: "Jolt App Screenshot 7",
                     title: "Search results that display the nearest 20 coffee shops to user's location, with shop details and links to Google directions and Yelp Reviews."
                 },
                 {
                     id: 8,
-                    image: "08-jolt-locator-fav.png",
+                    image: "08-jolt-locator-fav.webp",
                     alt: "Jolt App Screenshot 8",
                     title: "Save to favorites where you can save coffee shops to your profile for quick access and future reference."
                 },
                 {
                     id: 9,
-                    image: "09-jolt-profile-favs.png",
+                    image: "09-jolt-profile-favs.webp",
                     alt: "Jolt App Screenshot 9",
                     title: "Manage your favorite coffee shops in your profile, including viewing and editing the list of your top picks."
                 },
                 {
                     id: 10,
-                    image: "10-jolt-shop.png",
+                    image: "10-jolt-shop.webp",
                     alt: "Jolt App Screenshot 10",
                     title: "Shop for different coffee items, including coffee, coffee equipment, coffee merchandise and coffee-related snacks."
                 },
                 {
                     id: 11,
-                    image: "11-jolt-articles.png",
+                    image: "11-jolt-articles.webp",
                     alt: "Jolt App Screenshot 11",
                     title: "Articles page where you can read content related to coffee culture, health advice and user tips for coffee lovers."
                 },
                 {
                     id: 12,
-                    image: "12-jolt-about.png",
+                    image: "12-jolt-about.webp",
                     alt: "Jolt App Screenshot 12",
                     title: "About page describing the development team behind the project, along with descriptions about each and links to their LinkedIn profiles."
                 }

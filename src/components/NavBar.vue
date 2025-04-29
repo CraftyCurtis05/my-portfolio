@@ -32,15 +32,15 @@
                 title="Go to Home Page"
               >
                 <img
-                  src="/logo/light_theme/logo_blk_01.png"
+                  src="/logo/light_theme/logo_blk_01.webp"
                   alt="Jennifer Curtis Logo"
                   title="Go to My Home Page"
                 >
               </router-link>    
             </section>
           </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
 
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 lead justify-content-center">

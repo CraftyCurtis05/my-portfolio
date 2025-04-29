@@ -153,73 +153,73 @@ export default {
             screenshots: [
                 {
                     id: 1,
-                    image: "01-best-buds-register.png",
+                    image: "01-best-buds-register.webp",
                     alt: "Best Buds App Screenshot 1",
                     title: "Register page to create a new Best Buds account by entering your username and password. (Under Development)"
                 },
                 {
                     id: 2,
-                    image: "02-best-buds-login.png",
+                    image: "02-best-buds-login.webp",
                     alt: "Best Buds App Screenshot 2",
                     title: "Login page for accessing your Best Buds account using your registered username and password. (Under Development)"
                 },
                 {
                     id: 3,
-                    image: "03-best-buds-home.png",
+                    image: "03-best-buds-home.webp",
                     alt: "Best Buds App Screenshot 3",
                     title: "Home screen overview of the Best Buds app with a spotlight feature on a top-rated dispensary. (Under Development)"
                 },
                 {
                     id: 4,
-                    image: "04-best-buds-profile.png",
+                    image: "04-best-buds-profile.webp",
                     alt: "Best Buds App Screenshot 4",
                     title: "User profile page where you can view and update your personal details and favorite dispensaries. (Under Development)"
                 },
                 {
                     id: 5,
-                    image: "05-best-buds-locator.png",
+                    image: "05-best-buds-locator.webp",
                     alt: "Best Buds App Screenshot 5",
                     title: "Find nearby dispensaries using our locator tool by entering your location for quick results and a map. (Under Development)"
                 },
                 {
                     id: 6,
-                    image: "06-best-buds-shop.png",
+                    image: "06-best-buds-shop.webp",
                     alt: "Best Buds App Screenshot 6",
                     title: "Shop page to explore a variety of cannabis products, including strains, edibles, and accessories. (Under Development)"
                 },
                 {
                     id: 7,
-                    image: "07-best-buds-tips-tricks.png",
+                    image: "07-best-buds-tips-tricks.webp",
                     alt: "Best Buds App Screenshot 7",
                     title: "Tips & Tricks page offering cannabis advice for both beginners and seasoned users. (Under Development)"
                 },
                 {
                     id: 8,
-                    image: "08-best-buds-products.png",
+                    image: "08-best-buds-products.webp",
                     alt: "Best Buds App Screenshot 8",
                     title: "Strain guide page to help you explore cannabis products and find the right one for your needs. (Under Development)"
                 },
                 {
                     id: 9,
-                    image: "09-best-buds-strain-guide.png",
+                    image: "09-best-buds-strain-guide.webp",
                     alt: "Best Buds App Screenshot 9",
                     title: "Explore our strain and terpene guide to discover the perfect cannabis match for your mood and preferences. (Under Development)"
                 }, 
                 {
                     id: 10,
-                    image: "10-best-buds-safety-tips.png",
+                    image: "10-best-buds-safety-tips.webp",
                     alt: "Best Buds App Screenshot 10",
                     title: "Safety tips page providing essential information on cannabis consumption, smoking, and topicals. (Under Development)"
                 },
                 {
                     id: 11,
-                    image: "11-best-buds-too-much.png",
+                    image: "11-best-buds-too-much.webp",
                     alt: "Best Buds App Screenshot 11",
                     title: "Learn how to identify symptoms of cannabis overconsumption and how to manage the experience. (Under Development)"
                 },
                 {
                     id: 12,
-                    image: "12-best-buds-legality.png",
+                    image: "12-best-buds-legality.webp",
                     alt: "Best Buds App Screenshot 12",
                     title: "Explore cannabis legality across U.S. states with an interactive map detailing state laws and regulations. (Under Development)"
                 },
@@ -231,31 +231,31 @@ export default {
                 },
                 {
                     id: 14,
-                    image: "14-best-buds-articles.png",
+                    image: "14-best-buds-articles.webp",
                     alt: "Best Buds App Screenshot 14",
                     title: "Cannabis Resource Center offering informative articles on strains, trends, and all things cannabis-related. (Under Development)"
                 },
                 {
                     id: 15,
-                    image: "15-best-buds-news.png",
+                    image: "15-best-buds-news.webp",
                     alt: "Best Buds App Screenshot 15",
                     title: "Stay up-to-date with the latest cannabis news, trends, and cultural shifts from around the world. (Under Development)"
                 },
                 {
                     id: 16,
-                    image: "16-best-buds-about.png",
+                    image: "16-best-buds-about.webp",
                     alt: "Best Buds App Screenshot 16",
                     title: "At Best Buds, we guide you through the world of cannabis, promoting informed choices and responsible use. (Under Development)"
                 },
                 {
                     id: 17,
-                    image: "17-best-buds-privacy.png",
+                    image: "17-best-buds-privacy.webp",
                     alt: "Best Buds App Screenshot 17",
                     title: "Our Privacy Policy outlines how we collect, use, and protect your data to ensure a secure and transparent experience. (Under Development)"
                 },
                 {
                     id: 18,
-                    image: "18-best-buds-contact.png",
+                    image: "18-best-buds-contact.webp",
                     alt: "Best Buds App Screenshot 18",
                     title: "Reach out to us through our contact form for any questions or feedback, and we’ll get back to you shortly. (Under Development)"
                 }

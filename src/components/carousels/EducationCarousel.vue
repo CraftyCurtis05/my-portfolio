@@ -67,7 +67,7 @@ export default {
                     degree: "Certificate of Completion",
                     major: "Java Full-Stack Web Application",
                     skills: "Java, Vue.js, PostgreSQL Stack",
-                    image: "te_logo.png",
+                    image: "te_logo.webp",
                     alt: "Tech Elevator Logo",
                     website: "https://www.techelevator.com/",
                     siteTitle: "Visit Tech Elevator"
@@ -79,7 +79,7 @@ export default {
                     degree: "Knowlton School of Architecture",
                     major: "Completed 111 credit hrs towards BS Architecture",
                     skills: "CAD, Sketchup, Adobe Suite & Photoshop",
-                    image: "osu_logo.png",
+                    image: "osu_logo.webp",
                     alt: "Ohio State University Logo",
                     website: "https://www.osu.edu/",
                     siteTitle: "Visit Ohio State University"
@@ -91,7 +91,7 @@ export default {
                     degree: "General Studies",
                     major: "Completed 74 credit hours to transfer",
                     skills: "Dean's List & STNA Certification",
-                    image: "mtc_logo.png",
+                    image: "mtc_logo.webp",
                     alt: "Marion Technical College Logo",
                     website: "https://www.mtc.edu/",
                     siteTitle: "Visit Marion Technical College"
@@ -103,7 +103,7 @@ export default {
                     degree: "College Prep & Advanced Placement",
                     major: "Art, French & Pride Club",
                     skills: "Cheerleading",
-                    image: "cwhs_logo.png",
+                    image: "cwhs_logo.webp",
                     alt: "Canal Winchester High School Logo",
                     website: "https://highschool.cwschools.org/",
                     siteTitle: "Visit Canal Winchester High School"

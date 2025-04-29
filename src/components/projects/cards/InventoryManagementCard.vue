@@ -148,7 +148,7 @@ export default {
       screenshots: [
         {
           id: 1,
-          image: "inventory-mgmt-dashboard-design.png",
+          image: "inventory-mgmt-dashboard-design.webp",
           alt: "Inventory Management Dashboard Wireframe",
           title: "Wireframe design showcasing the layout and key features of an inventory management application, including item tracking, stock levels and user navigation."
         }

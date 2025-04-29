@@ -7,7 +7,7 @@
         <section class="col-3 logo column">
           <router-link to="/">
             <img
-              src="/logo/light_theme/logo_blk_01.png"
+              src="/logo/light_theme/logo_blk_01.webp"
               alt="Jannifer Curtis Logo"
               title="Go to My Home Page"
             >
@@ -66,7 +66,7 @@
               >
                 <img
                   class="icon"
-                  src="/icons/light_theme/linkedin_icon_blk.png"
+                  src="/icons/light_theme/linkedin_icon_blk.webp"
                   alt="LinkedIn Icon"
                 >
               </a>
@@ -79,7 +79,7 @@
               >
                 <img
                   class="icon"
-                  src="/icons/light_theme/github_icon_blk.png"
+                  src="/icons/light_theme/github_icon_blk.webp"
                   alt="GitHub Icon"
                 >
               </a>
@@ -92,7 +92,7 @@
               >
                 <img
                   class="icon"
-                  src="/icons/light_theme/codecademy_icon_blk.png"
+                  src="/icons/light_theme/codecademy_icon_blk.webp"
                   alt="Codecademy Icon"
                 >
               </a>
@@ -105,7 +105,7 @@
               >
                 <img
                   class="icon"
-                  src="/icons/light_theme/hackerrank_icon_blk.png"
+                  src="/icons/light_theme/hackerrank_icon_blk.webp"
                   alt="HackerRank Icon"
                 >
               </a>

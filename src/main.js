@@ -17,7 +17,5 @@ app.use(createPinia());
 app.use(router);
 app.use(createMetaManager());  // Initialize vue-meta manager
 
-await router.isReady()
-
 // Mount the app
 app.mount('#app');

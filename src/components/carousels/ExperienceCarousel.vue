@@ -58,140 +58,140 @@ export default {
           id: 1,
           title: "Bootstrap 5",
           subtitle: "1 year experience",
-          image: "bootstrap_icon.png",
+          image: "bootstrap_icon.webp",
           alt: "Bootstrap 5 Logo"
         },
         {
           id: 2,
           title: "CSS 3",
           subtitle: "2 years experience",
-          image: "css_icon.png",
+          image: "css_icon.webp",
           alt: "CSS 3 Logo"
         },
         {
           id: 3,
           title: "Docker",
           subtitle: "1 year experience",
-          image: "docker_icon.png",
+          image: "docker_icon.webp",
           alt: "Docker Logo"
         },
         {
           id: 4,
           title: "Express",
           subtitle: "2 years experience",
-          image: "express_icon.png",
+          image: "express_icon.webp",
           alt: "Express Logo"
         },
         {
           id: 5,
           title: "Git",
           subtitle: "2 years experience",
-          image: "git_icon.png",
+          image: "git_icon.webp",
           alt: "Git Logo"
         },
         {
           id: 6,
           title: "HTML 5",
           subtitle: "3 years experience",
-          image: "html_icon.png",
+          image: "html_icon.webp",
           alt: "HTML 5 Logo"
         },
         {
           id: 7,
           title: "Adobe Illustrator",
           subtitle: "3 years experience",
-          image: "illustrator_icon.png",
+          image: "illustrator_icon.webp",
           alt: "Adobe Illustrator Logo"
         },
         {
           id: 8,
           title: "Intellij IDEA",
           subtitle: "2 years experience",
-          image: "intellij_icon.png",
+          image: "intellij_icon.webp",
           alt: "Intellij IDEA Logo"
         },
         {
           id: 9,
           title: "Java",
           subtitle: "2 years experience",
-          image: "java_icon.png",
+          image: "java_icon.webp",
           alt: "Java Logo"
         },
         {
           id: 10,
           title: "JavaScript",
           subtitle: "2 years experience",
-          image: "javascript_icon.png",
+          image: "javascript_icon.webp",
           alt: "JavaScript Logo"
         },
         {
           id: 11,
           title: "J-Unit 5",
           subtitle: "1 year experience",
-          image: "junit_icon.png",
+          image: "junit_icon.webp",
           alt: "J-Unit 5 Logo"
         },
         {
           id: 12,
           title: "Node.js",
           subtitle: "2 years experience",
-          image: "nodejs_icon.png",
+          image: "nodejs_icon.webp",
           alt: "Node.js Logo"
         },
         {
           id: 13,
           title: "Adobe Photoshop",
           subtitle: "5 years experience",
-          image: "photoshop_icon.png",
+          image: "photoshop_icon.webp",
           alt: "Adobe Photoshop Logo"
         },
         {
           id: 14,
           title: "PostgreSQL",
           subtitle: "2 years experience",
-          image: "postgresql_icon.png",
+          image: "postgresql_icon.webp",
           alt: "PostgreSQL Logo"
         },
         {
           id: 15,
           title: "Python",
           subtitle: "2 years experience",
-          image: "python_icon.png",
+          image: "python_icon.webp",
           alt: "Python Logo"
         },
         {
           id: 16,
           title: "SketchUp",
           subtitle: "5 years experience",
-          image: "sketchup_icon.png",
+          image: "sketchup_icon.webp",
           alt: "SketchUp Logo"
         },
         {
           id: 17,
           title: "Spring Boot",
           subtitle: "2 years experience",
-          image: "spring_boot_icon.png",
+          image: "spring_boot_icon.webp",
           alt: "Spring Boot Logo"
         },
         {
           id: 18,
           title: "SQL",
           subtitle: "2 years experience",
-          image: "sql_icon.png",
+          image: "sql_icon.webp",
           alt: "SQL Logo"
         },
         {
           id: 19,
           title: "Visual Studio Code",
           subtitle: "2 years experience",
-          image: "vscode_icon.png",
+          image: "vscode_icon.webp",
           alt: "Visual Studio Code Logo"
         },
         {
           id: 20,
           title: "Vue.js",
           subtitle: "2 years experience",
-          image: "vue_icon.png",
+          image: "vue_icon.webp",
           alt: "Vue.js Logo"
         }
       ]
