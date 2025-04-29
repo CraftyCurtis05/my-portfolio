@@ -65,6 +65,14 @@
                 <hr>
                 <li
                     class="visit mt-4"
+                    @click="showModal('OTLCard', 'Personal')"
+                    title="Click to See More Information"
+                ><b>OTL Communications Website</b>
+                </li>
+                <div class="progress-bar"><ProgressBar :progress="progressOTL"/></div>
+                <hr>
+                <li
+                    class="visit mt-4"
                     @click="showModal('BestBudsCard', 'Personal')"
                     title="Click to See More Information"
                 ><b>"Best Buds" Dispensary Locator Web Application</b><em> (Under Dev)</em>
@@ -108,6 +116,7 @@
                 <div v-if="currentCard === 'SBSensorCard'"><SBSensorCard /></div>
                 <div v-if="currentCard === 'CodecademyCard'"><CodecademyCard /></div>
                 <div v-if="currentCard === 'JoltCard'"><JoltCard /></div>
+                <div v-if="currentCard === 'OTLCard'"><OTLCard /></div>
                 <div v-if="currentCard === 'BestBudsCard'"><BestBudsCard /></div>
                 <div v-if="currentCard === 'InventoryManagementCard'"><InventoryManagementCard /></div>
             </div>
@@ -122,6 +131,7 @@ import TECoffeeCard from './cards/TECoffeeCard.vue';
 import SBSensorCard from './cards/SBSensorCard.vue';
 import CodecademyCard from './cards/CodecademyCard.vue';
 import JoltCard from './cards/JoltCard.vue';
+import OTLCard from './cards/OTLCard.vue';
 import BestBudsCard from './cards/BestBudsCard.vue';
 import InventoryManagementCard from './cards/InventoryManagementCard.vue';
 import ProgressBar from './ProgressBar.vue';
@@ -135,6 +145,7 @@ export default {
         SBSensorCard,
         CodecademyCard,
         JoltCard,
+        OTLCard,
         BestBudsCard,
         InventoryManagementCard,
         ProgressBar
@@ -153,6 +164,7 @@ export default {
             progressSBSensor: 100,
             progressCodecademy: 100,
             progressJolt: 100,
+            progressOTL: 100,
             progressBestBuds: 50,
             progressInventoryManagement: 10,
             progressFutureProject: 0

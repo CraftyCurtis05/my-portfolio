@@ -32,7 +32,7 @@
                 title="Go to Home Page"
               >
                 <img
-                  src="/logo/light_theme/logo_blk_01.webp"
+                  src="/assets/logo/light_theme/logo_blk_01.webp"
                   alt="Jennifer Curtis Logo"
                   title="Go to My Home Page"
                 >

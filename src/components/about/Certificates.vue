@@ -6,7 +6,7 @@
         <section class="btn-container">
         <a
             class="btn d-flex justify-content-center align-items-center"
-            href="/about/jennifer_curtis_resume.pdf"
+            href="/assets/about/jennifer_curtis_resume.pdf"
             target="_blank"
             title="Click to View My Resume"
         >My Resume</a>
@@ -67,7 +67,7 @@
                                     :class="['carousel-item', { active: index === 0 }]"
                                 >
                                     <img
-                                        :src="(`/about/certificates/${screenshot.image}`)"
+                                        :src="(`/assets/about/certificates/${screenshot.image}`)"
                                         :alt="screenshot.title"
                                     >
                                 </div>

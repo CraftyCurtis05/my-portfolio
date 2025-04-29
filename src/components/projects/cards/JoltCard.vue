@@ -13,7 +13,7 @@
                             :class="['carousel-item', { active: index === 0 }]"
                         >
                             <img
-                                :src="(`/projects/project-examples/jolt-screenshots/${screenshot.image}`)"
+                                :src="(`/assets/projects/project-examples/jolt-screenshots/${screenshot.image}`)"
                                 :alt="screenshot.alt"
                             >
                         </div>
@@ -111,7 +111,7 @@
                                 :class="['carousel-item', { active: index === 0 }]"
                             >
                                 <img
-                                    :src="(`/projects/project-examples/jolt-screenshots/${screenshot.image}`)"
+                                    :src="(`/assets/projects/project-examples/jolt-screenshots/${screenshot.image}`)"
                                     :alt="screenshot.alt"
                                 >
                             </div>

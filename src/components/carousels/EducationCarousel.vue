@@ -25,7 +25,7 @@
                 <div class="card text-center pb-4 mx-auto">
                     <img 
                         class="card-img-top mx-auto"
-                        :src="(`/education/logos/${item.image}`)"
+                        :src="(`/assets/education/logos/${item.image}`)"
                         :alt="item.alt"
                     />
                     <div class="card-body">

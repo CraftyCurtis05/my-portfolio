@@ -24,7 +24,7 @@
                 <div class="card text-center pb-4 mx-auto">
                     <img 
                         class="card-img-top mx-auto my-5"
-                        :src="(`/experience/icons/${item.image}`)"
+                        :src="(`/assets/experience/icons/${item.image}`)"
                         :alt="item.alt"
                     />
                     <div class="card-body my-4">

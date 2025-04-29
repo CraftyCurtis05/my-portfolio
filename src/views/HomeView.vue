@@ -27,7 +27,7 @@ export default {
 <style scoped>
 main {
   width: 100%;
-  background: #dadae2 url('/home/jumbotron_bg_image.webp') no-repeat center center;
+  background: #dadae2 url('/assets/home/jumbotron_bg_image.webp') no-repeat center center;
   background-size: contain;
 }
 

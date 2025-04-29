@@ -13,7 +13,7 @@
               :class="['carousel-item', { active: index === 0 }]"
             >
               <img
-                :src="(`/projects/design-examples/${screenshot.image}`)"
+                :src="(`/assets/projects/design-examples/${screenshot.image}`)"
                 :alt="screenshot.alt"
               >
             </div>
@@ -107,7 +107,7 @@
                 :class="['carousel-item', { active: index === 0 }]"
               >
                 <img
-                  :src="(`/projects/design-examples/${screenshot.image}`)"
+                  :src="(`/assets/projects/design-examples/${screenshot.image}`)"
                   :alt="screenshot.alt"
                 >
               </div>
