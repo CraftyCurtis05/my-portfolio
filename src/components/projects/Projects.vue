@@ -67,7 +67,7 @@
                     class="visit mt-4"
                     @click="showModal('OTLCard', 'Personal')"
                     title="Click to See More Information"
-                ><b>OTL Communications Website</b>
+                ><b>"OTL Communications" Website</b>
                 </li>
                 <div class="progress-bar"><ProgressBar :progress="progressOTL"/></div>
                 <hr>
