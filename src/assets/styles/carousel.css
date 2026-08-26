@@ -1,0 +1,233 @@
+/* ========================================
+   Carousel Indicators
+======================================== */
+
+.carousel-indicators {
+  margin-bottom: 0;
+}
+
+.carousel-indicators button {
+  width: 2rem;
+  height: .2rem;
+
+  background-color:
+    var(--color-accent-muted);
+
+  border-radius: 1rem;
+
+  opacity: .45;
+
+  transition:
+    width .25s ease,
+    opacity .25s ease,
+    transform .2s ease;
+}
+
+.carousel-indicators button.active {
+  width: 2.75rem;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--color-accent-green),
+      var(--color-accent-blue),
+      var(--color-accent-lime)
+    );
+
+  opacity: 1;
+}
+
+.carousel-indicators button:hover,
+.carousel-indicators button:focus-visible {
+  opacity: .8;
+}
+
+.carousel-indicators button:focus-visible {
+  outline:
+    2px solid
+    var(--color-accent-blue);
+
+  outline-offset: 3px;
+}
+
+
+/* ========================================
+   Carousel Controls
+======================================== */
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color:
+    var(--color-border);
+
+  border: 0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  transition:
+    background-color .2s ease,
+    opacity .2s ease,
+    transform .2s ease;
+}
+
+.carousel-control-prev {
+  border-radius:
+    1rem
+    0
+    0
+    1rem;
+}
+
+.carousel-control-next {
+  border-radius:
+    0
+    1rem
+    1rem
+    0;
+}
+
+
+/* ========================================
+   Carousel Control Icons
+======================================== */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  transition:
+    transform .2s ease-in-out,
+    opacity .2s ease-in-out;
+}
+
+:root[data-theme="light"]
+.carousel-control-prev-icon,
+:root[data-theme="light"]
+.carousel-control-next-icon {
+  filter:
+    invert(45%);
+}
+
+.carousel-control-prev:hover
+.carousel-control-prev-icon,
+.carousel-control-prev:focus-visible
+.carousel-control-prev-icon,
+.carousel-control-next:hover
+.carousel-control-next-icon,
+.carousel-control-next:focus-visible
+.carousel-control-next-icon {
+  transform:
+    scale(1.12);
+
+  opacity: 1;
+}
+
+
+/* ========================================
+   Carousel Control Hover & Focus
+======================================== */
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover,
+.carousel-control-prev:focus-visible,
+.carousel-control-next:focus-visible {
+  background-color:
+    var(--color-surface-transparent-strong);
+
+  opacity: .9;
+}
+
+.carousel-control-prev:focus-visible,
+.carousel-control-next:focus-visible {
+  outline:
+    2px solid
+    var(--color-accent-blue);
+
+  outline-offset: -4px;
+}
+
+
+/* ========================================
+   Touch Interaction
+======================================== */
+
+@media (hover: none) and
+       (pointer: coarse) {
+
+  /* Carousel Indicators */
+
+  .carousel-indicators button:hover {
+    opacity: .45;
+  }
+
+  .carousel-indicators button:active {
+    opacity: .85;
+
+    transform:
+      scaleX(1.08);
+  }
+
+
+  /* Carousel Controls */
+
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    background-color:
+      var(--color-border);
+
+    opacity: 1;
+  }
+
+  .carousel-control-prev:hover
+  .carousel-control-prev-icon,
+  .carousel-control-next:hover
+  .carousel-control-next-icon {
+    transform: none;
+  }
+
+  .carousel-control-prev:active,
+  .carousel-control-next:active {
+    background-color:
+      var(--color-surface-transparent-strong);
+
+    opacity: .9;
+
+    transform:
+      scale(.98);
+  }
+
+  .carousel-control-prev:active
+  .carousel-control-prev-icon,
+  .carousel-control-next:active
+  .carousel-control-next-icon {
+    transform:
+      scale(1.08);
+  }
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 600px) {
+  .carousel-indicators button {
+    width: 1.5rem;
+  }
+}
+
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-control-prev,
+  .carousel-control-next,
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon,
+  .carousel-indicators button {
+    transition: none;
+    animation: none;
+  }
+}

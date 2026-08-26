@@ -1,486 +1,721 @@
 <!-- Certificates Component -->
 <template>
-    <article class="d-flex flex-column lead p-0 m-0">
+  <div class="certificates">
 
-        <!-- Resume Button -->
-        <section class="btn-container">
-        <a
-            class="btn d-flex justify-content-center align-items-center"
-            href="/assets/about/jennifer_curtis_resume.pdf"
-            target="_blank"
-            title="Click to View My Resume"
-        >My Resume</a>
-        </section>
+    <!-- Resume -->
+    <div class="btn-container">
+      <a
+        class="site-button certificate-button"
+        href="/assets/images/about/jennifer_curtis_resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="View my resume"
+      >
+        My Resume
+      </a>
+    </div>
 
-        <!-- Certificates Button with Modal Trigger -->
-        <section class="btn-container">
-            <button
-                class="btn d-flex justify-content-center align-items-center"
-                title="Click to View My Certificates"
-                @click="openCarouselModalCertificate"
-            >My Certificates</button>
-        </section>
 
-        <!-- Modal for Full-Screen Carousel -->
-        <aside
-            class="modal fade"
-            id="carouselModalCertificate"
-            tabindex="-1"
-            aria-labelledby="carouselModalCertificateLabel"
+    <!-- Certificates -->
+    <div class="btn-container">
+      <button
+        class="site-button certificate-button"
+        type="button"
+        title="View my certificates"
+        @click="openCertificateModal"
+      >
+        My Certificates
+      </button>
+    </div>
+
+
+    <!-- Certificate Modal -->
+    <BaseModal
+      modal-id="carouselModalCertificate"
+      label-id="carouselModalCertificateLabel"
+      modal-class="certificate-modal"
+      dialog-class="modal-lg"
+      close-label="Close certificates"
+    >
+
+      <!-- Modal Title -->
+      <template #title>
+        <span
+          aria-live="polite"
+          aria-atomic="true"
         >
-            <article class="modal-dialog modal-lg m-auto">
-                <div class="modal-content">
+          {{ currentTitle }}
+        </span>
+      </template>
 
-                    <!-- Modal Header -->
-                    <section class="modal-header">
-                        <h4 class="modal-title lead" id="carouselModalCertificateLabel">
-                            <b class="title lead">{{ currentTitle }}</b>
-                        </h4>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </section>
 
-                    <!-- Modal Carousel Body -->
-                    <section class="modal-body">
-                        <div id="carouselSlidesOnlyCertificateModal" class="carousel slide" data-bs-ride="carousel">
+      <!-- Certificate Carousel -->
+      <div
+        id="carouselSlidesOnlyCertificateModal"
+        class="carousel slide"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Professional certificates"
+      >
 
-                            <div class="carousel-indicators position-absolute m-auto">
-                            <button
-                                v-for="(screenshot, index) in screenshots"
-                                :key="screenshot.id"
-                                type="button"
-                                data-bs-target="#carouselSlidesOnlyCertificateModal"
-                                :data-bs-slide-to="index"
-                                :class="{ active: index === 0 }"
-                                aria-label="Slide {{ index + 1 }}"
-                            ></button>
-                            </div>
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
 
-                            <div class="carousel-inner position-relative">
-                                <div
-                                    v-for="(screenshot, index) in screenshots"
-                                    :key="screenshot.id"
-                                    :class="['carousel-item', { active: index === 0 }]"
-                                >
-                                    <img
-                                        :src="(`/assets/about/certificates/${screenshot.image}`)"
-                                        :alt="screenshot.title"
-                                    >
-                                </div>
-                            </div>
+          <button
+            v-for="(certificate, index) in certificates"
+            :key="`indicator-${certificate.id}`"
+            type="button"
+            data-bs-target="#carouselSlidesOnlyCertificateModal"
+            :data-bs-slide-to="index"
+            :class="{ active: index === 0 }"
+            :aria-current="
+              index === 0
+                ? 'true'
+                : undefined
+            "
+            :aria-label="
+              `Certificate ${index + 1}: ${certificate.title}`
+            "
+          ></button>
 
-                            <!-- Modal Carousel Controls -->
-                            <button
-                                class="carousel-control-prev"
-                                type="button"
-                                data-bs-target="#carouselSlidesOnlyCertificateModal"
-                                data-bs-slide="prev"
-                            >
-                                <span class="carousel-control-prev-icon"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button
-                                class="carousel-control-next"
-                                type="button"
-                                data-bs-target="#carouselSlidesOnlyCertificateModal"
-                                data-bs-slide="next"
-                            >
-                                <span class="carousel-control-next-icon"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+        </div>
 
-                        </div>
-                    </section>
-                </div>
-            </article>
-        </aside>
-    </article>
+
+        <!-- Certificate Images -->
+        <div class="carousel-inner">
+
+          <div
+            v-for="(certificate, index) in certificates"
+            :key="certificate.id"
+            :class="[
+              'carousel-item',
+              { active: index === 0 }
+            ]"
+          >
+
+            <!-- Zoom Viewport -->
+            <div
+              class="certificate-zoom-viewport"
+              @wheel.prevent="
+                handleImageWheel(
+                  $event,
+                  certificate.id
+                )
+              "
+            >
+
+              <!-- Zoom Control -->
+              <button
+                class="certificate-zoom-button"
+                type="button"
+                :class="{
+                  'is-zoomed':
+                    getImageZoom(
+                      certificate.id
+                    ) > 1
+                }"
+                :aria-label="
+                  getImageZoom(
+                    certificate.id
+                  ) > 1
+                    ? `Reset zoom for ${certificate.title}`
+                    : `Zoom in on ${certificate.title}`
+                "
+                :title="
+                  getImageZoom(
+                    certificate.id
+                  ) > 1
+                    ? 'Click to reset zoom'
+                    : 'Click where you want to zoom'
+                "
+                @click="
+                  handleImageClick(
+                    $event,
+                    certificate.id
+                  )
+                "
+              >
+                <img
+                  :src="
+                    `/assets/images/about/certificates/${certificate.image}`
+                  "
+                  :alt="certificate.title"
+                  :style="
+                    getImageStyle(
+                      certificate.id
+                    )
+                  "
+                  loading="lazy"
+                  decoding="async"
+                >
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Previous Certificate -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselSlidesOnlyCertificateModal"
+          data-bs-slide="prev"
+          aria-label="Previous certificate"
+        >
+          <span
+            class="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+        </button>
+
+
+        <!-- Next Certificate -->
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselSlidesOnlyCertificateModal"
+          data-bs-slide="next"
+          aria-label="Next certificate"
+        >
+          <span
+            class="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+        </button>
+
+      </div>
+
+    </BaseModal>
+
+  </div>
 </template>
 
+
 <script>
+import { Carousel, Modal } from 'bootstrap';
+
+import BaseModal from '@/components/BaseModal.vue';
+
+import certificates from '@/data/certificates';
+
+import imageZoomMixin from '@/mixins/imageZoomMixin';
+
 export default {
-    name: "Certificates",
-    data() {
-        return {
-            currentTitle: '',
-            screenshots: [
-                {
-                    id: 1,
-                    image: "01_Tech_Elevator_Certificate.webp",
-                    title: "Tech Elevator: Certificate of Completion"
-                },
-                {
-                    id: 2,
-                    image: "02_Learn_HTML.webp",
-                    title: "Learn HTML Course Certificate"
-                },
-                {
-                    id: 3,
-                    image: "03_HTML_Forms.webp",
-                    title: "Learn HTML: Forms Course Certificate"
-                },
-                {
-                    id: 4,
-                    image: "04_HTML_Fundamentals.webp",
-                    title: "Learn HTML: Fundamentals Course Certificate"
-                },
-                {
-                    id: 5,
-                    image: "05_HTML_Semantics.webp",
-                    title: "Learn HTML: Semantics Course Certificate"
-                },
-                {
-                    id: 6,
-                    image: "06_HTML_Tables.webp",
-                    title: "Learn HTML: Tables Course Certificate"
-                },
-                {
-                    id: 7,
-                    image: "07_Learn_CSS.webp",
-                    title: "Learn CSS Certificate"
-                },
-                {
-                    id: 8,
-                    image: "08_Learn_Intermediate_CSS.webp",
-                    title: "Learn Intermediate CSS Certificate"
-                },
-                {
-                    id: 9,
-                    image: "09_CSS_Accessibility.webp",
-                    title: "Learn CSS: Accessibility Course Certificate"
-                },
-                {
-                    id: 10,
-                    image: "10_CSS_Box_Model_And_Layout.webp",
-                    title: "Learn CSS: Box Model and Layout Course Certificate"
-                },
-                {
-                    id: 11,
-                    image: "11_CSS_Browser_Compatibility.webp",
-                    title: "Learn CSS: Browser Compatibility Course Certificate"
-                },
-                {
-                    id: 12,
-                    image: "12_CSS_Colors.webp",
-                    title: "Learn CSS: Colors Course Certificate"
-                },
-                {
-                    id: 13,
-                    image: "13_CSS_Flexbox_And_Grid.webp",
-                    title: "Learn CSS: Flexbox and Grid Course Certificate"
-                },
-                {
-                    id: 14,
-                    image: "14_CSS_Introduction.webp",
-                    title: "Learn CSS: Introduction Course Certificate"
-                },
-                {
-                    id: 15,
-                    image: "15_CSS_Responsive_Design.webp",
-                    title: "Learn CSS: Responsive Design Course Certificate"
-                },
-                {
-                    id: 16,
-                    image: "16_CSS_Transitions_And_Animations.webp",
-                    title: "Learn CSS: Transitions and Animations Course Certificate"
-                },
-                {
-                    id: 17,
-                    image: "17_CSS_Typography_And_Fonts.webp",
-                    title: "Learn CSS: Typography and Fonts Course Certificate"
-                },
-                {
-                    id: 18,
-                    image: "18_CSS_Variables_And_Functions.webp",
-                    title: "Learn CSS: Variables and Functions Course Certificate"
-                },
-                {
-                    id: 19,
-                    image: "19_Learn_Color_Design.webp",
-                    title: "Learn Color Design Course Certificate"
-                },
-                {
-                    id: 20,
-                    image: "20_Learn_JavaScript.webp",
-                    title: "Learn JavaScript Certificate"
-                },
-                {
-                    id: 21,
-                    image: "21_Learn_Intermediate_JavaScript.webp",
-                    title: "Learn Intermediate JavaScript Certificate"
-                },
-                {
-                    id: 22,
-                    image: "22_Building_Interactive_JavaScript_Websites.webp",
-                    title: "Building Interactive JavaScript Websites Certificate"
-                },
-                {
-                    id: 23,
-                    image: "23_Make_Website_With_NameCheap.webp",
-                    title: "How to Make a Website with NameCheap Certificate"
-                },
-                {
-                    id: 24,
-                    image: "24_Learn_Vuejs.webp",
-                    title: "Learn Vue.js Certificate"
-                },
-                {
-                    id: 25,
-                    image: "25_Learn_Bootstrap.webp",
-                    title: "Learn BootStrap Certificate"
-                },
-                {
-                    id: 26,
-                    image: "26_Learn_SQL.webp",
-                    title: "Learn SQL Certificate"
-                },
-                {
-                    id: 27,
-                    image: "27_Learn_Spring.webp",
-                    title: "Learn Spring Certificate"
-                },
-                {
-                    id: 28,
-                    image: "28_Spring_Fundamentals_And_Controllers.webp",
-                    title: "Learn Spring: Fundamentals and Controllers Course Certificate"
-                },
-                {
-                    id: 29,
-                    image: "29_Spring_Building_An_App.webp",
-                    title: "Learn Spring: Building an App Course Certificate"
-                },
-                {
-                    id: 30,
-                    image: "30_Create_REST_APIs_With_Spring_And_Java.webp",
-                    title: "Create REST APIs with Spring and Java Skill Path Certificate"
-                },
-                {
-                    id: 31,
-                    image: "31_Fundamentals_Of_Cybersecurity.webp",
-                    title: "Fundamentals Of Cybersecurity Skill Path Certificate"
-                },
-                {
-                    id: 32,
-                    image: "32_Comptia_Security_Fundamental_Security_Concepts.webp",
-                    title: "CompTIA Security+: Fundamental Security Concepts Course Certificate"
-                },
-                {
-                    id: 33,
-                    image: "33_Comptia_Security_Practical_Cryptography.webp",
-                    title: "CompTIA Security+: Practical Cryptography Course Certificate"
-                },
-                {
-                    id: 34,
-                    image: "34_Comptia_Security_Risk_Management.webp",
-                    title: "CompTIA Security+: Risk Management Course Certificate"
-                },
-                {
-                    id: 35,
-                    image: "35_Comptia_Security_Security_Goals_And_Controls.webp",
-                    title: "CompTIA Security+: Security Goals and Controls Course Certificate"
-                },
-                {
-                    id: 36,
-                    image: "36_Comptia_Security_Survey_Of_Malicious_Activities.webp",
-                    title: "CompTIA Security+: Survey Of Malicious Activities Course Certificate"
-                },
-                {
-                    id: 37,
-                    image: "37_Comptia_Security_Threat_Actors_And_Vectors.webp",
-                    title: "CompTIA Security+: Threat Actors and Vectors Course Certificate"
-                }
-            ]
-        };
-    },
-    methods: {
-        // Open modal and set current title based on the slide
-        openCarouselModalCertificate() {
-            // Send data for open modal to about view
-            this.$emit( 'data-sent', true );
-            
-            this.currentTitle = this.screenshots[0].title;
-            const modal = new window.bootstrap.Modal(document.getElementById('carouselModalCertificate'));
-            modal.show();
-        },
-        // Method to update the current slide index on slide change
-        updateCurrentSlide(event) {
-            const currentSlideIndex = event.to;
-            this.currentTitle = this.screenshots[currentSlideIndex].title;
-        },
-        // Reset modal and carousel when modal is closed
-        resetModal() {
-            // Send data for closed modal to about view
-            this.$emit( 'data-sent', false );
+  name: "Certificates",
 
-            // Reset the title to the first slide
-            this.currentTitle = this.screenshots[0].title;
+  components: {
+    BaseModal
+  },
 
-            // Reset the carousel to the first slide using Bootstrap's carousel API
-            const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
-            const carousel = new bootstrap.Carousel(carouselElement);
-            carousel.to(0); // Navigate to the first slide (index 0)
-        }
-    },
-    mounted() {
-        // Attach the slide event listener to the carousel after the component is mounted
-        const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
-        carouselElement.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
-      
-        // Add event listener for modal close
-        const modalElement = document.getElementById('carouselModalCertificate');
-        modalElement.addEventListener('hidden.bs.modal', this.resetModal);
-    },
-    beforeDestroy() {
-        // Clean up the event listener before the component is destroyed
-        const carouselElement = document.getElementById('carouselSlidesOnlyCertificateModal');
-        carouselElement.removeEventListener('slide.bs.carousel', this.updateCurrentSlide);
+  mixins: [
+    imageZoomMixin
+  ],
 
-        const modalElement = document.getElementById('carouselModalCertificate');
-        modalElement.removeEventListener('hidden.bs.modal', this.resetModal);
+
+  emits: [
+    'data-sent'
+  ],
+
+
+  data() {
+    return {
+      currentTitle:
+        certificates[0]?.title || '',
+
+      certificates
+    };
+  },
+
+
+  methods: {
+
+    /* Open Certificate Modal */
+    openCertificateModal() {
+      const modalElement =
+        document.getElementById(
+          'carouselModalCertificate'
+        );
+
+      if (!modalElement) {
+        return;
+      }
+
+      this.resetAllImageZoom();
+
+      this.currentTitle =
+        this.certificates[0]?.title || '';
+
+      Modal.getOrCreateInstance(
+        modalElement
+      ).show();
+    },
+
+
+    /* Update Current Certificate */
+    updateCurrentSlide(event) {
+      const certificate =
+        this.certificates[event.to];
+
+      this.resetAllImageZoom();
+
+      if (certificate) {
+        this.currentTitle =
+          certificate.title;
+      }
+    },
+
+
+    /* Handle Modal Open */
+    handleModalOpen() {
+      this.$emit(
+        'data-sent',
+        true
+      );
+    },
+
+
+    /* Reset Certificate Modal */
+    resetModal() {
+      const carouselElement =
+        document.getElementById(
+          'carouselSlidesOnlyCertificateModal'
+        );
+
+      this.resetAllImageZoom();
+
+      this.$emit(
+        'data-sent',
+        false
+      );
+
+      this.currentTitle =
+        this.certificates[0]?.title || '';
+
+      if (carouselElement) {
+        Carousel.getInstance(
+          carouselElement
+        )?.to(0);
+      }
     }
+  },
+
+
+  mounted() {
+    const carouselElement =
+      document.getElementById(
+        'carouselSlidesOnlyCertificateModal'
+      );
+
+    const modalElement =
+      document.getElementById(
+        'carouselModalCertificate'
+      );
+
+    if (carouselElement) {
+      carouselElement.addEventListener(
+        'slide.bs.carousel',
+        this.updateCurrentSlide
+      );
+    }
+
+    if (modalElement) {
+      modalElement.addEventListener(
+        'shown.bs.modal',
+        this.handleModalOpen
+      );
+
+      modalElement.addEventListener(
+        'hidden.bs.modal',
+        this.resetModal
+      );
+    }
+  },
+
+
+  beforeUnmount() {
+    const carouselElement =
+      document.getElementById(
+        'carouselSlidesOnlyCertificateModal'
+      );
+
+    const modalElement =
+      document.getElementById(
+        'carouselModalCertificate'
+      );
+
+    if (carouselElement) {
+      carouselElement.removeEventListener(
+        'slide.bs.carousel',
+        this.updateCurrentSlide
+      );
+
+      Carousel.getInstance(
+        carouselElement
+      )?.dispose();
+    }
+
+    if (modalElement) {
+      modalElement.removeEventListener(
+        'shown.bs.modal',
+        this.handleModalOpen
+      );
+
+      modalElement.removeEventListener(
+        'hidden.bs.modal',
+        this.resetModal
+      );
+
+      Modal.getInstance(
+        modalElement
+      )?.dispose();
+    }
+  }
 };
 </script>
 
-<style scoped>
-@media (min-width: 1000px) {
-    .btn {
-        width: clamp(15rem, 20vw, 35rem);
-        height: 4vh;
-        font-size: clamp(1rem, 1.1vw, 1.5rem);
-        color: #7c7c8a;
-        background-color: rgb(248, 248, 250, 0.7);
-        border: 1px solid #7c7c8a;
-        border-radius: 1rem;
-        margin-block: .5vh;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
-    }
 
-    .btn:hover {
-        font-size: clamp(1.05rem, 1.2vw, 1.6rem);
-        font-weight: 500;
-        color: white;
-        background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
-        background-size: 500% 500%;
-        border: 1px solid #cccce4;
-        transform: translateY(-1px);
-        box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.2);
-        animation: gradient-animation 5s ease infinite;
-    }
+<style>
+/* ========================================
+   Resume & Certificate Buttons
+======================================== */
 
-    /* Animation for button */
-    @keyframes gradient-animation {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
+.certificates {
+  display: flex;
+  flex-direction: column;
 
-    .carousel-inner {
-        width: 100%;
-    }
-
-    .carousel-item img {
-        width: 100%;
-        max-height: 80vh;
-        object-fit: contain;
-    }
-
-    .modal-dialog {
-        max-width: 90vw;
-        height: auto;
-    }
-    
-    .title {
-        font-size: clamp(1.2rem, 1.3vw, 2rem);
-    }
-
-    .modal-body {
-        height: 90vh;
-        background-color: #dadae2;
-    }
-
-    .carousel-indicators,
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
-        filter: invert(50%);
-    }
-
-    .carousel-indicators {
-        top: 80vh;
-    }
-
-    .carousel-indicators button {
-        height: .3vh;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 5%;
-        height: 90vh;
-        top: -.2vh;
-        transform: translateY(-15px); /* Adds 3D effect */
-        background-color: rgba(0, 0, 0, 0.1);
-        object-fit: contain;
-        z-index: 3000;
-    }
-
-    .carousel-control-prev {
-        left: -1rem;
-    }
-
-    .carousel-control-next {
-        right: -1rem;
-    }
-
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
-        background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
-        background-size: 250% 250%;
-        border: 1px solid #cccce4;
-        border-radius: .2rem;
-        opacity: .7;
-        box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
-        animation: gradient-animation 3s ease infinite;
-    }
+  width: 100%;
 }
 
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
+.certificates .btn-container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
 }
 
-/* Small (Mobile) */
+.certificate-button {
+  width:
+    clamp(10rem, 20vw, 20rem);
+
+  margin-block: .25rem;
+}
+
+
+/* ========================================
+   Certificate Modal
+======================================== */
+
+.certificate-modal .modal-dialog {
+  width:
+    min(94vw, 1200px);
+
+  max-width: none;
+
+  margin:
+    1rem
+    auto;
+}
+
+.certificate-modal .modal-content {
+  max-height:
+    calc(100vh - 2rem);
+
+  overflow: hidden;
+}
+
+.certificate-modal .modal-header {
+  flex-shrink: 0;
+}
+
+.certificate-modal .modal-title {
+  padding-right: 1rem;
+
+  font-size:
+    clamp(1rem, 1.3vw, 1.5rem);
+
+  font-weight: 500;
+}
+
+.certificate-modal .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 0;
+  height:
+    calc(100vh - 7rem);
+
+  padding: 1rem;
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   Certificate Carousel
+======================================== */
+
+.certificate-modal .carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.certificate-modal .carousel-inner {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.certificate-modal .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+.certificate-modal .carousel-item.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ========================================
+   Certificate Zoom Viewport
+======================================== */
+
+.certificate-modal
+.certificate-zoom-viewport {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  overscroll-behavior: contain;
+}
+
+
+/* ========================================
+   Certificate Zoom Button
+======================================== */
+
+.certificate-modal
+.certificate-zoom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  border: 0;
+
+  cursor: zoom-in;
+}
+
+.certificate-modal
+.certificate-zoom-button.is-zoomed {
+  cursor: zoom-out;
+}
+
+.certificate-modal
+.certificate-zoom-button:focus-visible {
+  outline:
+    3px solid
+    var(--color-accent-blue);
+
+  outline-offset: -3px;
+}
+
+
+/* ========================================
+   Certificate Image
+======================================== */
+
+.certificate-modal
+.certificate-zoom-button img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  margin: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  will-change: transform;
+
+  transition:
+    transform .2s ease,
+    filter .3s ease-in-out;
+}
+
+
+/* ========================================
+   Certificate Image - Dark Theme
+======================================== */
+
+:root[data-theme="dark"]
+.certificate-modal
+.certificate-zoom-button img {
+  filter:
+    brightness(.8);
+}
+
+
+/* ========================================
+   Carousel Indicators
+======================================== */
+
+.certificate-modal
+.carousel-indicators {
+  top: auto;
+  bottom: .5rem;
+
+  z-index: 5;
+}
+
+
+/* ========================================
+   Carousel Controls
+======================================== */
+
+.certificate-modal
+.carousel-control-prev,
+.certificate-modal
+.carousel-control-next {
+  top: 0;
+
+  width: 7%;
+  height: 100%;
+
+  z-index: 4;
+}
+
+
+/* ========================================
+   Resume & Certificate Buttons - Tablet
+======================================== */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .certificates {
+    flex-direction: row;
+    justify-content: center;
+
+    gap: 1rem;
+  }
+
+  .certificates .btn-container {
+    width: auto;
+  }
+
+  .certificate-button {
+    width:
+      clamp(10rem, 30vw, 16rem);
+  }
+}
+
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 900px) {
+  .certificate-modal .modal-dialog {
+    width: 96vw;
+
+    margin:
+      .75rem
+      auto;
+  }
+
+  .certificate-modal .modal-content {
+    max-height:
+      calc(100vh - 1.5rem);
+  }
+
+  .certificate-modal .modal-body {
+    height:
+      calc(100vh - 6.5rem);
+
+    padding: .75rem;
+  }
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
 @media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
+  .certificate-button {
+    width: 100%;
+  }
+
+  .certificate-modal .modal-dialog {
+    width: 98vw;
+
+    margin:
+      .5rem
+      auto;
+  }
+
+  .certificate-modal .modal-content {
+    max-height:
+      calc(100vh - 1rem);
+  }
+
+  .certificate-modal .modal-header {
+    padding: .75rem;
+  }
+
+  .certificate-modal .modal-body {
+    height:
+      calc(100vh - 5.5rem);
+
+    padding: .5rem;
+  }
+
+  .certificate-modal .modal-title {
+    font-size: .95rem;
+  }
+
+  .certificate-modal
+  .carousel-indicators {
+    bottom: .25rem;
+  }
+
+  .certificate-modal
+  .carousel-control-prev-icon,
+  .certificate-modal
+  .carousel-control-next-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
-/* Medium (Tablet) */
-@media (max-width: 768px) {
-  /* Styles for tablets in portrait mode */
-}
 
-/* Large (Tablet, Small Laptops) */
-@media (max-width: 1024px) {
-  /* Styles for small laptops and tablets in landscape mode */
-}
+/* ========================================
+   Reduced Motion
+======================================== */
 
-/* Extra Large (Laptops, Desktops) */
-@media (min-width: 1025px) {
-  /* Styles for laptops and desktop screens */
-}
-
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
-  /* Styles for large desktop displays */
+@media (prefers-reduced-motion: reduce) {
+  .certificate-modal
+  .certificate-zoom-button img {
+    transition: none;
+  }
 }
 </style>

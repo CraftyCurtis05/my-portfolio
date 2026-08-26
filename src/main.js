@@ -1,21 +1,26 @@
 import { createApp } from 'vue';
-import { createPinia } from 'pinia';
-import { createMetaManager } from 'vue-meta';  // Import vue-meta manager
 
 import App from './App.vue';
+
 import router from './router';
 
-// Bootstrap5
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Create the app
+import 'bootstrap';
+
+import './assets/styles/button.css';
+import './assets/styles/carousel.css';
+import './assets/styles/icon-links.css';
+import './assets/styles/modal.css';
+import './assets/styles/project-card.css';
+
+
+/* ========================================
+   Vue Application
+======================================== */
+
 const app = createApp(App);
 
-// Use Pinia store and router
-app.use(createPinia());
 app.use(router);
-app.use(createMetaManager());  // Initialize vue-meta manager
 
-// Mount the app
 app.mount('#app');

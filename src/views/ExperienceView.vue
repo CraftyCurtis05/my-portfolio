@@ -1,57 +1,52 @@
 <!-- Experience View -->
 <template>
+  <div class="experience-page page-shell">
 
-  <head>
-    <title>Experience | J.Curtis Portfolio</title>
-  </head>
-  
-  <body>
-    <main>
-      <ExperienceCarousel/>
-    </main>
-  </body>
+    <PageHeader
+      eyebrow="Experience · Systems · Technology"
+      title="Professional Experience"
+      description="A career across business operations, technology and development, with problem-solving at the center of it."
+    />
 
+
+    <!-- Experience -->
+    <section class="experience-content">
+      <ExperienceCarousel />
+    </section>
+
+
+    <!-- Tools & Technologies -->
+    <section class="tools-content section-divider">
+      <ToolsTechnologiesCarousel />
+    </section>
+
+  </div>
 </template>
-  
+
+
 <script>
-import ExperienceCarousel from '@/components/carousels/ExperienceCarousel.vue';
+import PageHeader from '@/components/PageHeader.vue';
+import ExperienceCarousel from '@/components/experience/ExperienceCarousel.vue';
+import ToolsTechnologiesCarousel from '@/components/experience/ToolsTechnologiesCarousel.vue';
 
 export default {
   name: "ExperienceView",
-  components: { 
-    ExperienceCarousel
+
+  components: {
+    PageHeader,
+    ExperienceCarousel,
+    ToolsTechnologiesCarousel
   }
 };
 </script>
-  
+
+
 <style scoped>
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
-}
+/* ========================================
+   Tools & Technologies
+======================================== */
 
-/* Small (Mobile) */
-@media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
-}
-
-/* Medium (Tablet) */
-@media (max-width: 768px) {
-  /* Styles for tablets in portrait mode */
-}
-
-/* Large (Tablet, Small Laptops) */
-@media (max-width: 1024px) {
-  /* Styles for small laptops and tablets in landscape mode */
-}
-
-/* Extra Large (Laptops, Desktops) */
-@media (min-width: 1025px) {
-  /* Styles for laptops and desktop screens */
-}
-
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
-  /* Styles for large desktop displays */
+.tools-content {
+  width: 100%;
 }
 </style>

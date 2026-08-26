@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+
+  <url>
+    <loc>
+      https://jennifercurtis.me/
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://jennifercurtis.me/about
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://jennifercurtis.me/education
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://jennifercurtis.me/experience
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://jennifercurtis.me/projects
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://jennifercurtis.me/contact
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://jennifercurtis.me/sitemap
+    </loc>
+  </url>
+
+</urlset>

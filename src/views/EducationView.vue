@@ -1,57 +1,33 @@
 <!-- Education View -->
 <template>
+  <div class="education-page page-shell">
 
-  <head>
-    <title>Education | J.Curtis Portfolio</title>
-  </head>
+    <PageHeader
+      eyebrow="Learning · Training · Growth"
+      title="Education & Training"
+      description="A mix of formal coursework, technical training and hands-on learning that helped me build the skills I use today."
+    />
 
-  <body>
-    <main>
-      <EducationCarousel/>
-    </main>
-  </body>
 
+    <!-- Education -->
+    <section class="education-content">
+      <EducationCarousel />
+    </section>
+
+  </div>
 </template>
 
+
 <script>
-import EducationCarousel from '@/components/carousels/EducationCarousel.vue';
+import PageHeader from '@/components/PageHeader.vue';
+import EducationCarousel from '@/components/education/EducationCarousel.vue';
 
 export default {
   name: "EducationView",
-  components: { 
+
+  components: {
+    PageHeader,
     EducationCarousel
   }
 };
 </script>
-
-<style scoped>
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
-}
-
-/* Small (Mobile) */
-@media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
-}
-
-/* Medium (Tablet) */
-@media (max-width: 768px) {
-  /* Styles for tablets in portrait mode */
-}
-
-/* Large (Tablet, Small Laptops) */
-@media (max-width: 1024px) {
-  /* Styles for small laptops and tablets in landscape mode */
-}
-
-/* Extra Large (Laptops, Desktops) */
-@media (min-width: 1025px) {
-  /* Styles for laptops and desktop screens */
-}
-
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
-  /* Styles for large desktop displays */
-}
-</style>

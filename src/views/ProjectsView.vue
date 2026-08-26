@@ -1,57 +1,33 @@
 <!-- Projects View -->
 <template>
+  <div class="projects-page page-shell">
 
-  <head>
-    <title>Projects | J.Curtis Portfolio</title>
-  </head>
+    <PageHeader
+      eyebrow="Systems · Development · Design"
+      title="Projects"
+      description="A mix of independent, client and educational work that shows how I approach systems, development and practical problem-solving."
+    />
 
-  <body>
-    <main class="ml-4">
-      <Projects/>
-    </main>
-  </body>
 
+    <!-- Projects -->
+    <section class="projects-content">
+      <ProjectDirectory />
+    </section>
+
+  </div>
 </template>
-  
+
+
 <script>
-import Projects from '@/components/projects/Projects.vue';
+import PageHeader from '@/components/PageHeader.vue';
+import ProjectDirectory from '@/components/projects/ProjectDirectory.vue';
 
 export default {
   name: "ProjectsView",
-  components: { 
-    Projects
+
+  components: {
+    PageHeader,
+    ProjectDirectory
   }
 };
 </script>
-
-<style scoped>
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
-}
-
-/* Small (Mobile) */
-@media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
-}
-
-/* Medium (Tablet) */
-@media (max-width: 768px) {
-  /* Styles for tablets in portrait mode */
-}
-
-/* Large (Tablet, Small Laptops) */
-@media (max-width: 1024px) {
-  /* Styles for small laptops and tablets in landscape mode */
-}
-
-/* Extra Large (Laptops, Desktops) */
-@media (min-width: 1025px) {
-  /* Styles for laptops and desktop screens */
-}
-
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
-  /* Styles for large desktop displays */
-}
-</style>

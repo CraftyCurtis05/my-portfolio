@@ -1,0 +1,171 @@
+/* ========================================
+   Site Button
+======================================== */
+
+.site-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width:
+    clamp(10rem, 22vw, 20rem);
+
+  max-width: 100%;
+  min-height: 3rem;
+
+  padding:
+    .65rem
+    1rem;
+
+  color:
+    var(--color-accent-muted);
+
+  background-color:
+    var(--color-surface-transparent-strong);
+
+  border: none;
+  border-radius: 1.5rem;
+
+  box-shadow:
+    0 .15rem .35rem
+    var(--color-shadow);
+
+  font-family: inherit;
+
+  font-size:
+    clamp(.95rem, 1vw, 1.05rem);
+
+  font-weight: 400;
+  line-height: 1.2;
+
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    color .3s ease-in-out,
+    background-color .3s ease-in-out,
+    box-shadow .3s ease-in-out,
+    transform .3s ease-in-out;
+}
+
+
+/* ========================================
+   Hover & Focus
+======================================== */
+
+.site-button:hover:not(:disabled),
+.site-button:focus-visible:not(:disabled) {
+  color:
+    var(--color-text);
+
+  background-color:
+    var(--color-surface);
+
+  font-weight: 500;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 .35rem .65rem
+    var(--color-shadow-strong);
+}
+
+.site-button:focus-visible {
+  outline:
+    2px solid
+    var(--color-accent-blue);
+
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   Touch Interaction
+======================================== */
+
+@media (hover: none) and
+       (pointer: coarse) {
+  .site-button:active:not(:disabled) {
+    color:
+      var(--color-white);
+
+    background-image:
+      var(--accent-gradient);
+
+    background-size:
+      300% 300%;
+
+    transform:
+      translateY(1px)
+      scale(.985);
+
+    box-shadow:
+      0 .2rem .4rem
+      var(--color-shadow);
+
+    animation:
+      gradient-animation
+      2.5s
+      ease
+      infinite;
+  }
+
+  .site-button:active:not(:disabled)::before {
+    opacity: .45;
+
+    transform:
+      scale(.98);
+  }
+}
+
+
+/* ========================================
+   Disabled
+======================================== */
+
+.site-button:disabled {
+  cursor: wait;
+
+  opacity: .65;
+}
+
+
+/* ========================================
+   Full Width Button
+======================================== */
+
+.site-button--full {
+  width: 100%;
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 600px) {
+  .site-button {
+    width:
+      min(100%, 18rem);
+  }
+
+  .site-button--full {
+    width: 100%;
+  }
+}
+
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-button,
+  .site-button::before {
+    transition: none;
+    animation: none;
+  }
+}

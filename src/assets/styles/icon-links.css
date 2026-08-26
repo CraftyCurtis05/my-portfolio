@@ -1,0 +1,122 @@
+/* ========================================
+   Social Links
+======================================== */
+
+.social-link {
+  position: relative;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: .3rem;
+
+  background-color: transparent;
+
+  border-radius: 50%;
+
+  transition:
+    transform .3s ease-in-out,
+    box-shadow .3s ease-in-out;
+}
+
+
+/* ========================================
+   Social Icons
+======================================== */
+
+.social-link .icon {
+  transition:
+    opacity .3s ease-in-out;
+}
+
+.icon-default {
+  position: relative;
+
+  opacity: 1;
+
+  z-index: 2;
+}
+
+.icon-hover {
+  position: absolute;
+
+  opacity: 0;
+
+  z-index: 3;
+}
+
+
+/* ========================================
+   Hover & Focus
+======================================== */
+
+.social-link:hover,
+.social-link:focus-visible {
+  transform:
+    translateY(-2px)
+    scale(1.05);
+}
+
+.social-link:hover .icon-default,
+.social-link:focus-visible .icon-default {
+  opacity: 0;
+}
+
+.social-link:hover .icon-hover,
+.social-link:focus-visible .icon-hover {
+  opacity: 1;
+}
+
+.social-link:focus-visible {
+  outline:
+    2px solid
+    var(--color-accent-blue);
+
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   Touch Interaction
+======================================== */
+
+@media (hover: none) and
+       (pointer: coarse) {
+  .social-link:hover {
+    transform: none;
+  }
+
+  .social-link:hover .icon-default {
+    opacity: 1;
+  }
+
+  .social-link:hover .icon-hover {
+    opacity: 0;
+  }
+
+  .social-link:active {
+    transform:
+      scale(.95);
+  }
+
+  .social-link:active .icon-default {
+    opacity: 0;
+  }
+
+  .social-link:active .icon-hover {
+    opacity: 1;
+  }
+}
+
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link,
+  .social-link .icon {
+    transition: none;
+  }
+}

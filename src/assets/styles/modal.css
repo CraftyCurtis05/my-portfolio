@@ -1,0 +1,67 @@
+/* ========================================
+   Modal Content
+======================================== */
+
+.modal-content {
+  color:
+    var(--color-text);
+
+  background-color:
+    var(--color-surface);
+
+  border: 0;
+  border-radius: 1rem;
+}
+
+
+/* ========================================
+   Modal Header
+======================================== */
+
+.modal-header {
+  color:
+    var(--color-text);
+
+  border-bottom:
+    1px solid
+    var(--color-border-transparent);
+}
+
+
+/* ========================================
+   Modal Body
+======================================== */
+
+.modal-body {
+  color:
+    var(--color-text);
+
+  background-color:
+    var(--color-background);
+}
+
+
+/* ========================================
+   Modal Close Button
+======================================== */
+
+.btn-close:focus-visible {
+  outline:
+    2px solid
+    var(--color-accent-blue);
+
+  outline-offset: 4px;
+
+  box-shadow: none;
+}
+
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .modal.fade .modal-dialog {
+    transition: none;
+  }
+}

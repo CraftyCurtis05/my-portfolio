@@ -1,223 +1,172 @@
-<!-- Codecademy Card Component -->
+<!-- Codecademy Mini Projects Card Component -->
 <template>
-    <aside class="card mb-3" style="max-width: 45vw; min-height: 68vh;">
-        <article class="row g-0">
+  <article class="project-card">
+    <div class="project-card-layout">
 
-            <!-- Screenshot Carousel -->
-            <section class="carousel-container col-md-4 d-flex flex-column align-items-center">
-                <div class="carousel-main slide mt-5" data-bs-ride="carousel">
-                    <div class="carousel-inner position-relative">
-                        <div
-                            v-for="(screenshot, index) in screenshots"
-                            :key="screenshot.id"
-                            :class="['carousel-item', { active: index === 0 }]"
-                        >
-                            <img
-                                :src="(`/assets/projects/${screenshot.image}`)"
-                                :alt="screenshot.alt"
-                            >
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <!-- Project Preview -->
+      <section class="carousel-container">
 
-            <!-- Card Body -->
-            <section class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title text-center">
-                        <a
-                            href="https://github.com/CraftyCurtis05/mini-projects"
-                            target="_blank"
-                            title="Visit My Code on Github"
-                        >"Codecademy" Mini Projects</a>
-                    </h5>
-                    <hr>
-                    <p class="card-text lead">
-                        <b>Tech Stack:</b> HTML, CSS, Java, JavaScript, Bootstrap, Flexbox, Spring Boot
-                    </p>
-                    <p class="card-text lead">
-                        A collection of mini projects from Codecademy courses, showcasing HTML, CSS, Java, and JavaScript skills, covering Bootstrap, Flexbox and Async/Await to build a strong web development foundation.
-                    </p>
-                    <ul class="lead">
-                        <li>HTML & CSS Layouts (Bootstrap, Flexbox, Grid)</li>
-                        <li>Java Web Apps (Spring Boot)</li>
-                        <li>Interactive JavaScript Websites</li>
-                        <li>Async Programming (Async/Await, Promises)</li>
-                        <li>Class & Module-based Projects</li>
-                    </ul>
-                    <p class="card-text text-muted lead">
-                        <em>Explore web development concepts through hands-on HTML, CSS, Java, and JavaScript projects.</em>
-                    </p>
-                </div>
-            </section>
+        <div class="carousel-main">
+          <div class="carousel-inner">
 
-        </article>
-    </aside>
+            <div
+              v-for="(screenshot, index) in screenshots"
+              :key="screenshot.id"
+              :class="[
+                'carousel-item',
+                { active: index === 0 }
+              ]"
+            >
+              <img
+                :src="`${imagePath}${screenshot.image}`"
+                :alt="screenshot.alt"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Full Screen Preview -->
+        <button
+          class="site-button project-preview-button"
+          type="button"
+          title="View Codecademy project screenshots in full screen"
+          data-bs-toggle="modal"
+          data-bs-target="#carouselModalCodecademy"
+        >
+          View in Full Screen
+        </button>
+
+      </section>
+
+
+      <!-- Project Details -->
+      <section class="project-details">
+
+        <div class="card-body">
+
+          <h2 class="card-title text-center">
+            Codecademy Mini Projects
+          </h2>
+
+
+          <!-- GitHub Link -->
+          <p class="project-link">
+            <a
+              href="https://github.com/CraftyCurtis05/mini-projects/tree/main/02-codecademy-projects"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Codecademy Mini Projects on GitHub"
+            >
+              View Code on GitHub
+            </a>
+          </p>
+
+
+          <hr>
+
+
+          <!-- Technology -->
+          <p class="card-text">
+            <strong>Tech Stack:</strong>
+            HTML, CSS and JavaScript
+          </p>
+
+
+          <!-- Project Description -->
+          <p class="card-text">
+            This collection includes smaller projects completed while
+            working through Codecademy courses and exercises. They gave me
+            opportunities to practice individual development concepts in
+            focused applications before using them in larger projects.
+          </p>
+
+
+          <!-- Project Features -->
+          <ul>
+            <li>
+              Practiced semantic HTML structure and accessible page
+              organization
+            </li>
+
+            <li>
+              Built responsive layouts using CSS, Flexbox, Grid and
+              media queries
+            </li>
+
+            <li>
+              Applied JavaScript fundamentals to interactive page
+              behavior
+            </li>
+
+            <li>
+              Worked with reusable styling patterns and consistent
+              visual hierarchy
+            </li>
+
+            <li>
+              Used smaller projects to reinforce concepts before
+              applying them to larger applications
+            </li>
+          </ul>
+
+
+          <!-- Project Note -->
+          <p class="card-text project-note">
+            <em>
+              These projects document my continued practice and show the
+              progression from individual concepts into more complete
+              application development.
+            </em>
+          </p>
+
+        </div>
+
+      </section>
+
+    </div>
+  </article>
+
+
+  <!-- Screenshot Modal -->
+  <ProjectScreenshotModal
+    modal-name="Codecademy"
+    project-name="Codecademy Mini Projects"
+    :screenshots="screenshots"
+    :image-path="imagePath"
+  />
 </template>
 
+
 <script>
+import ProjectScreenshotModal from '../ProjectScreenshotModal.vue';
+
 export default {
-    name: "CodecademyCard",
-    data() {
-        return {
-            screenshots: [
-                {
-                    id: 1,
-                    image: "default_image.webp",
-                    alt: "No Image Available"
-                }
-            ]
+  name: "CodecademyCard",
+
+  components: {
+    ProjectScreenshotModal
+  },
+
+
+  data() {
+    return {
+      imagePath:
+        "/assets/images/projects/",
+
+      screenshots: [
+        {
+          id: 1,
+          image: "default_image.webp",
+          alt: "Codecademy Mini Projects preview",
+          title:
+            "Codecademy Mini Projects preview. Additional project screenshots will be added as the collection is updated."
         }
-    }
+      ]
+    };
+  }
 };
 </script>
-
-<style scoped>
-.carousel-container  {
-  background-color: #dadae2;
-}
-
-.carousel-main {
-  border: 1px black solid;
-}
-
-.carousel-inner {
-  width: 100%;
-}
-
-.carousel-item img {
-  width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-}
-
-.carousel-container .btn {
-  color: #7c7c8a;
-  background-color: #f8f8fa;
-  border: 1px solid #7c7c8a;
-  border-radius: 15px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1); /* Soft shadow */
-}
-
-.carousel-container .btn:hover {
-  font-size: 1.03rem;
-  font-weight: 500;
-  color: white;
-  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454); /* Subtle gradient background */
-  background-size: 500% 500%;
-  border: 1px solid #cccce4;
-  transform: translateY(-1px); /* Adds 3D effect */
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
-  animation: gradient-animation 5s ease infinite;
-}
-
-/* Define the animation */
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%; /* Start position */
-  }
-  50% {
-    background-position: 100% 50%; /* End position */
-  }
-  100% {
-    background-position: 0% 50%; /* Back to start */
-  }
-}
-
-h5,
-h5 a {
-  color: black;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-h5:hover {
-  transform: scale(1.05);
-}
-
-/* Modal styling */
-.modal-dialog {
-  max-width: 90vw;
-  height: auto;
-}
-
-.modal-body {
-  height: 90vh;
-  background-color: #dadae2;
-}
-
-.carousel-indicators,
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  filter: invert(50%);
-}
-
-.carousel-indicators {
-  top: 80vh;
-}
-
-.carousel-indicators button {
-  height: .2rem;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
-  height: 90vh;
-  top: -.2vh;
-  transform: translateY(-15px); /* Adds 3D effect */
-  background-color: rgba(0, 0, 0, 0.1);
-  z-index: 3000;
-  object-fit: contain;
-}
-
-.carousel-control-prev {
-  left: -1rem;
-}
-
-.carousel-control-next {
-  right: -1rem;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-image: radial-gradient(circle, #c2fdcf, #70d3fb, #bef454);
-  background-size: 250% 250%;
-  border: 1px solid #cccce4;
-  border-radius: .2rem;
-  opacity: .7;
-  box-shadow: .4rem .5rem .5rem rgba(0, 0, 0, 0.15);
-  animation: gradient-animation 3s ease infinite;
-}
-
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
-}
-
-/* Small (Mobile) */
-@media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
-}
-
-/* Medium (Tablet) */
-@media (max-width: 768px) {
-  /* Styles for tablets in portrait mode */
-}
-
-/* Large (Tablet, Small Laptops) */
-@media (max-width: 1024px) {
-  /* Styles for small laptops and tablets in landscape mode */
-}
-
-/* Extra Large (Laptops, Desktops) */
-@media (min-width: 1025px) {
-  /* Styles for laptops and desktop screens */
-}
-
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
-  /* Styles for large desktop displays */
-}
-</style>

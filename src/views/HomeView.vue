@@ -1,63 +1,90 @@
 <!-- Home View -->
 <template>
+  <div class="home">
 
-  <head>
-    <title>Home | J.Curtis Portfolio</title>
-  </head>
+    <Jumbotron />
 
-  <body>
-    <main>
-      <Jumbotron />
-    </main>
-  </body>
-
+  </div>
 </template>
 
+
 <script>
-import Jumbotron from '@/components/Jumbotron.vue';
+import Jumbotron from '@/components/home/Jumbotron.vue';
 
 export default {
   name: "HomeView",
-  components: { 
+
+  components: {
     Jumbotron
   }
 };
 </script>
 
+
 <style scoped>
-main {
+/* ========================================
+   Home Page
+======================================== */
+
+.home {
   width: 100%;
-  background: #dadae2 url('/assets/home/jumbotron_bg_image.webp') no-repeat center center;
+
+  background-color:
+    var(--color-background);
+
+  background-image:
+    var(--home-background-image);
+
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: contain;
+
+  transition:
+    background-color .3s ease-in-out;
 }
 
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 900px) {
+  .home {
+    background-position: center top;
+    background-size: cover;
+  }
 }
 
-/* Small (Mobile) */
-@media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
-}
 
-/* Medium (Tablet) */
+/* ========================================
+   Smaller Tablet
+======================================== */
+
 @media (max-width: 768px) {
-  /* Styles for tablets in portrait mode */
+  .home {
+    background-position: center center;
+  }
 }
 
-/* Large (Tablet, Small Laptops) */
-@media (max-width: 1024px) {
-  /* Styles for small laptops and tablets in landscape mode */
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 600px) {
+  .home {
+    background-position: center top;
+  }
 }
 
-/* Extra Large (Laptops, Desktops) */
-@media (min-width: 1025px) {
-  /* Styles for laptops and desktop screens */
-}
 
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
-  /* Styles for large desktop displays */
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .home {
+    transition: none;
+  }
 }
 </style>

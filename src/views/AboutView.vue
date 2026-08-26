@@ -1,107 +1,259 @@
 <!-- About View -->
 <template>
-  
-  <head>
-    <title>About | J.Curtis Portfolio</title>
-  </head>
+  <div class="about-page page-shell">
 
-  <body>
-    <main class="main-content d-flex flex-row justify-content-center align-items-center">
+    <PageHeader
+      eyebrow="Business · Technology · Development"
+      title="About Jennifer Curtis"
+      description="A little about where I came from, how I found my way into technology and how I approach the work I do now."
+    />
 
-      <!-- About Me Image -->
-      <section class="image-container col-3 d-flex flex-column justify-content-center align-items-center p-0 m-0">
-        <Image :receivedData="dataFromCertificates"/>
-        <Certificates @data-sent="receiveData"/>
+
+    <!-- About Content -->
+    <div class="about-content">
+
+      <!-- Profile Image & Certificates -->
+      <section class="image-section">
+
+        <div class="profile-panel">
+
+          <ProfileImage
+            :received-data="certificateModalOpen"
+          />
+
+          <Certificates
+            @data-sent="handleCertificateModal"
+          />
+
+        </div>
+
       </section>
 
-      <!-- About Me Text -->
-      <section class="text-container col-6 d-flex flex-column justify-content-center align-items-center p-0 m-0">
-        <AboutMe/>
+
+      <!-- About Me -->
+      <section class="about-section">
+        <AboutMe />
       </section>
 
-      <!-- Experience Timeline -->
-      <section class="timeline-container col-1 d-flex flex-column justify-content-center align-items-center p-0 m-0">
-        <Timeline/>
-      </section>
+    </div>
 
-    </main>
-  </body>
 
+    <!-- How I Think -->
+    <HowIThink />
+
+
+    <!-- Professional Timeline -->
+    <section class="timeline-section section-divider">
+      <Timeline />
+    </section>
+
+  </div>
 </template>
 
+
 <script>
-import Image from '@/components/about/Image.vue';
+import PageHeader from '@/components/PageHeader.vue';
+import ProfileImage from '@/components/about/ProfileImage.vue';
 import Certificates from '@/components/about/Certificates.vue';
 import AboutMe from '@/components/about/AboutMe.vue';
+import HowIThink from '@/components/about/HowIThink.vue';
 import Timeline from '@/components/about/Timeline.vue';
 
 export default {
   name: "AboutView",
-  components: { 
-    Image,
+
+  components: {
+    PageHeader,
+    ProfileImage,
     Certificates,
     AboutMe,
+    HowIThink,
     Timeline
   },
+
+
   data() {
     return {
-      dataFromCertificates: false
+      certificateModalOpen: false
     };
   },
+
+
   methods: {
-    // Pass data from certificates to image about model open/close
-    receiveData(data) {
-      this.dataFromCertificates = data;
+
+    /* Track Certificate Modal State */
+    handleCertificateModal(isOpen) {
+      this.certificateModalOpen = isOpen;
     }
   }
 };
 </script>
 
+
 <style scoped>
-.main-content {
-  margin-block: 8vh;
+/* ========================================
+   About Content
+======================================== */
+
+.about-content {
+  display: grid;
+  grid-template-columns:
+    minmax(16rem, .8fr)
+    minmax(30rem, 1.6fr);
+
+  align-items: start;
+
+  column-gap:
+    clamp(3rem, 6vw, 7rem);
 }
 
-.image-container {
 
+/* ========================================
+   Image & Certificates
+======================================== */
+
+.image-section {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+
+  z-index: 2;
 }
 
-.text-container {
 
+/* ========================================
+   Profile Panel
+======================================== */
+
+.profile-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  padding:
+    clamp(1rem, 2vw, 1.5rem);
+
+  gap: .5rem;
+
+  background-color:
+    var(--color-surface-transparent-light);
+
+  border:
+    1px solid
+    var(--color-border-transparent);
+
+  border-radius: 1rem;
+
+  box-shadow:
+    0 .35rem .6rem
+    var(--color-shadow);
+
+  transition:
+    background-color .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.profile-panel:hover {
+  border-color:
+    var(--color-border);
+
+  box-shadow:
+    0 .5rem .8rem
+    var(--color-shadow);
 }
 
 
-.timeline-container {
+/* ========================================
+   About Me
+======================================== */
 
+.about-section {
+  position: relative;
+
+  min-width: 0;
+
+  z-index: 1;
 }
 
-/* Extra Small (Mobile) */
-@media (max-width: 480px) {
-  /* Styles for phones in portrait mode */
+
+/* ========================================
+   Timeline
+======================================== */
+
+.timeline-section {
+  width: 100%;
 }
 
-/* Small (Mobile) */
+
+/* ========================================
+   Small Desktop / Large Tablet
+======================================== */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .about-content {
+    grid-template-columns:
+      minmax(14rem, .85fr)
+      minmax(0, 1.5fr);
+
+    column-gap:
+      clamp(2rem, 4vw, 3rem);
+  }
+
+  .image-section {
+    margin-top: 1.7rem;
+  }
+
+  .about-section {
+    margin-top: .25rem;
+  }
+}
+
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+  }
+
+  .image-section,
+  .about-section {
+    width: 100%;
+
+    margin-top: 0;
+  }
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
 @media (max-width: 600px) {
-  /* Styles for phones in landscape mode */
+  .about-content {
+    gap: 2rem;
+  }
 }
 
-/* Medium (Tablet) */
-@media (max-width: 768px) {
-  /* Styles for tablets in portrait mode */
-}
 
-/* Large (Tablet, Small Laptops) */
-@media (max-width: 1024px) {
-  /* Styles for small laptops and tablets in landscape mode */
-}
+/* ========================================
+   Reduced Motion
+======================================== */
 
-/* Extra Large (Laptops, Desktops) */
-@media (min-width: 1025px) {
-  /* Styles for laptops and desktop screens */
-}
-
-/* Ultra Large (Wider Desktop Screens) */
-@media (min-width: 1440px) {
-  /* Styles for large desktop displays */
+@media (prefers-reduced-motion: reduce) {
+  .profile-panel {
+    transition: none;
+  }
 }
 </style>
