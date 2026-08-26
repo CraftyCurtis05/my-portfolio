@@ -144,7 +144,7 @@ export default {
   width: 34%;
 
   left: 3%;
-  bottom: 43%;
+  bottom: 39%;
 }
 
 
@@ -331,6 +331,21 @@ export default {
 
   .description {
     font-size: .95rem;
+  }
+}
+
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 400px) {
+  .paragraph .site-button {
+    display: block;
+
+    width: fit-content;
+
+    margin-inline: auto;
   }
 }
 </style>
