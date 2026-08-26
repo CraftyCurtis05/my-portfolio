@@ -157,131 +157,61 @@ export default {
   data() {
     return {
       imagePath:
-        "/assets/images/projects/project-examples/best-buds-screenshots/",
+        "/assets/images/projects/best-buds/",
 
       screenshots: [
         {
           id: 1,
-          image: "01-best-buds-register.webp",
-          alt: "Best Buds registration page",
-          title:
-            "Registration page for creating a new Best Buds account. This feature is still under development."
-        },
-        {
-          id: 2,
-          image: "02-best-buds-login.webp",
-          alt: "Best Buds login page",
-          title:
-            "Login page for returning users to access their Best Buds account. This feature is still under development."
-        },
-        {
-          id: 3,
-          image: "03-best-buds-home.webp",
+          image: "01-home.webp",
           alt: "Best Buds home page",
           title:
             "Home page introducing the application and highlighting featured dispensary information."
         },
         {
-          id: 4,
-          image: "04-best-buds-profile.webp",
-          alt: "Best Buds user profile",
-          title:
-            "User profile designed for managing account information and saved dispensary preferences. This feature is still under development."
-        },
-        {
-          id: 5,
-          image: "05-best-buds-locator.webp",
+          id: 2,
+          image: "02-locator.webp",
           alt: "Best Buds dispensary locator",
           title:
-            "Dispensary locator designed to search nearby businesses and display results with location and map information."
+            "Dispensary locator for searching nearby businesses and viewing results with location and map information."
         },
         {
-          id: 6,
-          image: "06-best-buds-shop.webp",
-          alt: "Best Buds product page",
+          id: 3,
+          image: "03-profile.webp",
+          alt: "Best Buds user profile",
           title:
-            "Product information page organized around common cannabis product categories and accessories."
+            "User profile for managing account information and saved dispensary preferences. This feature is still under development."
         },
         {
-          id: 7,
-          image: "07-best-buds-tips-tricks.webp",
+          id: 4,
+          image: "04-tips-tricks.webp",
           alt: "Best Buds tips and tricks page",
           title:
             "Tips and Tricks page with practical information intended for both newer and more experienced users."
         },
         {
-          id: 8,
-          image: "08-best-buds-products.webp",
-          alt: "Best Buds product guide",
-          title:
-            "Product guide designed to organize information about different cannabis products and their characteristics."
-        },
-        {
-          id: 9,
-          image: "09-best-buds-strain-guide.webp",
-          alt: "Best Buds strain and terpene guide",
-          title:
-            "Strain and terpene guide that organizes product information by characteristics, effects and user preferences."
-        },
-        {
-          id: 10,
-          image: "10-best-buds-safety-tips.webp",
-          alt: "Best Buds safety information page",
-          title:
-            "Safety information page covering responsible use, consumption methods and general cannabis safety."
-        },
-        {
-          id: 11,
-          image: "11-best-buds-too-much.webp",
-          alt: "Best Buds overconsumption information",
-          title:
-            "Educational page explaining common signs of overconsumption and general steps users can take if they feel uncomfortable."
-        },
-        {
-          id: 12,
-          image: "12-best-buds-legality.webp",
+          id: 5,
+          image: "05-legality.webp",
           alt: "Best Buds cannabis legality map",
           title:
-            "Interactive U.S. map designed to organize state-by-state cannabis legality and regulatory information."
+            "Interactive U.S. map organizing state-by-state cannabis legality and regulatory information."
         },
         {
-          id: 13,
-          image: "13-best-buds-questions.webp",
-          alt: "Best Buds frequently asked questions",
-          title:
-            "Frequently asked questions section that organizes common topics about dispensaries, products, laws and responsible use."
-        },
-        {
-          id: 14,
-          image: "14-best-buds-articles.webp",
+          id: 6,
+          image: "06-articles.webp",
           alt: "Best Buds articles page",
           title:
             "Resource center containing educational articles and additional cannabis-related information."
         },
         {
-          id: 15,
-          image: "15-best-buds-news.webp",
+          id: 7,
+          image: "07-news.webp",
           alt: "Best Buds news page",
           title:
-            "News page designed to bring current cannabis-related stories and industry information into the application."
+            "News page bringing current cannabis-related stories and industry information into the application."
         },
         {
-          id: 16,
-          image: "16-best-buds-about.webp",
-          alt: "Best Buds about page",
-          title:
-            "About page explaining the purpose of Best Buds as a dispensary locator and educational resource."
-        },
-        {
-          id: 17,
-          image: "17-best-buds-privacy.webp",
-          alt: "Best Buds privacy policy",
-          title:
-            "Privacy page explaining how user information and application data are intended to be handled."
-        },
-        {
-          id: 18,
-          image: "18-best-buds-contact.webp",
+          id: 8,
+          image: "08-contact.webp",
           alt: "Best Buds contact page",
           title:
             "Contact page with a form for questions, feedback and other application-related messages."

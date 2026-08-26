@@ -151,92 +151,64 @@ export default {
   data() {
     return {
       imagePath:
-        "/assets/images/projects/project-examples/jolt-screenshots/",
+        "/assets/images/projects/jolt/",
 
       screenshots: [
         {
           id: 1,
-          image: "01-jolt-register.webp",
-          alt: "Jolt registration page",
+          image: "01-home.webp",
+          alt: "Jolt home page",
           title:
-            "Registration page for creating a Jolt account with a username and password."
+            "Home page introducing the application with a curated coffee-themed image carousel."
         },
         {
           id: 2,
-          image: "02-jolt-login.webp",
-          alt: "Jolt login page",
-          title:
-            "Login page for returning users to access their Jolt account."
-        },
-        {
-          id: 3,
-          image: "03-jolt-home.webp",
-          alt: "Jolt home page",
-          title:
-            "Home page with an introduction to the application and a curated coffee-themed image carousel."
-        },
-        {
-          id: 4,
-          image: "04-jolt-profile-form.webp",
+          image: "02-profile-form.webp",
           alt: "Jolt profile form",
           title:
             "Profile form for saving personal information, an address, profile image and user preferences."
         },
         {
-          id: 5,
-          image: "05-jolt-profile-user.webp",
+          id: 3,
+          image: "03-profile-user.webp",
           alt: "Jolt user profile",
           title:
             "User profile where saved information and profile details can be viewed and updated."
         },
         {
-          id: 6,
-          image: "06-jolt-locator.webp",
+          id: 4,
+          image: "04-locator.webp",
           alt: "Jolt coffee shop locator",
           title:
             "Locator page that accepts a search location or uses the address saved in the user's profile."
         },
         {
-          id: 7,
-          image: "07-jolt-locator-search.webp",
+          id: 5,
+          image: "05-locator-search.webp",
           alt: "Jolt coffee shop search results",
           title:
             "Coffee shop results returned from the Yelp Fusion API with business details, directions and Yelp review links."
         },
         {
-          id: 8,
-          image: "08-jolt-locator-fav.webp",
+          id: 6,
+          image: "06-locator-fav.webp",
           alt: "Jolt save favorite feature",
           title:
             "Search result with the option to save a coffee shop to the user's favorites."
         },
         {
-          id: 9,
-          image: "09-jolt-profile-favs.webp",
+          id: 7,
+          image: "07-profile-favs.webp",
           alt: "Jolt saved favorites",
           title:
             "Profile section for viewing and managing coffee shops saved as favorites."
         },
         {
-          id: 10,
-          image: "10-jolt-shop.webp",
-          alt: "Jolt shop page",
-          title:
-            "Shop page featuring coffee, equipment, merchandise and other coffee-related products."
-        },
-        {
-          id: 11,
-          image: "11-jolt-articles.webp",
+          id: 8,
+          image: "08-articles.webp",
           alt: "Jolt articles page",
           title:
             "Articles page with coffee-related information, tips and lifestyle content."
-        },
-        {
-          id: 12,
-          image: "12-jolt-about.webp",
-          alt: "Jolt about page",
-          title:
-            "About page describing the original project team with links to their professional profiles."
         }
       ]
     };

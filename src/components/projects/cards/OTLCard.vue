@@ -168,78 +168,57 @@ export default {
   data() {
     return {
       imagePath:
-        "/assets/images/projects/project-examples/otl-screenshots/",
+        "/assets/images/projects/otl/",
 
       screenshots: [
         {
           id: 1,
-          image: "01-otl-home.webp",
+          image: "01-home.webp",
           alt: "OTL Communications home page",
           title:
             "Home page from the version I designed and delivered to the client."
         },
         {
           id: 2,
-          image: "02-otl-services.webp",
+          image: "02-services.webp",
           alt: "OTL Communications services page",
           title:
             "Services page reorganized to make the company's communication solutions easier for customers to understand."
         },
         {
           id: 3,
-          image: "03-otl-support.webp",
+          image: "03-support.webp",
           alt: "OTL Communications support page",
           title:
             "Support page organized to give customers a clear place to find help and service information."
         },
         {
           id: 4,
-          image: "04-otl-pricing.webp",
+          image: "04-pricing.webp",
           alt: "OTL Communications pricing page",
           title:
             "Pricing page structured to make service options and pricing easier for customers to compare."
         },
         {
           id: 5,
-          image: "05-otl-contact.webp",
+          image: "05-contact.webp",
           alt: "OTL Communications contact page",
           title:
             "Contact page with an EmailJS-powered form for customer questions and service inquiries."
         },
         {
           id: 6,
-          image: "06-otl-mobile-home.webp",
+          image: "06-mobile-home.webp",
           alt: "OTL Communications home page on mobile",
           title:
             "Responsive mobile version of the home page I designed and delivered."
         },
         {
           id: 7,
-          image: "07-otl-mobile-services.webp",
+          image: "07-mobile-services.webp",
           alt: "OTL Communications services page on mobile",
           title:
             "Mobile services page with the same content structure adapted for a smaller screen."
-        },
-        {
-          id: 8,
-          image: "08-otl-mobile-support.webp",
-          alt: "OTL Communications support page on mobile",
-          title:
-            "Responsive mobile version of the customer support page."
-        },
-        {
-          id: 9,
-          image: "09-otl-mobile-pricing.webp",
-          alt: "OTL Communications pricing page on mobile",
-          title:
-            "Responsive mobile version of the pricing and service options."
-        },
-        {
-          id: 10,
-          image: "10-otl-mobile-contact.webp",
-          alt: "OTL Communications contact page on mobile",
-          title:
-            "Responsive mobile version of the customer contact form."
         }
       ]
     };

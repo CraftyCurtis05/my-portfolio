@@ -137,7 +137,7 @@ export default {
   data() {
     return {
       imagePath:
-        "/assets/images/projects/design-examples/",
+        "/assets/images/projects/inventory-mgmt/",
 
       screenshots: [
         {
