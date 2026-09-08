@@ -159,7 +159,7 @@ The contact workflow includes:
 - Component-Based Architecture
 - UI / UX Design
 - Information Architecture
-- Light / Dark Theme System
+- Light and Dark Theme System
 
 ---
 
@@ -209,6 +209,14 @@ Key implementation details include:
 
 ```text
 my-portfolio/
+│
+├── docs/
+│   └── screenshots/
+│       ├── 01-home-light-desktop.webp
+│       ├── 02-home-dark-desktop.webp
+│       ├── 03-project-directory.webp
+│       ├── 04-project-modal.webp
+│       └── 05-home-mobile-navigation.webp
 │
 ├── public/
 │   └── assets/
@@ -263,6 +271,7 @@ my-portfolio/
 │
 ├── index.html
 ├── package.json
+├── README.md
 └── vite.config.js
 ```
 
@@ -270,53 +279,60 @@ my-portfolio/
 
 ## Screenshots
 
-The following screenshots show the primary areas of the portfolio.
+The following screenshots highlight the portfolio's visual design, theme system, project presentation, interactive components, and responsive behavior.
 
-### Home
+### Responsive Portfolio Design
 
-Introduces my professional focus across business systems and full-stack development.
+The home page introduces my professional focus across business systems and full-stack development. The same interface supports both light and dark themes while maintaining a consistent layout and visual hierarchy.
 
-![Home Page](images/01-home.png)
+<p align="center">
+  <img
+    src="./docs/screenshots/01-home-light-desktop.webp"
+    alt="Portfolio home page in light theme"
+    width="49%"
+  >
+  <img
+    src="./docs/screenshots/02-home-dark-desktop.webp"
+    alt="Portfolio home page in dark theme"
+    width="49%"
+  >
+</p>
 
----
+### Project Directory
 
-### About
+The project directory organizes personal, client, and educational work while providing project status, type, and access to detailed project information.
 
-Provides background on my experience, transition into technology, certifications, and professional direction.
+<p align="center">
+  <img
+    src="./docs/screenshots/03-project-directory.webp"
+    alt="Portfolio project directory showing personal, client and educational projects"
+    width="900"
+  >
+</p>
 
-![About](images/02-about.png)
+### Interactive Project Details
 
----
+Project cards provide additional context, technologies, implementation details, screenshots, and available project links without requiring each project to use the same presentation format.
 
-### Experience
+<p align="center">
+  <img
+    src="./docs/screenshots/04-project-modal.webp"
+    alt="Inventory Management System project details displayed within the portfolio"
+    width="900"
+  >
+</p>
 
-Highlights professional experience across business operations, systems, technology, and application development.
+### Mobile Experience
 
-![Experience](images/03-experience.png)
+The portfolio adapts its layout, navigation, typography, controls, and interactions for smaller screens and touch-based devices.
 
----
-
-### Education
-
-Presents education, bootcamp training, technical coursework, and related skills.
-
-![Education](images/04-education.png)
-
----
-
-### Projects
-
-Showcases personal, client, and educational projects with project details, technologies, and implementation information.
-
-![Projects](images/05-projects.png)
-
----
-
-### Contact
-
-Provides a responsive contact form using Vue.js and a PHP server-side endpoint.
-
-![Contact](images/06-contact.png)
+<p align="center">
+  <img
+    src="./docs/screenshots/05-home-mobile-navigation.webp"
+    alt="Portfolio mobile home page with responsive navigation"
+    width="350"
+  >
+</p>
 
 ---
 
