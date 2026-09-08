@@ -65,29 +65,37 @@
           <p class="card-text">
             This inventory management system is being designed around the
             workflows involved in receiving, storing, tracking and shipping
-            inventory. I started with process research, data planning and
-            interface design so the application structure reflects the
-            operational needs it is intended to support.
+            inventory. I started by researching warehouse operations and mapping
+            the business processes the system would need to support, then used
+            those requirements to plan the application workflow, database
+            structure, RESTful API architecture and user interface.
           </p>
 
 
           <ul>
             <li>
-              Created the initial dashboard wireframe and application layout
+              Researched warehouse operations and order fulfillment processes to
+              identify system requirements
             </li>
 
             <li>
-              Researched common inventory workflows and operational needs
+              Mapped workflows for system configuration, inventory movement,
+              order fulfillment and returns
             </li>
 
             <li>
-              Planned the database structure for products, inventory levels
-              and transaction records
+              Designed the database schema around master data, inventory
+              transactions, warehouse operations and system administration
             </li>
 
             <li>
-              Mapped the workflow from receiving inventory through storage,
-              tracking and shipment
+              Planned the RESTful API hierarchy for inventory, orders, users,
+              reporting and supporting system resources
+            </li>
+
+            <li>
+              Created dashboard wireframes and component plans around the
+              operational workflows
             </li>
 
             <li>
@@ -142,10 +150,59 @@ export default {
       screenshots: [
         {
           id: 1,
-          image: "inventory-mgmt-dashboard-design.webp",
-          alt: "Inventory Management System dashboard wireframe",
+          image: "01-wireframe.webp",
+          alt:
+            "Warehouse inventory management dashboard wireframe with navigation, pending tasks, analytics and inbound shipment tracking",
           title:
-            "Initial dashboard wireframe showing inventory tracking, stock levels and navigation for the planned management system."
+            "Dashboard Wireframe — Initial interface design combining task management, inventory analytics and inbound shipment tracking into a centralized warehouse dashboard."
+        },
+        {
+          id: 2,
+          image: "02-research.webp",
+          alt:
+            "Business process research for warehouse operations and order fulfillment",
+          title:
+            "Business Process Research — Documented the operational steps behind purchasing, receiving, inventory tracking, order fulfillment and shipping to establish the system requirements."
+        },
+        {
+          id: 3,
+          image: "03-operations.webp",
+          alt:
+            "Warehouse operations workflow showing receiving, inventory storage, order fulfillment, shipping and returns",
+          title:
+            "Warehouse Operations Workflow — Mapped inventory movement from receiving and quality checks through storage, picking, packing, shipping and returns."
+        },
+        {
+          id: 4,
+          image: "04-workflow.webp",
+          alt:
+            "System configuration and business workflow for the warehouse inventory management system",
+          title:
+            "System Workflow Design — Planned the initial system configuration from account and warehouse setup through products, vendors, customers, shipping integrations and employee access."
+        },
+        {
+          id: 5,
+          image: "05-schema.webp",
+          alt:
+            "Database schema for the warehouse inventory management system",
+          title:
+            "Database Schema Design — Structured the planned data model around master data, inventory transactions, warehouse operations, user administration, reporting and system activity."
+        },
+        {
+          id: 6,
+          image: "06-api-endpoint.webp",
+          alt:
+            "RESTful API endpoint hierarchy for the warehouse inventory management system",
+          title:
+            "RESTful API Architecture — Organized planned endpoints by authentication, master data, inventory, order fulfillment, user administration, reporting and issue management."
+        },
+        {
+          id: 7,
+          image: "07-components.webp",
+          alt:
+            "Inventory management dashboard component planning and interface relationships",
+          title:
+            "Interface Component Planning — Broke the dashboard design into reusable navigation, task, analytics and inventory components while mapping their relationships within the interface."
         }
       ]
     };

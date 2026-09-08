@@ -276,14 +276,11 @@ export default {
     padding: 1.5rem;
   }
 
-  .business-systems {
-    align-self: flex-start;
-  }
-
+  .business-systems,
   .full-stack {
-    align-self: flex-end;
+    align-self: center;
 
-    text-align: left;
+    text-align: center;
   }
 
   .paragraph h2 {

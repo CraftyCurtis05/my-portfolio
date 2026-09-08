@@ -1,4 +1,4 @@
-<!-- Web Dev Reference Card Component -->
+<!-- Web Development Reference Card Component -->
 <template>
   <article class="project-card">
     <div class="project-card-layout">
@@ -29,16 +29,31 @@
         </div>
 
 
-        <!-- Full Screen Preview -->
-        <button
-          class="site-button project-preview-button"
-          type="button"
-          title="View Web Development Reference screenshots in full screen"
-          data-bs-toggle="modal"
-          data-bs-target="#carouselModalWebDev"
-        >
-          View in Full Screen
-        </button>
+        <!-- Project Preview Actions -->
+        <div class="project-preview-actions">
+
+          <a
+            href="https://reference.jennifercurtis.me"
+            class="site-button project-preview-button"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Visit the Web Development Reference live site"
+          >
+            View Live Site
+          </a>
+
+
+          <button
+            class="site-button project-preview-button"
+            type="button"
+            title="View Web Development Reference screenshots in full screen"
+            data-bs-toggle="modal"
+            data-bs-target="#carouselModalWebDev"
+          >
+            View in Full Screen
+          </button>
+
+        </div>
 
       </section>
 
@@ -53,7 +68,7 @@
           </h2>
 
 
-          <!-- GitHub Link -->
+          <!-- Project Links -->
           <p class="project-link">
             <a
               href="https://github.com/CraftyCurtis05/mini-projects/tree/main/05-personal-projects/web-dev-reference"
@@ -72,45 +87,48 @@
           <!-- Technology Stack -->
           <p class="card-text">
             <strong>Tech Stack:</strong>
-            HTML, CSS and JavaScript
+            HTML, CSS, JavaScript, Web Storage, ESLint and npm
           </p>
 
 
           <!-- Project Description -->
           <p class="card-text">
-            Web Development Reference is a personal site I built to organize
-            commonly used HTML, CSS and JavaScript concepts in one place. I
-            wanted a practical resource I could use while coding instead of
-            repeatedly searching through notes, documentation and older
-            projects.
+            Web Development Reference is a multi-page reference site I built
+            to organize the concepts, syntax, patterns and tools I regularly
+            look up while developing. It started as an HTML tables cheat sheet
+            and grew as I kept finding information I wanted to organize in one
+            place. I intentionally kept it framework-free so the structure and
+            behavior remain easy for me to understand, maintain and expand.
           </p>
 
 
           <!-- Project Features -->
           <ul>
             <li>
-              Organized development concepts into clear sections for faster
-              reference while coding
+              Organized HTML, CSS, JavaScript, accessibility, APIs, Git,
+              performance, security and other development topics into focused
+              reference pages
             </li>
 
             <li>
-              Built reusable reference tables with descriptions, syntax
-              examples and practical notes
+              Built page-level and site-wide search to make information easier
+              to find as the amount of reference content grew
             </li>
 
             <li>
-              Added navigation and interface features to make technical
-              information easier to browse
+              Added saved references with local storage so frequently used
+              entries can be returned to quickly
             </li>
 
             <li>
-              Used consistent styling and visual hierarchy to separate
-              concepts, examples and supporting information
+              Created interactive Pattern demonstrations that combine working
+              examples with implementation details and accessibility notes
             </li>
 
             <li>
-              Built the project as a working resource I can continue updating
-              as my development knowledge expands
+              Built shared responsive navigation, light and dark themes,
+              reusable interface behavior and accessibility features across
+              the site
             </li>
           </ul>
 
@@ -118,9 +136,11 @@
           <!-- Project Note -->
           <p class="card-text project-note">
             <em>
-              This project combines technical practice with information
-              organization and reflects how I document concepts so they are
-              easier to understand, find and reuse.
+              This project started as a solution to a small problem I kept
+              having while coding and became an exercise in organizing a
+              growing system. Maintaining it has helped me think more about
+              information architecture, reusable behavior, accessibility and
+              how people find what they need in a content-heavy interface.
             </em>
           </p>
 
@@ -156,15 +176,71 @@ export default {
   data() {
     return {
       imagePath:
-        "/assets/images/projects/",
+        "/assets/images/projects/web-dev-ref/",
 
       screenshots: [
         {
           id: 1,
-          image: "default_image.webp",
-          alt: "Web Development Reference project preview",
+          image: "01-thumbnail.webp",
+          alt: "Web Development Reference home page in dark theme",
           title:
-            "Web Development Reference project preview. Additional screenshots will be added as the project presentation is updated."
+            "Web Development Reference home page showing the shared navigation, project introduction and visual system used throughout the site."
+        },
+        {
+          id: 2,
+          image: "02-home.webp",
+          alt: "Web Development Reference home page with organized reference categories",
+          title:
+            "Home page organizing HTML, CSS, JavaScript, tools and Patterns into focused reference areas so information can be reached without searching through one large document."
+        },
+        {
+          id: 3,
+          image: "03-js-modern-async.webp",
+          alt: "Modern and Async JavaScript reference page",
+          title:
+            "Modern and Async JavaScript reference showing the shared page structure used to organize searchable concepts, syntax examples, notes and related information."
+        },
+        {
+          id: 4,
+          image: "04-patterns-skeleton.webp",
+          alt: "Interactive loading state and skeleton Pattern demonstration",
+          title:
+            "Interactive Loading State / Skeleton Pattern combining a working demonstration with implementation details, accessibility considerations and related references."
+        },
+        {
+          id: 5,
+          image: "05-global-search.webp",
+          alt: "Site-wide Web Development Reference search results",
+          title:
+            "Site-wide search using a centralized reference index to find matching information across the project instead of limiting results to the current page."
+        },
+        {
+          id: 6,
+          image: "06-mobile-view.webp",
+          alt: "Web Development Reference responsive mobile layout",
+          title:
+            "Responsive mobile layout showing how navigation, reference content, tables and shared controls adapt to smaller screens."
+        },
+        {
+          id: 7,
+          image: "07-dark-theme.webp",
+          alt: "Web Development Reference accessibility page in dark theme",
+          title:
+            "Persistent dark theme applied across navigation, reference content, code examples and interface controls while maintaining readable contrast and consistent states."
+        },
+        {
+          id: 8,
+          image: "08-saved-references.webp",
+          alt: "Web Development Reference saved references dialog",
+          title:
+            "Saved References dialog showing frequently used entries stored in the browser with local storage for quicker access later."
+        },
+        {
+          id: 9,
+          image: "09-site-map.webp",
+          alt: "Web Development Reference site map",
+          title:
+            "Site map showing the information architecture behind the growing reference and providing direct access to each major topic area."
         }
       ]
     };

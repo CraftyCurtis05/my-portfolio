@@ -254,6 +254,18 @@ export default {
 
       personalProjects: [
         {
+          title: "Inventory Management System",
+          card: "InventoryManagementCard",
+          status: "In Design",
+          type: "Business Systems Project"
+        },
+        {
+          title: "Web Development Reference",
+          card: "WebDevReferenceCard",
+          status: "Complete",
+          type: "Frontend Reference Tool"
+        },
+        {
           title: "Jolt Coffee Shop Locator",
           card: "JoltCard",
           status: "Complete",
@@ -266,22 +278,10 @@ export default {
           type: "Web Design & Development"
         },
         {
-          title: "Web Development Reference",
-          card: "WebDevReferenceCard",
-          status: "Complete",
-          type: "Frontend Reference Tool"
-        },
-        {
           title: "Best Buds Dispensary Locator",
           card: "BestBudsCard",
           status: "In Development",
           type: "Full-Stack Application"
-        },
-        {
-          title: "Inventory Management System",
-          card: "InventoryManagementCard",
-          status: "In Design",
-          type: "Business Systems Project"
         }
       ],
 

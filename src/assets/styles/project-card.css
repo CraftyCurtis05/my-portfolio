@@ -229,6 +229,21 @@
 
 
 /* ========================================
+   Project Preview Actions
+======================================== */
+
+.project-preview-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: .75rem;
+
+  width: 100%;
+}
+
+
+/* ========================================
    Project Preview Buttons
 ======================================== */
 
@@ -712,6 +727,10 @@
 
   .project-card ul {
     padding-left: 1.2rem;
+  }
+
+  .project-preview-actions {
+    flex-direction: column;
   }
 
   .project-preview-button {
