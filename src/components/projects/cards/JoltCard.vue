@@ -29,16 +29,31 @@
         </div>
 
 
-        <!-- Full Screen Preview -->
-        <button
-          class="site-button project-preview-button"
-          type="button"
-          title="View Jolt screenshots in full screen"
-          data-bs-toggle="modal"
-          data-bs-target="#carouselModalJolt"
-        >
-          View in Full Screen
-        </button>
+        <!-- Project Preview Actions -->
+        <div class="project-preview-actions">
+
+          <a
+            href="https://jolt.jennifercurtis.me"
+            class="site-button project-preview-button"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Visit the Jolt Coffee Shop Locator live site"
+          >
+            View Live Site
+          </a>
+
+
+          <button
+            class="site-button project-preview-button"
+            type="button"
+            title="View Jolt Coffee Shop Locator screenshots in full screen"
+            data-bs-toggle="modal"
+            data-bs-target="#carouselModalJolt"
+          >
+            View in Full Screen
+          </button>
+
+        </div>
 
       </section>
 
@@ -159,56 +174,56 @@ export default {
           image: "01-home.webp",
           alt: "Jolt home page",
           title:
-            "Home page introducing the application with a curated coffee-themed image carousel."
+            "Home page introducing Jolt's main features with a responsive layout and coffee-themed image carousel."
         },
         {
           id: 2,
-          image: "02-profile-form.webp",
-          alt: "Jolt profile form",
+          image: "02-create-account.webp",
+          alt: "Jolt create account page",
           title:
-            "Profile form for saving personal information, an address, profile image and user preferences."
+            "Account registration with clear validation and feedback for creating a secure Jolt account."
         },
         {
           id: 3,
-          image: "03-profile-user.webp",
-          alt: "Jolt user profile",
+          image: "03-profile.webp",
+          alt: "Jolt profile management page",
           title:
-            "User profile where saved information and profile details can be viewed and updated."
+            "Profile management for creating and updating personal information, a home location and profile picture."
         },
         {
           id: 4,
-          image: "04-locator.webp",
+          image: "04-coffee-shop-locator.webp",
           alt: "Jolt coffee shop locator",
           title:
-            "Locator page that accepts a search location or uses the address saved in the user's profile."
+            "Coffee shop locator for searching by city, state or ZIP code or using a saved home location."
         },
         {
           id: 5,
-          image: "05-locator-search.webp",
-          alt: "Jolt coffee shop search results",
+          image: "05-saved-coffee-shops.webp",
+          alt: "Jolt saved coffee shops page",
           title:
-            "Coffee shop results returned from the Yelp Fusion API with business details, directions and Yelp review links."
+            "Saved Coffee Shops page for viewing and managing coffee shops saved to the authenticated user's account."
         },
         {
           id: 6,
-          image: "06-locator-fav.webp",
-          alt: "Jolt save favorite feature",
+          image: "06-shop.webp",
+          alt: "Jolt shop page",
           title:
-            "Search result with the option to save a coffee shop to the user's favorites."
+            "Jolt Shop with a responsive collection of merchandise that extends the application's visual identity."
         },
         {
           id: 7,
-          image: "07-profile-favs.webp",
-          alt: "Jolt saved favorites",
+          image: "07-articles.webp",
+          alt: "Jolt coffee articles page",
           title:
-            "Profile section for viewing and managing coffee shops saved as favorites."
+            "Coffee Articles page with a responsive card-based layout for browsing coffee-related content."
         },
         {
           id: 8,
-          image: "08-articles.webp",
-          alt: "Jolt articles page",
+          image: "08-about-project.webp",
+          alt: "Jolt about page",
           title:
-            "Articles page with coffee-related information, tips and lifestyle content."
+            "About page showing the original development team and Jolt's evolution from a collaborative capstone to an independently expanded project."
         }
       ]
     };
